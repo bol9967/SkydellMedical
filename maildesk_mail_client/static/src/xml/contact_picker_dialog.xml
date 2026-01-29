@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<templates xml:space="preserve">
+    <t t-name="maildesk_mail_client.ContactPickerDialog" owl="1">
+        <Dialog title="'Select Contact'">
+            <div
+        class="p-2 d-flex flex-column"
+        style="min-width: 560px; max-height: 70vh;"
+      >
+                <div class="input-group mb-2">
+                    <input
+            type="search"
+            class="form-control"
+            placeholder="Search contacts…"
+            t-att-value="state.search"
+            t-on-input="onSearchInput"
+          />
+                    <button class="btn btn-outline-secondary" t-on-click="reload">
+                        Search
+                    </button>
+                </div>
+
+                <div class="flex-grow-1 overflow-auto border rounded">
+                    <table class="table table-hover table-sm mb-0">
+                        <thead class="table-light text-nowrap">
+                            <tr>
+                                <th>Name</th>
+                                <th>E-Mail</th>
+                                <th>Company</th>
+                                <th>Tags</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-if="!state.results.length">
+                                <tr><td
+                    colspan="4"
+                    class="text-center text-muted py-4"
+                  >No contacts found</td></tr>
+                            </t>
+                            <t t-foreach="state.results" t-as="p" t-key="p.id">
+                                <tr
+                  style="cursor:pointer"
+                  t-on-click="() =&gt; this.select(p.id)"
+                >
+                                    <td t-out="p.name" />
+                                    <td t-out="p.email" />
+                                    <td t-out="p.company_name || ''" />
+                                    <td>
+                                        <t
+                      t-foreach="p.category_id"
+                      t-as="tagId"
+                      t-key="tagId"
+                    >
+                                            <span
+                        class="badge bg-secondary me-1"
+                        t-out="state.tagMap[tagId]"
+                      />
+                                        </t>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-2 pb-3">
+                    <small class="text-muted">
+                        <t t-out="state.start + (state.results.length ? 1 : 0)" /> –
+                        <t t-out="state.end" /> / <t t-out="state.total" />
+                    </small>
+
+                    <div class="btn-group">
+                        <button
+              class="btn btn-sm btn-outline-secondary"
+              t-att-disabled="state.page === 0"
+              t-on-click="prevPage"
+            >‹</button>
+                        <button
+              class="btn btn-sm btn-outline-secondary"
+              t-att-disabled="state.end &gt;= state.total"
+              t-on-click="nextPage"
+            >›</button>
+                    </div>
+                </div>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-secondary me-2" t-on-click="clearFilter">
+                    Clear filter
+                </button>
+                <button class="btn btn-secondary" t-on-click="props.close">
+                    Close
+                </button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

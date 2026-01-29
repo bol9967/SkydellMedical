@@ -1,0 +1,21 @@
+.o_action_manager .btn-secondary:not(.o_arrow_button, .active, [disabled]) {
+    background-color: $o-gray-200;
+}
+
+.o-form-buttonbox button.oe_stat_button:not(:hover) {
+    background-color: $o-gray-200;
+}
+
+.o_graph_renderer .btn-group .btn-secondary:not(.active),
+.o_cp_switch_buttons .btn-secondary:not(.active) {
+    border: $o-gray-200;
+}
+
+.o_control_panel {
+
+    .btn-light,
+    .o_cp_switch_buttons,
+    .o_cp_searchview {
+        box-shadow: unset;
+    }
+}

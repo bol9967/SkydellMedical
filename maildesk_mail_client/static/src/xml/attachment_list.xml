@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<templates xml:space="preserve">
+    <t
+    t-name="maildesk_mail_client.AttachmentList"
+    t-inherit="mail.AttachmentList"
+    t-inherit-mode="extension"
+  >
+        <xpath
+      expr="//div[hasclass('o-mail-AttachmentCard-image')]"
+      position="attributes"
+    >
+            <attribute name="t-att-data-mimetype">attachment.icon_mimetype</attribute>
+        </xpath>
+    </t>
+</templates>

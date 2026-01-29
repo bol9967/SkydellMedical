@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maildesk Basic – A modern email client for Odoo with Gmail, Outlook, and IMAP support. Unified inbox, real-time sync, and powerful features.">
+    <meta name="keywords" content="Odoo, Maildesk, Email Client, Unified Inbox, Gmail, Outlook, IMAP, ERP">
+    <meta name="author" content="Metzler IT GmbH">
+    <title>Maildesk Basic – Unified Email Client for Odoo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body style="font-family: 'Comfortaa', sans-serif; color: #333333;">
+<section class="p-3 p-md-5 my-5 rounded-4 shadow-lg position-relative overflow-hidden" style="background-image:linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius:26px">
+    <div class="container position-relative">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-11">
+                <h1 class="display-4 fw-bold mb-4 animate__animated animate__fadeInUp" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+                    <img src="icon.png" alt="Maildesk Logo" class="me-3 img-fluid animate__animated animate__fadeInDown rounded" style="max-width: 94px;" loading="lazy">
+                    Maildesk Basic – Your Odoo Email Solution!
+                </h1>
+                <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+                    Forget fragmented email clients. Maildesk Basic brings <strong>Gmail, Outlook, and IMAP</strong> into Odoo with a unified inbox, real-time sync, and a modern interface. A true <strong>game-changer</strong> for your workflow!
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-11 d-flex justify-content-center">
+                <img src="banner.gif" alt="Maildesk Preview" class="img-fluid rounded-4 shadow-lg border border-3 border-light animate__animated animate__zoomIn" loading="lazy">
+            </div>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="row justify-content-center mt-4">
+    <div class="col-lg-11 d-flex justify-content-center">
+        <a href="https://www.youtube.com/watch?v=kdeMgAIyoNk" target="_blank" class="btn animate__animated animate__pulse animate__delay-2s btn-youtube" style="font-family: 'Comfortaa', sans-serif;font-size: 1.2rem;color: #ffffff;padding: 0.75rem 1.5rem;border-radius: 3.5rem;background-image: linear-gradient(135deg, #ff4a4a 0%, #ff1c15 100%);border: 1px solid #990000;text-decoration: none;transition: all 0.3s ease;width: 320px;">
+            <i class="fa fa-youtube me-2"></i> Watch Video
+        </a>
+    </div>
+</div>
+        </div>
+        <div class="alert alert-warning mt-5 mb-0 fw-bold text-center" role="alert" style="font-family: 'Comfortaa', sans-serif;font-size: 1rem;background-image: linear-gradient(135deg, rgb(63 106 124), rgb(88 102 111));color: #fff;border: 1px solid rgba(255,255,255,0.3);border-radius: 1rem;max-width: 1100px;margin-left: auto;margin-right: auto;">
+    📌 <strong>Maildesk Basic</strong> sends emails through your real SMTP server — they appear correctly in your "Sent" folder. However, it does <strong>not synchronize flag changes, folder moves, or deletions</strong> back to the mail server.
+    <br><br>
+    For full two-way synchronization of message states and folders, consider <strong>Maildesk Ultimate</strong>.
+    <br><br>
+    🔗 You can find all information, feature videos, and full documentation on our website:
+</div><div style="display:inline-flex; margin-top:1rem; margin-bottom:2rem; width:100%;" class="d-flex justify-content-center flex-wrap gap-2">
+    <span class="d-flex justify-content-center align-items-center" style="font-family:'Comfortaa', sans-serif; font-size:1rem; color:#ffffff; padding:0.5rem 1rem; border-radius:0.5rem; border:1px solid rgba(255, 255, 255, 0.3); background-image: linear-gradient(340deg, rgb(90, 102, 110) 0%, rgb(61, 106, 125) 100%); display: flex; align-items: center; gap: 8px;">
+        <i class="fa fa-copy me-2"></i> https://mit-odoo.com/module/maildesk
+    </span>
+    <span class="d-flex justify-content-center align-items-center" style="font-family:'Comfortaa', sans-serif; font-size:1rem; color:#ffffff; padding:0.5rem 1rem; border-radius:0.5rem; border:1px solid rgba(255, 255, 255, 0.3); background-image: linear-gradient(340deg, rgb(90, 102, 110) 0%, rgb(61, 106, 125) 100%); display: flex; align-items: center; gap: 8px;">
+        <i class="fa fa-copy me-2"></i> https://mit-odoo.com/maildesk-youtube
+    </span>
+    <span class="d-flex justify-content-center align-items-center" style="font-family:'Comfortaa', sans-serif; font-size:1rem; color:#ffffff; padding:0.5rem 1rem; border-radius:0.5rem; border:1px solid rgba(255, 255, 255, 0.3); background-image: linear-gradient(340deg, rgb(90, 102, 110) 0%, rgb(61, 106, 125) 100%); display: flex; align-items: center; gap: 8px;">
+        <i class="fa fa-copy me-2"></i> https://mit-odoo.com/maildesk-documentation
+    </span>
+</div>
+    </div>
+</section>
+
+<section class="p-5 my-5 rounded-4 shadow" style="background-image:linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius:26px">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-12">
+                <h2 class="mb-4 d-flex align-items-center" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+                    <img src="icon.png" alt="Section Icon" class="img-fluid me-3 rounded" style="width: 60px;" loading="lazy">
+                    Solve Your Odoo Email Challenges!
+                </h2>
+                <p class="mb-1 fw-bold" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+                    Odoo's default email features fall short. We know your pain points and built Maildesk to eliminate them forever!
+                </p>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="p-4 rounded-3 shadow" style="
+    background-color: white;
+" style="background: #f8d7da;">
+                    <img src="OAuth2 & Easy IMAP.png" alt="Problem Icon" class="img-fluid rounded mb-3" style="width: 70px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">Complex Setup</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif;">IMAP/SMTP setup in Odoo can be a nightmare. We’ve revolutionized it.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="p-4 rounded-3 shadow" style="
+    background-color: white;
+" style="background: #d4edda;">
+                    <img src="OAuth2 & Easy IMAP.png" alt="Solution Icon" class="img-fluid rounded mb-3" style="width: 70px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">OAuth2 &amp; Easy IMAP</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif;">Secure, simple connections for Gmail/Outlook and any IMAP server.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="p-4 rounded-3 shadow" style="
+    background-color: white;
+" style="background: #d4edda;">
+                    <img src="OAuth2 & Easy IMAP.png" alt="Solution Icon" class="img-fluid rounded mb-3" style="width: 70px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">Unified Inbox</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif;">All emails in one place, directly in Odoo. Maximum clarity, maximum efficiency.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="p-4 rounded-3 shadow" style="
+    background-color: white;
+" style="background: #f8d7da;">
+                    <img src="OAuth2 & Easy IMAP.png" alt="Problem Icon" class="img-fluid rounded mb-3" style="width: 70px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">Fragmented Inboxes</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif;">Switching between Gmail, Outlook, and Odoo? It wastes time and breaks context.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="p-5 my-5 rounded-4 shadow" style="background-image:linear-gradient(135deg, rgb(15 32 39) 0%, rgb(44 83 100 / 99%) 100%)">
+    <div class="container">
+        <h2 class="mb-4 d-flex align-items-center" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+            <img src="icon.png" alt="Section Icon" class="img-fluid me-3 rounded" style="width: 60px;" loading="lazy">
+            Maildesk in Action: Visual Tour
+        </h2>
+        <p class="mb-4 fw-bold" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+            Explore Maildesk’s powerful and intuitive interface, designed to optimize your workflow.
+        </p>
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow rounded-4">
+                    <img src="preview_image.png" alt="Central Email Hub" class="card-img-top p-3 rounded img-fluid" loading="lazy">
+                    <div class="card-body text-center pt-2" style="
+    background-color: transparent;
+">
+                        <h3 class="card-title fw-bold" style="font-family: 'Comfortaa', sans-serif; color: #1c353f;">Your Central Email Hub</h3>
+                        <p class="card-text" style="font-family: 'Comfortaa', sans-serif; color: #1c353f;">All mailboxes, synchronized and organized in one view.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow rounded-4">
+                    <img src="condservetiond.png" alt="Smart Conversation Threads" class="card-img-top p-3 rounded img-fluid" loading="lazy">
+                    <div class="card-body text-center pt-2" style="
+    background-color: transparent;
+">
+                        <h3 class="card-title fw-bold" style="font-family: 'Comfortaa', sans-serif; color: #1c353f;">Smart Conversation Threads</h3>
+                        <p class="card-text" style="font-family: 'Comfortaa', sans-serif; color: #1c353f;">Track complex conversations with our threaded view.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow rounded-4" >
+                    <img src="email_editor.png" alt="Advanced Email Editor" class="card-img-top p-3 rounded img-fluid" loading="lazy">
+                    <div class="card-body text-center pt-2" style="
+    background-color: transparent;
+">
+                        <h3 class="card-title fw-bold" style="font-family: 'Comfortaa', sans-serif; color: #1c353f;">Advanced Email Editor</h3>
+                        <p class="card-text" style="font-family: 'Comfortaa', sans-serif; color: #1c353f;">Create visually stunning emails with rich text and attachments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 border-0 shadow rounded-4">
+                    <img src="collabor.png" alt="Next-Level Collaboration" class="card-img-top p-3 rounded img-fluid" loading="lazy">
+                    <div class="card-body text-center pt-2" style="
+    background-color: transparent;
+">
+                        <h3 class="card-title fw-bold" style="font-family: 'Comfortaa', sans-serif; color: #1c353f;">Next-Level Collaboration</h3>
+                        <p class="card-text" style="font-family: 'Comfortaa', sans-serif; color: #1c353f;">Manage team inboxes efficiently and assign tasks with ease.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div style="display:inline-flex; margin-top:1rem; margin-bottom:2rem; width:100%;" class="d-flex justify-content-center flex-wrap gap-2">
+    <span class="d-flex justify-content-center align-items-center" style="font-family:'Comfortaa', sans-serif; font-size:1rem; color:#ffffff; padding:0.5rem 1rem; border-radius:0.5rem; border:1px solid rgba(255, 255, 255, 0.3); background-image: linear-gradient(340deg, rgb(90, 102, 110) 0%, rgb(61, 106, 125) 100%); display: flex; align-items: center; gap: 8px;">
+        <i class="fa fa-copy me-2"></i> https://mit-odoo.com/module/maildesk
+    </span>
+    <span class="d-flex justify-content-center align-items-center" style="font-family:'Comfortaa', sans-serif; font-size:1rem; color:#ffffff; padding:0.5rem 1rem; border-radius:0.5rem; border:1px solid rgba(255, 255, 255, 0.3); background-image: linear-gradient(340deg, rgb(90, 102, 110) 0%, rgb(61, 106, 125) 100%); display: flex; align-items: center; gap: 8px;">
+        <i class="fa fa-copy me-2"></i> https://mit-odoo.com/maildesk-youtube
+    </span>
+    <span class="d-flex justify-content-center align-items-center" style="font-family:'Comfortaa', sans-serif; font-size:1rem; color:#ffffff; padding:0.5rem 1rem; border-radius:0.5rem; border:1px solid rgba(255, 255, 255, 0.3); background-image: linear-gradient(340deg, rgb(90, 102, 110) 0%, rgb(61, 106, 125) 100%); display: flex; align-items: center; gap: 8px;">
+        <i class="fa fa-copy me-2"></i> https://mit-odoo.com/maildesk-documentation
+    </span>
+</div>
+    </div>
+</section>
+
+
+<section id="features" class="p-5 my-5 rounded-4 shadow-lg" style="background-image:linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius:26px">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-12">
+                <h2 class="mb-4 d-flex align-items-center" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+                    <img src="icon.png" alt="Section Icon" class="img-fluid me-3 rounded" style="width: 60px;" loading="lazy">
+                    Why Maildesk Will Transform Your Odoo
+                </h2>
+                <p class="mb-1" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">Maildesk isn’t just a collection of features—it’s the <strong>complete solution</strong> for maximum email efficiency in Odoo.</p>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="p-4 rounded-3 shadow bg-white text-center">
+                    <img src="unified inbox.png" alt="Unified Inbox Icon" class="img-fluid rounded mb-3" style="width: 60px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">Unified Inbox</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #6C757D;">Consolidate Gmail, Outlook, and IMAP accounts into one intuitive Odoo interface.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="p-4 rounded-3 shadow bg-white text-center">
+                    <img src="shield.png" alt="Security Icon" class="img-fluid rounded mb-3" style="width: 60px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">Secure OAuth2</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #6C757D;">Modern, secure OAuth2 for Gmail/Outlook and easy connections for any IMAP server.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="p-4 rounded-3 shadow bg-white text-center">
+                    <img src="Shared Team Inboxes.png" alt="Threads Icon" class="img-fluid rounded mb-3" style="width: 60px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">Threaded Conversations</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #6C757D;">Clear, Outlook-style conversation view. Reply, forward, archive, and tag without losing context.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-4 rounded-3 shadow bg-white text-center">
+                    <img src="Powerful HTML Composer.png" alt="Composer Icon" class="img-fluid rounded mb-3" style="width: 60px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">Powerful HTML Composer</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #6C757D;">Craft professional emails with a full-featured HTML editor and intuitive OWL UI.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-4 rounded-3 shadow bg-white text-center">
+                    <img src="Shared Team Inboxes.png" alt="Teams Icon" class="img-fluid rounded mb-3" style="width: 60px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">Shared Team Inboxes</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #6C757D;">Set up shared inboxes (e.g., sales@, support@) with granular permissions for teamwork.</p>
+                </div>
+            </div>
+            <div class="col-lg-8 mx-auto">
+                <div class="p-4 rounded-3 shadow bg-white text-center">
+                    <img src="Full GDPR Compliance.png" alt="GDPR Icon" class="img-fluid rounded mb-3" style="width: 60px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">GDPR-Ready</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #6C757D;">
+                    Encrypted credentials and audit logs – designed for GDPR compliance and enterprise-grade security.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="p-5 my-5 rounded-4 shadow-lg" style="background-image:linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius:26px">
+    <div class="container">
+        <h2 class="mb-4 d-flex align-items-center" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+            <img src="icon.png" alt="Section Icon" class="img-fluid me-3 rounded" style="width: 60px;" loading="lazy">
+            Global Reach: Multi-Language Support
+        </h2>
+        <p class="mb-4 fw-bold" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+            Maildesk Basic is available in multiple languages to suit your team’s needs worldwide.
+        </p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <ul class="list-group list-group-flush" style="border-radius: 16px;">
+                    <li class="list-group-item" style="font-family: 'Comfortaa', sans-serif; padding: 18px;font-weight: 700;font-size: 18px;">
+                        <img src="flags/de.png" alt="German" style="width: 24px; margin-right: 10px;"/> German (de)
+                    </li>
+                    <li class="list-group-item" style="font-family: 'Comfortaa', sans-serif; padding: 18px;font-weight: 700;font-size: 18px;">
+                        <img src="flags/es.png" alt="Spanish" style="width: 24px; margin-right: 10px;"/> Spanish (es)
+                    </li>
+                    <li class="list-group-item" style="font-family: 'Comfortaa', sans-serif; padding: 18px;font-weight: 700;font-size: 18px;">
+                        <img src="flags/fr.png" alt="French" style="width: 24px; margin-right: 10px;"/> French (fr)
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group list-group-flush" style="border-radius: 16px;">
+                    <li class="list-group-item" style="font-family: 'Comfortaa', sans-serif; padding: 18px;font-weight: 700;font-size: 18px;">
+                        <img src="flags/nl.png" alt="Dutch" style="width: 24px; margin-right: 10px;"/> Dutch (nl)
+                    </li>
+                    <li class="list-group-item" style="font-family: 'Comfortaa', sans-serif; padding: 18px;font-weight: 700;font-size: 18px;">
+                        <img src="flags/pt.png" alt="Portuguese" style="width: 24px; margin-right: 10px;"/> Portuguese (pt)
+                    </li>
+                    <li class="list-group-item" style="font-family: 'Comfortaa', sans-serif; padding: 18px;font-weight: 700;font-size: 18px;">
+                        <img src="flags/us.png" alt="English" style="width: 24px; margin-right: 10px;"/> English (en)
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group list-group-flush" style="border-radius: 16px;">
+                    <li class="list-group-item" style="font-family: 'Comfortaa', sans-serif; padding: 18px;font-weight: 700;font-size: 18px;">
+                        <img src="flags/tr.png" alt="Turkish" style="width: 24px; margin-right: 10px;"/> Turkish (tr)
+                    </li>
+                    <li class="list-group-item" style="font-family: 'Comfortaa', sans-serif; padding: 18px;font-weight: 700;font-size: 18px;">
+                        <img src="flags/pl.png" alt="Polish" style="width: 24px; margin-right: 10px;"/> Polish (pl)
+                    </li>
+                    <li class="list-group-item" style="font-family: 'Comfortaa', sans-serif; padding: 18px;font-weight: 700;font-size: 18px;">
+                        and others
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="why-maildesk-unique" class="p-5 my-5 rounded-4 shadow-lg" style="background-image:linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius:26px">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-12">
+                <h2 class="mb-4 d-flex align-items-center" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+                    <img src="icon.png" alt="Section Icon" class="img-fluid me-3 rounded" style="width: 60px;" loading="lazy">
+                    Maildesk: No Alternatives!
+                </h2>
+                <p class="mb-4 fw-bold" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+                    No other Odoo solution offers such <strong>deep integration, flawless UI, and comprehensive features</strong>.&nbsp;<br />
+                    Maildesk is a <strong>fundamental shift</strong> in your workflow.
+                </p>
+            </div>
+            <div class="col-lg-4">
+                <div class="p-4 rounded-3 shadow bg-white text-center">
+                    <img src="Attention to Detail.png" alt="Crown Icon" class="img-fluid rounded mb-3" style="width: 60px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">Leading Integration</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #6C757D;">Maildesk embeds emails into Odoo’s core, making communication part of every process.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="p-4 rounded-3 shadow bg-white text-center">
+                    <img src="Leading Integration.png" alt="Lightning Icon" class="img-fluid rounded mb-3" style="width: 60px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">Unmatched Speed</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #6C757D;">Real-time sync and optimized code ensure you work with the latest data, lag-free.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="p-4 rounded-3 shadow bg-white text-center">
+                    <img src="Unmatched Speed.png" alt="Heart Icon" class="img-fluid rounded mb-3" style="width: 60px;" loading="lazy">
+                    <h3 class="fw-bold" style="font-family:'Comfortaa', sans-serif;font-size: 26px;">Attention to Detail</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #6C757D;">Every feature and design element is crafted for your comfort and productivity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="explore-features">
+    <div>
+        <div class="container p-5 my-5 rounded-4 shadow-lg" style="background-image:linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius:26px">
+            <h2 class="mb-4 d-flex align-items-center" style="font-family: 'Comfortaa', sans-serif; color: #ffffff;">
+                <img src="icon.png" alt="Section Icon" class="img-fluid me-3 rounded" style="width: 60px;" loading="lazy">
+                Explore Maildesk Features
+            </h2>
+            <p style="font-family: 'Comfortaa', sans-serif; color: #ffffff;" class="fw-bold">
+                See how Maildesk transforms your email workflow with intuitive tools and seamless Odoo integration.
+            </p>
+            <div class="alert alert-warning mt-5 mb-0 fw-bold text-center" role="alert" style="font-family: 'Comfortaa', sans-serif;font-size: 1rem;background-image: linear-gradient(135deg, rgb(63 106 124), rgb(88 102 111));color: #fff;border: 1px solid rgba(255,255,255,0.3);border-radius: 1rem;max-width: 1100px;margin-left: auto;margin-right: auto;">
+    📌 <strong>Maildesk Basic</strong> sends emails through your real SMTP server — they appear correctly in your "Sent" folder. However, it does <strong>not synchronize flag changes, folder moves, or deletions</strong> back to the mail server.
+    <br><br>
+    For full two-way synchronization of message states and folders, consider <strong>Maildesk Ultimate</strong>.
+    <br><br>
+    🔗 You can find all information, feature videos, and full documentation on our website:
+</div><div style="display:inline-flex; margin-top:1rem; margin-bottom:2rem; width:100%;" class="d-flex justify-content-center flex-wrap gap-2">
+    <span class="d-flex justify-content-center align-items-center" style="font-family:'Comfortaa', sans-serif; font-size:1rem; color:#ffffff; padding:0.5rem 1rem; border-radius:0.5rem; border:1px solid rgba(255, 255, 255, 0.3); background-image: linear-gradient(340deg, rgb(90, 102, 110) 0%, rgb(61, 106, 125) 100%); display: flex; align-items: center; gap: 8px;">
+        <i class="fa fa-copy me-2"></i> https://mit-odoo.com/module/maildesk
+    </span>
+    <span class="d-flex justify-content-center align-items-center" style="font-family:'Comfortaa', sans-serif; font-size:1rem; color:#ffffff; padding:0.5rem 1rem; border-radius:0.5rem; border:1px solid rgba(255, 255, 255, 0.3); background-image: linear-gradient(340deg, rgb(90, 102, 110) 0%, rgb(61, 106, 125) 100%); display: flex; align-items: center; gap: 8px;">
+        <i class="fa fa-copy me-2"></i> https://mit-odoo.com/maildesk-youtube
+    </span>
+    <span class="d-flex justify-content-center align-items-center" style="font-family:'Comfortaa', sans-serif; font-size:1rem; color:#ffffff; padding:0.5rem 1rem; border-radius:0.5rem; border:1px solid rgba(255, 255, 255, 0.3); background-image: linear-gradient(340deg, rgb(90, 102, 110) 0%, rgb(61, 106, 125) 100%); display: flex; align-items: center; gap: 8px;">
+        <i class="fa fa-copy me-2"></i> https://mit-odoo.com/maildesk-documentation
+    </span>
+</div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-3 pe-3" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-12">
+                <img src="preview_image.png" alt="Messages Display" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="preview_image.png" alt="Messages Display" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Messages Display</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        View all your emails in a clean, organized interface, consolidating Gmail, Outlook, and IMAP accounts.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="8_2_maildesk_reply.png" alt="Email Reply" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Email Reply</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        Respond to emails effortlessly with a streamlined reply interface, keeping conversations clear and contextual.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="8_4_maildesk_composer_signature.png" alt="Signature Insertion" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Signature Insertion</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        Add professional signatures to your emails with ease, fully customizable within the Maildesk composer.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="8_7_maildesk_action_buttons.png" alt="Bulk Actions" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Bulk Actions</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        Select multiple messages and perform actions like archiving, deleting, or moving in one go.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="8_8_maildesk_move_to_folder.png" alt="Folder Navigation" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Folder Navigation</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        Move emails between folders seamlessly to keep your inbox organized and efficient.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="8_9_maildesk_tags.png" alt="Tag Management" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Tag Management</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        Create and assign tags to emails for easy categorization and quick retrieval.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="8_12_maildesk_filter_by_contacts.png" alt="Contact Filtering" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Contact Filtering</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        Filter emails to show only those linked to specific contacts, streamlining communication tracking.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="9_1_comsoser_send.png" alt="Advanced Composer" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Advanced Composer</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        Choose sender accounts, set CC/BCC, and customize sender names in a powerful, redesigned composer.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="10_maildesk_send_sale_order.png" alt="Chatter Integration" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Chatter Integration</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        Emails from Odoo’s chatter are synced to Maildesk with correct parameters and document links.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="11_reply_responce.png" alt="Client Response" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Client Response</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        View client replies to sent Sale Orders directly within Maildesk’s intuitive interface.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="12_sale_order_doc.png" alt="Chatter Sync" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Chatter Sync</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        Client responses automatically sync back to the original Sale Order’s chatter in Odoo.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mb-5 mt-2 pb-4 ps-2" style="--gutter-x: aliceblue;background-image: linear-gradient(135deg, rgb(15, 32, 39) 0%, rgb(44, 83, 100) 100%); border-radius: 44px;">
+            <div class="col-md-6">
+                <img src="13_reply_from_maildesk_to_sale_order.png" alt="Reply to Client" class="img-fluid rounded-4 shadow-sm" loading="lazy">
+            </div>
+            <div class="col-md-6 d-flex align-items-center p-5">
+                <div>
+                    <h3 class="fw-bold fs-4" style="font-family: 'Comfortaa', sans-serif; color: #e8fbff;">Reply to Client</h3>
+                    <p style="font-family: 'Comfortaa', sans-serif; color: #f4f5f7;" class="fw-bold">
+                        Respond to client emails directly from Maildesk, maintaining full context with Sale Orders.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

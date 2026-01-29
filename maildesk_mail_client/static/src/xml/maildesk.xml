@@ -1,0 +1,1236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<templates xml:space="preserve">
+    <t t-name="maildesk_mail_client.MailDesk" owl="1">
+        <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600&amp;amp;display=swap"
+      rel="stylesheet"
+    />
+        <div class="maildesk-mail-client">
+            <div class="maildesk-body d-flex bg-light">
+                <t t-call="maildesk_mail_client.Sidebar" />
+                <t t-call="maildesk_mail_client.MailList" />
+                <t t-call="maildesk_mail_client.MailContent" />
+            </div>
+        </div>
+    </t>
+
+    <t t-name="maildesk_mail_client.Sidebar">
+        <aside class="maildesk-sidebar bg-light border-end p-3">
+            <div
+        class="d-flex align-items-center justify-content-center mb-3 composer-par"
+      >
+                <button
+          class="btn btn-composer w-100"
+          t-on-click="openComposer"
+          data-tooltip="Compose a new email"
+          accesskey="n"
+        >
+                    <img
+            loading="lazy"
+            src="/maildesk_mail_client/static/src/icons/composer.svg"
+            style="width: 34px; height: 31px; padding-bottom: 4px; filter: brightness(0.5);"
+          /> Compose
+                </button>
+            </div>
+
+            <t t-if="state.partnerName">
+                <div
+          class="alert alert-info py-2 px-3 d-flex align-items-center gap-2 mb-3"
+          role="alert"
+        >
+                    <div
+            class="flex-grow-1"
+            style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer;"
+            t-on-click.stop="(ev) =&gt; this.partnerCard.open(ev.currentTarget, { id: state.partnerId })"
+          >
+                        <img
+              loading="lazy"
+              src="/maildesk_mail_client/static/src/icons/open_contact.svg"
+              class="me-1 folder-icon"
+              width="21"
+              height="21"
+              style="margin-bottom: 2px;"
+            /> <span t-out="state.partnerName" />
+                    </div>
+                    <button
+            class="btn d-flex align-items-center"
+            t-on-click="clearContactFilter"
+            title="Remove contact filter"
+          >
+                        <i class="fa fa-times" />
+                    </button>
+                </div>
+            </t>
+
+            <t t-if="state.accounts.length === 0">
+                <div class="alert alert-info" role="alert">
+                    <strong>No mailboxes configured</strong><br />
+                </div>
+            </t>
+
+            <t t-else="">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                    <a
+            href="#"
+            class="btn btn-sm w-100 text-start fw-bold rounded filter-alle-btn ps-0"
+            t-att-class="this.isAllFilterActive() ? 'selected-filter' : 'text-muted'"
+            t-on-click="resetFilters"
+            title="Show all mailboxes and folders"
+            data-tooltip="Show all mailboxes and folders"
+          >
+                        <img
+              loading="lazy"
+              src="/maildesk_mail_client/static/src/icons/inbox.svg"
+              class="me-2 folder-icon"
+              width="21"
+              height="21"
+            />
+                        All Mailboxes
+                    </a>
+                </div>
+
+                <t t-foreach="state.accounts" t-as="account" t-key="account.id">
+                    <hr class="mt-1" />
+
+                    <h6
+            class="mt-3 account-name d-flex align-items-center text-truncate p-1 rounded"
+            t-att-data-account-id="account.id"
+            t-att-class="state.currentAccount === account.id ? 'selected-account' : 'text-muted'"
+            t-att-title="account.email"
+          >
+                        <i
+  class="fa me-2 folder-toggle-icon fa-chevron-right"
+  role="button"
+  data-bs-toggle="collapse"
+  t-att-data-bs-target="'#folders-' + account.id"
+  t-att-aria-controls="'folders-' + account.id"
+  t-att-aria-expanded="account.id === this.defaultExpandedAccountId ? 'true' : 'false'"
+  style="cursor: pointer;"
+/>
+
+                        <span
+              class="flex-grow-1"
+              style="cursor: pointer;"
+              t-out="account.name"
+              t-on-click="() =&gt; filterByAccount(account.id)"
+            />
+                    </h6>
+
+                    <ul
+  class="list-unstyled ms-2 collapse"
+  t-att-id="'folders-' + account.id"
+  t-att-class="'collapse' + (account.id === this.defaultExpandedAccountId ? ' show' : '')"
+>
+                        <t t-set="tree" t-value="this.getFolderTree(account.id)" />
+                        <t t-foreach="tree" t-as="folder" t-key="folder.id">
+                            <t t-call="maildesk_mail_client.FolderTree">
+                                <t t-set="folder" t-value="folder" />
+                                <t t-set="accountId" t-value="account.id" />
+                            </t>
+                        </t>
+                    </ul>
+                </t>
+
+                <t t-if="state.tags.length > 0">
+                    <div
+            class="d-flex justify-content-between align-items-center mt-4 mb-2 ms-2"
+          >
+                        <strong>Tags</strong>
+                        <a
+              href="#"
+              class="btn btn-link p-0 text-decoration-none"
+              t-on-click="() =&gt; { this.state.selectedTagId = []; this.refreshMessages(); }"
+            >
+                            Clear
+                        </a>
+                    </div>
+                    <ul class="list-unstyled ms-2">
+                        <t t-foreach="state.tags" t-as="tag" t-key="tag.id">
+                            <li>
+                                <a
+                  href="#"
+                  class="d-flex align-items-center p-1 rounded"
+                  t-att-class="[                     'd-flex',                     'align-items-center',                     'p-1',                     'rounded',                     state.selectedTagId.includes(tag.id) ? 'selected-filter' : 'text-muted'                     ].join(' ')"
+                  t-on-click="() =&gt; filterByTag(tag.id)"
+                >
+                                    <span
+                    class="badge rounded-pill px-2 py-1 text-white fw-medium"
+                    t-att-style="'background-color:' + tag.color + ';'"
+                    t-out="tag.name"
+                  />
+                                </a>
+                            </li>
+                        </t>
+                    </ul>
+                </t>
+            </t>
+        </aside>
+    </t>
+
+    <t t-name="maildesk_mail_client.MailList">
+        <section class="maildesk-list-section border-end">
+            <div class="maildesk-search-box-h d-flex gap-2 align-items-center">
+                <div class="maildesk-search-box d-flex align-items-center">
+                    <img
+            loading="lazy"
+            src="/maildesk_mail_client/static/src/icons/search.svg"
+            width="21"
+            height="21"
+            style="filter: invert(1);"
+          />
+                    <input
+            type="search"
+            class="form-control search-input"
+            placeholder="Search mail..."
+            t-att-value="state.searchQuery"
+            t-on-input="onSearchInput"
+          />
+                    <div class="position-relative">
+                        <button
+              class="btn btn-sm btn-secondary filter-btn px-3 d-flex justify-content-between align-items-center"
+              title="Filter options"
+              t-ref="filterBtn"
+              t-on-click="onFilterButtonClick"
+            >
+                            <i class="fa fa-filter me-1" />
+                            All
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-bar d-flex gap-2 overflow-auto">
+                <button
+          class="btn filter-btn"
+          accesskey="l"
+          t-att-class="state.currentFilter === 'all' ? 'active' : ''"
+          t-on-click="() => this.filterBy('all')"
+          data-tooltip="Show all emails from all folders (Alt+A)"
+        >
+                    <img
+            src="/maildesk_mail_client/static/src/icons/archive.svg"
+            alt="All"
+            class="icon me-1"
+            loading="lazy"
+          />
+                    All
+                </button>
+
+                <button
+          class="btn filter-btn"
+          accesskey="u"
+          t-att-class="state.currentFilter === 'unread' ? 'active' : ''"
+          t-on-click="() => this.filterBy('unread')"
+          data-tooltip="Show only unread emails (Alt+U)"
+        >
+                    <img
+            src="/maildesk_mail_client/static/src/icons/unread.svg"
+            alt="Unread"
+            class="icon me-1"
+            loading="lazy"
+          />
+                    Unread
+                </button>
+
+                <button
+          class="btn filter-btn"
+          accesskey="m"
+          t-att-class="state.currentFilter === 'starred' ? 'active' : ''"
+          t-on-click="() => this.filterBy('starred')"
+          data-tooltip="Show only starred (important) emails (Alt+R)"
+        >
+                    <img
+            src="/maildesk_mail_client/static/src/icons/starred.svg"
+            alt="Starred"
+            class="icon me-1"
+            loading="lazy"
+          />
+                    Starred
+                </button>
+
+                <button
+          class="btn filter-btn"
+          accesskey="i"
+          t-att-class="state.currentFilter === 'incoming' ? 'active' : ''"
+          t-on-click="() => this.filterBy('incoming')"
+          data-tooltip="Show only incoming messages (Alt+I)"
+        >
+                    <img
+            src="/maildesk_mail_client/static/src/icons/inbox.svg"
+            alt="Incoming"
+            class="icon me-1"
+            loading="lazy"
+          />
+                    Incoming
+                </button>
+
+                <button
+          class="btn filter-btn"
+          accesskey="t"
+          t-att-class="state.currentFilter === 'outgoing' ? 'active' : ''"
+          t-on-click="() => this.filterBy('outgoing')"
+          data-tooltip="Show only sent or outgoing messages (Alt+T)"
+        >
+                    <img
+            src="/maildesk_mail_client/static/src/icons/sent.svg"
+            alt="Outgoing"
+            class="icon me-1"
+            loading="lazy"
+          />
+                    Outgoing
+                </button>
+            </div>
+
+            <div
+        class="maildesk-list-header d-flex justify-content-between align-items-center gap-3 px-2 py-3"
+      >
+                <div class="d-flex align-items-center gap-2 w-100">
+                    <input
+            type="checkbox"
+            class="form-check-input custom-checkbox"
+            t-att-checked="state.allSelected"
+            t-on-click="toggleAllSelection"
+            data-tooltip="Toggle select all messages"
+          />
+                    <div class="d-flex flex-column">
+                        <div class="d-flex align-items-center">
+                            <h3
+                class="fw-bold mb-0 me-2"
+                t-out="this.currentFolderName || 'Inbox'"
+              />
+                            <!-- <span
+                class="text-muted"
+                style="font-size: 12px; padding-top: 2px;"
+                t-if="state.selectedIds.length"
+              > (<t t-out="state.selectedIds.length" /> selected) </span> -->
+                        </div>
+                    </div>
+                    <!-- <div
+            class="ms-auto text-muted"
+            style="font-size: 12px; padding-top: 2px;"
+          >
+                        <span t-out="state.messages.length" /> messages displayed
+                    </div> -->
+                </div>
+            </div>
+
+            <t t-if="state.selectedIds.length">
+                <div class="d-flex gap-2 action-bar">
+                    <button
+            class="btn btn-archive"
+            t-on-click="archiveSelected"
+            data-tooltip="Archive selected emails"
+          >
+                        <img
+              src="/maildesk_mail_client/static/src/icons/archive.svg"
+              alt="Archive"
+              class="icon"
+              loading="lazy"
+            />
+                        Archive
+                    </button>
+
+                    <button
+            class="btn btn-delete"
+            t-on-click="deleteSelected"
+            data-tooltip="Move selected emails to trash"
+          >
+                        <img
+              src="/maildesk_mail_client/static/src/icons/trash.svg"
+              alt="Delete"
+              class="icon"
+              loading="lazy"
+            />
+                        Delete
+                    </button>
+
+                    <button
+            class="btn btn-read"
+            t-on-click="markSelectedAsRead"
+            data-tooltip="Mark selected emails as read"
+          >
+                        <img
+              src="/maildesk_mail_client/static/src/icons/read.svg"
+              alt="Read"
+              class="icon"
+              loading="lazy"
+            />
+                        Read
+                    </button>
+
+                    <button
+            class="btn btn-read"
+            t-on-click="markSelectedAsUnread"
+            data-tooltip="Mark selected emails as unread"
+          >
+                        <img
+              src="/maildesk_mail_client/static/src/icons/unread.svg"
+              alt="Unread"
+              class="icon"
+              loading="lazy"
+            />
+                        Unread
+                    </button>
+
+                    <button
+            class="btn btn-move"
+            t-on-click="openMoveToFolderDialog"
+            data-tooltip="Move selected emails to another folder"
+          >
+                        <img
+              src="/maildesk_mail_client/static/src/icons/move.svg"
+              alt="Move"
+              class="icon"
+              loading="lazy"
+            />
+                        Move
+                    </button>
+
+                    <button
+            class="btn btn-star"
+            t-on-click="toggleStarForSelected"
+            data-tooltip="Add or remove star from selected emails"
+          >
+                        <img
+              src="/maildesk_mail_client/static/src/icons/starred.svg"
+              alt="Star"
+              class="icon"
+              loading="lazy"
+            />
+                        Star
+                    </button>
+                </div>
+            </t>
+
+            <div class="maildesk-list overflow-y" t-ref="list">
+                <t t-if="state.messages.length">
+                    <t t-foreach="state.messages" t-as="msg"
+   t-key="(msg.account_id?.[0] || 'x') + '-' + (msg.folder_id || 'y') + '-' + msg.id">
+
+                        <div
+              class="d-flex gap-3 px-2 py-3 border-bottom message-box pe-3"
+              t-att-class="[                             msg.is_draft ? 'border-draft' : '',                             !msg.is_read ? 'border-unread' : '',                             msg.is_starred ? 'border-starred' : '',                             state.selectedMessage?.id === msg.id ? 'border-selected border-selected-s shadow-sm' : '',                             state.selectedIds.includes(msg.id) ? 'border-selected shadow-sm' : '',     state.hiddenMessageIds.includes(msg.id) ? 'd-none' : ''].join(' ')"
+              t-on-click="(ev) =&gt; this.onClickMessage(ev, msg)"
+              t-on-contextmenu.prevent="(ev) =&gt; this.onMessageRightClick(ev, msg)"
+              t-att-data-message-id="msg.id"
+            >
+                            <div
+                class="d-flex justify-content-center align-items-center"
+              >
+                                <input
+                  type="checkbox"
+                  class="form-check-input custom-checkbox"
+                  t-att-checked="state.selectedIds.includes(msg.id)"
+                  t-on-click.stop="() =&gt; this.toggleSelection(msg.id)"
+                />
+                            </div>
+
+                            <div
+                class="d-flex justify-content-center align-items-center"
+              >
+                                <div
+                  t-out="msg.avatar_html"
+                  class="overflow-hidden sender-icon"
+                  t-on-click.stop="(ev) =&gt; this.onClickPartner(ev, msg.avatar_partner_id)"
+                />
+                            </div>
+
+                            <div class="flex-grow-1 overflow-hidden">
+                                <div
+                  class="d-flex justify-content-between align-items-start"
+                >
+                                    <div class="me-2 message-info flex-grow-1" style="min-width:0;">
+                                        <div class="d-flex align-items-center">
+                                            <div
+                        class="sender-name"
+                        t-att-class="!msg.is_read ? 'fw-bold' : ''"
+                        t-out="msg.sender_display_name"
+                      />
+                                            <div
+                        class="unread-dot"
+                        t-if="!msg.is_read"
+                      />
+                                        </div>
+                                        <div
+                      class="d-flex align-items-center message-subject mt-1"
+                      t-att-class="!msg.is_read ? 'fw-bold' : ''"
+                    >
+                                            <span
+                        t-if="msg.is_draft"
+                        class="text-danger me-1 draft-label"
+                      >[Draft]</span>
+                                            <span t-out="msg.subject or 'No Subject'" />
+                                        </div>
+                                        <div
+                      class="text-muted small mt-1 msg-body"
+                      t-out="msg.preview_text"
+                    />
+                                    </div>
+
+                                    <div class="text-end flex-shrink-0" style="max-width:160px;">
+                                        <div
+                      class="text-muted message-data text-nowrap"
+                      t-out="msg.formatted_date"
+                    />
+                                        <div
+                      class="d-flex flex-column align-items-end mt-1"
+                    >
+                                            <t t-if="msg.tag_ids">
+                                                <t
+                          t-foreach="msg.tag_ids"
+                          t-as="tag"
+                          t-key="tag.id"
+                        ><t t-log="tag"/>
+                                                    <span
+                            class="badge rounded-pill mb-1 px-2 py-1 text-white fw-medium"
+                            t-att-style="'background-color:' + tag.color + ';'"
+                            t-out="tag.name"
+                          />
+                                                </t>
+                                            </t>
+                                        </div>
+                                        <t t-if="msg.has_attachments">
+                                            <img
+                        loading="lazy"
+                        src="/maildesk_mail_client/static/src/icons/attachment.svg"
+                        alt="Attachment"
+                        style="width: 16px; height: 16px; margin-left: 4px;"
+                      />
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                class="hover-actions d-flex align-items-center ms-auto gap-1"
+              >
+                                <button
+                  class="icon-btn btn-reply"
+                  data-tooltip="Reply"
+                  t-on-click.stop="() =&gt; this.openReplyComposer(msg)"
+                >
+                                    <img
+                    loading="lazy"
+                    src="/maildesk_mail_client/static/src/icons/reply.svg"
+                    width="14"
+                    height="14"
+                  />
+                                </button>
+
+                                <button
+                  class="icon-btn btn-forward"
+                  data-tooltip="Forward"
+                  t-on-click.stop="() =&gt; this.openForwardComposer(msg)"
+                >
+                                    <img
+                    loading="lazy"
+                    src="/maildesk_mail_client/static/src/icons/forward.svg"
+                    width="14"
+                    height="14"
+                  />
+                                </button>
+
+                                <button
+                  class="icon-btn btn-delete"
+                  data-tooltip="Delete"
+                  t-on-click.stop="() =&gt; this.deleteSelected(msg)"
+                >
+                                    <img
+                    loading="lazy"
+                    src="/maildesk_mail_client/static/src/icons/trash.svg"
+                    width="14"
+                    height="14"
+                  />
+                                </button>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+                <t t-elif="state.isRefreshing or state.loadingMore">
+  <div class="maildesk-list-skeleton">
+    <t t-foreach="[1,2,3,4,5,6,7,8,9,10]" t-as="i" t-key="i">
+      <div class="skeleton-item d-flex align-items-center gap-3 px-3 py-3 border-bottom">
+        <div class="skel-avatar rounded-circle"></div>
+        <div class="flex-grow-1">
+          <div class="skel-line short mb-2"></div>
+          <div class="skel-line medium mb-2"></div>
+          <div class="skel-line long"></div>
+        </div>
+      </div>
+    </t>
+  </div>
+</t>
+
+<t t-else="">
+  <div class="text-center text-muted py-5">
+    <em>No messages found</em>
+  </div>
+</t>
+            </div>
+        </section>
+    </t>
+
+    <t t-name="maildesk_mail_client.MailContent">
+        <section
+          class="maildesk-content overflow-auto"
+          t-ref="maildesk-content"
+          t-att-class="state.isLoadingMessage ? 'loading-skeleton' : ''"
+        >
+
+            <t t-if="state.selectedMessage">
+                <div class="maildesk-full-message rounded shadow-sm p-4">
+                    <div
+            class="maildesk-full-message-header scrollable-buttons d-flex justify-content-between align-items-center pb-3 d-flex gap-2"
+          >
+                        <div
+              class="d-flex gap-2"
+              t-if="!state.selectedMessage.is_draft"
+            >
+                            <button
+                class="btn rounded-pill d-flex align-items-center"
+                t-on-click="() =&gt; this.openReplyComposer(state.selectedMessage)"
+                data-tooltip="Reply to sender"
+                accesskey="r"
+              >
+                                <img
+                  src="/maildesk_mail_client/static/src/icons/reply.svg"
+                  class="me-1"
+                  width="16"
+                  height="16"
+                />Reply
+                            </button>
+                            <button
+                class="btn rounded-pill d-flex align-items-center"
+                t-on-click="() =&gt; this.openReplyAllComposer(state.selectedMessage)"
+                data-tooltip="Reply to all recipients"
+                accesskey="a"
+              >
+                                <img
+                  src="/maildesk_mail_client/static/src/icons/reply_all.svg"
+                  class="me-1"
+                  width="16"
+                  height="16"
+                />Reply All
+                            </button>
+                            <button
+                class="btn rounded-pill d-flex align-items-center"
+                t-on-click="() =&gt; this.openForwardComposer(state.selectedMessage)"
+                data-tooltip="Forward this message"
+                accesskey="f"
+              >
+                                <img
+                  src="/maildesk_mail_client/static/src/icons/forward.svg"
+                  class="me-1"
+                  width="16"
+                  height="16"
+                />Forward
+                            </button>
+                        </div>
+
+                        <t t-if="state.selectedMessage.is_draft">
+                            <div class="d-flex gap-2">
+                                <button
+                  class="btn rounded-pill d-flex align-items-center"
+                  t-on-click="() =&gt; this.openDraftComposer(state.selectedMessage)"
+                  data-tooltip="Edit draft"
+                  accesskey="e"
+                >
+                                    <img
+                    src="/maildesk_mail_client/static/src/icons/drafts.svg"
+                    class="me-1"
+                    width="16"
+                    height="16"
+                  />Edit Draft
+                                </button>
+                            </div>
+                        </t>
+
+                        <div class="d-flex gap-">
+                            <button
+                class="btn rounded-pill d-flex align-items-center"
+                t-on-click="() =&gt; this.printMessage()"
+                data-tooltip="Print this email"
+                accesskey="p"
+              >
+                                <img
+                  src="/maildesk_mail_client/static/src/icons/drafts.svg"
+                  class="me-1"
+                  width="16"
+                  height="16"
+                />Print
+                            </button>
+
+                            <t t-if="!state.selectedMessage.avatar_partner_id">
+                                <button
+                  class="btn rounded-pill d-flex align-items-center"
+                  t-on-click="() => this.createPartnerFromMessage(state.selectedMessage)"
+                  accesskey="c"
+                >
+                                    <img
+                    src="/maildesk_mail_client/static/src/icons/create_contact.svg"
+                    class="me-1"
+                    width="16"
+                    height="16"
+                  />
+                                    Create Contact
+                                </button>
+                            </t>
+                            <t t-if="state.selectedMessage.avatar_partner_id">
+                                <button
+                  class="btn rounded-pill d-flex align-items-center"
+                  t-on-click="() => this.onClickViewProfile(state.selectedMessage.avatar_partner_id)"
+                  accesskey="c"
+                >
+                                    <img
+                    src="/maildesk_mail_client/static/src/icons/open_contact.svg"
+                    class="me-1"
+                    width="16"
+                    height="16"
+                  />
+                                    Open Contact
+                                </button>
+                            </t>
+
+                            <t
+                t-if="state.selectedMessage.model and state.selectedMessage.res_id"
+              >
+                                <button
+                  class="btn rounded-pill d-flex align-items-center"
+                  t-on-click="() => this.openLinkedDocument(state.selectedMessage)"
+                  data-tooltip="Open linked document"
+                  accesskey="o"
+                >
+                                    <img
+                    src="/maildesk_mail_client/static/src/icons/open_document.svg"
+                    class="me-1"
+                    width="16"
+                    height="16"
+                  />Open Document
+                                </button>
+                            </t>
+                        </div>
+
+                        <div
+              class="d-flex align-items-center gap-3 text-primary-emphasis"
+            >
+                            <img
+                src="/maildesk_mail_client/static/src/icons/archive.svg"
+                width="18"
+                height="18"
+                class="cursor-pointer"
+                data-tooltip="Archive message"
+                t-on-click="() =&gt; this.moveMessagesToFolder('is_archive', state.selectedMessage)"
+              />
+                            <img
+                src="/maildesk_mail_client/static/src/icons/trash.svg"
+                width="18"
+                height="18"
+                class="cursor-pointer"
+                data-tooltip="Delete message"
+                t-on-click.stop="() =&gt; this.deleteSelected(state.selectedMessage)"
+              />
+                            <img
+                src="/maildesk_mail_client/static/src/icons/unread.svg"
+                width="18"
+                height="18"
+                class="cursor-pointer"
+                data-tooltip="Mark as unread"
+                t-on-click="() =&gt; this.markSelectedAsUnread()"
+              />
+                            <img
+                src="/maildesk_mail_client/static/src/icons/starred.svg"
+                width="18"
+                height="18"
+                class="cursor-pointer"
+                t-att-class="state.selectedMessage?.is_starred ? 'cursor-pointer star-active' : 'cursor-pointer'"
+                data-tooltip="Toggle star"
+                t-on-click="() =&gt; this.toggleStarForSelected()"
+              />
+                            <img
+                src="/maildesk_mail_client/static/src/icons/tags.svg"
+                width="18"
+                height="18"
+                class="cursor-pointer"
+                data-tooltip="Assign tags"
+                t-on-click="() =&gt; this.openAssignTagsDialog(state.selectedMessage)"
+              />
+                            <img
+                src="/maildesk_mail_client/static/src/icons/move.svg"
+                width="18"
+                height="18"
+                class="cursor-pointer"
+                data-tooltip="Move to folder"
+                t-on-click="() =&gt; this.openMoveToFolderDialog(state.selectedMessage)"
+              />
+                        </div>
+                    </div>
+
+                    <div
+            class="d-flex justify-content-between align-items-start flex-wrap mb-3 info-container"
+          >
+                        <div class="d-flex align-items-start">
+                            <div class="me-3">
+                                <div
+                  t-out="state.selectedMessage.avatar_html"
+                  class="overflow-hidden sender-icon"
+                  style="width: 48px; height: 48px; cursor: pointer;"
+                  t-on-click.stop="(ev) =&gt; this.onClickPartner(ev, state.selectedMessage.avatar_partner_id)"
+                />
+                            </div>
+                            <div>
+                                <h5
+                  class="mb-0 fw-semibold"
+                  t-out="state.selectedMessage.sender_display_name || '?'"
+                  style="cursor: pointer;"
+                  t-on-click.stop="(ev) =&gt; this.onClickPartner(ev, state.selectedMessage.avatar_partner_id)"
+                />
+                                <div class="mb-1 info-container-bod"><span
+                    class="text-muted small"
+                    t-out="state.selectedMessage.email_from"
+                  />: <span
+                    t-out="state.selectedMessage.subject || 'No Subject'"
+                  /></div>
+                                <div class="text-muted small">
+                                    <t t-if="state.selectedMessage.account_display">
+                                        <div><strong>Mailbox:</strong> <span
+                        t-out="state.selectedMessage.account_display"
+                      /></div>
+                                    </t>
+                                    <t t-if="state.selectedMessage.to_display">
+                                        <div><strong>To:</strong> <span
+                        t-out="state.selectedMessage.to_display"
+                      /></div>
+                                    </t>
+                                    <t t-if="state.selectedMessage.cc_display">
+                                        <div><strong>Cc:</strong> <span
+                        t-out="state.selectedMessage.cc_display"
+                      /></div>
+                                    </t>
+                                    <t t-if="state.selectedMessage.bcc_display">
+                                        <div><strong>Bcc:</strong> <span
+                        t-out="state.selectedMessage.bcc_display"
+                      /></div>
+                                    </t>
+                                    <t t-if="state.selectedMessage.reply_to">
+                                        <div><strong>Reply to:</strong> <span
+                        t-out="state.selectedMessage.reply_to"
+                      /></div>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-end mt-2 mt-md-0">
+                            <div
+                class="text-muted small small-formatted_date mb-2"
+                t-out="formatUserDate(state.selectedMessage.date)"
+              />
+                            <t t-if="state.selectedMessage.folder_name">
+                                <span
+                  class="badge rounded-pill bg-light text-dark px-3 py-1 mt-2 d-inline-block small"
+                >
+                                    <t t-out="state.selectedMessage.folder_name" />
+                                    <span class="ms-1">×</span>
+                                </span>
+                            </t>
+                            <t t-if="state.selectedMessage.tag_ids">
+                                <div class="d-grid justify-content-end">
+                                    <t
+                    t-foreach="state.selectedMessage.tag_ids"
+                    t-as="tag"
+                    t-key="tag.id"
+                  >
+                                        <span
+                      class="badge rounded-pill px-2 py-1 text-white fw-medium mb-2 ms-auto w-auto"
+                      t-att-style="'background-color:' + tag.color + ';'"
+                      t-out="tag.name"
+                    />
+                                    </t>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+
+                    <h3 t-out="state.selectedMessage.subject || 'No Subject'" />
+                    <t
+            t-if="!state.selectedMessage.force_show_content and !state.selectedMessage.partner_trusted"
+          >
+                            <div class="alert alert-warning d-block p-3">
+                                <div class="d-flex align-items-center mb-2">
+                                    <img
+                  src="/maildesk_mail_client/static/src/icons/security.svg"
+                  width="20"
+                  height="20"
+                  class="me-2"
+                />
+                                    <strong
+                  class="me-1"
+                >Safe Mode:</strong> Suspicious content has been blocked for your safety.
+                                </div>
+                                <p class="mb-2">
+                                    To view the full content, we recommend checking this email or only trusting known senders.
+                                </p>
+                                <div class="d-flex gap-2 trust-buttons flex-wrap">
+                                    <button
+                  class="btn rounded-pill d-flex align-items-center"
+                  t-on-click="() => this.trustEmailOnce(state.selectedMessage)"
+                  accesskey="t"
+                  data-tooltip="Trust this email and display its full content."
+                >
+                                        <img
+                    src="/maildesk_mail_client/static/src/icons/show_once.svg"
+                    class="me-1"
+                    width="16"
+                    height="16"
+                  />
+                                        Show Once
+                                    </button>
+
+                                    <button
+                  class="btn rounded-pill d-flex align-items-center"
+                  t-on-click="() => this.trustPartner(state.selectedMessage)"
+                  accesskey="u"
+                  data-tooltip="Trust the sender of this email for all future communications."
+                >
+                                        <img
+                    src="/maildesk_mail_client/static/src/icons/security.svg"
+                    class="me-1"
+                    width="16"
+                    height="16"
+                  />
+                                        Trust Sender
+                                    </button>
+                                </div>
+                            </div>
+                        </t>
+
+                    <div class="email-body border-top pt-3 md-iframe-wrap" t-if="!state.isLoadingMessage and state.selectedMessage.body_original">
+                      <iframe
+                        t-att-data-msg-id="state.selectedMessage.id"
+                        t-att-sandbox="this.getIframeSandbox(state.selectedMessage)"
+                        class="email-preview-iframe"
+                        style="width: 100%; border: none; height: auto;"
+                        t-att-srcdoc="this.generateIframeSrcdoc(state.selectedMessage.body_original)"
+                      />
+                    </div>
+                    <t t-if="state.selectedMessage.attachments?.length">
+                              <t t-if="state.selectedMessage.attachments?.length">
+                                  <div class="mt-3 mb-5 pb-4">
+                                      <AttachmentList
+                  attachments="state.selectedMessage.attachments"
+                  unlinkAttachment="() =&gt; {}"
+                />
+                                  </div>
+                              </t>
+                        </t>
+                        <t t-else="">
+                        <div class="pb-4"/>
+                        </t>
+                         
+                </div>
+
+                <t t-if="state.selectedMessage?.parent_chain">
+                    <t
+            t-foreach="state.selectedMessage.parent_chain"
+            t-as="msg"
+            t-key="msg.id"
+          >
+                        <t t-call="maildesk_mail_client.ThreadMessage" />
+                    </t>
+                </t>
+            </t>
+            <t t-if="!state.selectedMessage">
+                <div
+          class="text-muted d-flex justify-content-center align-items-center h-100"
+        >
+                    <em>No message selected</em>
+                </div>
+            </t>
+        </section>
+    </t>
+
+    <t t-name="maildesk_mail_client.ThreadMessage">
+<t t-log="msg"/>
+        <div class="mail-thread-entry shadow-sm mb-3 p-4 bg-white mt-4">
+            <div
+        class="d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom"
+      >
+                <div class="d-flex gap-3">
+                    <img
+            src="/maildesk_mail_client/static/src/icons/reply.svg"
+            width="16"
+            height="16"
+            class="cursor-pointer"
+            t-on-click="() => this.openReplyComposer(msg)"
+            data-tooltip="Reply to this email."
+          />
+                    <img
+            src="/maildesk_mail_client/static/src/icons/reply_all.svg"
+            width="16"
+            height="16"
+            class="cursor-pointer"
+            t-on-click="() => this.openReplyAllComposer(msg)"
+            data-tooltip="Reply to all recipients of this email."
+          />
+                    <img
+            src="/maildesk_mail_client/static/src/icons/forward.svg"
+            width="16"
+            height="16"
+            class="cursor-pointer"
+            t-on-click="() => this.openForwardComposer(msg)"
+            data-tooltip="Forward this email to another recipient."
+          />
+                </div>
+
+                <div class="d-flex align-items-center gap-3 text-primary-emphasis">
+                    <img
+            src="/maildesk_mail_client/static/src/icons/archive.svg"
+            width="18"
+            height="18"
+            class="cursor-pointer"
+            data-tooltip="Archive message"
+            t-on-click="() =&gt; this.moveMessagesToFolder('is_archive', msg)"
+          />
+                    <img
+            src="/maildesk_mail_client/static/src/icons/trash.svg"
+            width="18"
+            height="18"
+            class="cursor-pointer"
+            data-tooltip="Delete message"
+            t-on-click.stop="() =&gt; this.deleteSelected(msg)"
+          />
+                    <img
+            src="/maildesk_mail_client/static/src/icons/unread.svg"
+            width="18"
+            height="18"
+            class="cursor-pointer"
+            data-tooltip="Mark as unread"
+            t-on-click="() =&gt; this.markSelectedAsUnread()"
+          />
+                    <img
+            src="/maildesk_mail_client/static/src/icons/starred.svg"
+            width="18"
+            height="18"
+            class="cursor-pointer"
+            t-att-class="msg?.is_starred ? 'cursor-pointer star-active' : 'cursor-pointer'"
+            data-tooltip="Toggle star"
+            t-on-click="() =&gt; this.toggleStarForSelected(msg)"
+          />
+                    <img
+            src="/maildesk_mail_client/static/src/icons/tags.svg"
+            width="18"
+            height="18"
+            class="cursor-pointer"
+            data-tooltip="Assign tags"
+            t-on-click="() =&gt; this.openAssignTagsDialog(msg)"
+          />
+                    <img
+            src="/maildesk_mail_client/static/src/icons/move.svg"
+            width="18"
+            height="18"
+            class="cursor-pointer"
+            data-tooltip="Move to folder"
+            t-on-click="() =&gt; this.openMoveToFolderDialog(msg)"
+          />
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="d-flex align-items-start">
+                    <div class="me-3">
+                        <div
+              t-out="msg.avatar_html"
+              class="rounded-circle overflow-hidden sender-icon cursor-pointer"
+              t-on-click.stop="(ev) =&gt; this.onClickPartner(ev, msg.avatar_partner_id)"
+            />
+                    </div>
+                    <div>
+                        <h5
+              class="mb-0 fw-semibold"
+              t-out="msg.sender_display_name || '?'"
+              style="cursor: pointer;"
+              t-on-click.stop="(ev) =&gt; this.onClickPartner(ev, msg.avatar_partner_id)"
+            />
+                        <div class="mb-1 info-container-bod"><span
+                class="text-muted small"
+                t-out="msg.email_from"
+              />: <span t-out="msg.subject || 'No Subject'" /></div>
+                        <div class="text-muted small">
+                            <t t-if="msg.account_display">
+                                <div><strong>Mailbox:</strong> <span
+                    t-out="msg.account_display"
+                  /></div>
+                            </t>
+                            <t t-if="msg.to_display">
+                                <div><strong>To:</strong> <span
+                    t-out="msg.to_display"
+                  /></div>
+                            </t>
+                            <t t-if="msg.cc_display">
+                                <div><strong>Cc:</strong> <span
+                    t-out="msg.cc_display"
+                  /></div>
+                            </t>
+                            <t t-if="msg.bcc_display">
+                                <div><strong>Bcc:</strong> <span
+                    t-out="msg.bcc_display"
+                  /></div>
+                            </t>
+                            <t t-if="msg.reply_to">
+                                <div><strong>Reply to:</strong> <span
+                    t-out="msg.reply_to"
+                  /></div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-end">
+                    <div
+            class="text-muted small small-formatted_date mb-2"
+            t-out="formatUserDate(msg.date)"
+          />
+
+                    <t t-if="msg.folder_name">
+                        <span
+              class="badge bg-light text-dark small"
+              t-out="msg.folder_name"
+            />
+                    </t>
+                    <t t-if="msg.tag_ids">
+                        <div class="d-flex flex-wrap justify-content-end mt-2">
+                            <t t-foreach="msg.tag_ids" t-as="tag" t-key="tag.id">
+                                <span
+                  class="badge rounded-pill text-white me-1 mb-1 px-2 py-1 fw-medium"
+                  t-att-style="'background-color:' + tag.color + ';'"
+                  t-out="tag.name"
+                />
+                            </t>
+                        </div>
+                    </t>
+                </div>
+            </div>
+
+            <t t-if="!msg.force_show_content and !msg.partner_trusted">
+                <div class="alert alert-warning d-block p-3 mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <img
+              src="/maildesk_mail_client/static/src/icons/security.svg"
+              width="20"
+              height="20"
+              class="me-2"
+            />
+                        <strong
+            >Safe Mode: </strong> Suspicious content has been blocked for your safety.
+                    </div>
+                    <p class="mb-2">
+                        To view the full content, we recommend checking this email with AI first or only trusting known senders.
+                    </p>
+                    <div class="d-flex gap-2 trust-buttons flex-wrap">
+                        <button
+              class="btn rounded-pill d-flex align-items-center"
+              t-on-click="() => this.trustEmailOnce(msg)"
+              accesskey="t"
+              data-tooltip="Trust this email and display its full content."
+            >
+                            <img
+                src="/maildesk_mail_client/static/src/icons/show_once.svg"
+                class="me-1"
+                width="16"
+                height="16"
+              />
+                            Show Once
+                        </button>
+
+                        <button
+              class="btn rounded-pill d-flex align-items-center"
+              t-on-click="() => this.trustPartner(msg)"
+              accesskey="u"
+              data-tooltip="Trust the sender of this email for all future communications."
+            >
+                            <img
+                src="/maildesk_mail_client/static/src/icons/security.svg"
+                class="me-1"
+                width="16"
+                height="16"
+              />
+                            Trust Sender
+                        </button>
+                    </div>
+                </div>
+            </t>
+
+            <div class="email-body lh-lg fs-6 border-top pt-2" t-if="!state.isLoadingMessage and msg.body_original">
+                <iframe
+          class="email-preview-iframe"
+          t-att-data-msg-id="msg.id"
+          t-att-sandbox="this.getIframeSandbox(msg)"
+          style="width: 100%; border: none; height: auto;"
+          t-att-srcdoc="this.generateIframeSrcdoc(msg.body_original)"
+        />
+
+
+            </div>
+<t t-if="msg.attachments and msg.attachments.length > 0">
+                    <div class="mt-3 border-top pt-3 mb-4">
+                        <AttachmentList
+            attachments="msg.attachments"
+            unlinkAttachment="() =&gt; {}"
+          />
+                    </div>
+                </t>
+        </div>
+    </t>
+
+    <t t-name="maildesk_mail_client.FolderTree">
+        <li class="folder-li">
+            <div class="d-flex align-items-center w-100">
+                <i class="fa fa-chevron-right me-2 ms-1 folder-toggle-icon cursor-pointer"
+                  t-if="folder.children?.length"
+                  data-bs-toggle="collapse"
+                  t-att-data-bs-target="'#subfolders-' + folder.id"
+                  t-att-aria-expanded="state.expandedFolderIds.includes(folder.id) ? 'true' : 'false'"
+                  t-on-click.stop="" />
+
+                <i class="fa me-2" t-else="" style="width: 14px; opacity: 0;" />
+
+                <a href="#"
+                  class="d-flex align-items-center text-decoration-none flex-grow-1 p-1 rounded"
+                  t-att-class="{'fw-bold selected-folder': state.currentFolderId === folder.id}"
+                  t-on-click.prevent="() => this.filterByFolderAndAccount(folder.id, accountId)">
+                    <img loading="lazy"
+                        t-att-src="this.getFolderIconSrc(folder)"
+                        class="me-2 folder-icon"
+                        width="21" height="21"/>
+                    <div class="d-flex w-100 justify-content-between">
+                        <span class="folder-name" t-out="folder.name"/>
+                        <span class="badge badge-folder-unread"
+                              t-if="folder.unread_count"
+                              t-out="folder.unread_count"/>
+                    </div>
+                </a>
+            </div>
+
+            <t t-if="folder.children?.length">
+                <ul
+                    t-att-id="'subfolders-' + folder.id"
+                    t-att-class="state.expandedFolderIds.includes(folder.id) ? 'collapse show list-unstyled ms-3' : 'collapse list-unstyled ms-3'"
+                >
+                    <t t-foreach="folder.children" t-as="child" t-key="child.id">
+                        <t t-call="maildesk_mail_client.FolderTree">
+                            <t t-set="folder" t-value="child"/>
+                            <t t-set="accountId" t-value="accountId"/>
+                        </t>
+                    </t>
+                </ul>
+            </t>
+        </li>
+    </t>
+
+</templates>

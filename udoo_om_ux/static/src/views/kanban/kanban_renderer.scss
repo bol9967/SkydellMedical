@@ -1,0 +1,70 @@
+.o_kanban_renderer {
+    --Kanban-gap: 11px;
+    --KanbanRecord-margin-h: 0;
+    --KanbanRecord-margin-v: 0;
+    --KanbanRecord-bradius: #{$o-border-radius-xl};
+
+    &:has(.o_kanban_record > .o_kanban_aside_full) {
+        --KanbanRecord-width: 349px;
+    }
+
+    &.o_kanban_ungrouped {
+        padding-top: var(--Kanban-ungrouped-pt, #{$u-kanban-ungrouped-pt}) !important;
+        padding-inline: 9pt !important;
+        padding-bottom: 0 !important;
+
+        .oe_kanban_card {
+            border-top: $border-width solid $border-color !important;
+        }
+    }
+
+    &.o_kanban_grouped .o_kanban_record {
+        margin-top: 8pt;
+    }
+
+    .o_kanban_record:not(.o_legacy_kanban_record) {
+        border-radius: var(--KanbanRecord-bradius);
+
+        // Records colours
+        @for $size from 2 through length($o-colors) {
+
+            // Note: the first color is not defined as it is the 'no color' for kanban
+            &.o_kanban_color_#{$size - 1}::after {
+                top: var(--KanbanRecord-padding-v);
+                height: 16%;
+                min-height: 1.5rem;
+                max-height: 2rem;
+            }
+        }
+
+        aside {
+            &.o_kanban_aside_full {
+
+                img {
+                    border-radius: calc(#{$o-border-radius-xl} - 0.15rem);
+                }
+            }
+        }
+    }
+
+    .o_dropdown_kanban>.dropdown {
+        --btn-active-border-color: transparent;
+        border-top-right-radius: $o-border-radius-xl !important;
+    }
+
+    .o_column_progress:has(.progress-bar-animated) {
+        background-color: transparent !important;
+
+        .progress-bar {
+            border-radius: var(--progress-border-radius);
+        }
+    }
+}
+
+.o_web_client:not(.o_touch_device) {
+    .o_kanban_renderer .o_kanban_record:not(.o_legacy_kanban_record) {
+        aside.o_kanban_aside_full {
+            margin: 3px;
+        }
+    }
+}

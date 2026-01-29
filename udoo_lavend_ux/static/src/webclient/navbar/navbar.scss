@@ -1,0 +1,25 @@
+.o_web_client:not(.o_website_navbar_hide):not(.nolside) {
+    .o_sidenav {
+        .sidenav_cont {
+            margin-bottom: 11px;
+
+            &:has(.u_current_app) {
+                margin-top: 11px;
+            }
+
+            .o_nsub {
+                font-size: smaller;
+            }
+
+            .sidenav_remain:has(.nav-item) {
+                display: block !important;
+            }
+        }
+    }
+}
+
+.o_sidenav .sidenav_cont {
+    .nav-arrow:after {
+        content: "\ea6e";
+    }
+}

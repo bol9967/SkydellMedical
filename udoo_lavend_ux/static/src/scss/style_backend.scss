@@ -1,0 +1,111 @@
+.u_sw_inline_edit:not(.active, :hover, [disabled]),
+.u_sw_filter_bar:not(.active, :hover, [disabled]),
+.o_action .btn-secondary:not(.o_arrow_button, .active, [disabled]) {
+    background-color: $u-searchview-bg;
+    border-color: $u-searchview-bg;
+
+    &:hover {
+        color: $o-action-accent;
+    }
+}
+
+.o_cp_switch_buttons .btn-secondary:not(.active) {
+    border: $o-white;
+}
+
+.o_action {
+    .o_onboarding_main {
+        margin-bottom: $o-horizontal-padding;
+    }
+
+    .o_purchase_dashboard {
+        div.bg-100 {
+            background-color: $o-gray-200 !important;
+        }
+    }
+
+    .o_attachment_preview {
+        padding-top: map-get($spacers, 2);
+
+        .o-mail-Attachment {
+            border-top: 1px solid $border-color;
+            border-left: 1px solid $border-color;
+        }
+    }
+
+    .btn-group,
+    .btn-light,
+    .btn-secondary:not(.btn-group *):not(.o_arrow_button, .active, [disabled]),
+    .o_cp_switch_buttons,
+    .o_cp_searchview {
+        box-shadow: $u-btn-shadow;
+    }
+}
+
+.o_action.o_kanban_view .o_component_with_search_panel {
+
+    .o_search_panel_sidebar,
+    .o_search_panel {
+        border-top: 1px solid $border-color;
+        border-top-right-radius: $o-border-radius-lg !important;
+    }
+}
+
+.o_graph_renderer {
+    border-top: 0 !important;
+}
+
+.o_form_view .o_horizontal_separator {
+    color: $o-action-accent;
+}
+
+.o-form-buttonbox button.oe_stat_button:not(:hover) {
+    background-color: $o-white;
+}
+
+.o_lunch_kanban_view,
+.o_purchase_dashboard_list_view,
+.o_purchase_dashboard_kanban_view,
+.o_helpdesk_team_kanban_view_view,
+.o_hr_expense_dashboard_kanban_view {
+    .o_content .o_kanban_renderer {
+        --Kanban-ungrouped-pt: 11px;
+    }
+}
+
+.o_lunch_banner,
+.o_purchase_dashboard,
+.o_calendar_header {
+    background-color: $o-webclient-background-color !important;
+}
+
+.o_base_settings_view .o_form_renderer .o_setting_container .settings_tab {
+    border-right: none !important;
+}
+
+.o-mail-Discuss {
+    border-top: 1px solid $border-color;
+
+    .o-mail-discussSidebarBgColor {
+        border-bottom: 1px solid $border-color;
+    }
+
+    .o-mail-DiscussSidebar,
+    .o-mail-Discuss-header {
+        box-shadow: unset;
+    }
+}
+
+.modal-body {
+    .o_control_panel {
+        background-color: unset;
+    }
+
+    .o_cp_searchview {
+        background-color: $o-gray-100;
+    }
+
+    .o_list_view .o_content {
+        border-bottom: 0;
+    }
+}

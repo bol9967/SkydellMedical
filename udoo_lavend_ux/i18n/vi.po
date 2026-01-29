@@ -1,0 +1,429 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* udoo_lavend_ux
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-21 02:41+0000\n"
+"PO-Revision-Date: 2025-06-21 02:41+0000\n"
+"Last-Translator: \n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__active
+msgid "Active"
+msgstr "Đang hoạt động"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Allow Visibility To Groups"
+msgstr "Cho phép hiển thị theo nhóm"
+
+#. module: udoo_lavend_ux
+#: model:ir.actions.act_window,name:udoo_lavend_ux.action_app_group
+#: model:ir.ui.menu,name:udoo_lavend_ux.mensidenav_group
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_list
+msgid "App Groups"
+msgstr "Nhóm ứng dụng"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/editor/data_filter.xml:0
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Apply"
+msgstr "Áp dụng"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Apply Changes"
+msgstr "Áp dụng thay đổi"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.js:0
+msgid ""
+"Are you sure you want to restore the default view?\r\n"
+"All columns customization on this view will be lost."
+msgstr ""
+"Bạn có chắc chắn muốn khôi phục chế độ xem mặc định không?\n"
+"Tất cả tùy chỉnh cột trong chế độ xem này sẽ bị mất."
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Available columns"
+msgstr "Các cột có sẵn"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/editor/data_filter.xml:0
+msgid "Clear"
+msgstr "Xóa"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Clear Filtering"
+msgstr "Xóa bộ lọc"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Clear Grouping"
+msgstr "Xóa nhóm"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+#: code:addons/udoo_lavend_ux/static/src/cmfb/editor/data_filter.xml:0
+msgid "Close"
+msgstr "Đóng"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Column Label"
+msgstr "Nhãn cột"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "Contained Apps"
+msgstr "Ứng dụng bao gồm"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.actions.act_window,help:udoo_lavend_ux.action_app_group
+msgid "Create your first app group!"
+msgstr "Tạo nhóm ứng dụng đầu tiên của bạn!"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__create_uid
+msgid "Created by"
+msgstr "Tạo bởi"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__create_date
+msgid "Created on"
+msgstr "Tạo vào"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/conf/view.xml:0
+msgid "Customize environment colors"
+msgstr "Tùy chỉnh màu giao diện"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Day"
+msgstr "Ngày"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__description
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Domain is invalid. Please correct it!"
+msgstr "Miền điều kiện không hợp lệ. Vui lòng kiểm tra lại!"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/list/controller.xml:0
+msgid "Done"
+msgstr "Hoàn tất"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/list/controller.xml:0
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/search/control_panel.xml:0
+msgid "Filter Navigation Bar"
+msgstr "Thanh điều hướng bộ lọc"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Filter by"
+msgstr "Lọc theo"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Filter by "
+msgstr "Lọc theo "
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Filter columns..."
+msgstr "Lọc cột..."
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Forbid Visibility To Groups"
+msgstr "Chặn hiển thị theo nhóm"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Group"
+msgstr "Nhóm"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__name
+msgid "Group Name"
+msgstr "Tên nhóm"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Group by"
+msgstr "Nhóm theo"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Hide"
+msgstr "Ẩn"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.js:0
+msgid "Hide by default"
+msgstr "Ẩn theo mặc định"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__id
+msgid "ID"
+msgstr ""
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__items
+msgid "Items"
+msgstr "Các mục"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật cuối bởi"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật vào"
+
+#. module: udoo_lavend_ux
+#: model:res.groups,name:udoo_lavend_ux.group_lvm
+msgid "List View Configuration"
+msgstr "Cấu hình danh sách"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/list/renderer.xml:0
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Manage Columns"
+msgstr "Quản lý cột"
+
+#. module: udoo_lavend_ux
+#: model:res.groups,comment:udoo_lavend_ux.group_lvm
+msgid "Manage the structure and behavior of backend list views."
+msgstr "Quản lý cấu trúc và hành vi của danh sách trong giao diện quản trị."
+
+#. module: udoo_lavend_ux
+#: model:ir.model,name:udoo_lavend_ux.model_ir_ui_menu_group
+msgid "Menu Group"
+msgstr "Nhóm menu"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Month"
+msgstr "Tháng"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "No column filters found."
+msgstr "Không tìm thấy bộ lọc cột nào."
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/search/control_panel.js:0
+msgid "No filters found."
+msgstr "Không tìm thấy bộ lọc nào."
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Optional Display"
+msgstr "Hiển thị tùy chọn"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.actions.act_window,help:udoo_lavend_ux.action_app_group
+msgid "Organize and categorize your apps by creating app groups."
+msgstr "Tổ chức và phân loại ứng dụng bằng cách tạo nhóm ứng dụng."
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/conf/view.xml:0
+msgid "Organize your applications"
+msgstr "Sắp xếp ứng dụng của bạn"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Others"
+msgstr "Khác"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Quarter"
+msgstr "Quý"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Quick Column Filters"
+msgstr "Bộ lọc cột nhanh"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Remove"
+msgstr "Xóa"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Remove column"
+msgstr "Xóa cột"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/editor/data_filter.xml:0
+msgid "Reset"
+msgstr "Đặt lại"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Reset Sorting"
+msgstr "Đặt lại sắp xếp"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Restore Defaults"
+msgstr "Khôi phục mặc định"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Select column"
+msgstr "Chọn cột"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid ""
+"Select which columns are visible for you. To change the column order, drag "
+"and drop the visible columns."
+msgstr ""
+"Chọn các cột bạn muốn hiển thị. Để thay đổi thứ tự cột, hãy kéo và thả các cột đang hiển thị."
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__sequence
+msgid "Sequence"
+msgstr "Thứ tự"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.js:0
+msgid "Show by default"
+msgstr "Hiển thị theo mặc định"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Sort Ascending"
+msgstr "Sắp xếp tăng dần"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Sort Descending"
+msgstr "Sắp xếp giảm dần"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/list/controller.xml:0
+msgid "Toggle Inline Editing"
+msgstr "Bật/tắt chỉnh sửa trực tiếp"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Visible columns"
+msgstr "Các cột hiển thị"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Week"
+msgstr "Tuần"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Year"
+msgstr "Năm"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "by"
+msgstr "theo"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "e.g. Contains all finance related applications"
+msgstr "ví dụ: Bao gồm tất cả ứng dụng liên quan đến tài chính"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "e.g. Finance"
+msgstr "ví dụ: Tài chính"

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="email_template_delivery_validated" model="mail.template">
+
+            <field name="name">Delivery: Auto-Validated from FedEx</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+
+            <!-- Sender -->
+            <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
+
+            <!-- Subject -->
+            <field name="subject">Delivery Validated: {{ object.picking_type_code == 'dropship' and object.sale_id.name or object.origin or object.name }} (FedEx Status: Delivered)</field>
+
+            <!-- Recipient (MUST be pure Jinja2 – no <t> tags allowed) -->
+            <field name="email_to">{{ object.company_id.email }}</field>
+
+            <field name="description">Sent automatically when delivery is auto-validated based on FedEx 'Delivered' status.</field>
+
+            <!-- Body HTML — QWeb allowed -->
+            <field name="body_html" type="html">
+<div style="margin:0; padding:0; font-size:13px;">
+    <p>
+
+        Dear Logistics Team,
+        <br/><br/>
+
+        Delivery has been <span style="font-weight:bold;">auto-validated</span> for the following shipment:
+        <br/><br/>
+
+        <span style="font-weight:bold; text-decoration:underline;">DELIVERY INFORMATION:</span><br/>
+
+        • Picking Number:
+        <strong><t t-out="object.name"/></strong>
+        <br/>
+
+        <t t-if="object.picking_type_code == 'dropship' and object.sale_id">
+            • Sale Order:
+            <strong><t t-out="object.sale_id.name"/></strong>
+            <br/>
+        </t>
+        <t t-elif="object.origin">
+            • Origin:
+            <strong><t t-out="object.origin"/></strong>
+            <br/>
+        </t>
+
+        <t t-if="object.carrier_tracking_ref">
+            • Tracking Number:
+            <strong><t t-out="object.carrier_tracking_ref"/></strong>
+            <br/>
+        </t>
+
+        <t t-if="object.fedex_actual_delivery">
+            • FedEx Delivery Date:
+            <strong t-out="object.fedex_actual_delivery.strftime('%Y-%m-%d %H:%M')"/>
+            <br/>
+        </t>
+
+        • FedEx Status:
+        <strong>Delivered</strong>
+        <br/>
+
+        <t t-if="object.picking_type_code == 'dropship' and object.sale_id">
+            • Customer:
+            <strong><t t-out="object.sale_id.partner_shipping_id.name or object.sale_id.partner_id.name or 'N/A'"/></strong>
+            <br/>
+        </t>
+        <t t-else="">
+            <t t-if="object.partner_id">
+                • Customer:
+                <strong><t t-out="object.partner_id.name"/></strong>
+                <br/>
+            </t>
+        </t>
+
+        <br/>
+        <span style="font-weight:bold; text-decoration:underline;">VALIDATION DETAILS:</span><br/>
+
+        The delivery has been automatically validated in the system because FedEx tracking status shows "Delivered".
+        <br/><br/>
+
+        <strong style="text-decoration:underline;">ITEMS DELIVERED:</strong><br/><br/>
+
+        <table style="border-collapse: collapse; width:100%; font-size:13px;">
+            <tr>
+                <th style="border:1px solid #ccc; padding:6px; background:#f3f3f3;">Item</th>
+                <th style="border:1px solid #ccc; padding:6px; background:#f3f3f3;">Qty</th>
+            </tr>
+
+            <t t-foreach="object.move_ids_without_package" t-as="line">
+                <tr>
+                    <td style="border:1px solid #ccc; padding:6px;">
+                        <t t-out="line.product_id.display_name"/>
+                    </td>
+                    <td style="border:1px solid #ccc; padding:6px;">
+                        <t t-if="line.quantity">
+                            <t t-out="line.quantity"/>
+                        </t>
+                        <t t-elif="line.move_line_ids">
+                            <t t-out="line.move_line_ids[0].qty_done"/>
+                        </t>
+                        <t t-else="">
+                            <t t-out="line.product_uom_qty"/>
+                        </t>
+                    </td>
+                </tr>
+            </t>
+        </table>
+
+        <br/>
+        This is an automated notification. The delivery has been validated in the system.
+        <br/><br/>
+
+        Best regards,<br/>
+        Automated Delivery System
+
+        <t t-if="not is_html_empty(object.user_id.signature)">
+            <br/><br/>
+            <t t-out="object.user_id.signature or ''"/>
+        </t>
+
+    </p>
+</div>
+            </field>
+
+            <field name="lang">{{ object.partner_id.lang }}</field>
+
+            <field name="auto_delete" eval="True"/>
+
+        </record>
+
+    </data>
+</odoo>
+

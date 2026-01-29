@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="open_module_config" model="ir.actions.client">
+        <field name="name">Omux Color Palette Settings</field>
+        <field name="tag">omux_color_scheme_config</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="ir_module_module_view_kanban" model="ir.ui.view">
+        <field name="name">ir.module.module.view.kanban.inherit</field>
+        <field name="model">ir.module.module</field>
+        <field name="inherit_id" ref="base.module_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//t[@t-name='card']//footer/a[hasclass('float-end')]" position="before">
+                <button t-if="record.state.raw_value == 'installed' and record.name.raw_value == 'omux_color_scheme'" name="%(open_module_config)d" type="action" class="btn btn-info btn-sm" groups="base.group_system">Settings</button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

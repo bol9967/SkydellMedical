@@ -1,0 +1,14 @@
+.o_list_renderer {
+    .o_list_table {
+        tbody .o_column_resizing {
+            position: relative;
+
+            &:after {
+                @include o-position-absolute($top: 0, $bottom: 0, $right: 0);
+                background-color: #{$border-color};
+                width: 4px;
+                content: '';
+            }
+        }
+    }
+}

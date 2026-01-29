@@ -1,0 +1,30 @@
+.o_cp_searchview {
+    border-radius: $u-searchview-border-radius;
+    background: $u-searchview-bg;
+
+    .o_searchview_dropdown_toggler {
+        transition: border 0.375s;
+        border-width: $u-searchview-border-width;
+        border-radius: $u-searchview-border-radius;
+        border-left: 0 !important;
+        border-color: $u-searchview-border;
+        padding-inline: 8px;
+    }
+
+    .o_searchview {
+        transition: border 0.375s;
+        border-top-left-radius: $u-searchview-border-radius;
+        border-bottom-left-radius: $u-searchview-border-radius;
+        border-width: $u-searchview-border-width;
+        border-color: $u-searchview-border;
+        background: inherit;
+
+        &:focus-within {
+            border-color: $input-focus-border-color;
+        }
+
+        >.o_searchview_input_container {
+            margin-left: 2px;
+        }
+    }
+}

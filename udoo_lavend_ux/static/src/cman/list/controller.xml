@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-inherit="web.ListView" t-inherit-mode="extension">
+        <xpath expr="//Layout//t[@t-set-slot='layout-buttons']" position="inside">
+            <button t-if="!lvState.skipInlineEdit and !lvState.isInlineEdit" class="btn btn-outline-primary text-nowrap" t-att-class="{ 'btn-success': lvState.forceInlineEdit }" t-on-click="forceInlineEdit">
+                <t t-if="lvState.forceInlineEdit">
+                    <i class="fa fa-pencil me-1"/>
+                    Done
+                </t>
+                <t t-elif="env.isSmall">Toggle Inline Editing</t>
+                <t t-else="">Edit</t>
+            </button>
+        </xpath>
+
+        <xpath expr="//div[@t-ref='root']" position="attributes">
+            <attribute name="t-att-class">className + (lvState.forceInlineEdit ? ' u_edit_inlist' : '')</attribute>
+        </xpath>
+    </t>
+
+</templates>

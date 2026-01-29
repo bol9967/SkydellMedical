@@ -1,0 +1,23 @@
+Odoo Proprietary License v1.0
+
+Copyright (C) 2025 Metzler IT GmbH
+
+This software and associated files (the “Software”) may only be used (executed, modified, executed after modifications) with a valid license from Metzler IT GmbH.
+
+With a purchased license, you are granted the right to use the Software on one (1) production Odoo database, and any number of development or testing databases directly related to that production instance.
+
+Restrictions:
+- You may not distribute, sublicense, publish, resell, or share the Software or any part of it.
+- You may not include the Software in any public or commercial distribution.
+- You may not upload it to any app store or code repository.
+- You may not reverse engineer, extract code, or reuse the source in other modules without written permission.
+
+The Software is provided “as is” without warranty of any kind, express or implied, including but not limited to warranties of merchantability or fitness for a particular purpose.
+
+Metzler IT GmbH shall not be held liable for any damages arising in any way from the use of the Software.
+
+For the complete license terms, refer to:
+https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+
+If you have any questions regarding licensing, please contact:
+info@metzler-it.de

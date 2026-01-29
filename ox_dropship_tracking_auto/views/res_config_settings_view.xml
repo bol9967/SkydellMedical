@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Inherit General Settings View -->
+        <record id="view_res_config_settings_fedex" model="ir.ui.view">
+            <field name="name">res.config.settings.fedex.api</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+
+            <field name="arch" type="xml">
+
+                <!-- Insert AFTER Users block, BEFORE Languages block -->
+                <xpath expr="//div[@id='languages']" position="before">
+
+                    <!-- FedEx API Settings -->
+                    <div id="fedex_settings">
+                        <block title="FedEx Integration" name="fedex_api_setting_container">
+
+                            <setting id="fedex_api_settings"
+                                     string="FedEx API Credentials"
+                                     help="Required for tracking shipments and delivery updates.">
+
+                                <label for="fedex_api_key"
+                                       string="API Key"
+                                       class="col-3 col-lg-3 o_light_label"/>
+                                <field name="fedex_api_key"
+                                       placeholder="Enter FedEx API Key"
+                                       class="oe_inline"/>
+
+                                <br/><br/>
+
+                                <label for="fedex_secret_key"
+                                       string="Secret Key"
+                                       class="col-3 col-lg-3 o_light_label"/>
+                                <field name="fedex_secret_key"
+                                       placeholder="Enter FedEx Secret Key"
+                                       class="oe_inline"/>
+
+                            </setting>
+
+                            <setting id="tracking_reminder_settings"
+                                     string="Tracking Reminder Settings"
+                                     help="Configure when to send automatic tracking reminders to suppliers.">
+
+                                <label for="tracking_reminder_min_date"
+                                       string="Minimum PO Approval Date"
+                                       class="col-3 col-lg-3 o_light_label"/>
+                                <field name="tracking_reminder_min_date"
+                                       class="oe_inline"
+                                       widget="datetime"/>
+
+                            </setting>
+
+                            <setting id="fedex_tracking_settings"
+                                     string="FedEx API Tracking Settings"
+                                     help="Configure when to start checking FedEx API for tracking status updates.">
+
+                                <label for="fedex_tracking_min_date"
+                                       string="Minimum Date for FedEx API Tracking"
+                                       class="col-3 col-lg-3 o_light_label"/>
+                                <field name="fedex_tracking_min_date"
+                                       class="oe_inline"
+                                       widget="datetime"/>
+
+                            </setting>
+
+                        </block>
+                    </div>
+
+                    <!-- Tracking Reminder Info -->
+                    <div id="tracking_reminder_info" class="alert alert-warning" role="alert" style="margin-top: 10px;">
+                        <strong>⚠️ Required:</strong> The "Minimum PO Approval Date" field is <strong>REQUIRED</strong>. 
+                        Only Purchase Orders approved on or after this date will receive automatic tracking reminders. 
+                        This prevents sending reminders to existing/old orders. 
+                        <strong>The cron will not run if this date is not configured.</strong>
+                    </div>
+
+                    <!-- FedEx Tracking Info -->
+                    <div id="fedex_tracking_info" class="alert alert-warning" role="alert" style="margin-top: 10px;">
+                        <strong>⚠️ Required:</strong> The "Minimum Date for FedEx API Tracking" field is <strong>REQUIRED</strong>. 
+                        Only pickings created on or after this date will be checked via FedEx API. 
+                        This prevents checking existing/old pickings. 
+                        <strong>The cron will not run if this date is not configured.</strong>
+                        <br/><br/>
+                        <strong>Note:</strong> Once a picking is marked as "Delivered", it will no longer be checked by the API.
+                    </div>
+
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

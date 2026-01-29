@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit base settings form to add OTP Rate Limiting section -->
+        <record id="res_config_settings_view_form_inherit_otp_rate_limit" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.otp.rate.limit</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <!-- Add OTP Rate Limiting section after first block -->
+                <xpath expr="//block[1]" position="after">
+                    <block title="OTP Rate Limiting" name="otp_rate_limiting_setting_container">
+                        <setting id="otp_resend_cooldown_seconds_setting" 
+                                 string="Resend Cooldown (seconds)" 
+                                 help="Minimum seconds between resend OTP requests">
+                            <field name="otp_resend_cooldown_seconds"/>
+                        </setting>
+                        <setting id="otp_max_per_email_per_hour_setting" 
+                                 string="Max OTPs per Email (per hour)" 
+                                 help="Maximum number of OTP requests allowed per email address per hour">
+                            <field name="otp_max_per_email_per_hour"/>
+                        </setting>
+                        <setting id="otp_max_per_ip_per_hour_setting" 
+                                 string="Max OTPs per IP (per hour)" 
+                                 help="Maximum number of OTP requests allowed per IP address per hour">
+                            <field name="otp_max_per_ip_per_hour"/>
+                        </setting>
+                        <setting id="otp_max_per_email_per_10min_setting" 
+                                 string="Max OTPs per Email (per 10 minutes)" 
+                                 help="Maximum number of OTP requests allowed per email address per 10 minutes">
+                            <field name="otp_max_per_email_per_10min"/>
+                        </setting>
+                    </block>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

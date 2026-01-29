@@ -1,0 +1,3518 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ks_dashboard_ninja
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250415\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-17 16:28+0000\n"
+"PO-Revision-Date: 2025-05-19 16:13-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.6\n"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__ks_dashboard_board_id
+msgid ""
+"\n"
+"        Items Configuration and their position in the dashboard will be copied from the selected dashboard \n"
+"        and will be saved as template.\n"
+"    "
+msgstr ""
+"\n"
+"        La configuración de los elementos y su posición en el panel se copiarán del panel seleccionado \n"
+"        y se guardarán como plantilla.\n"
+"    "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_previous_period
+msgid " Compare With Previous Period "
+msgstr " Comparación con el periodo previo "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_relation_groupby
+msgid " Define the x-axis of the graph. "
+msgstr " Define el eje x del gráfico. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_year_period
+msgid " Display the record for the same Date field for the last year. "
+msgstr " Mostrar el registro del mismo campo Fecha para el último año. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_show_data_value
+msgid " Display value on the graph. . "
+msgstr " Mostrar valor en la gráfica. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__ls_pastwithout_now
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__ls_pastwithout_now
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__ls_pastwithout_now
+msgid " Past Excluding Today"
+msgstr " Pasado excluyendo hoy"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_compare_period
+msgid " Provide the number of Date Filter Selection you want to include while displaying the record."
+msgstr " Proporcione el número de selección de filtro de fecha que desea incluir al mostrar el registro."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_record_data_limit
+msgid " Records to be displayed on the graph"
+msgstr " Registros que se mostrarán en el gráfico"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_background_color
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_header_bg_color
+msgid " Select the background color with transparency. "
+msgstr " Selecciona el color de fondo con transparencia. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_list_view_fields
+msgid " Select the fields you want to display in the list.  "
+msgstr " Seleccione los campos que desea mostrar en la lista.  "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_layout
+msgid " Select the layout to display records. "
+msgstr " Seleccione el diseño para mostrar los registros. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_sort_by_order
+msgid " Select the order of the sorting. "
+msgstr " Seleccione el orden de clasificación. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_target_view
+msgid " Select the view to compare target with data."
+msgstr " Seleccione la vista para comparar el objetivo con los datos."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_relation_sub_groupby
+msgid " Sub Group By"
+msgstr " Subgrupo por"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_set_interval__60000
+msgid "1 minute"
+msgstr "1 minuto"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_set_interval__600000
+msgid "10 minute"
+msgstr "10 minutos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__res_config_settings__ks_analysis_word_length__100
+msgid "100 words"
+msgstr "100 minutos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_set_interval__15000
+msgid "15 Seconds"
+msgstr "15 segundos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__res_config_settings__ks_analysis_word_length__150
+msgid "150 words"
+msgstr "150 palabras"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_set_interval__120000
+msgid "2 minute"
+msgstr "2 minutos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__res_config_settings__ks_analysis_word_length__200
+msgid "200 words"
+msgstr "200 palabras"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_set_interval__30000
+msgid "30 Seconds"
+msgstr "30 segundos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_set_interval__45000
+msgid "45 Seconds"
+msgstr "45 segundos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_set_interval__300000
+msgid "5 minute"
+msgstr "5 minutos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__res_config_settings__ks_analysis_word_length__50
+msgid "50 words"
+msgstr "50 palabras"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid ""
+"<span name=\"ks_excel_span\" style=\"font-style: italic; color: #888888;\">\n"
+"                                        **File names should not contain any special characters. File name can have\n"
+"                                        Spaces or separated by Underscores(_).\n"
+"                                    </span>"
+msgstr ""
+"<span name=\"ks_excel_span\" style=\"font-style: italic; color: #888888;\">\n"
+"                                        **Los nombres de archivo no deben contener caracteres especiales. Pueden estar separados \n"
+"                                        por espacios o guiones bajos (_).\n"
+"                                    </span>"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid ""
+"<span name=\"ks_sort_span\" style=\"font-style: italic; color: #888888;\">\n"
+"                                                    **Field in sort by column must match atleast one field given in\n"
+"                                                    measures column.\n"
+"                                                </span>"
+msgstr ""
+"<span name=\"ks_sort_span\" style=\"font-style: italic; color: #888888;\">\n"
+"                                                    **El campo en la columna \"Ordenar por\" debe coincidir al menos con un campo indicado en \n"
+"                                                    la columna \"Medidas\".\n"
+"                                                </span>"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid ""
+"<span name=\"ks_target_span\" style=\"font-style: italic; color: #888888;\">\n"
+"                                                    ** Please enter positive standard target.\n"
+"                                                </span>"
+msgstr ""
+"<span name=\"ks_target_span\" style=\"font-style: italic; color: #888888;\">\n"
+"                                                    ** Ingrese un objetivo estándar positivo.\n"
+"                                                </span>"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "<span>Preview</span>"
+msgstr "<span>Avance</span>"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_ai_analysis
+msgid "AI Analysis"
+msgstr "Análisis de IA"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_res_config_settings__ks_analysis_word_length
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.res_config_settings_inherit_view
+msgid "AI Analysis length"
+msgstr "Longitud del análisis de IA"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.ks_dashboard_ninja_ai_action
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_ai_dashboard
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_arti_int
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_ai_whole_dashboard_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_ai_form_view
+msgid "AI Dashboard"
+msgstr "Panel de IA"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.ks_dashboard_ninja_ai_dashboardaction
+msgid "AI whole Dashboard"
+msgstr "Panel de control completo con IA"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_favourite_filters__ks_access_id
+msgid "Access Id"
+msgstr "Acceso ID"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_ninja_dashboard_item_action__ks_action
+msgid "Action"
+msgstr "Acción"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__ks_item_action_field
+msgid "Action Group By"
+msgstr "Grupo de acción por"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_action_lines
+msgid "Action Lines"
+msgstr "Líneas de acción"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__ks_action_item_name
+msgid "Action item name"
+msgstr "Nombre del elemento de acción"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_actions
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Actions"
+msgstr "Acciones"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_active
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__ks_is_active
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_defined_filters
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Active"
+msgstr "Activo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_description__ks_active
+msgid "Active Description"
+msgstr "Descripción activa"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.ks_create_dashboard_wizard
+msgid "Add New Dashboard"
+msgstr "Agregar nuevo panel"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Add a Line"
+msgstr "Agregar una linea"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Add a Section"
+msgstr "Agregar una sección"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Add a filter"
+msgstr "Agregar un filtro"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Add a separator"
+msgstr "Agregar un separador"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Advance Configuration"
+msgstr "Configuración avanzada"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Advance Settings"
+msgstr "Ajustes avanzados"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid ""
+"All Target Lines Changes Will be reflected on Chart after saving the record\n"
+"                                            and\n"
+"                                            pagination will be ignore ."
+msgstr ""
+"Todos los cambios en las líneas de destino se reflejarán en el gráfico después de guardar el registro.\n"
+"                                            y\n"
+"                                            La paginación será ignorada."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__l_none
+msgid "All Time"
+msgstr "Todo el tiempo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_board__multi_layouts
+msgid "Allow user to have multiple layouts of the same Dashboard"
+msgstr "Permitir al usuario tener múltiples diseños del mismo Tablero"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_multiplier_active
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Apply Multiplier"
+msgstr "Aplicar multiplicador"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_delete_dashboard_wizard_form
+msgid "Are you sure you want to delete this dashboard ?"
+msgstr "¿Estás seguro que deseas eliminar este panel?"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_area_chart
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_area_chart
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_15
+msgid "Area Chart"
+msgstr "Gráfico de área"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_23
+msgid "Area Chart with data values"
+msgstr "Gráfico de área con valores de datos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_sort_by_order__asc
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_sort_by_order__asc
+msgid "Ascending"
+msgstr "Ascenso"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Auto Update"
+msgstr "Actualización automática"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_data_count_type__average
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_record_count_type_2__average
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_record_count_type__average
+msgid "Average"
+msgstr "Promedio"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_background_color
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Background Color"
+msgstr "Color de fondo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_bar_chart
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_bar_chart
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_5
+msgid "Bar Chart"
+msgstr "Gráfico de barras"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_20
+msgid "Bar Chart With Data Values"
+msgstr "Gráfico de barras con valores de datos"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Below action will be performed at the end of the Drill Down Action"
+msgstr "La siguiente acción se realizará al final de la acción de desglose"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__board_type
+msgid "Board Type"
+msgstr "Tipo de tablero"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_bullet_chart
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_bullet_chart
+msgid "Bullet Chart"
+msgstr "Gráfico de viñetas"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_bullet_preview
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Bullet Preview"
+msgstr "Gráfico de viñetas"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__data_source__csv
+msgid "CSV"
+msgstr "CSV"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__csv_bool
+msgid "CSV Bool"
+msgstr "CSV Bool"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_csv_group_by_lines
+msgid "CSV Group By Lines"
+msgstr "Agrupar por líneas CSV"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_ai_whole_dashboard_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_action
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_ai_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_delete_dashboard_wizard_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_duplicate_dashboard_wizard_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_fetch_key_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_import_dashboard_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_item_color
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Chart Color Palette"
+msgstr "Paleta de colores del gráfico"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_data
+msgid "Chart Data in string form"
+msgstr "Datos del gráfico en formato de cadena"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_previous_period
+msgid "Checkbox to show comparison between the data of present day and the previous selected period. "
+msgstr "Casilla de verificación para mostrar la comparación entre los datos del día actual y el período anterior seleccionado. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_child_board__board_type__child
+msgid "Child"
+msgstr "Niño"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_icon_select
+msgid "Choose the Icon option. "
+msgstr "Elija la opción Icono. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_is_client_action
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Client Action"
+msgstr "Atención al cliente"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Client Action Item"
+msgstr "Elemento de acción del cliente"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_client_action
+msgid "Client Item Action"
+msgstr "Acción del elemento del cliente"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_format__colombian
+msgid "Colombian Peso Format"
+msgstr "Formato del peso colombiano"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Column Data Type"
+msgstr "Tipo de datos de columna"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__company_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_company_id
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.child_board_tree
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Company"
+msgstr "Compañia"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Compare With Previous Period"
+msgstr "Comparar con el período anterior"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajustes de configuración"
+
+#. module: ks_dashboard_ninja
+#: model:ir.ui.menu,name:ks_dashboard_ninja.configuration_menu
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_data_count_type__count
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_record_count_type_2__count
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_record_count_type__count
+msgid "Count"
+msgstr "Cuenta"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Count..."
+msgstr "Cuenta..."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_country_id
+msgid "Country"
+msgstr "País"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_country_code
+msgid "Country Code"
+msgstr "Código del país"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Create Table"
+msgstr "Crear tabla"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_group_by__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_new__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_delete_wizard__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_duplicate_wizard__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_group_by__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_item_multiplier__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_new__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_custom_filters__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_favourite_filters__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_fetch_key__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_import__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_goal__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_kpi_mail__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_wizard__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_ninja_dashboard_item_action__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_description__create_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_headers__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_group_by__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_new__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_delete_wizard__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_duplicate_wizard__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_group_by__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_item_multiplier__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_new__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_custom_filters__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_favourite_filters__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_fetch_key__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_import__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_goal__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_kpi_mail__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_wizard__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_ninja_dashboard_item_action__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_description__create_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_headers__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_cumulative
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Cumulative As Line"
+msgstr "Línea acumulativa como"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_cumulative_field
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Cumulative Fields"
+msgstr "Campos acumulativos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board_template__ks_template_type__ks_custom
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_icon_select__custom
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_unit_selection__custom
+msgid "Custom"
+msgstr "Personalizado"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__l_custom
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__l_custom
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__l_custom
+msgid "Custom Filter"
+msgstr "Filtro personalizado"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Custom Filters"
+msgstr "Filtros personalizados"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_calculation_type__query
+msgid "Custom Query"
+msgstr "Consulta personalizada"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_item_color__dark
+msgid "Dark"
+msgstr "Oscuro"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_custom_filters__ks_dashboard_board_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__ks_dashboard_board_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__ks_dashboard_board_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_favourite_filters__ks_dashboard_board_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_dashboard_ninja_board_id
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.child_board_tree
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item
+msgid "Dashboard"
+msgstr "Panel"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_res_config_settings__dn_api_key
+msgid "Dashboard AI API Key"
+msgstr "Clave API de IA del panel de control"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.res_config_settings_inherit_view
+msgid "Dashboard API Key"
+msgstr "Clave API del panel de control"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.res_config_settings_inherit_view
+msgid "Dashboard Charts Configurations"
+msgstr "Configuraciones de gráficos del tablero"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_wizard
+msgid "Dashboard Creation Wizard"
+msgstr "Asistente para la creación de paneles"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_custom_filters_ids
+msgid "Dashboard Custom Filters"
+msgstr "Filtros personalizados del panel de control"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_defined_filters
+msgid "Dashboard Defined Filter"
+msgstr "Filtro definido por el panel"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_delete_wizard
+msgid "Dashboard Delete Wizard"
+msgstr "Asistente para eliminar el panel de control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_duplicate_wizard
+msgid "Dashboard Duplicate Wizard"
+msgstr "Asistente para duplicar el panel de control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_favourite_filters_ids
+msgid "Dashboard Favourite Filters"
+msgstr "Filtros favoritos del panel de control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dn_dashboard_image
+msgid "Dashboard Image"
+msgstr "Imagen del tablero"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_group_by__ks_dashboard_csv_group_by_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_item_multiplier__ks_dashboard_item_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__ks_dashboard_item_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_goal__ks_dashboard_item
+msgid "Dashboard Item"
+msgstr "Elemento del tablero"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_action
+msgid "Dashboard Item Action"
+msgstr "Acción del elemento del tablero"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_date_groupby
+msgid "Dashboard Item Chart Group By Type"
+msgstr "Grupo de gráficos de elementos del tablero por tipo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_date_sub_groupby
+msgid "Dashboard Item Chart Sub Group By Type"
+msgstr "Subgrupo de gráficos de elementos del tablero por tipo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_group_by__ks_dashboard_group_by_id
+msgid "Dashboard Item Id"
+msgstr "Id. del elemento del panel"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_dashboard_item_type
+msgid "Dashboard Item Type"
+msgstr "Tipo de elemento del tablero"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.item_action_window
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_items_ids
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_ninja_dashboard_item_action__ks_dashboard_item_ids
+msgid "Dashboard Items"
+msgstr "Elementos del tablero"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.child_board_tree
+msgid "Dashboard Layout"
+msgstr "Diseño del tablero de instrumentos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.ui.menu,name:ks_dashboard_ninja.dashboard_layout_menu
+msgid "Dashboard Layouts"
+msgstr "Diseños del tablero de instrumentos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.board_form_tree_action_window
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_delete_dashboard_wizard_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_duplicate_dashboard_wizard_form
+msgid "Dashboard Manager"
+msgstr "Administrador del panel de control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__ks_dash_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_wizard__name
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_ai_whole_dashboard_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+msgid "Dashboard Name"
+msgstr "Nombre del tablero"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_board
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.res_config_settings_inherit_view
+msgid "Dashboard Ninja"
+msgstr "Tablero ninja"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.res_config_settings_inherit_view
+msgid "Dashboard Ninja Api Key"
+msgstr "Clave API de Dashboard Ninja"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_child_board
+msgid "Dashboard Ninja Child Board"
+msgstr "Tablero infantil Ninja Dashboard"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_board_custom_filters
+msgid "Dashboard Ninja Custom Filters"
+msgstr "Filtros personalizados de Dashboard Ninja"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_board_defined_filters
+msgid "Dashboard Ninja Defined Filters"
+msgstr "Filtros definidos por Dashboard Ninja"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_favourite_filters
+msgid "Dashboard Ninja Favourite Filters"
+msgstr "Filtros favoritos de Dashboard Ninja"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_csv_group_by
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_group_by
+msgid "Dashboard Ninja Group By"
+msgstr "Panel de control Ninja Group By"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_ninja_dashboard_item_action
+msgid "Dashboard Ninja Item Actions"
+msgstr "Acciones de elementos Ninja del panel de control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_item_action
+msgid "Dashboard Ninja Items Action Lines"
+msgstr "Líneas de acción de elementos Ninja del tablero de instrumentos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_item_goal
+msgid "Dashboard Ninja Items Goal Lines"
+msgstr "Líneas de gol de elementos Ninja del tablero de instrumentos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_item_multiplier
+msgid "Dashboard Ninja Items Multiplier Lines"
+msgstr "Líneas multiplicadoras de elementos Ninja del tablero"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_kpi_mail
+msgid "Dashboard Ninja Kpi mail"
+msgstr "Correo de KPI de Dashboard Ninja"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_csv_new
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_new
+msgid "Dashboard Ninja New"
+msgstr "Tablero Ninja Nuevo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.module.category,name:ks_dashboard_ninja.ks_dashboard_ninja_security_groups
+msgid "Dashboard Ninja Rights"
+msgstr "Derechos de Dashboard Ninja"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_board_template
+msgid "Dashboard Ninja Template"
+msgstr "Plantilla Ninja del Tablero"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_item
+msgid "Dashboard Ninja items"
+msgstr "Elementos Ninja del panel de control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_defined_filters_ids
+msgid "Dashboard Predefined Filters"
+msgstr "Filtros predefinidos del panel de control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.template_tree_action_window
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__ks_template
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_default_template
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_dashboard_board_template_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_wizard__ks_template
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_template_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_template_tree
+msgid "Dashboard Template"
+msgstr "Plantilla de panel de control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.layout_tree_action_window
+msgid "Dashboard layout"
+msgstr "Diseño del tablero de instrumentos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.ui.menu,name:ks_dashboard_ninja.dashboard_menu
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Dashboards"
+msgstr "Paneles de control"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Data"
+msgstr "Datos"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Data #2"
+msgstr "Datos #2"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Data Calculation"
+msgstr "Calculo de datos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_data_calculation_type
+msgid "Data Calculation Type"
+msgstr "Tipo de cálculo de datos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_kpi_type__layout_2
+msgid "Data Comparison"
+msgstr "Data Comparison"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_measure_field_2
+msgid "Data Points displayed with a line in the graph. "
+msgstr "Puntos de datos mostrados con una línea en el gráfico. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__data_source
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Data Source"
+msgstr "Fuente de datos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_as_of_now
+msgid "Data Till Now"
+msgstr "Datos hasta ahora"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_data_count_type
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Data Type"
+msgstr "Tipo de datos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_cumulative_field
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_measure_field
+msgid "Data points to be selected."
+msgstr "Puntos de datos a seleccionar."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_item_multiplier__ks_model_id
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__ks_import_model_id
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__ks_import_model
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__ks_import_model_id
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_board_custom_filters__ks_model_id
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__ks_model_id
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_model_id
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__ks_model_id
+msgid "Data source to fetch and read the data for the creation of dashboard items. "
+msgstr "Fuente de datos para obtener y leer los datos para la creación de elementos del panel. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_goal__ks_goal_date
+msgid "Date"
+msgstr "Datos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_date_filter_field
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Date Filter Field"
+msgstr "Campo de filtro de fecha"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_date_filter_selection
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Date Filter Selection"
+msgstr "Selección de filtro de fecha"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_groupby__day
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_sub_groupby__day
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_item_action_date_groupby__day
+msgid "Day"
+msgstr "Dia"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_child_board__board_type__default
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_item_color__default
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_icon_select__default
+msgid "Default"
+msgstr "Por defecto"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid ""
+"Default Date\n"
+"                                                Filter"
+msgstr ""
+"Fecha por defecto\n"
+"                                                Filtro"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_date_filter_selection
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Default Date Filter"
+msgstr "Filtro de fecha predeterminado"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_default_end_time
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Default End Time"
+msgstr "Hora de finalización predeterminada"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_calculation_type__custom
+msgid "Default Query"
+msgstr "Consulta predeterminada"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_set_interval
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Default Update Interval"
+msgstr "Intervalo de actualización predeterminado"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_domain_extension
+msgid "Define conditions for filter to write manually"
+msgstr "Definir condiciones para que el filtro se escriba manualmente"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__ks_domain
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_domain
+msgid "Define conditions for filter. "
+msgstr "Definir condiciones para el filtro. "
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_delete_dashboard_wizard_form
+msgid "Delete"
+msgstr "Borrar"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.ks_delete_dashboard_wizard
+msgid "Delete Dashboard"
+msgstr "Borrar tablero"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_sort_by_order__desc
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_sort_by_order__desc
+msgid "Descending"
+msgstr "Decendiendo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_description__ks_description
+msgid "Description"
+msgstr "Descripcion"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Deviation Field"
+msgstr "Campo de desviación"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_precision_digits
+msgid "Digits"
+msgstr "Dígitos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_discuss_channel
+msgid "Discussion Channel"
+msgstr "Canal de conversaciones"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Display"
+msgstr "Mostrar"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_group_by__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_new__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_delete_wizard__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_duplicate_wizard__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_group_by__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_item_multiplier__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_new__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_custom_filters__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_favourite_filters__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_fetch_key__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_import__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_goal__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_kpi_mail__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_wizard__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_ninja_dashboard_item_action__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_description__display_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_headers__display_name
+msgid "Display Name"
+msgstr "Mostrar nombre"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__display_type
+msgid "Display Type"
+msgstr "Mostrar tipo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_as_of_now
+msgid "Display the total sum of each legends as it grows with times"
+msgstr "Muestra la suma total de cada leyenda a medida que crece con el tiempo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_unit
+msgid "Display the unit of the data."
+msgstr "Mostrar la unidad de los datos."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__ks_domain
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_domain
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_defined_filters
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Domain"
+msgstr "Dominio"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_domain_extension
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Domain Extension"
+msgstr "Expansión de dominio"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_custom_filters__ks_domain_field_id
+msgid "Domain Field"
+msgstr "Campo de dominio"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__ks_domain_temp
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_domain_temp
+msgid "Domain Substitute"
+msgstr "Sustituto de dominio"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_doughnut_chart
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_doughnut_chart
+msgid "Doughnut Chart"
+msgstr "Gráfico de anillos"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_11
+msgid "Doughnut chart"
+msgstr "Gráfico de anillos"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_25
+msgid "Doughnut semi circle"
+msgstr "Semicírculo de dona"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.server,name:ks_dashboard_ninja.ks_duplicate_dashboard
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_ninja_dashboard_item_action__ks_action__duplicate
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_duplicate_dashboard_wizard_form
+msgid "Duplicate"
+msgstr "Duplicado"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.ks_duplicate_dashboard_wizard
+msgid "Duplicate Dashboard"
+msgstr "Tablero duplicado"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_duplicate_dashboard_wizard_form
+msgid "Duplicate Image"
+msgstr "Duplicado de imagen"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_email_to_ids
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Email Address"
+msgstr "Dirección de correo electrónico"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_fetch_key__ks_email_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_res_config_settings__ks_email_id
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.res_config_settings_inherit_view
+msgid "Email ID"
+msgstr "ID de correo electrónico"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_kpi_mail__name
+msgid "Email To:"
+msgstr "Enviar correo electrónico a:"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__multi_layouts
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Enable Multi-Dashboard Layouts"
+msgstr "Habilitar diseños de múltiples paneles"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_goal_enable
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enable Target"
+msgstr "Habilitar objetivo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.res_config_settings_inherit_view
+msgid "Enable Zooming"
+msgstr "Habilitar zoom"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_res_config_settings__enable_chart_zoom
+msgid "Enable Zooming for charts"
+msgstr "Habilitar el zoom para gráficos"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.res_config_settings_inherit_view
+msgid "Enable Zooming for charts on mouse scroll"
+msgstr "Habilitar el zoom para gráficos al desplazarse con el mouse"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_end_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_item_end_date
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "End Date"
+msgstr "Fecha de finalización"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_format__global
+msgid "English Format"
+msgstr "Formato ingles"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_ai_whole_dashboard_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+msgid "Enter Dashboard Name"
+msgstr "Ingrese el nombre del tablero"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Data Calculation"
+msgstr "Cálculo de introducción de datos"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Data Type"
+msgstr "Introduzca el tipo de datos"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Date Filter"
+msgstr "Introducir filtro de fecha"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Default Date Filter"
+msgstr "Introduzca el filtro de fecha predeterminado"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Deviation Field"
+msgstr "Introduzca el campo de desviación"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Domain"
+msgstr "Ingresar dominio"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Email Address"
+msgstr "Introduzca su dirección de correo electrónico"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter End Date"
+msgstr "Introduzca la fecha de finalización"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Fields to show in list"
+msgstr "Introduzca los campos que desea mostrar en la lista"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_defined_filters
+msgid "Enter Filter Name"
+msgstr "Introduzca el nombre del filtro"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Icon Option"
+msgstr "Entrar Opción de icono"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Item Description"
+msgstr "Introduzca la descripción del artículo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Layout"
+msgstr "Introducir diseño"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Line Measure"
+msgstr "Introducir medida de línea"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter List View Grouped Fields"
+msgstr "Ingresar a la vista de lista de campos agrupados"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter List View Type"
+msgstr "Introduzca el tipo de vista de lista"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Measure"
+msgstr "Introducir medida"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Measure X"
+msgstr "Ingrese la Medida X"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Measures"
+msgstr "Introducir medidas"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_ai_whole_dashboard_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+msgid "Enter Menu Name"
+msgstr "Introducir nombre del menú"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Enter Menu Sequence"
+msgstr "Entrar en la secuencia del menú"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_ai_whole_dashboard_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_ai_form_view
+msgid "Enter Model"
+msgstr "Introducir modelo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Model Name"
+msgstr "Ingrese el nombre del modelo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Multiplier"
+msgstr "Introducir multiplicador"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Name"
+msgstr "Introducir nombre"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Pagination Limit"
+msgstr "Introducir límite de paginación"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Record Field"
+msgstr "Ingresar campo de registro"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Record Limit"
+msgstr "Introducir límite de registros"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Record Type"
+msgstr "Ingrese el tipo de registro"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Record Value"
+msgstr "Ingrese el valor del registro"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Scatter Group By"
+msgstr "Ingrese al grupo disperso por"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_defined_filters
+msgid "Enter Separator Name (eg. Order States, Deadlines)"
+msgstr "Introduzca el nombre del separador (por ejemplo, estados del pedido, fechas límite)"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+msgid "Enter Sequence"
+msgstr "Introducir secuencia"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Standard Target"
+msgstr "Introduzca el objetivo estándar"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Start Date"
+msgstr "Introduzca la fecha de inicio"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_unit
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Enter Unit"
+msgstr "Ingresar unidad"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_data_formatting__exact
+msgid "Exact"
+msgstr "Exacto"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_format__exact
+msgid "Exact Value"
+msgstr "Valuación exacta"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__data_source__excel
+msgid "Excel"
+msgstr "Sobresalir"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__excel_bool
+msgid "Excel Bool"
+msgstr "Excel Bool"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_export_all_records
+msgid "Export All Records"
+msgstr "Exportar todos los registros"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.ks_fetch_key
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_fetch_key
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_fetch_key_form_view
+msgid "Fetch API key"
+msgstr "Obtener clave API"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_fetch_key_form_view
+msgid "Fetch Key"
+msgstr "Obtener clave"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_list_view_fields
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Fields to show in list"
+msgstr "Campos a mostrar en la lista"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__filename
+msgid "Filename"
+msgstr "Nombre del archivo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_fill_temporal
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Fill Temporal Value"
+msgstr "Rellenar valor temporal"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_favourite_filters__ks_filter
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Filter"
+msgstr "Filtro"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_custom_filters__name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_favourite_filters__name
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_defined_filters
+msgid "Filter Label"
+msgstr "Etiqueta de filtro"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_flower_view_preview
+msgid "Flower Preview"
+msgstr "Vista previa de la flor"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_flower_view
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_flower_view
+msgid "Flower View"
+msgstr "Vista de flores"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_font_color
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Font Color"
+msgstr "Color de fuente"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_data_formatting
+msgid "Format"
+msgstr "Formato"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_funnel_chart
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_funnel_chart
+msgid "Funnel Chart"
+msgstr "Gráfico de embudo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_funnel_preview
+msgid "Funnel Preview"
+msgstr "Vista previa del embudo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_funnel_record_field
+msgid "Funnel Record Field"
+msgstr "Campo de registro de embudo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__n_future_starting_now
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__n_future_starting_now
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__n_future_starting_now
+msgid "Future Starting Now"
+msgstr "El futuro empieza ahora"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__n_futurestarting_tomorrow
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__n_futurestarting_tomorrow
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__n_futurestarting_tomorrow
+msgid "Future Starting Tomorrow"
+msgstr "El futuro empieza mañana"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_ai_form_view
+msgid "Generate Item"
+msgstr "Generar artículo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_ai_whole_dashboard_form_view
+msgid "Generate dashboard with AI"
+msgstr "Generar panel de control con IA"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_ai_form_view
+msgid "Generate with"
+msgstr "Generar con"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_ai_form_view
+msgid "Generate with AI"
+msgstr "Generar con IA"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_fetch_key__ks_api_key
+msgid "Generated AI API Key"
+msgstr "Clave API de IA generada"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.res_config_settings_inherit_view
+msgid "Get API key"
+msgstr "Obtener la clave API"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__sequence
+msgid "Gives the sequence order when displaying a list of payment terms lines."
+msgstr "Proporciona el orden de secuencia al mostrar una lista de líneas de condiciones de pago."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_data_formatting__global
+msgid "Global"
+msgstr "Global"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Goal Lines"
+msgstr "Líneas de gol"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_graph_preview
+msgid "Graph Preview"
+msgstr "Vista previa del gráfico"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_group_access
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Group Access"
+msgstr "Acceso grupal"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.action_group_by
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.csv_action_group_by
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_relation_groupby
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__ks_item_action_date_groupby
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Group By Date"
+msgstr "Agrupar por fecha"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_group_by_lines
+msgid "Group By Lines"
+msgstr "Agrupar por líneas"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_list_view_type__grouped
+msgid "Grouped"
+msgstr "Agrupado"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Groups/Dimensions"
+msgstr "Grupos/Dimensiones"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_headers__ks_to_do_header
+msgid "Header"
+msgstr "Encabezamiento"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_header_bg_color
+msgid "Header Background Color"
+msgstr "Color de fondo del encabezado"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_hide_legend
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_radial_legend
+msgid "Hide all legend from the chart item"
+msgstr "Ocultar toda la leyenda del elemento del gráfico"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_9
+msgid "Horizontal Bar"
+msgstr "Barra fija"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_horizontalbar_chart
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_horizontalbar_chart
+msgid "Horizontal Bar Chart"
+msgstr "Gráfico de barras horizontales"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_22
+msgid "Horizontal Bar(sub-group)"
+msgstr "Barra horizontal (subgrupo)"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_groupby__hour
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_sub_groupby__hour
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_item_action_date_groupby__hour
+msgid "Hour"
+msgstr "Hora"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_group_by__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_new__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_delete_wizard__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_duplicate_wizard__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_group_by__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_item_multiplier__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_new__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_custom_filters__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_favourite_filters__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_fetch_key__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_import__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_goal__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_kpi_mail__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_wizard__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_ninja_dashboard_item_action__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_description__id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_headers__id
+msgid "ID"
+msgstr "ID"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_default_icon
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Icon"
+msgstr "Icono"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_default_icon_color
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Icon Color"
+msgstr "Icono de color"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_icon_select
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Icon Option"
+msgstr "Opción de icono"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.ks_import_dashboard_action
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_dashboard_ninja_import
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_import_dashboard_form_view
+msgid "Import Dashboard"
+msgstr "Panel de importación"
+
+#. module: ks_dashboard_ninja
+#: model:ir.ui.menu,name:ks_dashboard_ninja.ks_import_dashboard_menu
+msgid "Import Dashboards"
+msgstr "Importar paneles de control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.ui.menu,name:ks_dashboard_ninja.inbox_menu
+msgid "Inbox"
+msgstr "Bandeja de entrada"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_compare_period
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Include Period"
+msgstr "Incluir período"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_data_formatting__indian
+msgid "Indian"
+msgstr "India"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_format__indian
+msgid "Indian Format"
+msgstr "Formato indio"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__is_bookmarked
+msgid "Is Bookmarked"
+msgstr "Está marcado"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_is_cumulative
+msgid "Is Cumulative"
+msgstr "Es acumulativo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__ks_active
+msgid "Is Selected"
+msgstr "Está seleccionado"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Item Action"
+msgstr "Acción del artículo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_gridstack_config
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__ks_gridstack_config
+msgid "Item Configurations"
+msgstr "Configuraciones de artículos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_info
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Item Description"
+msgstr "Descripción del artículo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__ks_chart_type
+msgid "Item Type"
+msgstr "Tipo de artículo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_kpi
+msgid "KPI"
+msgstr "KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_kpi_data
+msgid "KPI Data"
+msgstr "Datos KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_domain_extension_2
+msgid "KPI Domain Extension"
+msgstr "Extensión de dominio KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_compare_period_2
+msgid "KPI Include Period"
+msgstr "Período de inclusión de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_record_count_2
+msgid "KPI Record Count"
+msgstr "Recuento de registros de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_year_period_2
+msgid "KPI Same Period Previous Years"
+msgstr "KPI mismo período años anteriores"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_kpi_type__layout_1
+msgid "KPI With Target"
+msgstr "KPI con objetivo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_arti_int__ks_type__ks_keyword
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_ai_form_view
+msgid "Keywords"
+msgstr "Contraseñas"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_18
+msgid "Kpi ( Number)"
+msgstr "Kpi (Número)"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_17
+msgid "Kpi ( Percentage)"
+msgstr "Kpi (Porcentaje)"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_27
+msgid "Kpi (previous)"
+msgstr "Kpi (anterior)"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_19
+msgid "Kpi (sum)"
+msgstr "Kpi (suma)"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_26
+msgid "Kpi 26(Average)"
+msgstr "Kpi 26 (promedio)"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_data_comparison
+msgid "Kpi Data Type"
+msgstr "Tipo de datos de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_date_filter_field_2
+msgid "Kpi Date Filter Field"
+msgstr "Campo de filtro de fecha de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_date_filter_selection_2
+msgid "Kpi Date Filter Selection"
+msgstr "Selección de filtro de fecha de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_domain_2
+msgid "Kpi Domain"
+msgstr "Kpi Domain"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_domain_2_temp
+msgid "Kpi Domain Substitute"
+msgstr "Sustituto de dominio de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_item_end_date_2
+msgid "Kpi End Date"
+msgstr "Fecha de finalización del KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_kpi_type
+msgid "Kpi Layout"
+msgstr "Diseño de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_model_id_2
+msgid "Kpi Model"
+msgstr "Modelo de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_model_name_2
+msgid "Kpi Model Name"
+msgstr "Nombre del modelo KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_kpi_preview
+msgid "Kpi Preview"
+msgstr "Vista previa de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_16
+msgid "Kpi Ratio"
+msgstr "Índice de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_record_field_2
+msgid "Kpi Record Field"
+msgstr "Campo de registro de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_record_count_type_2
+msgid "Kpi Record Type"
+msgstr "Tipo de registro de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_item_start_date_2
+msgid "Kpi Start Date"
+msgstr "Fecha de inicio del KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.server,name:ks_dashboard_ninja.ir_cron_send_target_email_ir_actions_server
+msgid "Kpi mail cron"
+msgstr "Cron de correo de KPI"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__ks_type
+msgid "Ks AI Type"
+msgstr "Tipo de IA de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_ai_explain_dash
+msgid "Ks Ai Explain Dash"
+msgstr "Ks Ai Explica Dash"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_bounds
+msgid "Ks Bounds"
+msgstr "Límites de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_groupby_type
+msgid "Ks Chart Groupby Type"
+msgstr "Gráfico Ks Agrupar por tipo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_sub_groupby_type
+msgid "Ks Chart Sub Groupby Type"
+msgstr "Subgrupo por tipo de gráfico Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_child_dashboard_ids
+msgid "Ks Child Dashboard"
+msgstr "Panel de control infantil de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__ks_computed_group_access
+msgid "Ks Computed Group Access"
+msgstr "Acceso al grupo computarizado de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_discuss_channel__ks_dashboard_board_id
+msgid "Ks Dashboard Board"
+msgstr "Tablero de instrumentos de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_client_action_id
+msgid "Ks Dashboard Client Action"
+msgstr "Acción del cliente del panel de control de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_discuss_channel__ks_dashboard_item_id
+msgid "Ks Dashboard Item"
+msgstr "Elemento del panel de control de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_menu_id
+msgid "Ks Dashboard Menu"
+msgstr "Menú del tablero de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_state
+msgid "Ks Dashboard State"
+msgstr "Estado del tablero de instrumentos de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_db_name
+msgid "Ks Db Name"
+msgstr "Nombre de la base de datos Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_db_password
+msgid "Ks Db Password"
+msgstr "Contraseña de Ks Db"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_db_user
+msgid "Ks Db User"
+msgstr "Usuario de Ks Db"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_dn_header_lines
+msgid "Ks Dn Header Lines"
+msgstr "Líneas de encabezado Ks Dn"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_headers__ks_dn_item_id
+msgid "Ks Dn Item"
+msgstr "Artículo Ks Dn"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_favourite_filters__ks_filter_type
+msgid "Ks Filter Type"
+msgstr "Tipo de filtro Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__ks_gridstack_config
+msgid "Ks Gridstack Config"
+msgstr "Configuración de Ks Gridstack"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_host
+msgid "Ks Host"
+msgstr "Anfitrión de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_is_external_db
+msgid "Ks Is External Db"
+msgstr "Ks es una base de datos externa"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_isDateFilterApplied
+msgid "Ks Isdatefilterapplied"
+msgstr "Ks Se aplicó el filtro de fecha"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__ks_item_action_field_type
+msgid "Ks Item Action Field Type"
+msgstr "Tipo de campo de acción del elemento Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__ks_item_count
+msgid "Ks Item Count"
+msgstr "Recuento de artículos de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__ks_input_keywords
+msgid "Ks Keywords"
+msgstr "Palabras clave de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_many2many_field_ordering
+msgid "Ks Many2Many Field Ordering"
+msgstr "Ordenamiento de campos Many2Many de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__ks_model_show
+msgid "Ks Model Show"
+msgstr "Exposición de modelos Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_partners_map
+msgid "Ks Partners Map"
+msgstr "Mapa de socios de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_port
+msgid "Ks Port"
+msgstr "Puerto ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_headers__ks_to_do_description_lines
+msgid "Ks To Do Description Lines"
+msgstr "Líneas de descripción de tareas pendientes de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_description__ks_to_do_header_id
+msgid "Ks To Do Header"
+msgstr "Encabezado de tareas pendientes de Ks"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__l_month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__l_month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__l_month
+msgid "Last 30 days"
+msgstr "Ultimas 30 días"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__l_year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__l_year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__l_year
+msgid "Last 365 days"
+msgstr "Ultimas 365 días"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__l_week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__l_week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__l_week
+msgid "Last 7 days"
+msgstr "Ultimas 7 días"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__l_quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__l_quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__l_quarter
+msgid "Last 90 days"
+msgstr "Ultimas 90 días"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__ls_day
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__ls_day
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__ls_day
+msgid "Last Day"
+msgstr "Ultimo día"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__ls_month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__ls_month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__ls_month
+msgid "Last Month"
+msgstr "Ultimo mes"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__ls_quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__ls_quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__ls_quarter
+msgid "Last Quarter"
+msgstr "Último trimestre"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_group_by__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_new__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_delete_wizard__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_duplicate_wizard__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_group_by__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_item_multiplier__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_new__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_custom_filters__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_favourite_filters__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_fetch_key__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_import__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_goal__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_kpi_mail__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_wizard__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_ninja_dashboard_item_action__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_description__write_uid
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_headers__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_group_by__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_new__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_delete_wizard__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_duplicate_wizard__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_group_by__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_item_multiplier__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_new__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_custom_filters__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_favourite_filters__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_fetch_key__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_import__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_goal__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_kpi_mail__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_wizard__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_ninja_dashboard_item_action__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_description__write_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_to_do_headers__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__ls_week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__ls_week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__ls_week
+msgid "Last Week"
+msgstr "La semana pasada"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__ls_year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__ls_year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__ls_year
+msgid "Last Year"
+msgstr "El año pasado"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_layout
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Layout"
+msgstr "Disposición"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_layout__layout1
+msgid "Layout 1"
+msgstr "Disposición 1"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_layout__layout2
+msgid "Layout 2"
+msgstr "Disposición 2"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_layout__layout3
+msgid "Layout 3"
+msgstr "Disposición 3"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_layout__layout4
+msgid "Layout 4"
+msgstr "Disposición 4"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_layout__layout5
+msgid "Layout 5"
+msgstr "Disposición 5"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_layout__layout6
+msgid "Layout 6"
+msgstr "Disposición 6"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Layout..."
+msgstr "Disposición..."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_line_chart
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_line_chart
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_6
+msgid "Line Chart"
+msgstr "Gráfico de líneas"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_24
+msgid "Line Chart with values"
+msgstr "Gráfico de líneas con valores"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_measure_field_2
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Line Measure"
+msgstr "Medida de línea"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_list_view
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_list_view
+msgid "List View"
+msgstr "Vista de lista"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_list_view_data
+msgid "List View Data in JSon"
+msgstr "Datos de vista de lista en JSon"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_list_view_group_fields
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "List View Grouped Fields"
+msgstr "Campos agrupados de la vista de lista"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_list_view_preview
+msgid "List View Preview"
+msgstr "Vista previa de la vista de lista"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_list_view_type
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "List View Type"
+msgstr "Tipo de vista de lista"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_map_chart_relation_groupby
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Map Group By"
+msgstr "Agrupar mapas por"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_map_preview
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Map Preview"
+msgstr "Vista previa del mapa"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_map_record_field
+msgid "Map Record Field"
+msgstr "Campo de registro de mapa"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_map_view
+msgid "Map View"
+msgstr "Vista del mapa"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_item_color__material
+msgid "Material"
+msgstr "Material"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_unit
+msgid "Maximum limit 5 characters, for ex: km, m"
+msgstr "Límite máximo de 5 caracteres, por ejemplo: km, m"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Measure"
+msgstr "Medida"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_measure_field
+msgid "Measure 1"
+msgstr "Medida 1"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_scatter_measure_x_id
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Measure X"
+msgstr "Medida X"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_scatter_measure_y_id
+msgid "Measure Y"
+msgstr "Medida Y"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Measures"
+msgstr "Medidas"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__ks_menu_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_menu_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__ks_dashboard_menu_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_wizard__ks_menu_name
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_ai_whole_dashboard_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+msgid "Menu Name"
+msgstr "Nombre del menú"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_menu_sequence
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Menu Sequence"
+msgstr "Secuencia de menú"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_groupby__minute
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_sub_groupby__minute
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_item_action_date_groupby__minute
+msgid "Minute"
+msgstr "Minuto"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_item_multiplier__ks_model_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__ks_import_model_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__ks_import_model
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_custom_filters__ks_model_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__ks_model_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_model_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__ks_model_id
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_arti_int__ks_type__ks_model
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_defined_filters
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_ai_whole_dashboard_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_ai_form_view
+msgid "Model"
+msgstr "Modelo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__model_bool
+msgid "Model Bool"
+msgstr "Modelo Bool"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_arti_int__ks_import_model_id
+msgid "Model ID"
+msgstr "Identificación del modelo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__ks_model_name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_model_name
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Model Name"
+msgstr "Nombre del modelo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Model..."
+msgstr "Modelo..."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_unit_selection__monetary
+msgid "Monetary"
+msgstr "Monetario"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_groupby__month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_sub_groupby__month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_item_action_date_groupby__month
+msgid "Month"
+msgstr "Mes"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__td_month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__td_month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__td_month
+msgid "Month to Date"
+msgstr "Mes hasta la fecha"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_groupby__month_year
+msgid "Month-Year"
+msgstr "Mes-Año"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_item_color__moonrise
+msgid "Moonrise"
+msgstr "Salida de la luna"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.server,name:ks_dashboard_ninja.ks_move_dashboard
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_ninja_dashboard_item_action__ks_action__move
+msgid "Move"
+msgstr "Mover"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_item_multiplier__ks_multiplier_value
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_multiplier
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Multiplier"
+msgstr "Multiplicador"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_item_multiplier__ks_multiplier_fields
+msgid "Multiplier Field"
+msgstr "Campo multiplicador"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_multiplier_lines
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Multiplier Lines"
+msgstr "Líneas multiplicadoras"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.client,name:ks_dashboard_ninja.dashboard_action_window
+#: model:ir.ui.menu,name:ks_dashboard_ninja.board_menu_root
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_tree
+msgid "My Dashboard"
+msgstr "Mi panel de control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.ui.menu,name:ks_dashboard_ninja.dashboards_menu_root
+msgid "My Dashboards"
+msgstr "Mis paneles de control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_group_by__name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_new__name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_group_by__name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_new__name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__name
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_ninja_dashboard_item_action__name
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Name"
+msgstr "Nombre"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__name_seq
+msgid "Name Seq"
+msgstr "Secuencia de nombre"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_company_id
+msgid "Name of the company for which analytics will be displayed in the dashboard. "
+msgstr "Nombre de la empresa cuyos análisis se mostrarán en el panel. "
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Name..."
+msgstr "Nombre..."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__n_day
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__n_day
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__n_day
+msgid "Next Day"
+msgstr "Siguiente día"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__n_month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__n_month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__n_month
+msgid "Next Month"
+msgstr "Siguiente mes"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__n_quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__n_quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__n_quarter
+msgid "Next Quarter"
+msgstr "Siguiente trimestre"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__n_week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__n_week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__n_week
+msgid "Next Week"
+msgstr "Siguiente semana"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__n_year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__n_year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__n_year
+msgid "Next Year"
+msgstr "Siguiente año"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_comparison__none
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__l_none
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__l_none
+msgid "None"
+msgstr "Ninguno"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_target_view__number
+msgid "Number"
+msgstr "Numero"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_data_format
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Number System"
+msgstr "Sistema numérico"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__data_source__odoo
+msgid "Odoo"
+msgstr "Odoo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.ui.menu,name:ks_dashboard_ninja.overview_menu
+msgid "Overview"
+msgstr "Descripción general"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_pagination_limit
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Pagination Limit"
+msgstr "Límite de paginación"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__ls_past_until_now
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__ls_past_until_now
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__ls_past_until_now
+msgid "Past Till Now"
+msgstr "Pasado hasta ahora"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_label_type__percent
+msgid "Percent"
+msgstr "Por ciento"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_comparison__percentage
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_pie_chart
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_pie_chart
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_14
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_7
+msgid "Pie Chart"
+msgstr "Gráfico circular"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_10
+msgid "Polar Area"
+msgstr "Área polar"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_polararea_chart
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_polararea_chart
+msgid "Polar Area Chart"
+msgstr "Gráfico de área polar"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Pre Defined Filters"
+msgstr "Filtros predefinidos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board_template__ks_template_type__ks_default
+msgid "Predefined"
+msgstr "Predefinido"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_preview
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+msgid "Preview"
+msgstr "Avance"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_target_view__progress_bar
+msgid "Progress Bar"
+msgstr "Barra de progreso"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_multiplier
+msgid "Provides the multiplication of record value"
+msgstr "Proporciona la multiplicación del valor del registro"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_multiplier_active
+msgid "Provides the visibility of multiplier field"
+msgstr "Proporciona la visibilidad del campo multiplicador"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_groupby__quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_sub_groupby__quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_item_action_date_groupby__quarter
+msgid "Quarter"
+msgstr "Cuarto"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__td_quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__td_quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__td_quarter
+msgid "Quarter to Date"
+msgstr "Trimestre hasta la fecha"
+
+#. module: ks_dashboard_ninja
+#: model:ir.ui.menu,name:ks_dashboard_ninja.quick_access_menu
+msgid "Quick Access"
+msgstr "Acceso rápido"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_radar_view
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_radar_view
+msgid "Radar View"
+msgstr "Vista de radar"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_radialbar_chart
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_radialbar_chart
+msgid "Radial Bar Chart"
+msgstr "Gráfico de barras radiales"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_radial_preview
+msgid "Radial Preview"
+msgstr "Vista previa radial"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_comparison__ratio
+msgid "Ratio"
+msgstr "Relación"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_record_count
+msgid "Record Count"
+msgstr "Recuento de registros"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_record_field
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Record Field"
+msgstr "Campo de registro"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Record Field..."
+msgstr "Campo de registro..."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_record_data_limit
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__ks_record_limit
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Record Limit"
+msgstr "Límite de registro"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_record_data_limit_visibility
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Record Limit Data Visibility"
+msgstr "Visibilidad de datos del límite de registro"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_record_count_type
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Record Type"
+msgstr "Tipo de registro"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_quick_edit_form_view
+msgid "Record Value"
+msgstr "Valor récord"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_actions
+msgid "Redirects you to the selected view. "
+msgstr "Le redirecciona a la vista seleccionada. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_year_period
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Same Period Previous Years"
+msgstr "Mismo Periodo Años Anteriores"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_action
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_import_dashboard_form_view
+msgid "Save"
+msgstr "Ahorrar"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_scatter_chart
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_chart_type__ks_scatter_chart
+msgid "Scatter Chart"
+msgstr "Gráfico de dispersión"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_is_scatter_group
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Scatter Group By"
+msgstr "Grupo disperso por"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_scatter_field_id
+msgid "Scatter Points"
+msgstr "Puntos de dispersión"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_item_search_view
+msgid "Search Items"
+msgstr "Buscar elementos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board_defined_filters__display_type__line_section
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Section"
+msgstr "Sección"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Background Color"
+msgstr "Seleccionar color de fondo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Client Action"
+msgstr "Seleccionar acción del cliente"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Company"
+msgstr "Seleccionar empresa"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_child_board__ks_dashboard_ninja_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_ninja_dashboard_item_action__ks_dashboard_ninja_id
+msgid "Select Dashboard"
+msgstr "Seleccionar Panel de Control"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_ninja_dashboard_item_action__ks_dashboard_ninja_ids
+msgid "Select Dashboards"
+msgstr "Seleccionar paneles"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Select End Date"
+msgstr "Seleccionar fecha de finalización"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Font Color"
+msgstr "Seleccionar color de fuente"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Group By"
+msgstr "Seleccionar Agrupar por"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Group By Date"
+msgstr "Seleccionar Agrupar por fecha"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Icon"
+msgstr "Seleccionar icono"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Icon Color"
+msgstr "Seleccionar el color del icono"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Item Action"
+msgstr "Seleccionar acción del elemento"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Map Group By"
+msgstr "Seleccionar grupo de mapas por"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_defined_filters
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_dashboard_ninja_ai_form_view
+msgid "Select Model"
+msgstr "Seleccionar modelo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Select Multiple Group Access"
+msgstr "Seleccionar acceso a varios grupos"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_duplicate_dashboard_wizard_form
+msgid "Select Show Under Menu"
+msgstr "Seleccione Mostrar en el menú"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Sort By Field"
+msgstr "Seleccionar Ordenar por campo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Sort Order"
+msgstr "Seleccionar orden de clasificación"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Select Start Date"
+msgstr "Seleccionar fecha de inicio"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Sub Group By"
+msgstr "Seleccionar subgrupo por"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Sub Group By Date"
+msgstr "Seleccionar subgrupo por fecha"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+msgid "Select Template"
+msgstr "Seleccionar plantilla"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Theme"
+msgstr "Seleccionar tema"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Top Button Color"
+msgstr "Seleccionar el color del botón superior"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Select Under Menu"
+msgstr "Seleccionar en el menú"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_unit_selection
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select Unit Type"
+msgstr "Seleccionar el tipo de unidad"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Select View"
+msgstr "Seleccionar vista"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_date_filter_selection
+msgid "Select interval of the records to be displayed. "
+msgstr "Seleccione el intervalo de los registros que se mostrarán. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_dashboard_item_theme
+msgid "Select the color theme for the display. "
+msgstr "Seleccione el tema de color para la pantalla. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_list_view_type
+msgid "Select the desired list view type. "
+msgstr "Seleccione el tipo de vista de lista deseada. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_sort_by_field
+msgid "Select the desired sorting preference. "
+msgstr "Seleccione la preferencia de clasificación deseada. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_item_color
+msgid "Select the display preference. "
+msgstr "Seleccione la preferencia de visualización. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_date_filter_field
+msgid "Select the field for which Date Filter should be applicable."
+msgstr "Seleccione el campo para el cual se debe aplicar el filtro de fecha."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_font_color
+msgid "Select the font color. "
+msgstr "Seleccione el color de fuente. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_default_icon
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_default_icon_color
+msgid "Select the icon to be displayed. "
+msgstr "Seleccione el icono que desea mostrar. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_dashboard_item_type
+msgid "Select the required type of dashboard to display. "
+msgstr "Seleccione el tipo de panel que desea mostrar. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_chart_relation_sub_groupby
+msgid "Select the second level of grouping. "
+msgstr "Seleccione el segundo nivel de agrupación. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_data_calculation_type
+msgid "Select the type of calculation you want to perform on the data."
+msgstr "Seleccione el tipo de cálculo que desea realizar sobre los datos."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_unit_selection
+msgid "Select the unit to be assigned to the value. "
+msgstr "Seleccione la unidad que se asignará al valor. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_semi_circle_chart
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Semi Circle Chart"
+msgstr "Gráfico de semicírculo"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_21
+msgid "Semi Circle Pie Chart"
+msgstr "Gráfico circular semicircular"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_send_mail
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Send Mail"
+msgstr "Enviar correo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_defined_filters
+msgid "Separator Name"
+msgstr "Nombre del separador"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__sequence
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__sequence
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_wizard__ks_sequence
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__name_seq
+msgid "Sequential Queue ID"
+msgstr "ID de cola secuencial"
+
+#. module: ks_dashboard_ninja
+#: model:ir.actions.act_window,name:ks_dashboard_ninja.action_dashboard_ninja_config_settings
+#: model:ir.ui.menu,name:ks_dashboard_ninja.menu_dashboard_ninja_config_settings
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_unit
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Show Custom Unit"
+msgstr "Mostrar unidad personalizada"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_show_data_value
+msgid "Show Data Value"
+msgstr "Mostrar valor de los datos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_data_label_type
+msgid "Show Data Value Type"
+msgstr "Mostrar tipo de valor de datos"
+
+#. module: ks_dashboard_ninja
+#: model:res.groups,name:ks_dashboard_ninja.ks_dashboard_ninja_group_manager
+msgid "Show Full Dashboard Features"
+msgstr "Mostrar todas las funciones del panel"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_hide_legend
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Show Legend"
+msgstr "Mostrar leyenda"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_radial_legend
+msgid "Show Radial Legend"
+msgstr "Mostrar leyenda radial"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_show_records
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Show Records"
+msgstr "Mostrar registros"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_goal_bar_line
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Show Target As Line"
+msgstr "Mostrar objetivo como línea"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_duplicate_wizard__ks_top_menu_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_ai_dashboard__ks_top_menu_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_top_menu_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_import__ks_top_menu_id
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_wizard__ks_top_menu_id
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_ai_whole_dashboard_form_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_import_dashboard_form_view
+msgid "Show Under Menu"
+msgstr "Mostrar en el menú"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_fetch_key__ks_show_api_key
+msgid "Show key"
+msgstr "Mostrar clave"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_standard_goal_value
+msgid "Show the set target"
+msgstr "Mostrar el objetivo establecido"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_goal_enable
+msgid "Show the set target."
+msgstr "Mostrar el objetivo establecido."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_menu_sequence
+msgid "Smallest sequence give high priority and Highest sequence give low priority"
+msgstr "La secuencia más pequeña da alta prioridad y la secuencia más alta da baja prioridad"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_sort_by_field
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__ks_sort_by_field
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Sort By Field"
+msgstr "Ordenar por campo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_sort_by_order
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_action__ks_sort_by_order
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Sort Order"
+msgstr "Orden de clasificación"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_bar_chart_stacked
+msgid "Stack the columns of the same record. "
+msgstr "Apilar las columnas del mismo registro. "
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_bar_chart_stacked
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Stacked Bar Chart"
+msgstr "Gráfico de barras apiladas"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_standard_goal_value
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Standard Target"
+msgstr "Objetivo estándar"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_dashboard_start_date
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_item_start_date
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_defined_filters
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Status"
+msgstr "Estado"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_stop_mail_cron
+msgid "Stop mail cron"
+msgstr "Detener el cron del correo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Sub Group By"
+msgstr "Subgrupo por"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Sub Group By Date"
+msgstr "Subgrupo por fecha"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_data_count_type__sum
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_comparison__sum
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_record_count_type_2__sum
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_record_count_type__sum
+msgid "Sum"
+msgstr "Suma"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Sync Data"
+msgstr "Sincronizar datos"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Target"
+msgstr "Objetivo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_goal_lines
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Target Lines"
+msgstr "Líneas objetivo"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Task Lines"
+msgstr "Líneas de tareas"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Tasks"
+msgstr "Tareas"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_board_defined_filters__display_type
+msgid "Technical field for UX purpose."
+msgstr "Campo técnico para fines UX."
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_create_dashboard_wizard_form
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__ks_template_type
+msgid "Template Format"
+msgstr "Formato de plantilla"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_board_template__ks_dashboard_item_ids
+msgid "Template Type"
+msgstr "Tipo de plantilla"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_form
+msgid "Template one"
+msgstr "Plantilla uno"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_country_code
+msgid ""
+"The ISO country code in two chars. \n"
+"You can use this field for quick search."
+msgstr ""
+"El código de país ISO en dos caracteres.\n"
+"Puede utilizar este campo para una búsqueda rápida."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__name
+msgid "The item will be represented by this unique name."
+msgstr "El artículo estará representado por este nombre único."
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.constraint,message:ks_dashboard_ninja.constraint_ks_dashboard_ninja_favourite_filters_name_uniq
+msgid "The name of the filter must be unique!"
+msgstr "¡El nombre del filtro debe ser único!"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_dashboard_item_theme
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Theme"
+msgstr "Tema"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_client_action
+msgid "This Action will be Performed at the end of Drill Down Action"
+msgstr "Esta acción se realizará al final de la acción de desglose"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__t_month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__t_month
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__t_month
+msgid "This Month"
+msgstr "Este mes"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__t_quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__t_quarter
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__t_quarter
+msgid "This Quarter"
+msgstr "Este trimestre"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__t_week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__t_week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__t_week
+msgid "This Week"
+msgstr "Esta semana"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__t_year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__t_year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__t_year
+msgid "This Year"
+msgstr "Este año"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_show_records
+msgid ""
+"This field Enable the click on \n"
+"                                                                                  Dashboard Items to view the Odoo \n"
+"                                                                                  default view of records"
+msgstr ""
+"Este campo habilita el clic en \n"
+"                                                                                  Elementos del panel para ver Odoo \n"
+"                                                                                  vista predeterminada de registros"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_tile
+msgid "Tile"
+msgstr "Titulo"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_1
+msgid "Tile (layout 1)"
+msgstr "Azulejo (diseño 1)"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_3
+msgid "Tile (layout 2)"
+msgstr "Azulejo (diseño 2)"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_2
+msgid "Tile (layout 3)"
+msgstr "Azulejo (diseño 3)"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_12
+msgid "Tile (layout 4)"
+msgstr "Azulejo (diseño 4)"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_4
+msgid "Tile (layout 5)"
+msgstr "Azulejo (diseño 5)"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_13
+msgid "Tile (layout 6)"
+msgstr "Azulejo (diseño 6)"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_data_format
+msgid "To Change the number format showing in chart to given option"
+msgstr "Para cambiar el formato de número que se muestra en el gráfico a la opción dada"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_dashboard_item_type__ks_to_do
+msgid "To Do"
+msgstr "Para Hacer"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_to_do_data
+msgid "To Do Data in JSon"
+msgstr "Para hacer datos en JSon"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_to_do_preview
+msgid "To Do Preview"
+msgstr "Vista previa de tareas pendientes"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_record_data_limit_visibility
+msgid "To enable the record data limit field"
+msgstr "Para habilitar el campo de límite de datos de registro"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__l_day
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__l_day
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__l_day
+msgid "Today"
+msgstr "Hoy"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_button_color
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Top Button Color"
+msgstr "Color del botón superior"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_group_by__ttype
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_csv_new__ttype
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_group_by__ttype
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_new__ttype
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Type"
+msgstr "Tipo"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_record_count_type
+msgid "Type of record how record will show as count,sum and average of the record"
+msgstr "Tipo de registro: cómo se mostrará el registro como recuento, suma y promedio del registro"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_res_config_settings__url
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.res_config_settings_inherit_view
+msgid "URL"
+msgstr "URL"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_list_view_type__ungrouped
+msgid "Un-Grouped"
+msgstr "No agrupado"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_board__ks_set_interval
+msgid "Update Interval for new items only"
+msgstr "Intervalo de actualización solo para artículos nuevos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_csv_field
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Upload CSV File"
+msgstr "Subir archivo CSV"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_import__ks_import_dashboard
+msgid "Upload Dashboard"
+msgstr "Panel de carga"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.ks_import_dashboard_form_view
+msgid "Upload Dashboard Json"
+msgstr "Subir JSON del panel"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__upload_excel
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "Upload Excel File"
+msgstr "Subir archivo de Excel"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_icon
+msgid "Upload Icon"
+msgstr "Icono de carga"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item_goal__ks_goal_value
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_data_label_type__value
+msgid "Value"
+msgstr "Valor"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_target_view
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.item_form_view
+msgid "View"
+msgstr "Vista"
+
+#. module: ks_dashboard_ninja
+#: model_terms:ir.ui.view,arch_db:ks_dashboard_ninja.board_tree
+msgid "View Items"
+msgstr "Ver artículos"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_groupby__week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_sub_groupby__week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_item_action_date_groupby__week
+msgid "Week"
+msgstr "Semana"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__td_week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__td_week
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__td_week
+msgid "Week to Date"
+msgstr "Semana hasta la fecha"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,help:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_data_label_type
+msgid "When \"Show Data Value Type\" selected this field enables to select label type in percent or value"
+msgstr "Cuando se selecciona \"Mostrar tipo de valor de datos\", este campo permite seleccionar el tipo de etiqueta en porcentaje o valor"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_groupby__year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_chart_date_sub_groupby__year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item_action__ks_item_action_date_groupby__year
+msgid "Year"
+msgstr "Año"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_board__ks_date_filter_selection__td_year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection_2__td_year
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_ninja_item__ks_date_filter_selection__td_year
+msgid "Year to Date"
+msgstr "El año hasta la fecha"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__zoom_enabled
+msgid "Zoom enabled?"
+msgstr "¿Zoom habilitado?"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_csv_group_by__ttype__char
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_csv_new__ttype__char
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_group_by__ttype__char
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_new__ttype__char
+msgid "char"
+msgstr "limpiar"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_csv_group_by__ttype__date
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_csv_new__ttype__date
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_group_by__ttype__date
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_new__ttype__date
+msgid "date"
+msgstr "fecha"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_csv_group_by__ttype__datetime
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_csv_new__ttype__datetime
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_group_by__ttype__datetime
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_new__ttype__datetime
+msgid "datetime"
+msgstr "fecha y hora"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_csv_group_by__ttype__float
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_csv_new__ttype__float
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_group_by__ttype__float
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_new__ttype__float
+msgid "float"
+msgstr "flotar"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__grid_corners
+msgid "grid corners"
+msgstr "esquinas de la cuadrícula"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_csv_group_by__ttype__integer
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_csv_new__ttype__integer
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_group_by__ttype__integer
+#: model:ir.model.fields.selection,name:ks_dashboard_ninja.selection__ks_dashboard_new__ttype__integer
+msgid "integer"
+msgstr "entero"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_8
+msgid "list view (Un-Grouped)"
+msgstr "vista de lista (agrupada)"
+
+#. module: ks_dashboard_ninja
+#: model:ks_dashboard_ninja.item,name:ks_dashboard_ninja.ks_default_item_28
+msgid "list view (grouped)"
+msgstr "vista de lista (agrupada)"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model.fields,field_description:ks_dashboard_ninja.field_ks_dashboard_ninja_item__ks_list_target_deviation_field
+msgid "list_field_id"
+msgstr "id del campo de lista"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_to_do_description
+msgid "to do description"
+msgstr "descripción de la tarea"
+
+#. module: ks_dashboard_ninja
+#: model:ir.model,name:ks_dashboard_ninja.model_ks_to_do_headers
+msgid "to do headers"
+msgstr "para hacer encabezados"

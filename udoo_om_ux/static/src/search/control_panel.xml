@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="web.ControlPanel" t-inherit-mode="extension">
+        <xpath expr="//button[@t-on-click='doRefresh']" position="after">
+            <t t-if="!env.isSmall and !env.inDialog and hasChatter and this.store.canSwAside !== false and hasAttachmentPreview !== true">
+                <button class="btn btn-secondary w-100" t-on-click="() => this.uSwitchAside('r')">
+                    <i class="ri-lg ri-layout-right-line"></i>
+                </button>
+                <button class="btn btn-secondary w-100" t-on-click="() => this.uSwitchAside('b')">
+                    <i class="ri-lg ri-layout-bottom-line"></i>
+                </button>
+            </t>
+        </xpath>
+        <xpath expr="//div[hasclass('u_header_area')]" position="inside">
+            <div t-if="env.config?.viewType == 'form'" class="rounded w-100 p-2 mt-2" t-att-class="{ 'border': store.uQuickRepeat }">
+                <CheckBox className="'o_field_boolean o_boolean_toggle form-switch align-self-center'" value="store.uQuickRepeat" onChange.bind="uQuickRepeatCheck">
+                    <span class="user-select-none">Extended Creation</span>
+                </CheckBox>
+                <div t-if="store.uQuickRepeat" class="mt-2">
+                    <label class="h6 text-muted">Repeat From:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="cm_last_record" checked=""/>
+                        <label class="form-check-label user-select-none" for="cm_last_record">Last Created Record</label>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('u_action_area')]//DropdownItem" position="before">
+            <DropdownItem class="'d-flex align-items-center'" onSelected="() => this.uBookmarkThis()">
+                <t>Add to Bookmarks</t>
+            </DropdownItem>
+            <DropdownItem t-if="!env.inDialog and hasChatter" class="'d-flex align-items-center'" onSelected="() => env.bus.trigger('LYT:TCTT')">
+                <t>Toggle Chatter</t>
+            </DropdownItem>
+        </xpath>
+        <xpath expr="//div[hasclass('u_toggle_area')]" position="inside">
+            <span t-if="!env.isSmall and env.config.viewType == 'kanban'" t-on-click.prevent="uSwitchPopMode" class="dropdown-item" role="menuitem" tabindex="0">
+                <div class="pe-none o-checkbox form-check form-switch d-flex align-items-center flex-row-reverse justify-content-between p-0 w-100 mb-0">
+                    <input id="u_DropinMode" type="checkbox" class="form-check-input ms-3 mt-0" t-att-checked="ui.dropinMode or state.dropinMode"/>
+                    <label class="user-select-none d-flex align-items-center" for="u_DropinMode">
+                        <t>Quick Popup View</t>
+                    </label>
+                </div>
+            </span>
+        </xpath>
+        <xpath expr="//div[hasclass('o_control_panel_main_buttons')]//div[hasclass('d-inline-flex')]/t" position="after">
+            <t t-set="bbxl" t-value="uo?.ps_auto_hmenu and ue?.sidenav"/>
+            <button t-if="!bbxl and breadcrumbs.length > 1" class="u_btn_back btn btn-outline-primary px-2 lh-1" t-on-click.prevent.stop="uBackTrick">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"></path>
+                </svg>
+            </button>
+        </xpath>
+        <xpath expr="//div[hasclass('o_control_panel_breadcrumbs')]" position="attributes">
+            <attribute name="class" remove="gap-1" add="gap-2" separator=" "/>
+        </xpath>
+    </t>
+    <t t-inherit="web.Breadcrumbs" t-inherit-mode="extension">
+        <xpath expr='//t[@t-set="breadcrumb"]' position="after">
+            <t t-set="bbxl" t-value="uo?.ps_auto_hmenu and !uo?.sk_auto_hmenu and ue?.sidenav"/>
+        </xpath>
+        <xpath expr="//button[hasclass('btn-light btn-sm px-1 p-0')]" position="attributes">
+            <attribute name="class" add="lh-1" separator=" "/>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_breadcrumb')]" position="attributes">
+            <attribute name="class" remove="align-self-stretch" separator=" "/>
+            <attribute name="t-att-class">{ 'align-self-stretch': !bbxl, 'u_breadcrumb': bbxl }</attribute>
+        </xpath>
+        <xpath expr="//ol[hasclass('breadcrumb')]/parent::t" position="before">
+            <ol t-elif="uo.onbOk and bbxl" t-portal="'.o_navbar_breadcrumbs'" class="breadcrumb align-items-center flex-nowrap text-nowrap lh-sm">
+                <li t-if="collapsedBreadcrumbs.length" class="breadcrumb-item d-inline-flex min-w-0">
+                    <Dropdown>
+                        <button class="btn btn-light btn-sm px-1 p-0">
+                            <i class="fa fa-ellipsis-h"/>
+                        </button>
+                        <t t-set-slot="content">
+                            <t t-foreach="collapsedBreadcrumbs" t-as="breadcrumb" t-key="breadcrumb.jsId">
+                                <DropdownItem onSelected="breadcrumb.onSelected" attrs="{ href: breadcrumb.url, 'data-tooltip': getBreadcrumbTooltip(breadcrumb)}">
+                                    <t t-call="web.Breadcrumb.Name"/>
+                                </DropdownItem>
+                            </t>
+                        </t>
+                    </Dropdown>
+                </li>
+                <t t-foreach="visiblePathBreadcrumbs" t-as="breadcrumb" t-key="breadcrumb.jsId">
+                    <li class="breadcrumb-item d-inline-flex min-w-0" t-att-class="{ o_back_button: breadcrumb_last }" t-att-data-hotkey="breadcrumb_last and 'b'" t-on-click.prevent="breadcrumb.onSelected">
+                        <a t-att-href="breadcrumb.url" class="fw-bold text-truncate" t-att-data-tooltip="'Back to &quot;' + breadcrumb.name + '&quot;' + (breadcrumb.isFormView ? ' form' : '')"><t t-call="web.Breadcrumb.Name"/></a>
+                    </li>
+                </t>
+            </ol>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_breadcrumb d-flex gap-1 text-truncate')]" position="before">
+            <div t-elif="uo.onbOk and bbxl" t-portal="'.o_navbar_breadcrumbs'" class="ux_brumb d-flex gap-1 text-truncate">
+                <div class="o_last_breadcrumb_item active d-flex fs-4 min-w-0 align-items-center">
+                    <span class="min-w-0 text-truncate" t-call="web.Breadcrumb.Name"/>
+                </div>
+                <t t-call="web.Breadcrumb.Actions"/>
+            </div>
+        </xpath>
+    </t>
+</templates>

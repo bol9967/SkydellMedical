@@ -1,0 +1,147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * udoo_lavend_ux
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-13 14:22+0000\n"
+"PO-Revision-Date: 2025-04-13 14:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__active
+msgid "Active"
+msgstr "Aktif"
+
+#. module: udoo_lavend_ux
+#: model:ir.actions.act_window,name:udoo_lavend_ux.action_app_group
+#: model:ir.ui.menu,name:udoo_lavend_ux.mensidenav_group
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_list
+msgid "App Groups"
+msgstr "Uygulama Grupları"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__company_id
+msgid "Company"
+msgstr "Şirket"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "Contained Apps"
+msgstr "İçerilen Uygulamalar"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.actions.act_window,help:udoo_lavend_ux.action_app_group
+msgid "Create your first app group!"
+msgstr "İlk uygulama grubunuzu oluşturun!"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__create_date
+msgid "Created on"
+msgstr "Oluşturulma tarihi"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__description
+msgid "Description"
+msgstr "Açıklama"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__display_name
+msgid "Display Name"
+msgstr "Görünen Ad"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.edit_menu_access_search_ui
+msgid "Group By"
+msgstr "Grupla"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__name
+msgid "Group Name"
+msgstr "Grup Adı"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__id
+msgid "ID"
+msgstr "Kimlik"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__items
+msgid "Items"
+msgstr "Öğeler"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme Tarihi"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/conf/view.xml:0
+msgid "Manage your app organization"
+msgstr "Uygulama düzeninizi yönetin"
+
+#. module: udoo_lavend_ux
+#: model:ir.model,name:udoo_lavend_ux.model_ir_ui_menu_group
+msgid "Menu Group"
+msgstr "Menü Grubu"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.actions.act_window,help:udoo_lavend_ux.action_app_group
+msgid "Organize and categorize your apps by creating app groups."
+msgstr "Uygulama grupları oluşturarak uygulamalarınızı düzenleyin ve kategorilere ayırın."
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Others"
+msgstr "Diğer"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.edit_menu_access_search_ui
+msgid "Parent"
+msgstr "Üst Öğesi"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.edit_menu_access_search_ui
+msgid "Root Menu"
+msgstr "Kök Menü"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__sequence
+msgid "Sequence"
+msgstr "Sıralama"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/conf/view.xml:0
+msgid "Set environment color scheme"
+msgstr "Ortam renk şemasını ayarla"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "e.g. Contains all finance related applications"
+msgstr "örneğin: Tüm finansla ilgili uygulamaları içerir"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "e.g. Finance"
+msgstr "örneğin: Finans"

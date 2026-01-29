@@ -1,0 +1,535 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* udoo_lavend_ux
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-20 15:47+0000\n"
+"PO-Revision-Date: 2025-05-20 15:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Allow Visibility To Groups"
+msgstr "السماح بالرؤية للمجموعات"
+
+#. module: udoo_lavend_ux
+#: model:ir.actions.act_window,name:udoo_lavend_ux.action_app_group
+#: model:ir.ui.menu,name:udoo_lavend_ux.mensidenav_group
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_list
+msgid "App Groups"
+msgstr "مجموعات التطبيقات"
+
+#. module: udoo_lavend_ux
+#: model:ir.actions.act_window,name:udoo_lavend_ux.action_edit_menu
+msgid "App Menu Manager"
+msgstr "مدير قائمة التطبيقات"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/editor/data_filter.xml:0
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Apply"
+msgstr "تطبيق"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Apply Changes"
+msgstr "تطبيق التغييرات"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.js:0
+msgid ""
+"Are you sure you want to restore the default view?\r\n"
+"All columns customization on this view will be lost."
+msgstr ""
+"هل أنت متأكد أنك تريد استعادة العرض الافتراضي؟\n"
+"سيتم فقدان جميع تخصيصات الأعمدة في هذا العرض."
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Available columns"
+msgstr "الأعمدة المتاحة"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/editor/data_filter.xml:0
+msgid "Clear"
+msgstr "مسح"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Clear Filtering"
+msgstr "مسح الفلاتر"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Clear Grouping"
+msgstr "مسح التجميع"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+#: code:addons/udoo_lavend_ux/static/src/cmfb/editor/data_filter.xml:0
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Column Label"
+msgstr "تسمية العمود"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "Contained Apps"
+msgstr "التطبيقات المضمنة"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.actions.act_window,help:udoo_lavend_ux.action_app_group
+msgid "Create your first app group!"
+msgstr "أنشئ أول مجموعة تطبيقات لك!"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__create_date
+msgid "Created on"
+msgstr "تاريخ الإنشاء"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/conf/view.xml:0
+msgid "Customize environment colors"
+msgstr "تخصيص ألوان البيئة"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Day"
+msgstr "اليوم"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Domain is invalid. Please correct it!"
+msgstr "النطاق غير صالح. يرجى تصحيحه!"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/list/controller.xml:0
+msgid "Done"
+msgstr "تم"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/list/controller.xml:0
+msgid "Edit"
+msgstr "تعديل"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/search/control_panel.xml:0
+msgid "Filter Navigation Bar"
+msgstr "شريط التنقل مع الفلاتر"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Filter by"
+msgstr "تصفية حسب"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Filter by "
+msgstr "تصفية حسب "
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Filter columns..."
+msgstr "تصفية الأعمدة..."
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Forbid Visibility To Groups"
+msgstr "منع الرؤية للمجموعات"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Group"
+msgstr "مجموعة"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__name
+msgid "Group Name"
+msgstr "اسم المجموعة"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Group by"
+msgstr "تجميع حسب"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Hide"
+msgstr "إخفاء"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.js:0
+msgid "Hide by default"
+msgstr "إخفاء بشكل افتراضي"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_form
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_list
+msgid "Icon Image"
+msgstr "صورة الأيقونة"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_form
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_list
+msgid "Icon Plug"
+msgstr "مكون الأيقونة"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__items
+msgid "Items"
+msgstr "العناصر"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__write_date
+msgid "Last Updated on"
+msgstr "تاريخ آخر تحديث"
+
+#. module: udoo_lavend_ux
+#: model:res.groups,name:udoo_lavend_ux.group_lvm
+msgid "List View Configuration"
+msgstr "تهيئة عرض القائمة"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/list/renderer.xml:0
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Manage Columns"
+msgstr "إدارة الأعمدة"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.actions.act_window,help:udoo_lavend_ux.action_edit_menu
+msgid ""
+"Manage and customize the items available and displayed in your Odoo system "
+"menu. You can delete an item by clicking on the box at the beginning of each"
+" line and then delete it through the button that appeared. Items can be "
+"assigned to specific groups in order to make them accessible to some users "
+"within the system."
+msgstr ""
+"إدارة وتخصيص العناصر المتاحة والمعروضة في قائمة نظام Odoo. يمكنك حذف عنصر من خلال "
+"النقر على المربع في بداية كل سطر ثم حذفه عبر الزر الذي سيظهر. يمكن تخصيص العناصر "
+"لمجموعات معينة لتكون متاحة لبعض المستخدمين داخل النظام."
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/conf/view.xml:0
+msgid "Manage application menus"
+msgstr "إدارة قوائم التطبيقات"
+
+#. module: udoo_lavend_ux
+#: model:res.groups,comment:udoo_lavend_ux.group_lvm
+msgid "Manage the structure and behavior of backend list views."
+msgstr "إدارة هيكل وسلوك عروض القوائم في الواجهة الخلفية."
+
+#. module: udoo_lavend_ux
+#: model:ir.model,name:udoo_lavend_ux.model_ir_ui_menu
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_form
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_list
+msgid "Menu"
+msgstr "القائمة"
+
+#. module: udoo_lavend_ux
+#: model:ir.model,name:udoo_lavend_ux.model_ir_ui_menu_group
+msgid "Menu Group"
+msgstr "مجموعة القوائم"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Month"
+msgstr "شهر"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_form
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_list
+msgid "Name"
+msgstr "الاسم"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "No column filters found."
+msgstr "لم يتم العثور على فلاتر أعمدة."
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/search/control_panel.js:0
+msgid "No filters found."
+msgstr "لم يتم العثور على فلاتر."
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_list
+msgid "Open"
+msgstr "فتح"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Optional Display"
+msgstr "عرض اختياري"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.actions.act_window,help:udoo_lavend_ux.action_app_group
+msgid "Organize and categorize your apps by creating app groups."
+msgstr "نظم وصنف تطبيقاتك عن طريق إنشاء مجموعات تطبيقات."
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/conf/view.xml:0
+msgid "Organize your applications"
+msgstr "تنظيم تطبيقاتك"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Others"
+msgstr "أخرى"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_search
+msgid "Parent"
+msgstr "الأصل"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_search
+msgid "Patched Icon Plug"
+msgstr "مكون الأيقونة المعدّل"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_search
+msgid "Pristine Icon Plug"
+msgstr "مكون الأيقونة الأصلي"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Quarter"
+msgstr "ربع السنة"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Quick Column Filters"
+msgstr "فلاتر الأعمدة السريعة"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Remove"
+msgstr "إزالة"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Remove column"
+msgstr "إزالة العمود"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/editor/data_filter.xml:0
+msgid "Reset"
+msgstr "إعادة تعيين"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_form
+msgid "Reset Icon"
+msgstr "إعادة تعيين الأيقونة"
+
+#. module: udoo_lavend_ux
+#: model:ir.actions.server,name:udoo_lavend_ux.action_reset_web_icon
+msgid "Reset Icon Plug"
+msgstr "إعادة تعيين مكون الأيقونة"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Reset Sorting"
+msgstr "إعادة تعيين الترتيب"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Restore Defaults"
+msgstr "استعادة الإعدادات الافتراضية"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_search
+msgid "Root Menu"
+msgstr "القائمة الجذرية"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Select column"
+msgstr "اختر عمودًا"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid ""
+"Select which columns are visible for you. To change the column order, drag "
+"and drop the visible columns."
+msgstr ""
+"حدد الأعمدة التي تريد إظهارها. لتغيير ترتيب الأعمدة، اسحب وأفلت الأعمدة المرئية."
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__sequence
+msgid "Sequence"
+msgstr "الترتيب"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.js:0
+msgid "Show by default"
+msgstr "عرض بشكل افتراضي"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Sort Ascending"
+msgstr "ترتيب تصاعدي"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "Sort Descending"
+msgstr "ترتيب تنازلي"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_form
+msgid "Submenus"
+msgstr "القوائم الفرعية"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/list/controller.xml:0
+msgid "Toggle Inline Editing"
+msgstr "تبديل التحرير المضمن"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_form
+msgid "Visibility"
+msgstr "الرؤية"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cman/mod/manager.xml:0
+msgid "Visible columns"
+msgstr "الأعمدة المرئية"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Week"
+msgstr "أسبوع"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.js:0
+msgid "Year"
+msgstr "سنة"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/cmfb/patch/list_renderer.xml:0
+msgid "by"
+msgstr "حسب"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "e.g. Contains all finance related applications"
+msgstr "مثلاً: يحتوي على جميع التطبيقات المتعلقة بالمالية"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "e.g. Finance"
+msgstr "مثلاً: المالية"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_form
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.om_edit_menu_list
+msgid "e.g. ri-home-line,inherit,inherit"
+msgstr "مثال: ri-home-line،inherit،inherit"

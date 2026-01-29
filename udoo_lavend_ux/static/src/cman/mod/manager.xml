@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="omux_list_explorer.ManagerDialog" t-inherit="web.Dialog" t-inherit-mode="primary">
+        <xpath expr="//main[hasclass('modal-body')]" position="before">
+            <t t-slot="overview"/>
+        </xpath>
+    </t>
+    <t t-name="omux_list_explorer.ColumnManager">
+        <Dialog contentClass="'u_column_manager u_dsheet'" title.translate="Manage Columns" size="isDebug ? 'xl' : 'lg'">
+            <div class="row w-100 g-3 mb-3">
+                <div class="col-12 col-md-6 h-100">
+                    <div class="d-flex flex-column border rounded-3 h-100">
+                        <div class="d-flex align-items-center ms-3 mt-3 gap-2">
+                            <h4 class="d-contents">Available columns</h4>
+                            <span class="badge fs-7 fw-bold rounded-pill text-bg-secondary" t-out="existingColumns.length"/>
+                        </div>
+                        <hr class="bg-500"/>
+                        <div class="input-group mb-3 px-3">
+                            <input type="text" class="form-control" placeholder="Filter columns..." t-model="state.searchValue"/>
+                            <span class="input-group-text bg-transparent">
+                                <i class="oi oi-search mx-1"/>
+                            </span>
+                        </div>
+                        <div class="o_left_field_panel overflow-auto">
+                            <t t-foreach="existingColumns" t-as="field" t-key="field.name">
+                                <t t-set="fAdded" t-value="isColSelected(field.name)"/>
+                                <div t-att-data-field_id="field.name" t-attf-class="o_cman_tree_item cursor-pointer position-relative py-1 ps-3" role="treeitem">
+                                    <div t-attf-class="o_tree_column d-flex align-items-center {{ field.required ? 'fw-bolder' : ''}}">
+                                        <span class="align-middle w-100 me-2" t-out="field.string"/>
+                                        <code t-if="isDebug and field.name" t-out="field.name"/>
+                                        <t t-set="isInvisible" t-value="props.fieldNodes[field.name + '_0']?.column_invisible == 'True'"/>
+                                        <span t-if="fAdded" title="Remove column" t-att-class="{ 'disabled': isInvisible }" class="o_remove_field btn btn-sm btn-light m-1 me-2 pe-2 float-end cursor-pointer d-flex align-items-center text-danger" t-on-click.stop="(ev) => this.onRemoveColumn(field.name)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-minus">
+                                                <circle cx="12" cy="12" r="10"/>
+                                                <path d="M8 12h8"/>
+                                            </svg>
+                                        </span>
+                                        <span t-else="" title="Select column" t-att-class="{ 'disabled': isInvisible }" t-attf-class="o_add_field btn btn-sm btn-light m-1 me-2 px-2 float-end d-flex align-items-center" t-on-click.stop="(ev) => this.onAddColumn(field.name)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus">
+                                                <circle cx="12" cy="12" r="10"/>
+                                                <path d="M8 12h8"/>
+                                                <path d="M12 8v8"/>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 h-100">
+                    <div class="d-flex flex-column border rounded-3 h-100">
+                        <div class="d-flex align-items-center ms-3 mt-3 gap-2">
+                            <h4 class="d-contents">Visible columns</h4>
+                            <span class="badge fs-7 fw-bold rounded-pill text-bg-info" t-out="state.visibleColumns.length"/>
+                            <button class="btn btn-sm h-100 lh-1 btn-secondary ms-auto me-3" t-on-click="resetVisibleColumns">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-undo-2">
+                                    <path d="M9 14 4 9l5-5"/>
+                                    <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <hr class="bg-500"/>
+                        <div class="o_right_field_panel overflow-auto">
+                            <ul class="o_fields_list list-unstyled" t-ref="draggable">
+                                <t t-foreach="state.visibleColumns" t-as="cl" t-key="cl_index">
+                                    <t t-set="isInvisible" t-value="cl.column_invisible == 'True'"/>
+                                    <li t-attf-class="my-1 o_cman_field d-inline-block w-100 ps-2 {{ state.isSmall ? '' : 'o_cman_field_sortable' }}" t-att-data-uid="cl.uid" t-att-data-col="cl.name">
+                                        <span class="o_sort_field ms-1 me-2" t-attf-style="opacity: {{ isInvisible ? .5 : .9 }}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-grip-vertical">
+                                                <circle cx="9" cy="12" r="1"/>
+                                                <circle cx="9" cy="5" r="1"/>
+                                                <circle cx="9" cy="19" r="1"/>
+                                                <circle cx="15" cy="12" r="1"/>
+                                                <circle cx="15" cy="5" r="1"/>
+                                                <circle cx="15" cy="19" r="1"/>
+                                            </svg>
+                                        </span>
+                                        <span class="align-middle" t-att-class="{ 'text-muted': isInvisible }" t-out="props.fields[cl.name].string"/>
+                                        <span class="o_opt_field btn btn-light me-1 float-end d-flex align-items-center" t-on-click="(ev) => this.openColModifer(ev, cl)">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-2">
+                                                <path d="M20 7h-9"/>
+                                                <path d="M14 17H5"/>
+                                                <circle cx="17" cy="17" r="3"/>
+                                                <circle cx="7" cy="7" r="3"/>
+                                            </svg>
+                                        </span>
+                                    </li>
+                                </t>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <t t-set-slot="overview">
+                <div style="padding: 16px 16px 0 16px;">
+                    Select which columns are visible for you. To change the column order, drag and drop the visible columns.
+                </div>
+            </t>
+            <t t-set-slot="footer">
+                <button class="btn btn-outline-danger" t-on-click="restore">Restore Defaults</button>
+                <button class="btn btn-secondary ms-auto" t-on-click="props.close" t-ref="autofocus">Cancel</button>
+                <button class="btn btn-primary" t-on-click="confirm">Apply Changes</button>
+            </t>
+        </Dialog>
+    </t>
+    <t t-name="omux_list_explorer.ColumnModifer">
+        <t t-set="isColInvisible" t-value="props.fieldNode?.column_invisible == 'True'"/>
+        <div class="d-flex p-3 gap-2 border-bottom">
+            <button t-if="!isColInvisible" class="btn btn-outline-danger me-auto" t-on-click="props.remove">Remove</button>
+            <button class="btn btn-secondary" t-on-click="props.close">Close</button>
+        </div>
+        <div class="rolkit" style="max-height: 50vh; width: 288px">
+            <div class="p-3">
+                <div class="mb-3 d-flex flex-column">
+                    <label class="mb-1" for="col_label">Column Label</label>
+                    <input name="col_label" id="col_label" type="string" t-model="state.widget.attrs.string" class="form-control"/>
+                </div>
+                <div class="d-flex flex-column gap-3" t-if="!isColInvisible">
+                    <div class="d-flex flex-column">
+                        <label class="mb-1">Optional Display</label>
+                        <SelectMenu choices="optionalVisibilityChoices" value="state.widget.attrs.optional" searchable="false" onSelect.bind="onSelectOptional" />
+                    </div>
+                    <div class="d-grid">
+                        <label for="allow_group_ids" class="mb-1">Allow Visibility To Groups</label>
+                        <div class="o_field_widget o_field_many2many_tags" name="allow_group_ids">
+                            <MultiRecordSelector t-props="allowGroupsProps"/>
+                        </div>
+                    </div>
+                    <div class="d-grid">
+                        <label for="forbid_group_ids" class="mb-1">Forbid Visibility To Groups</label>
+                        <div class="o_field_widget o_field_many2many_tags" name="forbid_group_ids">
+                            <MultiRecordSelector t-props="forbidGroupsProps"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

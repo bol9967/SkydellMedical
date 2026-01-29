@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="wub.NavBar.AppsMenu" t-inherit-mode="extension">
+        <xpath expr="//t[contains(@t-portal,'sidenav_cont')]" position="replace">
+            <t t-portal="'.sidenav_cont'">
+                <div t-foreach="appGroups" t-as="g" t-key="g_index" class="sidenav_group">
+                    <h6 t-if="g.items.length" t-attf-class="o_nsub ms-2 sidenav_subt {{ g_first ? 'mb-3' : 'my-3' }}" t-out="g.name"/>
+                    <div t-foreach="g.items" t-as="app" t-key="app.id" class="nav-item">
+                        <t t-call="wub.Sidenav.Item">
+                            <t t-set="app" t-value="app"/>
+                            <t t-set="appsub" t-value="getAppSections(app.id)"/>
+                        </t>
+                    </div>
+                </div>
+                <div class="sidenav_remain d-none">
+                    <div t-if="!_noAppGroup" class="d-flex align-items-center justify-content-between">
+                        <h6 class="fs-7 fw-sbold ms-2 sidenav_subt text-uppercase my-3">Others</h6>
+                    </div>
+                    <div t-foreach="uo.orderedApps" t-if="!appGroupDict[app.id] and (!uo.fav_menus?.length or uo.fav_menus.includes(app.xmlid))" t-as="app" t-key="app.id" class="nav-item">
+                        <t t-call="wub.Sidenav.Item">
+                            <t t-set="app" t-value="app"/>
+                            <t t-set="appsub" t-value="getAppSections(app.id)"/>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//div[@t-ref='fav_drag_root']" position="replace">
+            <div class="rolkit">
+                <div t-ref="fav_drag_root" class="island_apps rolkit" role="listbox">
+                    <div t-foreach="uo.orderedApps" t-as="app" t-key="app.id" 
+                        t-if="uo.fav_menus.includes(app.xmlid) and !appGroupDict[app.id]"
+                        class="u_app_square u_draggable">
+                        <t t-call="wub.Island.VerAppNode">
+                            <t t-set="app" t-value="app"/>
+                        </t>
+                    </div>
+                </div>
+
+                <div t-foreach="appGroups" t-as="group" t-key="group_index" class="u_app_group p-2">
+                    <t t-if="group.items.length">
+                        <label class="o_nsub fw-bold ps-1 pb-2" t-out="group.name"></label>
+                        <div class="island_apps rolkit" role="listbox">
+                            <div t-foreach="group.items" t-as="app" t-key="app.id"
+                                class="u_app_square">
+                                <t t-call="wub.Island.VerAppNode">
+                                    <t t-set="app" t-value="app"/>
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </t>
+
+    <t t-inherit="wub.MenuAppContextMenu" t-inherit-mode="extension">
+        <xpath expr="//a[@t-on-click.prevent='pinToStart']" position="attributes">
+            <attribute name="t-elif">!props.grouped</attribute>
+        </xpath>
+    </t>
+</templates>

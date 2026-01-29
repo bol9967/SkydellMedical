@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Add NPI # field after VAT on partner form -->
+        <record id="view_partner_form_inherit_npi" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit.npi</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="after">
+                    <!-- NPI field - invisible for internal users (users with share=False) -->
+                    <field name="npi_number" invisible="has_internal_user"/>
+                </field>
+                
+                <!-- Add NPI Lookup page inside existing notebook -->
+                <!-- NPI Lookup tab - invisible for internal users -->
+                <xpath expr="//notebook" position="inside">
+                    <page string="NPI Lookup" name="npi_lookup" invisible="has_internal_user">
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_lookup_npi" type="object" string="Lookup NPI" 
+                                    class="oe_stat_button" icon="fa-search"
+                                    invisible="not npi_number"/>
+                        </div>
+                        <group>
+                            <group string="Basic Information">
+                                <field name="npi_number" readonly="1"/>
+                                <field name="npi_enumeration_type" readonly="1"/>
+                                <field name="npi_provider_name" readonly="1"/>
+                                <field name="npi_status" readonly="1"/>
+                                <field name="npi_enumeration_date" readonly="1"/>
+                                <field name="npi_certification_date" readonly="1" invisible="not npi_certification_date"/>
+                                <field name="npi_created_date" readonly="1" invisible="not npi_created_date"/>
+                                <field name="npi_last_updated" readonly="1"/>
+                                <field name="npi_last_updated_date" readonly="1" invisible="not npi_last_updated_date"/>
+                                <field name="npi_deactivation_date" readonly="1" invisible="not npi_deactivation_date"/>
+                                <field name="npi_reactivation_date" readonly="1" invisible="not npi_reactivation_date"/>
+                                <field name="npi_replacement_npi" readonly="1" invisible="not npi_replacement_npi"/>
+                            </group>
+                            <group string="Individual Provider (NPI-1)" invisible="npi_enumeration_type != 'NPI-1'">
+                                <field name="npi_first_name" readonly="1"/>
+                                <field name="npi_middle_name" readonly="1"/>
+                                <field name="npi_last_name" readonly="1"/>
+                                <field name="npi_name_prefix" readonly="1"/>
+                                <field name="npi_name_suffix" readonly="1"/>
+                                <field name="npi_credential" readonly="1"/>
+                                <field name="npi_gender" readonly="1"/>
+                                <field name="npi_sole_proprietor" readonly="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Organization (NPI-2)" invisible="npi_enumeration_type != 'NPI-2'">
+                                <field name="npi_organization_name" readonly="1"/>
+                                <field name="npi_organizational_subpart" readonly="1" invisible="not npi_organizational_subpart"/>
+                            </group>
+                            <group string="Authorized Official" invisible="npi_enumeration_type != 'NPI-2'">
+                                <field name="npi_authorized_official_first_name" readonly="1"/>
+                                <field name="npi_authorized_official_middle_name" readonly="1" invisible="not npi_authorized_official_middle_name"/>
+                                <field name="npi_authorized_official_last_name" readonly="1"/>
+                                <field name="npi_authorized_official_title" readonly="1"/>
+                                <field name="npi_authorized_official_telephone" readonly="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Primary Practice Location">
+                                <field name="npi_primary_practice_location" readonly="1" nolabel="1" widget="text"/>
+                                <field name="npi_location_telephone" readonly="1"/>
+                                <field name="npi_location_fax" readonly="1"/>
+                            </group>
+                            <group string="Mailing Address">
+                                <field name="npi_mailing_address" readonly="1" nolabel="1" widget="text"/>
+                                <field name="npi_mailing_telephone" readonly="1"/>
+                                <field name="npi_mailing_fax" readonly="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Primary Taxonomy">
+                                <field name="npi_primary_taxonomy" readonly="1"/>
+                                <field name="npi_primary_taxonomy_code" readonly="1"/>
+                                <field name="npi_primary_taxonomy_license" readonly="1"/>
+                            </group>
+                            <group string="All Taxonomies">
+                                <field name="npi_taxonomies" readonly="1" nolabel="1" widget="text"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Other Identifiers">
+                                <field name="npi_identifiers" readonly="1" nolabel="1" widget="text" invisible="not npi_identifiers"/>
+                            </group>
+                            <group string="Endpoints">
+                                <field name="npi_endpoints" readonly="1" nolabel="1" widget="text" invisible="not npi_endpoints"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Other Names">
+                                <field name="npi_other_names" readonly="1" nolabel="1" widget="text" invisible="not npi_other_names"/>
+                            </group>
+                            <group string="Practice Locations">
+                                <field name="npi_practice_locations" readonly="1" nolabel="1" widget="text" invisible="not npi_practice_locations"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Raw NPI Data">
+                                <field name="npi_lookup_data" readonly="1" nolabel="1" widget="text"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

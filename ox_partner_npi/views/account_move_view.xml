@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_move_form_inherit_npi" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.npi</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Customer/Vendor NPI -->
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="partner_npi"
+                       readonly="True"
+                       placeholder="NPI #"
+                       invisible="not partner_npi"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

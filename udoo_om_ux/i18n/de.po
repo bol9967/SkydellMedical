@@ -1,0 +1,962 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* udoo_om_ux
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 14:35+0000\n"
+"PO-Revision-Date: 2025-10-01 14:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/search/control_panel.xml:0
+msgid "Add to Bookmarks"
+msgstr "Zu Lesezeichen hinzufügen"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Add users"
+msgstr "Benutzer hinzufügen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "All Apps"
+msgstr "Alle Apps"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "All Features"
+msgstr "Alle Funktionen"
+
+#. module: udoo_om_ux
+#: model:ir.actions.act_window,name:udoo_om_ux.action_edit_menu
+msgid "App Menu Manager"
+msgstr "App-Menü-Manager"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+#: code:addons/udoo_om_ux/static/src/webclient/user_menu.js:0
+msgid "Appearance"
+msgstr "Darstellung"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+#: code:addons/udoo_om_ux/static/src/webclient/webclient.xml:0
+msgid "Apps"
+msgstr "Apps"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Auto hide horizontal submenu items"
+msgstr "Horizontale Untermenüelemente automatisch ausblenden"
+
+#. module: udoo_om_ux
+#: model:res.groups,name:udoo_om_ux.group_omux
+msgid "Backend Experience Manager"
+msgstr "Backend-Erfahrungsmanager"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.js:0
+msgid "Bookmark current view"
+msgstr "Aktuelle Ansicht als Lesezeichen speichern"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Border Radius"
+msgstr "Eckenradius"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.res_company_form_inherit_om
+msgid "Choose options..."
+msgstr "Optionen auswählen..."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Clear recent record history"
+msgstr "Verlauf der letzten Datensätze löschen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Close"
+msgstr "Schließen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Collapse the recent records drawer"
+msgstr "Schublade mit letzten Datensätzen einklappen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Color Value"
+msgstr "Farbwert"
+
+#. module: udoo_om_ux
+#: model:ir.model,name:udoo_om_ux.model_res_company
+msgid "Companies"
+msgstr "Unternehmen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Company Branding"
+msgstr "Unternehmens-Branding"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Contact the administrator for access."
+msgstr "Wenden Sie sich an den Administrator für Zugriff."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Contains add-on-specific settings for advanced customization."
+msgstr "Enthält erweiterte Add-on-spezifische Einstellungen zur Anpassung."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/palette.xml:0
+msgid "Copy info"
+msgstr "Informationen kopieren"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Cozy"
+msgstr "Gemütlich"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Dark"
+msgstr "Dunkel"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.res_company_form_inherit_om
+msgid "Dark Mode"
+msgstr "Dunkelmodus"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Default"
+msgstr "Standard"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Default (System)"
+msgstr "Standard (System)"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Default settings applied across all users."
+msgstr "Standard­einstellungen gelten für alle Benutzer."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/palette.xml:0
+msgid "Delete"
+msgstr "Löschen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/provider.js:0
+msgid "Directory"
+msgstr "Verzeichnis"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/views/form/form_status/indicator.xml:0
+msgid "Discard changes"
+msgstr "Änderungen verwerfen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/core/dialog/view.xml:0
+msgid "Dismiss"
+msgstr "Verwerfen"
+
+#. module: udoo_om_ux
+#: model:ir.model.fields,field_description:udoo_om_ux.field_ir_ui_menu__display_name
+#: model:ir.model.fields,field_description:udoo_om_ux.field_omux_editor_assets__display_name
+#: model:ir.model.fields,field_description:udoo_om_ux.field_res_company__display_name
+#: model:ir.model.fields,field_description:udoo_om_ux.field_res_users_settings__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid ""
+"Display the Start menu in full-screen mode instead of the default mode."
+msgstr "Startmenü im Vollbildmodus statt im Standardmodus anzeigen."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/provider.js:0
+msgid "Document"
+msgstr "Dokument"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Dodger"
+msgstr "Dodger"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Emerald"
+msgstr "Smaragd"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Enable company-specific home menu background"
+msgstr "Firmenspezifischen Hintergrund für das Startmenü aktivieren"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Enable company-specific sidebar background"
+msgstr "Firmenspezifischen Hintergrund für die Seitenleiste aktivieren"
+
+#. module: udoo_om_ux
+#: model:ir.model.fields,field_description:udoo_om_ux.field_ir_ui_menu__ex_users
+msgid "Excluded Users"
+msgstr "Ausgeschlossene Benutzer"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/core/dialog/view.xml:0
+msgid "Expand"
+msgstr "Erweitern"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/search/control_panel.xml:0
+msgid "Extended Creation"
+msgstr "Erweiterte Erstellung"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Filled"
+msgstr "Gefüllt"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Font Family"
+msgstr "Schriftfamilie"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Form Density"
+msgstr "Formulardichte"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Green"
+msgstr "Grün"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Groups assigned. Access limited to members, minus exclusions."
+msgstr "Zugewiesene Gruppen. Zugriff nur für Mitglieder, abzüglich Ausschlüsse."
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Hide by User"
+msgstr "Nach Benutzer ausblenden"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Hides this menu for selected users."
+msgstr "Blendet dieses Menü für ausgewählte Benutzer aus."
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.res_company_form_inherit_om
+msgid "Home Background"
+msgstr "Startmenü-Hintergrund"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Home Menu"
+msgstr "Startmenü"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.js:0
+msgid "Home action has been set!"
+msgstr "Startaktion wurde festgelegt!"
+
+#. module: udoo_om_ux
+#: model:ir.model.fields,field_description:udoo_om_ux.field_ir_ui_menu__id
+#: model:ir.model.fields,field_description:udoo_om_ux.field_omux_editor_assets__id
+#: model:ir.model.fields,field_description:udoo_om_ux.field_res_company__id
+#: model:ir.model.fields,field_description:udoo_om_ux.field_res_users_settings__id
+msgid "ID"
+msgstr "ID"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_list
+msgid "Icon Image"
+msgstr "Symbolbild"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_list
+msgid "Icon Plug"
+msgstr "Symbolstecker"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "If empty, everyone can see. If set, any listed group can see."
+msgstr "Wenn leer, für alle sichtbar. Wenn gesetzt, nur für aufgelistete Gruppen sichtbar."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Indigo"
+msgstr "Indigo"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Input Style"
+msgstr "Eingabestil"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Interface Size"
+msgstr "Oberflächengröße"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/search/control_panel.xml:0
+msgid "Last Created Record"
+msgstr "Zuletzt erstellter Datensatz"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Leave empty to make it visible to all users."
+msgstr "Leer lassen, damit es für alle Benutzer sichtbar ist."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Light"
+msgstr "Hell"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.res_company_form_inherit_om
+msgid "Light Mode"
+msgstr "Hellmodus"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Lime"
+msgstr "Limette"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "List Density"
+msgstr "Listendichte"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Look & Feel"
+msgstr "Look & Feel"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Magenta"
+msgstr "Magenta"
+
+#. module: udoo_om_ux
+#: model_terms:ir.actions.act_window,help:udoo_om_ux.action_edit_menu
+msgid ""
+"Manage and customize the items available and displayed in your Odoo system "
+"menu. You can delete an item by clicking on the box at the beginning of each"
+" line and then delete it through the button that appeared. Items can be "
+"assigned to specific groups in order to make them accessible to some users "
+"within the system."
+msgstr ""
+"Verwalten und passen Sie die im Odoo-Systemmenü verfügbaren und angezeigten "
+"Elemente an. Sie können ein Element löschen, indem Sie das Kästchen am Anfang "
+"der Zeile anklicken und es anschließend über die angezeigte Schaltfläche "
+"löschen. Elemente können bestimmten Gruppen zugewiesen werden, um sie nur "
+"einigen Benutzern im System zugänglich zu machen."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Manage application menus"
+msgstr "Anwendungsmenüs verwalten"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Manage company branding"
+msgstr "Unternehmens-Branding verwalten"
+
+#. module: udoo_om_ux
+#: model:res.groups,comment:udoo_om_ux.group_omux
+msgid ""
+"Manage the visual experience and navigation settings of the backend "
+"interface."
+msgstr "Verwalten Sie das visuelle Erlebnis und die Navigationseinstellungen der Backend-Oberfläche."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/core/dialog/view.xml:0
+msgid "Maximize"
+msgstr "Maximieren"
+
+#. module: udoo_om_ux
+#: model:ir.model,name:udoo_om_ux.model_ir_ui_menu
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_list
+msgid "Menu"
+msgstr "Menü"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.res_company_form_inherit_om
+msgid "Menu Preset"
+msgstr "Menü-Voreinstellung"
+
+#. module: udoo_om_ux
+#: model:ir.model.fields,field_description:udoo_om_ux.field_res_company__menus_preset
+msgid "Menus Preset"
+msgstr "Menü-Voreinstellungen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Miscellaneous"
+msgstr "Sonstiges"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Moderate"
+msgstr "Mittel"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_list
+msgid "Name"
+msgstr "Name"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Navigation"
+msgstr "Navigation"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "No visibility rules set. This menu is visible to everyone."
+msgstr "Keine Sichtbarkeitsregeln gesetzt. Dieses Menü ist für alle sichtbar."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/provider.js:0
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.js:0
+msgid "Notification"
+msgstr "Benachrichtigung"
+
+#. module: udoo_om_ux
+#: model:ir.model.fields.selection,name:udoo_om_ux.selection__res_users_settings__ps_auto_hmenu__off
+#: model:ir.model.fields.selection,name:udoo_om_ux.selection__res_users_settings__ps_full_iland__off
+msgid "Off"
+msgstr "Aus"
+
+#. module: udoo_om_ux
+#: model:ir.model,name:udoo_om_ux.model_omux_editor_assets
+msgid "Omux Asset Editor"
+msgstr "Omux-Asset-Editor"
+
+#. module: udoo_om_ux
+#: model:ir.model.fields.selection,name:udoo_om_ux.selection__res_users_settings__ps_auto_hmenu__on
+#: model:ir.model.fields.selection,name:udoo_om_ux.selection__res_users_settings__ps_full_iland__on
+msgid "On"
+msgstr "Ein"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_list
+msgid "Open"
+msgstr "Öffnen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/palette.xml:0
+msgid "Open in main view"
+msgstr "In Hauptansicht öffnen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Open in new tab"
+msgstr "In neuem Tab öffnen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/palette.xml:0
+msgid "Open in popup view"
+msgstr "In Popup-Ansicht öffnen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Orange"
+msgstr "Orange"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_search
+msgid "Parent"
+msgstr "Übergeordnet"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_search
+msgid "Patched Icon Plug"
+msgstr "Angepasste Symbolstecker"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Pin all to start"
+msgstr "Alle an Start anheften"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Pin to start"
+msgstr "An Start anheften"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Pink"
+msgstr "Rosa"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Pinned"
+msgstr "Angeheftet"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/provider.js:0
+msgid "Planning"
+msgstr "Planung"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Position Chatter and Document Viewer on right"
+msgstr "Chatter und Dokumentenanzeige rechts positionieren"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Position Chatter at bottom; Document Viewer on right if present"
+msgstr "Chatter unten positionieren; Dokumentenanzeige rechts, falls vorhanden"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Position Chatter at bottom; Hide Document Viewer by default"
+msgstr "Chatter unten positionieren; Dokumentenanzeige standardmäßig ausblenden"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Prefer full-screen start menu mode"
+msgstr "Vollbild-Startmenü bevorzugen"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_search
+msgid "Pristine Icon Plug"
+msgstr "Unveränderte Symbolstecker"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/provider.js:0
+msgid "Quick Access"
+msgstr "Schnellzugriff"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/provider.js:0
+msgid "Quick Create"
+msgstr "Schnellerstellen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/search/control_panel.xml:0
+msgid "Quick Popup View"
+msgstr "Schnell-Popup-Ansicht"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/provider.js:0
+#: code:addons/udoo_om_ux/static/src/webclient/webclient.xml:0
+msgid "Recents"
+msgstr "Zuletzt verwendet"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Remove all bookmarks"
+msgstr "Alle Lesezeichen entfernen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/search/control_panel.xml:0
+msgid "Repeat From:"
+msgstr "Wiederholen ab:"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/provider.js:0
+msgid "Reporting"
+msgstr "Berichte"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Reset Icon"
+msgstr "Symbol zurücksetzen"
+
+#. module: udoo_om_ux
+#: model:ir.actions.server,name:udoo_om_ux.action_reset_web_icon
+msgid "Reset Icon Plug"
+msgstr "Symbolstecker zurücksetzen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Reset home menu action"
+msgstr "Startmenü-Aktion zurücksetzen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Reset home menu layout"
+msgstr "Startmenü-Layout zurücksetzen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Restore defaults"
+msgstr "Standardwerte wiederherstellen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Roomy"
+msgstr "Geräumig"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_search
+msgid "Root Menu"
+msgstr "Hauptmenü"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Rose"
+msgstr "Rosa"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Rules: Group list = OR. Excluded users always win."
+msgstr "Regeln: Gruppenliste = ODER. Ausgeschlossene Benutzer haben immer Vorrang."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/views/form/form_status/indicator.xml:0
+msgid "Save manually"
+msgstr "Manuell speichern"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Search..."
+msgstr "Suchen..."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Select Language"
+msgstr "Sprache auswählen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Set as home action"
+msgstr "Als Startaktion festlegen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid ""
+"Set default form list view to Kanban; Position Chatter at bottom; Hide "
+"Document Viewer by default"
+msgstr ""
+"Standard-Formlistenansicht auf Kanban setzen; Chatter unten positionieren; "
+"Dokumentenanzeige standardmäßig ausblenden"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Sharp"
+msgstr "Klar"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Shortcuts (Ctrl+K)"
+msgstr "Tastenkürzel (Strg+K)"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Show by Group"
+msgstr "Nach Gruppe anzeigen"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.res_company_form_inherit_om
+msgid "Sidenav Background"
+msgstr "Seitenleiste Hintergrund"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.res_company_form_inherit_om
+msgid "Sidenav Logo"
+msgstr "Seitenleiste Logo"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Sky"
+msgstr "Himmel"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Soft"
+msgstr "Sanft"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Some users are explicitly excluded from this menu."
+msgstr "Einige Benutzer sind ausdrücklich von diesem Menü ausgeschlossen."
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Status"
+msgstr "Status"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Submenus"
+msgstr "Untermenüs"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Subtle"
+msgstr "Fein"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Switch Scheme"
+msgstr "Schema wechseln"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/webclient.xml:0
+msgid "Switch Sidebar Mode"
+msgstr "Seitenleistenmodus wechseln"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "System"
+msgstr "System"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/provider.js:0
+msgid "The bookmark has been saved successfully!."
+msgstr "Das Lesezeichen wurde erfolgreich gespeichert!"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Theme Editor"
+msgstr "Theme-Editor"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "This action cannot be undone. Are you sure?"
+msgstr "Diese Aktion kann nicht rückgängig gemacht werden. Sind Sie sicher?"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/search/control_panel.xml:0
+msgid "Toggle Chatter"
+msgstr "Chatter umschalten"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid ""
+"Underline input fields; Set default form list view to Kanban; Position "
+"Chatter at bottom; Hide Document Viewer by default"
+msgstr ""
+"Eingabefelder unterstreichen; Standard-Formlistenansicht auf Kanban setzen; "
+"Chatter unten positionieren; Dokumentenanzeige standardmäßig ausblenden"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Underlined"
+msgstr "Unterstrichen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/bookm/provider.js:0
+msgid "Unnamed"
+msgstr "Unbenannt"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Unpin from start"
+msgstr "Von Start lösen"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Use the topbar for main navigation"
+msgstr "Die obere Leiste für die Hauptnavigation verwenden"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "User"
+msgstr "Benutzer"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "User Data"
+msgstr "Benutzerdaten"
+
+#. module: udoo_om_ux
+#: model:ir.model.fields,help:udoo_om_ux.field_ir_ui_menu__ex_users
+msgid ""
+"Users listed here will not see this menu, regardless of group settings."
+msgstr ""
+"Hier aufgeführte Benutzer sehen dieses Menü nicht, unabhängig von den Gruppeneinstellungen."
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Users listed here will not see this menu, regardless of groups."
+msgstr "Hier aufgeführte Benutzer sehen dieses Menü nicht, unabhängig von Gruppen."
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Visibility"
+msgstr "Sichtbarkeit"
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+msgid "Visible to these groups (OR)"
+msgstr "Sichtbar für diese Gruppen (ODER)"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid ""
+"When the sidebar is enabled, the horizontal menu will automatically be "
+"hidden."
+msgstr "Wenn die Seitenleiste aktiviert ist, wird das horizontale Menü automatisch ausgeblendet."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Workspace"
+msgstr "Arbeitsbereich"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Yellow"
+msgstr "Gelb"
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Your home menu action has been restored."
+msgstr "Ihre Startmenü-Aktion wurde wiederhergestellt."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.js:0
+msgid "Your home menu layout has been restored."
+msgstr "Ihr Startmenü-Layout wurde wiederhergestellt."
+
+#. module: udoo_om_ux
+#. odoo-javascript
+#: code:addons/udoo_om_ux/static/src/conf/view.xml:0
+msgid "Your personal settings, saved to your Odoo account."
+msgstr "Ihre persönlichen Einstellungen, gespeichert in Ihrem Odoo-Konto."
+
+#. module: udoo_om_ux
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_form
+#: model_terms:ir.ui.view,arch_db:udoo_om_ux.om_edit_menu_list
+msgid "e.g. ri-home-line,inherit,inherit"
+msgstr "z. B. ri-home-line,inherit,inherit"

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="web.ListRenderer.RecordRow" t-inherit-mode="extension">
+        <xpath expr="//CheckBox[contains(@value,'record.selected')]" position="after">
+            <div class="d-flex">
+                <span t-att-class="{ 'px-3': !withHandleColumn, 'ps-3': withHandleColumn }" t-out="list.offset + record_index + 1"/>
+            </div>
+        </xpath>
+        <xpath expr="//span[contains(@t-out,'record_index + 1')]" position="before">
+            <xpath expr="//CheckBox[contains(@value,'record.selected')]" position="move"/>
+        </xpath>
+    </t>
+</templates>

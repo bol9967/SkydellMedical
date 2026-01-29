@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<odoo>
+  <record id="res_partner_view_form_inherit_maildesk" model="ir.ui.view">
+    <field name="name">res.partner.view.form.inherit.maildesk.email.history</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form" />
+    <field name="arch" type="xml">
+      <xpath expr="//div[@name='button_box']" position="inside">
+        <button
+          name="email_history"
+          type="object"
+          class="oe_stat_button"
+          icon="fa-envelope-o"
+          invisible="not email"
+        >
+          <span class="o_stat_text">
+              Emails
+          </span>
+          
+        </button>
+      </xpath>
+      <xpath expr="//notebook" position="inside">
+        <page string="Maildesk" name="email_history_page">
+          <group>
+            <field
+              name="trusted_partner"
+              widget="boolean_toggle"
+              groups="maildesk_mail_client.group_mailbox_user,maildesk_mail_client.group_mailbox_admin"
+              help="If enabled, emails from this partner will always display full content without additional security checks."
+            />
+        </group>
+        <group>
+            <field
+                name="trusted_by_user_id"
+                widget="many2one_avatar_user"
+                groups="maildesk_mail_client.group_mailbox_user,maildesk_mail_client.group_mailbox_admin"
+                options="{'no_create': True, 'no_open': True}"
+                help="The user who has marked this partner as trusted."
+            />
+        </group>
+        </page>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>

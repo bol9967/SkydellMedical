@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="signup_2fa" name="Two-Factor Authentication">
+        <t t-call="website.layout">
+            <div class="container mt-5 mb-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-5">
+                        <div class="card shadow">
+                            <div class="card-header bg-primary text-white text-center">
+                                <h3 class="mb-0">
+                                    <i class="fa fa-shield-alt"/> Two-Factor Authentication
+                                </h3>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="text-center mb-4">
+                                    <i class="fa fa-envelope fa-3x text-primary mb-3"></i>
+                                    <p class="lead">Verify Your Email Address</p>
+                                    <p class="text-muted">
+                                        We have sent a verification code to <strong t-esc="email_masked"/>
+                                    </p>
+                                </div>
+
+                                <!-- Error Message -->
+                                <t t-if="error">
+                                    <div class="alert alert-danger" role="alert">
+                                        <i class="fa fa-exclamation-circle"/> <t t-esc="error"/>
+                                    </div>
+                                </t>
+
+                                <!-- Success Message -->
+                                <t t-if="message">
+                                    <div class="alert alert-success" role="alert">
+                                        <i class="fa fa-check-circle"/> <t t-esc="message"/>
+                                    </div>
+                                </t>
+
+                                <!-- OTP Form -->
+                                <form method="post" action="/web/signup/2fa" id="otp_form">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    
+                                    <div class="mb-4">
+                                        <label for="otp_code" class="form-label">
+                                            <strong>Enter Verification Code</strong>
+                                        </label>
+                                        <div class="input-group input-group-lg">
+                                            <input 
+                                                type="text" 
+                                                id="otp_code" 
+                                                name="otp_code" 
+                                                class="form-control text-center" 
+                                                placeholder="000000" 
+                                                maxlength="6" 
+                                                pattern="[0-9]{6}" 
+                                                autocomplete="off"
+                                                autofocus="autofocus"
+                                                required="required"
+                                                style="font-size: 24px; letter-spacing: 8px; font-weight: bold;"/>
+                                        </div>
+                                        <small class="form-text text-muted mt-2">
+                                            Enter the 6-digit code sent to your email
+                                        </small>
+                                    </div>
+
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-primary btn-lg" id="verify_btn">
+                                            <i class="fa fa-check"/> Verify &amp; Create Account
+                                        </button>
+                                        
+                                        <button type="submit" name="action" value="resend" class="btn btn-outline-secondary" formnovalidate="formnovalidate" id="resend_btn">
+                                            <i class="fa fa-redo"/> <span id="resend_text">Resend Code</span>
+                                        </button>
+                                        
+                                        <a href="/web/signup" class="btn btn-link text-muted">
+                                            <i class="fa fa-arrow-left"/> Back to Signup
+                                        </a>
+                                    </div>
+                                </form>
+
+                                <div class="mt-4 text-center">
+                                    <small class="text-muted">
+                                        <i class="fa fa-info-circle"/> The verification code will expire in 10 minutes
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

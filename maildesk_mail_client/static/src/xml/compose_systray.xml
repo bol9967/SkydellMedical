@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<templates xml:space="preserve">
+    <t t-name="maildesk_mail_client.ComposeSystray" owl="1">
+        <button
+      class="o-dropdown dropdown-toggle dropdown me-2"
+      t-on-click="onClick"
+      groups="maildesk_mail_client.group_mailbox_user"
+      accesskey="n"
+      title="New email (Alt+N)"
+    >
+            <i class="fa fa-send" role="img" />
+        </button>
+    </t>
+</templates>

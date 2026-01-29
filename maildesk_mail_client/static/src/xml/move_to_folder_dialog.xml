@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<templates xml:space="preserve">
+    <t t-name="maildesk_mail_client.MoveToFolderDialog" owl="1">
+        <Dialog title="'Move to Folder'">
+            <div class="p-2">
+                <t t-foreach="props.folders" t-as="folder" t-key="folder.id">
+                    <t t-call="maildesk_mail_client.MoveToFolderDialogItem">
+                        <t t-set="folder" t-value="folder" />
+                        <t t-set="level" t-value="0" />
+                        <t t-set="onSelect" t-value="props.onSelect" />
+                        <t t-set="close" t-value="props.close" />
+                    </t>
+                </t>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-secondary" t-on-click="props.close">
+                    Close
+                </button>
+            </t>
+        </Dialog>
+    </t>
+
+    <t t-name="maildesk_mail_client.MoveToFolderDialogItem">
+        <div t-att-style="'margin-left: ' + (level * 30) + 'px;'">
+            <button
+        class="btn btn-outline-secondary w-100 text-start mb-2"
+        t-on-click="() => onSelect(folder, { close })"
+      >
+                <i class="fa fa-folder me-2 text-secondary" />
+                <t t-out="folder.name" />
+            </button>
+        </div>
+        <t t-if="folder.children">
+            <t t-foreach="folder.children" t-as="child" t-key="child.id">
+                <t t-call="maildesk_mail_client.MoveToFolderDialogItem">
+                    <t t-set="folder" t-value="child" />
+                    <t t-set="level" t-value="level + 1" />
+                    <t t-set="onSelect" t-value="onSelect" />
+                    <t t-set="close" t-value="close" />
+                </t>
+            </t>
+        </t>
+    </t>
+</templates>

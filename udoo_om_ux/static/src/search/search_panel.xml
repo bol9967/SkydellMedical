@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="web.SearchPanel.Category" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('o_toggle_fold')]" position="attributes">
+            <attribute name="t-if">isChildList</attribute>
+        </xpath>
+        <xpath expr="//ul[hasclass('list-group')]" position="attributes">
+            <attribute name="t-if">value.childrenIds.length and (!isChildList or state.expanded[section.id][valueId])</attribute>
+        </xpath>
+    </t>
+</templates>

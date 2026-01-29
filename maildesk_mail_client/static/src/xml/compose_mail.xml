@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<templates xml:space="preserve">
+    <t t-name="maildesk.ComposeMail" owl="1">
+        <div
+      class="composer-wrapper card shadow position-fixed composer-wrapper-maildesk"
+      t-att-style="getStyle()"
+    >
+            <div
+        class="card-header d-flex justify-content-between align-items-center"
+        t-on-mousedown="startDrag"
+        style="cursor: move;"
+      >
+                <h5 class="mb-0">New Message</h5>
+                <div class="d-flex gap-2">
+                    <button
+            class="btn btn-sm"
+            t-on-click="toggleMinimize"
+            data-tooltip="Minimize"
+          >
+                        <i class="fa fa-minus" />
+                    </button>
+                    <button
+            class="btn btn-sm"
+            t-on-click="toggleFull"
+            data-tooltip="Expand"
+          >
+                        <i class="fa fa-expand" />
+                    </button>
+                    <button class="btn btn-sm" t-on-click="close" data-tooltip="Close">
+                        <i class="fa fa-close" />
+                    </button>
+                </div>
+            </div>
+
+            <div
+        t-attf-class="card-body overflow-auto h-100 d-flex flex-column card-body-composer #{uiState.isMinimized ? 'd-none' : ''}"
+      >         
+                <div class="mb-3">
+                    <label class="form-label">From</label>
+                    <select
+                    
+            class="form-select line-h-composer"
+            t-model="state.account_id"
+            t-on-change="onAccountChange"
+          >
+                        <t t-foreach="state.accounts" t-as="a" t-key="a.id">
+                            <option t-att-value="a.id">
+                                <t t-out="a.name" />
+                            </option>
+                        </t>
+                    </select>
+                </div>
+                <div class="mb-3">
+    <label class="form-label">Sender Name</label>
+    <input
+      type="text"
+      class="form-control line-h-composer"
+      t-model="state.from_display"
+      placeholder="Sender Name"
+    />
+  </div>
+
+                <EmailInputField
+          field="'To'"
+          state="state"
+          addEmail="addEmail"
+          remove="remove"
+          toggleCc="toggleCc"
+          toggleBcc="toggleBcc"
+        />
+
+                <t t-if="state.showCc">
+                    <EmailInputField
+            field="'Cc'"
+            state="state"
+            addEmail="addEmail"
+            remove="remove"
+            toggleCc="toggleCc"
+            toggleBcc="toggleBcc"
+          />
+                </t>
+
+                <t t-if="state.showBcc">
+                    <EmailInputField
+            field="'Bcc'"
+            state="state"
+            addEmail="addEmail"
+            remove="remove"
+            toggleCc="toggleCc"
+            toggleBcc="toggleBcc"
+          />
+                </t>
+
+                <div class="mb-2">
+                    <label class="form-label">Subject</label>
+                    <input
+            type="text"
+            class="form-control subject-input line-h-composer"
+            placeholder="Subject"
+            t-model="state.subject"
+          />
+                </div>
+
+                <Wysiwyg
+          config="getWysiwygConfig()"
+          contentClass="o_wysiwyg_content"
+          onLoad="onEditorLoad"
+          t-key="wysiwygKey"
+        />
+
+                <t t-call="mail.MailComposerAttachmentList">
+                    <t t-set="files" t-value="state.attachments" />
+                    <t t-set="onFileRemove" t-value="onFileRemove" />
+                    <t t-set="getUrl" t-value="getUrl" />
+                </t>
+            </div>
+
+            <div
+        t-attf-class="card-footer d-flex justify-content-end align-items-center card-footer-composer #{uiState.isMinimized ? 'd-none' : ''}"
+      >
+                <FileInput
+          multiUpload="true"
+          onUpload.bind="onFileUploaded"
+          resModel="'mailbox.composer.wizard'"
+          resId="0"
+        >
+                    <button
+            class="btn btn-ligh o_attach me-2"
+            title="Attach file"
+            accesskey="b"
+          >
+                        <img
+              loading="lazy"
+              src="/maildesk_mail_client/static/src/icons/attachment.svg"
+            />
+                    </button>
+                </FileInput>
+
+                <button
+          class="btn me-2"
+          type="button"
+          t-on-click="insertSignature"
+          title="Insert signature"
+          accesskey="s"
+        >
+                    <img
+            loading="lazy"
+            src="/maildesk_mail_client/static/src/icons/signatur.svg"
+          />
+                </button>
+
+                <button
+          class="btn me-2"
+          type="button"
+          t-on-click="saveDraftClick"
+          title="Save draft"
+          accesskey="d"
+        >
+                    <img
+            loading="lazy"
+            src="/maildesk_mail_client/static/src/icons/drafts.svg"
+            class="me-1"
+          /> Draft
+                </button>
+
+                <button
+          class="btn btn-primary"
+          type="button"
+          t-on-click="sendMail"
+          t-att-disabled="state.sending"
+          title="Send email"
+          accesskey="z"
+        >
+                    <img
+            loading="lazy"
+            src="/maildesk_mail_client/static/src/icons/sent.svg"
+            class="me-1"
+          /> Send
+                </button>
+            </div>
+        </div>
+    </t>
+</templates>

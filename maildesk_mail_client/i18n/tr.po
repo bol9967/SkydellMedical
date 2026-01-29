@@ -1,0 +1,2456 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* maildesk_mail_client
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250516\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-31 04:40+0000\n"
+"PO-Revision-Date: 2025-07-31 04:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid ""
+"<strong>Date Range:</strong> You must specify a start and end date. The "
+"system will fetch all messages received within this period."
+msgstr ""
+"<strong>Tarih Aralığı:</strong> Başlangıç ve bitiş tarihi belirtmeniz gerekir. "
+"Sistem bu süre içinde alınan tüm mesajları alacaktır."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid ""
+"<strong>Note:</strong> This feature works only for IMAP-based accounts "
+"(including Gmail and Outlook IMAP)."
+msgstr ""
+"<strong>Not:</strong> Bu özellik yalnızca IMAP tabanlı hesaplarda çalışır "
+"(Gmail ve Outlook IMAP dahil)."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_wizard_form
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "Date Range"
+msgstr "Tarih Aralığı"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "How it works"
+msgstr "Nasıl çalışır"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mailbox_sync_manual_wizard
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "Manual Mail Sync"
+msgstr "Manuel E-posta Eşitleme"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "Sync Now"
+msgstr "Şimdi Eşitle"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid ""
+"This wizard allows you to manually queue an email synchronization job for "
+"the selected mailbox account."
+msgstr ""
+"Bu sihirbaz, seçilen posta kutusu hesabı için e-posta eşitleme görevini "
+"manuel olarak kuyruğa almanızı sağlar."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid ""
+"No folders configured for this mailbox account. Please configure folders "
+"first."
+msgstr ""
+"Bu posta kutusu hesabı için hiçbir klasör yapılandırılmamış. "
+"Lütfen önce klasörleri yapılandırın."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>Enterprise-grade security:</strong> SPF/DKIM/DMARC, encryption at "
+"rest &amp; in transit, fail2ban &amp; advanced spam defense."
+msgstr ""
+"<strong>Kurumsal düzeyde güvenlik:</strong> SPF/DKIM/DMARC, dinlenme ve aktarma "
+"sırasında şifreleme, fail2ban ve gelişmiş spam koruması."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>GDPR &amp; privacy first:</strong> host in the EU or on your own "
+"infrastructure for complete compliance."
+msgstr ""
+"<strong>GDPR ve gizlilik öncelikli:</strong> tam uyumluluk için AB'de veya "
+"kendi altyapınızda barındırın."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>One-click mail server setup:</strong> with the Connector, you can "
+"create fully working incoming &amp; outgoing servers directly from Odoo—no "
+"need to touch the mail server UI. Just click, and it’s ready."
+msgstr ""
+"<strong>Tek tıkla posta sunucusu kurulumu:</strong> Connector ile, posta sunucusu "
+"arayüzüne dokunmadan doğrudan Odoo'dan tam çalışan gelen ve giden sunucular oluşturabilirsiniz. "
+"Sadece tıklayın ve hazır."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>Seamless Odoo integration:</strong> configure accounts, filters, "
+"signatures, folders, notifications &amp; more—without ever leaving your ERP."
+msgstr ""
+"<strong>Kesintisiz Odoo entegrasyonu:</strong> Hesapları, filtreleri, imzaları, klasörleri, "
+"bildirimleri ve daha fazlasını ERP'nizden ayrılmadan yapılandırın."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>Unified experience:</strong> send, receive, search and collaborate "
+"on emails directly in your Odoo workflows."
+msgstr ""
+"<strong>Birleşik deneyim:</strong> E-postaları doğrudan Odoo iş akışlarınızda gönderin, alın, arayın ve işbirliği yapın."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>Zero third-party storage:</strong> all messages &amp; data stay on "
+"your server—no Google, no Microsoft."
+msgstr ""
+"<strong>Üçüncü taraf depolama yok:</strong> tüm mesajlar ve veriler sunucunuzda kalır—Google da yok, Microsoft da yok."
+
+#. module: maildesk_mail_client
+#: model:ir.module.category,description:maildesk_mail_client.module_category_maildesk
+msgid "Access rights for the Mailbox / MailDesk module"
+msgstr "Mailbox / MailDesk modülü için erişim hakları"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__account_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__account_id
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "Account"
+msgstr "Hesap"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__name
+msgid "Account Name"
+msgstr "Hesap Adı"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Account not found."
+msgstr "Hesap bulunamadı."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_needaction
+msgid "Action Needed"
+msgstr "İşlem Gerekli"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__active
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__active
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__active
+msgid "Active"
+msgstr "Aktif"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/email_input_field.xml:0
+msgid "Add Bcc (Blind Carbon Copy)"
+msgstr "Bcc (Gizli Karbon Kopya) Ekle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/email_input_field.xml:0
+msgid "Add Cc (Carbon Copy)"
+msgstr "Cc (Karbon Kopya) Ekle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Add Star"
+msgstr "Yıldız Ekle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Add or remove star from selected emails"
+msgstr "Seçili e-postalara yıldız ekle veya kaldır"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "All"
+msgstr "Tümü"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "All Mailboxes"
+msgstr "Tüm Postalar"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Apply"
+msgstr "Uygula"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__archive
+msgid "Archive"
+msgstr "Arşiv"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Archive message"
+msgstr "Mesajı arşivle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Archive selected emails"
+msgstr "Seçili e-postaları arşivle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/assign_tags_dialog.esm.js:0
+msgid "Assign Tags"
+msgstr "Etiket Ata"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Assign Tags…"
+msgstr "Etiket Ata…"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Assign tags"
+msgstr "Etiketleri ata"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Attach file"
+msgstr "Dosya ekle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_form
+msgid "Attachment"
+msgstr "Ek"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_attachment_count
+msgid "Attachment Count"
+msgstr "Ek Sayısı"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mailbox_attachment
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_list
+msgid "Attachments"
+msgstr "Ekler"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__avatar_html
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__avatar_html
+msgid "Avatar Html"
+msgstr "Avatar Html"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__avatar_partner_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__avatar_partner_id
+msgid "Avatar Partner"
+msgstr "Avatar Partner"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_compose_message__partner_bcc_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__email_bcc
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_template_preview__email_bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__recipient_bcc_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__recipient_bcc_ids
+msgid "Bcc (Partners)"
+msgstr "Bcc (Ortaklar)"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__bcc_display
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__bcc_display
+msgid "Bcc Display"
+msgstr "Bcc Görüntüleme"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/email_input_field.xml:0
+msgid "Bcc+"
+msgstr "Bcc+"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Bcc:"
+msgstr "Bcc:"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mail_mail__email_bcc
+msgid "Blind Cc message recipients"
+msgstr "Gizli Karbon Kopya mesaj alıcıları"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__block_tracking_urls
+msgid "Block Tracking URLs"
+msgstr "Takip URL'lerini Engelle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "By Contact"
+msgstr "Kontak tarafından"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_compose_message__partner_cc_ids
+msgid "Cc"
+msgstr "Cc"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__recipient_cc_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__recipient_cc_ids
+msgid "Cc (Partners)"
+msgstr "Cc (Ortaklar)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/email_input_field.xml:0
+msgid "Cc /"
+msgstr "Cc /"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__cc_display
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__cc_display
+msgid "Cc Display"
+msgstr "Cc Görüntüleme"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Cc:"
+msgstr "Cc:"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__child_ids
+msgid "Child"
+msgstr "Alt"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mail_compose_message__account_id
+msgid "Choose the mail account to send the email from"
+msgstr "E-postanın gönderileceği posta hesabını seçin"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Clear"
+msgstr "Temizle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "Clear filter"
+msgstr "Filtresi temizle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+#: code:addons/maildesk_mail_client/static/src/xml/move_to_folder_dialog.xml:0
+msgid "Close"
+msgstr "Kapat"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__color
+msgid "Color"
+msgstr "Renk"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "Company"
+msgstr "Şirket"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Compose"
+msgstr "Oluştur"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Compose a new email"
+msgstr "Yeni e-posta oluştur"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Concurrent write error. Please try again."
+msgstr "Eşzamanlı yazma hatası. Lütfen tekrar deneyin."
+
+#. module: maildesk_mail_client
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_maildesk_config
+msgid "Configuration"
+msgstr "Yapılandırma"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_wizard_form
+msgid "Connect"
+msgstr "Bağlan"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_account_wizard
+msgid "Connect to Existing Mailbox Wizard"
+msgstr "Mevcut Posta Kutusu Sihirbazına Bağlan"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mailbox_account_wizard
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mailbox_account_wizard
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_wizard_form
+msgid "Connect to Mailbox"
+msgstr "Posta Kutusuna Bağlan"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid "Connection Test Successful!"
+msgstr "Bağlantı Testi Başarılı!"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_res_partner
+msgid "Contact"
+msgstr "Kişi"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Create"
+msgstr "Oluştur"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Create Contact"
+msgstr "Kişi Oluştur"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Create New Tag"
+msgstr "Yeni Etiket Oluştur"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Create new tag"
+msgstr "Yeni etiket oluştur"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__create_uid
+msgid "Created by"
+msgstr "Oluşturan"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__create_date
+msgid "Created on"
+msgstr "Oluşturulma Tarihi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__date_created
+msgid "Date Created"
+msgstr "Oluşturulma Tarihi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__date_done
+msgid "Date Done"
+msgstr "Tamamlanma Tarihi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__date_from
+msgid "Date From"
+msgstr "Başlangıç Tarihi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__date_to
+msgid "Date To"
+msgstr "Bitiş Tarihi"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_sync_manual_wizard.py:0
+msgid "Date To must be after or equal to Date From."
+msgstr "Bitiş Tarihi, Başlangıç Tarihinden sonra veya ona eşit olmalıdır."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Delete"
+msgstr "Sil"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Delete message"
+msgstr "Mesajı sil"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__name
+msgid "Description"
+msgstr "Açıklama"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__display_name
+msgid "Display Name"
+msgstr "Görünen İsim"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_sync_job__state__done
+msgid "Done"
+msgstr "Tamamlandı"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Draft"
+msgstr "Taslak"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Draft not found."
+msgstr "Taslak bulunamadı."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__drafts
+msgid "Drafts"
+msgstr "Taslaklar"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "E-Mail"
+msgstr "E-Posta"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Edit Draft"
+msgstr "Taslağı Düzenle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Edit draft"
+msgstr "Taslağı düzenle"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+msgid "Email"
+msgstr "E-Posta"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__email
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__email
+msgid "Email Address"
+msgstr "E-Posta Adresi"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Email Hosting Recommendation"
+msgstr "E-Posta Barındırma Tavsiyesi"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_template_preview
+msgid "Email Template Preview"
+msgstr "E-posta Şablonu Önizlemesi"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_thread
+msgid "Email Thread"
+msgstr "E-posta Dizisi"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "E-posta oluşturma sihirbazı"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Email sending failed: %s"
+msgstr "E-posta gönderimi başarısız: %s"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.res_partner_view_form_inherit_maildesk
+msgid "Emails"
+msgstr "E-postalar"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__notify_enabled
+msgid "Enable Notifications"
+msgstr "Bildirimleri Etkinleştir"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mail_compose_message__custom_from_name
+msgid ""
+"Enter the name from which the email will be sent. If empty, default is the "
+"user's name."
+msgstr ""
+"E-postanın gönderileceği adı girin. Boş bırakılırsa varsayılan olarak kullanıcının adı kullanılır."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__error_message
+msgid "Error Message"
+msgstr "Hata Mesajı"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "Errors only"
+msgstr "Sadece Hatalar"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Expand"
+msgstr "Genişlet"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_attachment
+msgid "External Email Attachment Metadata"
+msgstr "Harici E-posta Eki Meta Verisi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__external_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__external_id
+msgid "External Message ID"
+msgstr "Harici Mesaj ID'si"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_sync_job__state__failed
+msgid "Failed"
+msgstr "Başarısız"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Failed to mark partner as trusted."
+msgstr "Ortak güvenilir olarak işaretlenemedi."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Failed to open contact form."
+msgstr "Kişi formu açılamadı."
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.action_mailbox_account_create_folders
+msgid "Fetch Folders"
+msgstr "Klasörleri Getir"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Fetch folders"
+msgstr "Klasörleri getir"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__filename
+msgid "Filename"
+msgstr "Dosya adı"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Filter options"
+msgstr "Filtre seçenekleri"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "Finished"
+msgstr "Tamamlandı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__finished_at
+msgid "Finished At"
+msgstr "Tamamlanma Zamanı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__first_uid
+msgid "First UID"
+msgstr "İlk UID"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__folder_str
+msgid "Folder Name"
+msgstr "Klasör Adı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__folder_type
+msgid "Folder Type"
+msgstr "Klasör Türü"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Folder not found."
+msgstr "Klasör bulunamadı."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__folder_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__folder_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__folder_ids
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Folders"
+msgstr "Klasörler"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_follower_ids
+msgid "Followers"
+msgstr "Takipçiler"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Takipçiler (Ortaklar)"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__force_show_content
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__force_show_content
+msgid "Force show content once"
+msgstr "İçeriği bir kez zorla göster"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Forward"
+msgstr "İlet"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Forward this email to another recipient."
+msgstr "Bu e-postayı başka bir alıcıya ilet."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Forward this message"
+msgstr "Bu mesajı ilet"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "From"
+msgstr "Gönderen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__date_from
+msgid "From Date"
+msgstr "Başlangıç Tarihi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_compose_message__custom_from_name
+msgid "From Name"
+msgstr "Gönderen Adı"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "Group By"
+msgstr "Gruplandır"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__has_message
+msgid "Has Message"
+msgstr "Mesaj Var"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__id
+msgid "ID"
+msgstr "ID"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__imap_name
+msgid "IMAP Folder Name"
+msgstr "IMAP Klasör Adı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__mailbox_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__mailbox_uid
+msgid "IMAP UID"
+msgstr "IMAP UID"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_thread__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "İşaretlenirse, yeni mesajlar dikkat gerektirir."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_thread__message_has_error
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_thread__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "İşaretlenirse, bazı mesajlarda teslimat hatası vardır."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_account__attach_mail_server_id
+msgid ""
+"If enabled, attachments will be downloaded and stored in Odoo. If disabled, "
+"attachments will remain on the mail server and will be fetched on demand "
+"when the email is viewed."
+msgstr ""
+"Açılırsa, ekler indirilecek ve Odoo'da saklanacaktır. Devre dışı bırakılırsa, "
+"ekler posta sunucusunda kalır ve e-posta görüntülendiğinde talep üzerine alınır."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.res_partner_view_form_inherit_maildesk
+msgid ""
+"If enabled, emails from this partner will always display full content "
+"without additional security checks."
+msgstr ""
+"Açılırsa, bu ortakdan gelen e-postalar ek güvenlik kontrolleri olmadan her zaman tam içerik gösterir."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"If set, attachments will not be stored in Odoo. Only links to attachments on"
+" this mail server will be saved and fetched when needed."
+msgstr ""
+"Ayarlandığında, ekler Odoo'da saklanmaz. Sadece bu posta sunucusundaki eklere "
+"bağlantılar kaydedilir ve gerektiğinde alınır."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+msgid "Images"
+msgstr "Resimler"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__inbox
+msgid "Inbox"
+msgstr "Gelen Kutusu"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Incoming"
+msgstr "Gelen"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_fetchmail_server
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__mail_server_id
+msgid "Incoming Mail Server"
+msgstr "Gelen Posta Sunucusu"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_account_wizard.py:0
+msgid "Incorrect password."
+msgstr "Yanlış şifre."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Insert signature"
+msgstr "İmza ekle"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_account__notify_interval_minutes
+msgid "Interval for periodic unread notifications"
+msgstr "Periyodik okunmamış bildirimler için aralık"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid "Invalid email address format."
+msgstr "Geçersiz e-posta adresi formatı."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__is_draft
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__is_draft
+msgid "Is Draft"
+msgstr "Taslak mı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_is_follower
+msgid "Is Follower"
+msgstr "Takipçi mi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__is_starred
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__is_starred
+msgid "Is Starred"
+msgstr "Yıldızlı mı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__is_visible
+msgid "Is Visible"
+msgstr "Görünür mü"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__job_type
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "Job Type"
+msgstr "Görev Türü"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__attach_mail_server_id
+msgid "Keep Attachments"
+msgstr "Ekleri Sakla"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__sync_modseq
+msgid "Last MODSEQ"
+msgstr "Son MODSEQ"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__last_notify_sent
+msgid "Last Notification Sent"
+msgstr "Son Bildirim Gönderildi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__last_uid
+msgid "Last UID"
+msgstr "Son UID"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__write_uid
+msgid "Last Updated by"
+msgstr "Son Güncelleyen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__write_date
+msgid "Last Updated on"
+msgstr "Son Güncelleme Tarihi"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Learn More"
+msgstr "Daha Fazla Bilgi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__mimetype
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_list
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+msgid "MIME Type"
+msgstr "MIME Türü"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_compose_message__account_id
+msgid "Mail Account"
+msgstr "Posta Hesabı"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_ir_mail_server
+msgid "Mail Server"
+msgstr "Posta Sunucusu"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_thread
+msgid "Mail Thread"
+msgstr "Posta Dizisi"
+
+#. module: maildesk_mail_client
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_maildesk_root
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_maildesk_root_menu
+msgid "MailDesk"
+msgstr "MailDesk"
+
+#. module: maildesk_mail_client
+#: model:ir.module.category,name:maildesk_mail_client.module_category_maildesk
+msgid "Mailbox / MailDesk"
+msgstr "Posta Kutusu / MailDesk"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_account
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__account_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__account_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__account_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__account_id
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Mailbox Account"
+msgstr "Posta Kutusu Hesabı"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mailbox_account
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mailbox_account
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_list
+msgid "Mailbox Accounts"
+msgstr "Posta Kutusu Hesapları"
+
+#. module: maildesk_mail_client
+#: model:res.groups,name:maildesk_mail_client.group_mailbox_admin
+msgid "Mailbox Admin"
+msgstr "Posta Kutusu Yöneticisi"
+
+#. module: maildesk_mail_client
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mailbox_attachment
+msgid "Mailbox Attachments"
+msgstr "Posta Kutusu Ekleri"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_folder
+msgid "Mailbox Folder"
+msgstr "Posta Kutusu Klasörü"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_sync_job
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_form
+msgid "Mailbox Sync Job"
+msgstr "Posta Kutusu Senkronizasyon Görevi"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mailbox_sync_jobs
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mailbox_sync_jobs
+msgid "Mailbox Sync Jobs"
+msgstr "Posta Kutusu Senkronizasyon Görevleri"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_sync
+msgid "Mailbox Synchronization Handler"
+msgstr "Posta Kutusu Senkronizasyon Yöneticisi"
+
+#. module: maildesk_mail_client
+#: model:res.groups,name:maildesk_mail_client.group_mailbox_user
+msgid "Mailbox User"
+msgstr "Posta Kutusu Kullanıcısı"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Mailbox account is required."
+msgstr "Posta kutusu hesabı gereklidir."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_sync_manual_wizard.py:0
+msgid "Mailbox synchronization failed: %s"
+msgstr "Posta kutusu senkronizasyonu başarısız oldu: %s"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Mailbox:"
+msgstr "Posta Kutusu:"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.ir_cron_sync_folder_history_ir_actions_server
+msgid "Mailbox: Background Sync (All Accounts)"
+msgstr "Posta Kutusu: Arka Plan Senkronizasyonu (Tüm Hesaplar)"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.ir_cron_compute_missing_values_ir_actions_server
+msgid "Mailbox: Compute missing values"
+msgstr "Posta Kutusu: Eksik değerleri hesapla"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.ir_cron_mailbox_sync_ir_actions_server
+msgid "Mailbox: Instant Sync (Online Users)"
+msgstr "Posta Kutusu: Anlık Senkronizasyon (Çevrimiçi Kullanıcılar)"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.ir_cron_mailbox_sync_job_runner_ir_actions_server
+msgid "Mailbox: Job Processor"
+msgstr "Posta Kutusu: Görev İşleyici"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.client,name:maildesk_mail_client.maildesk_dashboard_action
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.res_partner_view_form_inherit_maildesk
+msgid "Maildesk"
+msgstr "Maildesk"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_sync_manual_wizard
+msgid "Manual Mailbox Sync Wizard"
+msgstr "Manuel Posta Kutusu Senkronizasyon Sihirbazı"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Manual Sync"
+msgstr "Manuel Senkronizasyon"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Mark as Read"
+msgstr "Okundu olarak işaretle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Mark as Unread"
+msgstr "Okunmadı olarak işaretle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Mark as unread"
+msgstr "Okunmadı olarak işaretle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Mark selected emails as read"
+msgstr "Seçili e-postaları okundu olarak işaretle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Mark selected emails as unread"
+msgstr "Seçili e-postaları okunmadı olarak işaretle"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_sync_job__job_type__mass_sync
+msgid "Mass Email Sync"
+msgstr "Toplu E-posta Senkronizasyonu"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_message
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__message_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__message_id
+msgid "Message"
+msgstr "Mesaj"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_has_error
+msgid "Message Delivery error"
+msgstr "Mesaj Teslim Hatası"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_message_tag
+msgid "Message Tag"
+msgstr "Mesaj Etiketi"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mail_message_tag
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mail_message_tag
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mail_message_tag_tree
+msgid "Message Tags"
+msgstr "Mesaj Etiketleri"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Message not found"
+msgstr "Mesaj bulunamadı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__message_id_header
+msgid "Message-ID Header"
+msgstr "Mesaj-ID Başlığı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_ids
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mailbox_messages
+msgid "Messages"
+msgstr "Mesajlar"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_form
+msgid "Metadata"
+msgstr "Meta Veriler"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Minimize"
+msgstr "Küçült"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Move"
+msgstr "Taşı"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Move selected emails to another folder"
+msgstr "Seçili e-postaları başka bir klasöre taşı"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Move selected emails to trash"
+msgstr "Seçili e-postaları çöpe taşı"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Move to Folder…"
+msgstr "Klasöre taşı…"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Move to folder"
+msgstr "Klasöre taşı"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Moved to Trash"
+msgstr "Çöpe taşındı"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__name
+msgid "Name"
+msgstr "İsim"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "New Message"
+msgstr "Yeni Mesaj"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_sync.py:0
+msgid "New email"
+msgstr "Yeni e-posta"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_systray.xml:0
+msgid "New email (Alt+N)"
+msgstr "Yeni e-posta (Alt+N)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "New tag name"
+msgstr "Yeni etiket adı"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "No Subject"
+msgstr "Konu yok"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "No contacts found"
+msgstr "Hiçbir kişi bulunamadı"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.actions.act_window,help:maildesk_mail_client.action_mailbox_attachment
+msgid "No external attachments found."
+msgstr "Harici ek bulunamadı."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid ""
+"No incoming mail server configured. Please configure it in the server "
+"settings."
+msgstr "Gelen posta sunucusu yapılandırılmamış. Lütfen sunucu ayarlarında yapılandırın."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "No mailboxes configured"
+msgstr "Hiç posta kutusu yapılandırılmamış"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "No message selected"
+msgstr "Hiç mesaj seçilmedi"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "No messages found"
+msgstr "Mesaj bulunamadı"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid ""
+"No outgoing SMTP server configured. Please configure it in the server "
+"settings."
+msgstr "Giden SMTP sunucusu yapılandırılmamış. Lütfen sunucu ayarlarında yapılandırın."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_account_wizard.py:0
+msgid "No shared mailbox found with this email."
+msgstr "Bu e-posta ile paylaşılan posta kutusu bulunamadı."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "No tags available yet. Use the form above to create one."
+msgstr "Henüz kullanılabilir etiket yok. Oluşturmak için yukarıdaki formu kullanın."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__notify_interval_minutes
+msgid "Notification Interval (minutes)"
+msgstr "Bildirim Aralığı (dakika)"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Notifications"
+msgstr "Bildirimler"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_needaction_counter
+msgid "Number of Actions"
+msgstr "İşlem Sayısı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_has_error_counter
+msgid "Number of errors"
+msgstr "Hata Sayısı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_thread__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "İşlem gerektiren mesaj sayısı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_thread__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Teslimat hatası olan mesaj sayısı"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Only Starred"
+msgstr "Sadece Yıldızlılar"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Only Unread"
+msgstr "Sadece Okunmamışlar"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Open Contact"
+msgstr "Kişiyi Aç"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Open Document"
+msgstr "Belgeyi Aç"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Open Linked Document"
+msgstr "Bağlantılı Belgeyi Aç"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Open linked document"
+msgstr "Bağlantılı belgeyi aç"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Open: %s"
+msgstr "Aç: %s"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"Optional support by <strong>Metzler IT GmbH</strong> – experienced Odoo "
+"experts"
+msgstr ""
+"İsteğe bağlı destek <strong>Metzler IT GmbH</strong> tarafından – deneyimli Odoo uzmanları"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__body_original
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__body_original
+msgid "Original HTML Body"
+msgstr "Orijinal HTML Gövdesi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__other
+msgid "Other"
+msgstr "Diğer"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Outgoing"
+msgstr "Giden"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_mail
+msgid "Outgoing Mails"
+msgstr "Giden Postalar"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__mail_send_server_id
+msgid "Outgoing SMTP Server"
+msgstr "Giden SMTP Sunucusu"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__change_key
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__change_key
+msgid "Outlook Change Key"
+msgstr "Outlook Değişiklik Anahtarı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__last_outlook_delta_link
+msgid "Outlook Delta Link"
+msgstr "Outlook Delta Bağlantısı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__owner_id
+msgid "Owner"
+msgstr "Sahip"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+msgid "PDF"
+msgstr "PDF"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__parent_id
+msgid "Parent"
+msgstr "Üst Klasör"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__part_id
+msgid "Part ID"
+msgstr "Parça ID"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Partner marked as trusted."
+msgstr "Ortak güvenilir olarak işaretlendi."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mail_form_inherit
+msgid "Partners"
+msgstr "Ortaklar"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__password
+msgid "Password"
+msgstr "Parola"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__data
+msgid "Payload"
+msgstr "Yük"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_sync_job__state__pending
+msgid "Pending"
+msgstr "Beklemede"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Pick tag color"
+msgstr "Etiket rengi seç"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__preview_text
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__preview_text
+msgid "Preview Text"
+msgstr "Önizleme Metni"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Print"
+msgstr "Yazdır"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Print this email"
+msgstr "Bu e-postayı yazdır"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__rating_ids
+msgid "Ratings"
+msgstr "Değerlendirmeler"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__flags
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__flags
+msgid "Raw Flags"
+msgstr "Ham Bayraklar"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__is_read
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__is_read
+msgid "Read"
+msgstr "Okundu"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Remove Star"
+msgstr "Yıldızı Kaldır"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Remove contact filter"
+msgstr "Kişi filtresini kaldır"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"Removes tracking links (e.g. /L0/...) from incoming emails to protect user "
+"privacy."
+msgstr "Kullanıcı gizliliğini korumak için gelen e-postalardaki izleme bağlantılarını (ör. /L0/...) kaldırır."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply"
+msgstr "Yanıtla"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply All"
+msgstr "Herkese Yanıtla"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply to all recipients"
+msgstr "Tüm alıcılara yanıtla"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply to all recipients of this email."
+msgstr "Bu e-postanın tüm alıcılarına yanıtla"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply to sender"
+msgstr "Göndereni yanıtla"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply to this email."
+msgstr "Bu e-postayı yanıtla"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply to:"
+msgstr "Yanıtla:"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Reset"
+msgstr "Sıfırla"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_sync_job__state__running
+msgid "Running"
+msgstr "Çalışıyor"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "SMS Teslim Hatası"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "SMTP server is not configured for this account."
+msgstr "Bu hesap için SMTP sunucusu yapılandırılmamış."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Safe Mode:"
+msgstr "Güvenli Mod:"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Save draft"
+msgstr "Taslağı kaydet"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Saving…"
+msgstr "Kaydediliyor…"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "Search"
+msgstr "Ara"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+msgid "Search Attachments"
+msgstr "Eklerde Ara"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__search_text
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__search_text
+msgid "Search Text"
+msgstr "Arama Metni"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "Search contacts…"
+msgstr "Kişilerde ara…"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Search mail..."
+msgstr "Postada ara..."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Send"
+msgstr "Gönder"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Send email"
+msgstr "E-postayı gönder"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__sender_display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__sender_display_name
+msgid "Sender Display Name"
+msgstr "Gönderen Görünen Adı"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Sender email address is missing."
+msgstr "Gönderen e-posta adresi eksik."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__sent
+msgid "Sent"
+msgstr "Gönderilen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_partner__email_count
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_users__email_count
+msgid "Sent Email Count"
+msgstr "Gönderilen E-posta Sayısı"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/res_partner.py:0
+msgid "Sent Emails"
+msgstr "Gönderilen E-postalar"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__sequence
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__sequence
+msgid "Sequence"
+msgstr "Sıra"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__password
+msgid "Share Password"
+msgstr "Parolayı Paylaş"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__is_shared
+msgid "Shared Mailbox"
+msgstr "Paylaşılan Posta Kutusu"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__show_recommendation
+msgid "Show Email Hosting Recommendation"
+msgstr "E-posta Barındırma Önerisini Göster"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show Once"
+msgstr "Bir Kez Göster"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show all emails from all folders (Alt+A)"
+msgstr "Tüm klasörlerden tüm e-postaları göster (Alt+A)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show all mailboxes and folders"
+msgstr "Tüm posta kutularını ve klasörleri göster"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show only incoming messages (Alt+I)"
+msgstr "Sadece gelen mesajları göster (Alt+I)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show only sent or outgoing messages (Alt+T)"
+msgstr "Sadece gönderilen/giden mesajları göster (Alt+T)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show only starred (important) emails (Alt+R)"
+msgstr "Sadece işaretlenen (önemli) e-postaları göster (Alt+R)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show only unread emails (Alt+U)"
+msgstr "Sadece okunmamış e-postaları göster (Alt+U)"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"Show or hide the Metzler IT recommendation block below the mailbox settings."
+msgstr "Posta kutusu ayarlarının altında Metzler IT öneri bloğunu göster veya gizle."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__signature
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Signature"
+msgstr "İmza"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_sync_manual_wizard.py:0
+msgid "Similar sync tasks already exist for this account"
+msgstr "Bu hesap için benzer senkronizasyon görevleri zaten mevcut"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__size
+msgid "Size (bytes)"
+msgstr "Boyut (bayt)"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__formatted_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__formatted_date
+msgid "Smart Date"
+msgstr "Akıllı Tarih"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__spam
+msgid "Spam"
+msgstr "İstenmeyen Posta"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Star"
+msgstr "Yıldızla"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__starred
+msgid "Starred"
+msgstr "Yıldızlı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__started_at
+msgid "Started At"
+msgstr "Başlangıç Zamanı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__state
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "State"
+msgstr "Durum"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__name
+msgid "Subject"
+msgstr "Konu"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Suspicious content has been blocked for your safety."
+msgstr "Güvenliğiniz için şüpheli içerik engellendi."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__sync_job_ids
+msgid "Sync Jobs"
+msgstr "Senkronizasyon Görevleri"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_sync_manual_wizard.py:0
+msgid "Synchronization tasks have been created for each day."
+msgstr "Her gün için senkronizasyon görevleri oluşturuldu."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_form
+msgid "System Info"
+msgstr "Sistem Bilgisi"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Tag name"
+msgstr "Etiket adı"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/assign_tags_dialog.esm.js:0
+msgid "Tag with this name already exists."
+msgstr "Bu isimde bir etiket zaten var."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__tag_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__tag_ids
+msgid "Tags"
+msgstr "Etiketler"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Test Incoming Server"
+msgstr "Gelen Sunucu Testi"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Test Outgoing Server"
+msgstr "Giden Sunucu Testi"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.res_partner_view_form_inherit_maildesk
+msgid "The user who has marked this partner as trusted."
+msgstr "Bu partneri güvenilir olarak işaretleyen kullanıcı."
+
+#. module: maildesk_mail_client
+#: model:ir.model.constraint,message:maildesk_mail_client.constraint_mailbox_attachment_unique_attachment_part
+msgid "This attachment part already exists for this message!"
+msgstr "Bu ek parçası bu mesaj için zaten mevcut!"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "This message will now show full content."
+msgstr "Bu mesaj şimdi tam içerik gösterecek."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"Tired of relying on Gmail or Outlook? Get your own\n"
+"                <strong>secure, managed IMAP server</strong> with deep Odoo integration:"
+msgstr "Gmail veya Outlook'a bağımlı olmaktan sıkıldınız mı? Kendi\n"
+"                <strong>güvenli, yönetilen IMAP sunucunuzu</strong> derin Odoo entegrasyonu ile edinin:"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__date_to
+msgid "To Date"
+msgstr "Bitiş Tarihi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__to_display
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__to_display
+msgid "To Display"
+msgstr "Görüntüleye"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid ""
+"To view the full content, we recommend checking this email or only trusting "
+"known senders."
+msgstr "Tam içeriği görmek için, bu e-postayı kontrol etmenizi veya yalnızca tanınan gönderenlere güvenmenizi öneririz."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid ""
+"To view the full content, we recommend checking this email with AI first or "
+"only trusting known senders."
+msgstr "Tam içeriği görmek için, önce bu e-postayı yapay zeka ile kontrol etmenizi veya yalnızca tanınan gönderenlere güvenmenizi öneririz."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "To:"
+msgstr "Kime:"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Toggle select all messages"
+msgstr "Tüm mesajların seçimini değiştir"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Toggle star"
+msgstr "Yıldız durumunu değiştir"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_res_partner__email_count
+#: model:ir.model.fields,help:maildesk_mail_client.field_res_users__email_count
+msgid "Total number of emails sent by the partner"
+msgstr "Ortak tarafından gönderilen toplam e-posta sayısı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__trash
+msgid "Trash"
+msgstr "Çöp Kutusu"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Trust Sender"
+msgstr "Gönderene Güven"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Trust the sender of this email for all future communications."
+msgstr "Bu e-postanın gönderenine tüm gelecekteki iletişimler için güven."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Trust this email and display its full content."
+msgstr "Bu e-postaya güven ve tam içeriğini göster."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__trusted_by_user_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__trusted_by_user_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_partner__trusted_by_user_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_users__trusted_by_user_id
+msgid "Trusted By User"
+msgstr "Kullanıcı tarafından Güvenilen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_partner__trusted_partner
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_users__trusted_partner
+msgid "Trusted Partner"
+msgstr "Güvenilen Ortak"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/email_input_field.xml:0
+msgid "Type email or name..."
+msgstr "E-posta veya isim yaz..."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__uid_validity
+msgid "UID Validity"
+msgstr "UID Geçerliliği"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Unable to determine or create partner."
+msgstr "Ortak belirlenemedi veya oluşturulamadı."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Undo"
+msgstr "Geri Al"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Unread"
+msgstr "Okunmamış"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/compose_mail.esm.js:0
+msgid "Uploading error"
+msgstr "Yükleme hatası"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__access_user_ids
+msgid "Users with Access"
+msgstr "Erişimi Olan Kullanıcılar"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/partner_card_popover.xml:0
+msgid "View Profile"
+msgstr "Profili Görüntüle"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__website_message_ids
+msgid "Website Messages"
+msgstr "Site Mesajları"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_thread__website_message_ids
+msgid "Website communication history"
+msgstr "Site iletişim geçmişi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_account__show_recommendation
+msgid "Whether to show the Metzler IT email hosting recommendation block."
+msgstr "Metzler IT e-posta barındırma öneri bloğunun gösterilip gösterilmeyeceği."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Yesterday"
+msgstr "Dün"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_account_wizard.py:0
+msgid "You already have access to this mailbox."
+msgstr "Bu posta kutusuna zaten erişiminiz var."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "You do not have access to one or more selected messages."
+msgstr "Seçilen bir veya daha fazla mesaja erişiminiz yok."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "You do not have access to this mailbox account."
+msgstr "Bu posta kutusu hesabına erişiminiz yok."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_sync.py:0
+msgid "You have a new email."
+msgstr "Yeni bir e-postanız var."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_sync.py:0
+msgid "You have {} new emails."
+msgstr "{} yeni e-postanız var."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "[Draft]"
+msgstr "[Taslak]"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "messages displayed"
+msgstr "görüntülenen mesajlar"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "selected)"
+msgstr "seçili)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "total)"
+msgstr "toplam)"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_sync.py:0
+msgid "{} new messages"
+msgstr "{} yeni mesaj"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "🚀 Take Back Control of Your Email — Fully Inside Odoo!"
+msgstr "🚀 E-postalarınızın Kontrolünü Geri Alın — Tamamen Odoo İçinde!"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_sync.py:0
+msgid "{} new messages"
+msgstr "{} yeni mesaj"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_account__server_kind__dovecot
+msgid "Dovecot/Mailcow-like"
+msgstr "Dovecot/Mailcow-benzeri"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Concurrent write error (safe_write_with_retry)."
+msgstr "Eşzamanlı yazma hatası (safe_write_with_retry)."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_account__imap_capabilities
+msgid "Cached list of IMAP server capabilities (JSON)."
+msgstr "IMAP sunucu yeteneklerinin önbelleğe alınmış listesi (JSON)."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_account__smtp_capabilities
+msgid "Cached list of SMTP server capabilities (JSON)."
+msgstr "SMTP sunucu yeteneklerinin önbelleğe alınmış listesi (JSON)."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk_notifications.esm.js:0
+msgid "new messages"
+msgstr "yeni mesajlar"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_sync.py:0
+msgid "You have a new email."
+msgstr "Yeni bir e-postanız var."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "This wizard allows you to manually queue an email synchronization job for the selected mailbox account."
+msgstr "Bu sihirbaz, seçilen posta kutusu için manuel olarak e-posta senkronizasyonu kuyruğa almanızı sağlar."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk_notifications.esm.js:0
+msgid "You have a new email. Click to read."
+msgstr "Yeni bir e-postanız var. Okumak için tıklayın."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_sync.py:0
+msgid "You have {} new emails."
+msgstr "{} yeni e-postanız var."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_wizard_form
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "Cancel"
+msgstr "İptal"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "<strong>Note:</strong> This feature works only for IMAP-based accounts (including Gmail and Outlook IMAP)."
+msgstr "<strong>Not:</strong> Bu özellik yalnızca IMAP tabanlı hesaplarda çalışır (Gmail ve Outlook IMAP dahil)."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "<strong>Date Range:</strong> You must specify a start and end date. The system will fetch all messages received within this period."
+msgstr "<strong>Tarih Aralığı:</strong> Başlangıç ve bitiş tarihini belirtmelisiniz. Sistem bu dönemde alınan tüm mesajları getirecektir."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "<strong>One-click mail server setup:</strong> with the Connector, you can create fully working incoming &amp; outgoing servers directly from Odoo—no need to touch the mail server UI. Just click, and it’s ready."
+msgstr "<strong>Tek tıkla mail sunucusu kurulumu:</strong> Bağlayıcı ile, Odoo içinden tam çalışan gelen ve giden sunucular oluşturabilirsiniz — mail sunucusu arayüzüne girmenize gerek yok. Sadece tıklayın ve hazır."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Allow Personal Connection"
+msgstr "Kişisel Bağlantıya İzin Ver"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_res_partner__email_count_live
+#: model:ir.model.fields,help:maildesk_mail_client.field_res_users__email_count_live
+msgid "Always recalculated number of emails sent by the partner"
+msgstr "Partner tarafından gönderilen e-posta sayısı her zaman yeniden hesaplanır"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "Date Range"
+msgstr "Tarih Aralığı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_account__server_kind__gmail
+msgid "Gmail / Google Workspace"
+msgstr "Gmail / Google Workspace"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__x_gm_msgid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__x_gm_msgid
+msgid "Gmail Message ID"
+msgstr "Gmail Mesaj ID"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__has_message
+msgid "Has Message"
+msgstr "Mesaj Var"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__heartbeat_at
+msgid "Heartbeat At"
+msgstr "Kalp Atışı Zamanı"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "How it works"
+msgstr "Nasıl çalışır"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid "Incoming mail server %s is already linked to another mailbox account."
+msgstr "Gelen posta sunucusu %s zaten başka bir posta kutusu hesabına bağlı."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk_notifications.esm.js:0
+msgid "Including"
+msgstr "Dahil"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__imap_capabilities
+msgid "IMAP Capabilities"
+msgstr "IMAP Yetenekleri"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "If enabled, users can connect to this mailbox account themselves by entering the email and password."
+msgstr "Etkinleştirilirse, kullanıcılar e-posta ve şifre girerek bu posta kutusuna kendileri bağlanabilir."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__is_deleted
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__is_deleted
+msgid "Is Deleted"
+msgstr "Silindi"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__last_smtp_check
+msgid "Last SMTP Capability Check"
+msgstr "Son SMTP Yetenek Kontrolü"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__items_processed
+msgid "Items Processed"
+msgstr "İşlenen Öğeler"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__last_capability_check
+msgid "Last Capability Check"
+msgstr "Son Yetenek Kontrolü"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__last_deep_check
+msgid "Last Deep Check"
+msgstr "Son Derin Kontrol"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.ir_cron_mailbox_discover_folders_ir_actions_server
+msgid "Mailbox: Discover / Sync Folders"
+msgstr "Posta Kutusu: Klasörleri Keşfet / Senkronize Et"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.ir_cron_mailbox_rescue_jobs_ir_actions_server
+msgid "Mailbox: Rescue Stuck Jobs"
+msgstr "Posta Kutusu: Takılan İşleri Kurtar"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.client,name:maildesk_mail_client.maildesk_dashboard_action
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.res_partner_view_form_inherit_maildesk
+msgid "Maildesk"
+msgstr "Maildesk"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mailbox_sync_manual_wizard
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "Manual Mail Sync"
+msgstr "Manuel Mail Senkronizasyonu"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_partner__email_count_live
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_users__email_count_live
+msgid "Sent Email Count (live)"
+msgstr "Gönderilen E-Posta Sayısı (canlı)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__sender_name
+msgid "Sender Name"
+msgstr "Gönderen Adı"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__smtp_capabilities
+msgid "SMTP Capabilities"
+msgstr "SMTP Yetenekleri"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__progress
+msgid "Progress"
+msgstr "İlerleme"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+msgid "PDF"
+msgstr "PDF"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid "Outgoing mail server %s is already linked to another mailbox account."
+msgstr "Giden posta sunucusu %s zaten başka bir posta kutusu hesabına bağlı."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_account__server_kind__outlook
+msgid "Outlook / Microsoft 365"
+msgstr "Outlook / Microsoft 365"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_account__server_kind__other
+msgid "Other/Unknown"
+msgstr "Diğer/Bilinmeyen"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Only administrators can modify 'model' and 'res_id' fields."
+msgstr "Yalnızca yöneticiler 'model' ve 'res_id' alanlarını değiştirebilir."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__name
+msgid "Name"
+msgstr "Ad"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_account__sender_name
+msgid "Name that will appear as sender when sending emails."
+msgstr "E-posta gönderirken gönderen olarak görünecek ad."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__max_email_size
+msgid "Max Email Size (MB)"
+msgstr "Maksimum E-Posta Boyutu (MB)"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__server_kind
+msgid "Server Kind"
+msgstr "Sunucu Türü"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__spam
+msgid "Spam"
+msgstr "Spam"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_manual_wizard_form
+msgid "Sync Now"
+msgstr "Şimdi Senkronize Et"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid "No folders configured for this mailbox account. Please configure folders first."
+msgstr "Bu posta kutusu için klasörler yapılandırılmamış. Lütfen önce klasörleri ayarlayın."

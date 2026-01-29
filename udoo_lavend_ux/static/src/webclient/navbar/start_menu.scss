@@ -1,0 +1,44 @@
+.island {
+
+    &.o_wdl {
+        .u_app_group {
+            @include media-breakpoint-up(md) {
+                margin-inline: 24% !important;
+            }
+
+            .island_apps {
+                padding-inline: 0 !important;
+            }
+
+            .o_nsub {
+                font-size: .85rem;
+            }
+        }
+    }
+
+    .island_area {
+        .o_nsub {
+            font-size: smaller;
+        }
+
+        .u_app_group {
+            background-color: rgba($o-gray-600, .02);
+            border: 1px solid rgba(mix($o-gray-700, $o-community-color), .26);
+            border-radius: $o-border-radius-md;
+            margin: 17px;
+
+            .island_apps {
+                padding-left: 0;
+                justify-content: center;
+
+                .u_app_square {
+                    width: 90px;
+                }
+
+                .u_app_caption {
+                    font-size: $o-font-size-base;
+                }
+            }
+        }
+    }
+}

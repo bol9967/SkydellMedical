@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Inherit auth_signup.fields template to add NPI field -->
+        <template id="auth_signup_fields_npi" inherit_id="auth_signup.fields" name="Auth Signup form fields with NPI">
+            <xpath expr="//input[@id='name']/parent::div" position="after">
+                <!-- NPI field - visible for portal/public signups and portal invitations (not internal user invitations) -->
+                <!-- Also visible on password set page (only_passwords) if NPI exists on partner -->
+                <div class="mb-3 field-npi_number" t-if="not is_internal_invitation or (only_passwords and npi_number)">
+                    <label for="npi_number">NPI # <span class="text-danger" t-if="not only_passwords">*</span></label>
+                    <input type="text" name="npi_number" t-att-value="npi_number" id="npi_number" 
+                           class="form-control form-control-sm" 
+                           placeholder="e.g. 1234567890"
+                           maxlength="10"
+                           t-att-class="'form-control form-control-sm is-invalid' if error and 'npi' in str(error).lower() else 'form-control form-control-sm'"
+                           t-att-readonly="'readonly' if only_passwords else None"/>
+                    <div id="npi_validation_feedback" class="mt-1" style="display: none;">
+                        <small id="npi_validation_message"></small>
+                    </div>
+                    <div class="invalid-feedback" t-if="error and 'npi' in str(error).lower()">
+                        <t t-esc="error"/>
+                    </div>
+                    <small class="form-text text-muted" t-if="not only_passwords">NPI number is required and must be valid to complete signup.</small>
+                </div>
+            </xpath>
+        </template>
+        
+        <!-- Enhance error display for NPI errors in signup form -->
+        <!-- <template id="auth_signup_npi_error" inherit_id="auth_signup.signup">
+            <xpath expr="//p[hasclass('alert', 'alert-danger')]" position="replace">
+                <p class="alert alert-danger" t-if="error" role="alert">
+                    <strong>Error:</strong> <t t-esc="error"/>
+                </p>
+            </xpath>
+        </template> -->
+    </data>
+</odoo>
+

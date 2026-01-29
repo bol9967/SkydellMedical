@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="view_commission_plan_form" model="ir.ui.view">
+        <field name="name">commission.plan.form</field>
+        <field name="model">commission.plan</field>
+        <field name="arch" type="xml">
+            <form string="Commission Plan">
+                <header>
+                    <button name="action_approve" string="Approve" type="object" 
+                            class="btn-primary"
+                            invisible="state != 'draft'" 
+                            groups="ox_sales_commission.group_commission_sale_admin"/>
+                    <button name="action_cancel" string="Cancel" type="object" 
+                            class="btn-danger"
+                            invisible="state not in ('draft', 'approved')" groups="ox_sales_commission.group_commission_sale_admin"/>
+                    <button name="action_draft" string="Set to Draft" type="object" 
+                            class="btn-warning"
+                            invisible="state != 'cancelled'" groups="ox_sales_commission.group_commission_sale_admin"/>
+                    <button name="action_closed" string="Set to Closed" type="object" 
+                            class="btn-success"
+                            invisible="state != 'approved'" 
+                            groups="ox_sales_commission.group_commission_sale_admin"/>
+                            
+                    <field name="state" widget="statusbar"  
+                        decoration-warning="state == 'draft'" 
+                        decoration-success="state == 'approved'"
+                        decoration-danger="state == 'cancelled'"  
+                        invisible="state != 'cancelled'" statusbar_visible="draft,approved,cancelled"/>
+
+
+                    <field name="state" widget="statusbar"
+                        decoration-warning="state == 'draft'"  
+                        decoration-info="state == 'approved'"
+                        decoration-danger="state == 'cancelled'" 
+                        decoration-success="state == 'closed'"  
+                        invisible="state == 'cancelled'" 
+                        statusbar_visible="draft,approved,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button type="object" name="action_view_commissions" class="oe_stat_button" icon="fa-line-chart"
+                                string="Commissions"/>
+                    </div>
+                    <group>
+                        <group string="Period and Participants">
+                            <!-- Ensure enable_manager_commission is loaded early and computed -->
+                            <field name="enable_manager_commission" invisible="1"/>
+                            <field name="commission_plan_type" readonly="state in ('approved','closed') and commission_tracking_ids"/>
+                            <field name="name" readonly="state in ('approved','closed') and commission_tracking_ids"/>
+                            <field name="target_period_start" readonly="state in ('approved','closed') and commission_tracking_ids"/>
+                            <field name="target_period_end" readonly="state in ('approved','closed') and commission_tracking_ids"/>
+                            <field name="disbursement_frequency" readonly="state in ('approved','closed') and commission_tracking_ids" help="If you select weekly, then bill will be generated on Monday, if you select biweekly, then bill will be generated on 1st and 15th of month, if you select monthly, then bill will be generated on 1st of month"/>
+                            <field name="admin_person_id" invisible="commission_plan_type == 'sales_team'" required="commission_plan_type == 'admin'" readonly="state in ('approved','closed') and commission_tracking_ids" help="Admin person will receive commission for ALL sales orders during the plan period"/>
+                            <field name="salesperson_ids" widget="many2many_tags" invisible="commission_plan_type == 'admin'" required="commission_plan_type == 'sales_team'"
+                                   readonly="state in ('approved','closed') and commission_tracking_ids"/>
+                            <field name="company_id" groups="base.group_multi_company" readonly="state in ('approved','closed') and commission_tracking_ids"/>
+                        </group>
+                        <group string="Commission Rates">
+                            <field name="first_order_commission" readonly="state in ('approved','closed') and commission_tracking_ids" invisible="commission_plan_type == 'admin'" help="Percentage for first-time customer orders"/>
+                            <field name="residual_commission" readonly="state in ('approved','closed') and commission_tracking_ids" invisible="commission_plan_type == 'admin'" help="Percentage for repeat customer orders"/>
+                            <field name="first_order_commission" string="Commission Rate (%)" readonly="state in ('approved','closed') and commission_tracking_ids" invisible="commission_plan_type == 'sales_team'" help="Commission percentage applied to all sales orders for admin"/>
+                            
+                            <div class="alert alert-info" role="alert" style="margin: 10px 0; padding: 12px; border-left: 4px solid #17a2b8;" invisible="commission_plan_type == 'admin'">
+                                <h5 style="margin-top: 0; margin-bottom: 8px;"><strong>Legend Details - Salesperson Commission:</strong></h5>
+                                <div style="margin-left: 10px;">
+                                    <p style="margin: 5px 0;"><b>First Order Commission:</b></p>
+                                    <ul style="margin: 3px 0 10px 20px; padding-left: 15px;">
+                                        <li>Base Amount = Order Amount (untaxed, excluding delivery/payment fees)</li>
+                                        <li>Commission = Base Amount × First Order Commission %</li>
+                                        <li><i>Example: Order $1000 (untaxed), First Order 20% = $200 commission</i></li>
+                                    </ul>
+                                    <p style="margin: 5px 0;"><b>Residual Order Commission:</b></p>
+                                    <ul style="margin: 3px 0 10px 20px; padding-left: 15px;">
+                                        <li>Base Amount = Order Amount (untaxed, excluding delivery/payment fees)</li>
+                                        <li>Commission = Base Amount × Residual Commission %</li>
+                                        <li><i>Example: Order $1000 (untaxed), Residual 10% = $100 commission</i></li>
+                                    </ul>
+                                    <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.9em; color: #6c757d;">
+                                        <i><b>Note:</b> All Base Amount calculations use untaxed amounts. Delivery charges and payment processing fees are excluded from commission calculations.</i>
+                                    </p>
+                                </div>
+                            </div>
+                            <field name="company_id" groups="base.group_multi_company" readonly="1" invisible="1"/>
+                            <!-- extra company field kept invisible to preserve prior layout compatibility -->
+                        </group>
+                        <group string="Manager Commission Rates" 
+                               invisible="commission_plan_type == 'admin' or not enable_manager_commission">
+                            <field name="enable_manager_commission" invisible="1"/>
+                            <field name="manager_commission_type" 
+                                   readonly="state != 'draft'"
+                                   required="enable_manager_commission and commission_plan_type == 'sales_team' and state == 'draft'"
+                                   help="Base Commission: Calculated on order amount (excluding delivery/payment fees). Net Commission: Calculated on (Order Amount - (Product Cost + Salesperson Commission)), all excluding delivery/payment fees. Can only be set when creating new plans (draft state)."/>
+                            <field name="manager_first_order_commission" 
+                                   readonly="state != 'draft'"
+                                   required="enable_manager_commission and commission_plan_type == 'sales_team' and state == 'draft'"
+                                   help="Commission percentage for sales team manager on first orders from their team. Can only be set when creating new plans (draft state). Cannot be added to approved/active plans."/>
+                            <field name="manager_residual_commission" 
+                                   readonly="state != 'draft'"
+                                   required="enable_manager_commission and commission_plan_type == 'sales_team' and state == 'draft'"
+                                   help="Commission percentage for sales team manager on repeat orders from their team. Can only be set when creating new plans (draft state). Cannot be added to approved/active plans."/>
+                            
+                            <div class="alert alert-info" role="alert" style="margin: 10px 0; padding: 12px; border-left: 4px solid #17a2b8;">
+                                <h5 style="margin-top: 0; margin-bottom: 8px;"><strong>Legend Details - Manager Commission:</strong></h5>
+                                <div style="margin-left: 10px;">
+                                    <p style="margin: 5px 0;"><b>1. Base Commission:</b></p>
+                                    <ul style="margin: 3px 0 10px 20px; padding-left: 15px;">
+                                        <li>Base Amount = Order Amount (untaxed, excluding delivery/payment fees)</li>
+                                        <li>Manager Commission = Base Amount × Manager Commission %</li>
+                                        <li><i>Example: Order $1000 (untaxed), Manager 5% = $50 commission</i></li>
+                                    </ul>
+                                    <p style="margin: 5px 0;"><b>2. Net Commission:</b></p>
+                                    <ul style="margin: 3px 0 10px 20px; padding-left: 15px;">
+                                        <li>Base Amount = Order Amount (untaxed) - (Product Cost + Salesperson Commission)</li>
+                                        <li>All amounts exclude delivery/payment fees</li>
+                                        <li>Product Cost = Sum of (standard_price × quantity) with UOM conversion</li>
+                                        <li>Manager Commission = Base Amount × Manager Commission %</li>
+                                        <li><i>Example: Order $1000 (untaxed), Cost $600, Salesperson $200, Manager 5% = ($1000 - $800) × 5% = $10 commission</i></li>
+                                    </ul>
+                                    <p style="margin-top: 10px; margin-bottom: 0; font-size: 0.9em; color: #6c757d;">
+                                        <i><b>Note:</b> All Base Amount calculations use untaxed amounts. Delivery charges and payment processing fees are excluded from all commission calculations.</i>
+                                    </p>
+                                </div>
+                            </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Cron (Testing)">
+                            <label for="cron_run_date" string="Run Date"/>
+                            <field name="cron_run_date" widget="string" help="Testing only: override today's date for cron logic" color="red"/>
+                            <div class="o_alert o_alert_info">
+                                <p>Use this to simulate the current date for cron execution during testing:</p>
+                                <ul>
+                                    <li><b>For Disbursement Frequency is Monthly</b>: set the 1st of a month</li>
+                                    <li><b>For Disbursement Frequency is Weekly</b>: set a Monday</li>
+                                    <li><b>For Disbursement Frequency is Biweekly</b>: set the 1st or 15th</li>
+                                </ul>
+
+                                <p><b>Note:</b> Go to scheduler actions find the "Generate Commission Vendor Bills" cron job and run it manually</p>
+                            </div>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!-- <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div> -->
+            </form>
+        </field>
+    </record>
+    
+    <!-- List View -->
+    <record id="view_commission_plan_list" model="ir.ui.view">
+        <field name="name">commission.plan.list</field>
+        <field name="model">commission.plan</field>
+        <field name="arch" type="xml">
+            <list string="Commission Plans">
+                <field name="commission_plan_type" widget="badge" decoration-info="commission_plan_type == 'sales_team'" decoration-warning="commission_plan_type == 'admin'"/>
+                <field name="name"/>
+                <field name="target_period_start" widget="string"/>
+                <field name="target_period_end" widget="string"/>
+                <field name="disbursement_frequency" widget="selection"/>
+                <field name="salesperson_ids" optional="show"/>
+                <field name="admin_person_id" optional="show"/>
+                <field name="first_order_commission" widget="number" optional="hide"/>
+                <field name="residual_commission" widget="number" optional="hide"/>
+                <field name="state" widget="badge" 
+                decoration-success="state == 'approved'" 
+                decoration-warning="state == 'closed'"
+                decoration-muted="state == 'draft'" decoration-danger="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+</odoo>

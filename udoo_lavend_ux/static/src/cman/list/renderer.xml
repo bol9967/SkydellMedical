@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+<t t-inherit="web.ListRenderer" t-inherit-mode="extension">
+    <xpath expr="//Dropdown/t[@t-set-slot='content']" position="inside">
+        <t t-if="this.udooEditable ? this.isUdooEditable() : false">
+            <div t-if="hasOptionalFields" class="dropdown-divider"/>
+            <DropdownItem closingMode="'none'" onSelected="() => this.openColumnManager()" class="'d-flex align-items-center'">
+                <i class="fa fa-wrench fa-fw me-2"/>
+                <span>Manage Columns</span>
+            </DropdownItem>
+        </t>
+    </xpath>
+</t>
+
+</templates>

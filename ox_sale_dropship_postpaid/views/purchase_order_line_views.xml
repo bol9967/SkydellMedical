@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add carrier field to purchase order line list view -->
+    <record id="purchase_order_line_tree_carrier" model="ir.ui.view">
+        <field name="name">purchase.order.line.list.carrier</field>
+        <field name="model">purchase.order.line</field>
+        <field name="inherit_id" ref="purchase.purchase_order_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="price_subtotal" position="after">
+                <field name="carrier_id" optional="hide" string="Delivery Method"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Add carrier field to purchase order line form view -->
+    <record id="purchase_order_line_form_carrier" model="ir.ui.view">
+        <field name="name">purchase.order.line.form.carrier</field>
+        <field name="model">purchase.order.line</field>
+        <field name="inherit_id" ref="purchase.purchase_order_line_form2"/>
+        <field name="arch" type="xml">
+            <field name="date_planned" position="after">
+                <field name="carrier_id" string="Delivery Method" 
+                       help="Shipping method copied from the related sale order"/>
+            </field>
+        </field>
+    </record>
+</odoo>
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<templates xml:space="preserve">
+  <t t-name="maildesk_mail_client.PartnerCardPopover" owl="1">
+    <div class="o_avatar_card">
+      <div class="card-body p-2">
+        <div class="d-flex align-items-start gap-2">
+          <span class="o_avatar pt-1 position-relative o_card_avatar">
+            <img
+              loading="lazy"
+              t-if="partner.id"
+              t-attf-src="/web/image/res.partner/{{partner.id}}/image_128"
+              class="rounded"
+            />
+          </span>
+          <div class="d-flex flex-column o_card_user_infos overflow-hidden">
+            <span class="fw-bold" t-out="partner.name" />
+            <t t-if="partner.function">
+              <span class="text-muted small" t-out="partner.function" />
+            </t>
+            <t t-if="partner.company_name">
+              <span class="text-muted small" t-out="partner.company_name" />
+            </t>
+            <span t-if="partner.email">
+              <i class="fa fa-fw fa-envelope me-1" /><t t-out="partner.email" />
+            </span>
+            <a
+              t-if="partner.phone"
+              class="o-mail-avatar-card-tel text-truncate"
+              t-att-title="partner.phone"
+              t-att-href="'tel:' + partner.phone"
+            >
+              <i class="fa fa-fw fa-phone me-1" /><t t-out="partner.phone" />
+            </a>
+          </div>
+        </div>
+        <div class="flex-wrap gap-2 mt-2">
+          <div class="justify-content-end d-flex align-items-baseline">
+            <div class="d-flex gap-2 o_avatar_card_buttons">
+              <button
+                class="btn btn-secondary btn-sm"
+                t-on-click.stop="onClickViewProfile"
+              >View Profile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </t>
+</templates>

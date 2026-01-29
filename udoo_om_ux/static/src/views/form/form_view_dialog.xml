@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="web.FormViewDialog" t-inherit-mode="extension">
+        <xpath expr="//Dialog" position="attributes">
+            <attribute name="contentClass">dropinCls</attribute>
+            <attribute name="size">'xl'</attribute>
+        </xpath>
+        <xpath expr="//Dialog/View" position="after">
+            <!-- ========== ✅ CHANGED: Restructured conditional rendering ========== -->
+            <!-- ❌ REMOVED: <div> wrapper (not needed, using <t> elements instead) -->
+            <!-- ❌ REMOVED: Single t-if condition directly on <Chatter> component -->
+            <!-- ✅ ADDED: Outer <t t-if> for business logic check -->
+            <t t-if="viewProps.context.coChatter or (ui.dropinUid == props.resModel and ui.dropinMode == 'chatter')">
+                <!-- ========== ✅ ADDED: Inner check to verify Chatter component exists before rendering ========== -->
+                <!-- This prevents "Missing template: portal.Chatter" error when Chatter is not available (frontend) -->
+                <t t-if="hasChatterComponent">
+                    <Chatter threadId="props.resId"
+                        threadModel="props.resModel"/>
+                </t>
+            </t>
+            <!-- ❌ REMOVED: </div> closing tag -->
+        </xpath>
+    </t>
+</templates>

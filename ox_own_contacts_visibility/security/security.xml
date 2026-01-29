@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Restricted group -->
+    <record id="group_sales_contact_restricted" model="res.groups">
+        <field name="name">Sales: Restricted Contact Access</field>
+        <field name="category_id" ref="base.module_category_sales_sales"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- Team Leader group for contacts -->
+    <record id="group_contact_team_leader" model="res.groups">
+        <field name="name">Contact Team Leader</field>
+        <field name="category_id" ref="base.module_category_sales_sales"/>
+        <field name="implied_ids" eval="[(4, ref('group_sales_contact_restricted'))]"/>
+        <field name="comment">
+            Team leaders can view their own contacts plus contacts of users in sales teams they lead.
+        </field>
+    </record>
+
+    <!-- Rule: can see own created contacts OR contacts assigned to them -->
+    <!-- Note: This rule is bypassed in Python code for users with settings/system access -->
+    <record id="rule_sales_contact_own_or_assigned" model="ir.rule">
+        <field name="name">Sales: Own or Assigned Contacts</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups" eval="[(4, ref('ox_own_contacts_visibility.group_sales_contact_restricted'))]"/>
+        <field name="domain_force">
+            [
+                '|', '|', '|', '|', '|', '|',
+                ('id', '=', user.partner_id.id),
+                ('create_uid', '=', user.id),
+                ('user_id', '=', user.id),
+                ('message_partner_ids', 'in', user.partner_id.ids),
+                ('parent_id.create_uid', '=', user.id),
+                ('parent_id.user_id', '=', user.id),
+                ('id', '=', 1)
+            ]
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="wub.ColorPaletteConfig">
+        <Dialog header="false">
+            <div class="o_color_palette_config container">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h2 class="fw-bold">Color Scheme Options</h2>
+                        <p class="text-muted mb-0">
+                            Select a color palette and apply it to your Odoo environment.
+                        </p>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+                    <t t-foreach="Object.entries(presets)" t-as="item" t-key="item[0]">
+                        <t t-set="presetKey" t-value="item[0]"/>
+                        <t t-set="presetVal" t-value="item[1]"/>
+
+                        <div class="col">
+                            <div class="card h-100 o_palette_card" t-on-click="() => {state.preset = presetKey}" t-att-class="{'border-primary': state.preset === presetKey}">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">
+                                        <t t-esc="presetVal.name"/>
+                                    </h5>
+                                    <p class="card-text text-muted flex-grow-1">
+                                        <t t-esc="presetVal.description"/>
+                                    </p>
+                                    <div class="d-flex mt-3">
+                                        <t t-foreach="presetVal.grayscale" t-as="color" t-key="color">
+                                            <div class="o_preview_swatch me-1" t-att-style="'background-color:' + color + '; width: 18px; height: 18px; border-radius: 3px;'" t-att-title="color" />
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-outline-danger" t-on-click="() => this.reset()">
+                    Reset
+                </button>
+                <button class="btn btn-secondary ms-auto" t-on-click="env.dialogData.close">
+                    Close
+                </button>
+                <button class="btn btn-primary" t-on-click="apply">
+                    Apply
+                </button>
+            </t>
+        </Dialog>
+    </t>
+</templates>

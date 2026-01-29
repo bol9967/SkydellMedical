@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Reusable Address Block -->
+    <template id="report_saleorder_address_block_npi">
+        <div t-if="partner.name">
+            <t t-if="partner.title">
+                <t t-if="partner.title.shortcut">
+                    <span t-esc="partner.title.shortcut"/> 
+                </t>
+                <t t-elif="partner.title.name">
+                    <span t-esc="partner.title.name"/> 
+                </t>
+            </t>
+            <span t-esc="partner.name"/>
+        </div>
+
+        <div t-if="partner.npi_number">
+            NPI #: <span t-esc="partner.npi_number"/>
+        </div>
+
+        <div t-if="partner.email">
+            <i class="fa fa-envelope"/> 
+            <span t-esc="partner.email"/>
+        </div>
+
+        <div t-if="partner.street">
+            <span t-esc="partner.street"/>
+            <t t-if="partner.street2">
+                <br/><span t-esc="partner.street2"/>
+            </t>
+        </div>
+
+        <div t-if="partner.city or partner.state_id or partner.zip">
+            <span t-esc="partner.city"/>
+            <t t-if="partner.state_id">
+                <span> </span><span t-esc="partner.state_id.name"/>
+            </t>
+            <t t-if="partner.zip">
+                <span> </span><span t-esc="partner.zip"/>
+            </t>
+        </div>
+
+        <div t-if="partner.country_id">
+            <span t-esc="partner.country_id.name"/>
+        </div>
+
+        <div t-if="partner.phone">
+            <i class="fa fa-phone"/> 
+            <span t-esc="partner.phone"/>
+        </div>
+
+        <div t-if="partner.mobile">
+            <i class="fa fa-mobile"/> 
+            <span t-esc="partner.mobile"/>
+        </div>
+
+        <div t-if="partner.vat">
+            VAT: <span t-esc="partner.vat"/>
+        </div>
+    </template>
+
+
+    <!-- Inherit Sale Order Report -->
+    <template id="report_saleorder_npi_native_full"
+              name="Sales Order Report with Title, NPI, and Address Logic"
+              inherit_id="sale.report_saleorder_document">
+
+        <xpath expr="//t[@t-if='doc.partner_shipping_id == doc.partner_invoice_id                              and doc.partner_invoice_id != doc.partner_id                              or doc.partner_shipping_id != doc.partner_invoice_id']" position="replace">
+
+            <!-- 🧩 Full conditional structure -->
+            <t t-if="doc.partner_id == doc.partner_invoice_id == doc.partner_shipping_id">
+                <t t-set="information_block">
+                    <strong>Invoicing and Shipping Address</strong>
+                    <div>
+                        <t t-call="ox_partner_npi.report_saleorder_address_block_npi">
+                            <t t-set="partner" t-value="doc.partner_id"/>
+                        </t>
+                    </div>
+                </t>
+            </t>
+
+            <t t-elif="doc.partner_shipping_id == doc.partner_invoice_id and doc.partner_invoice_id != doc.partner_id">
+                <t t-set="information_block">
+                    <strong>Invoicing and Shipping Address</strong>
+                    <div>
+                        <t t-call="ox_partner_npi.report_saleorder_address_block_npi">
+                            <t t-set="partner" t-value="doc.partner_invoice_id"/>
+                        </t>
+                    </div>
+                </t>
+            </t>
+
+            <t t-else="">
+                <t t-set="information_block">
+                    <strong>Invoicing Address</strong>
+                    <div>
+                        <t t-call="ox_partner_npi.report_saleorder_address_block_npi">
+                            <t t-set="partner" t-value="doc.partner_invoice_id"/>
+                        </t>
+                    </div>
+
+                    <strong class="d-block mt-3">Shipping Address</strong>
+                    <div>
+                        <t t-call="ox_partner_npi.report_saleorder_address_block_npi">
+                            <t t-set="partner" t-value="doc.partner_shipping_id"/>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+
+    </template>
+</odoo>

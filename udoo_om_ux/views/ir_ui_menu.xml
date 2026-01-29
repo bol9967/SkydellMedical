@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="om_edit_menu_list" model="ir.ui.view">
+        <field name="model">ir.ui.menu</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="99"/>
+        <field name="arch" type="xml">
+            <list string="Menu" editable="bottom">
+                <button type="object" name="u_open_detail" class="btn-secondary" string="Open" icon="oi-arrow-right" width="80"/>
+                <field name="sequence" widget="handle" width="38" class="me-3"/>
+                <field name="name" string="Name"/>
+                <field name="web_icon_data" string="Icon Image" widget="image" options="{'size':[32,32]}" width="100"/>
+                <field name="web_icon" string="Icon Plug" placeholder="e.g. ri-home-line,inherit,inherit"/>
+                <field name="action" groups="base.group_system"/>
+            </list>
+        </field>
+    </record>
+    <record id="om_edit_menu_form" model="ir.ui.view">
+        <field name="model">ir.ui.menu</field>
+        <field name="priority" eval="99"/>
+        <field name="arch" type="xml">
+            <form string="Menu">
+                <header>
+                    <button string="Reset Icon" icon="fa-undo" type="object" name="u_reset_icon" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" string="Name"/>
+                            <field name="action" groups="base.group_system"/>
+                        </group>
+                        <group>
+                            <field name="web_icon" string="Icon Plug" placeholder="e.g. ri-home-line,inherit,inherit"/>
+                            <field name="web_icon_data" string="Icon Image" widget="image" options="{'size':[32,32]}"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Submenus" name="submenus">
+                            <field name="child_id" context="{'default_parent_id': id, 'list_view_ref': 'udoo_om_ux.om_edit_menu_list', 'form_view_ref': 'udoo_om_ux.om_edit_menu_form'}"/>
+                        </page>
+                        <page string="Visibility" name="access_rights" groups="base.group_system">
+                            <separator string="Status"/>
+                            <div class="text-muted mb-2">
+                                Rules: Group list = OR. Excluded users always win.
+                            </div>
+                            <div class="text-warning" invisible="ex_users or groups_id">
+                                No visibility rules set. This menu is visible to everyone.
+                            </div>
+                            <div class="text-danger" invisible="not ex_users">
+                                Some users are explicitly excluded from this menu.
+                            </div>
+                            <div class="text-info" invisible="not groups_id">
+                                Groups assigned. Access limited to members, minus exclusions.
+                            </div>
+                            <group>
+                                <group string="Show by Group">
+                                    <field name="groups_id" widget="many2many_tags" placeholder="Visible to these groups (OR)" help="If empty, everyone can see. If set, any listed group can see."/>
+                                    <p colspan="2" class="text-muted o_row ps-1">Leave empty to make it visible to all users.</p>
+                                </group>
+                                <group string="Hide by User">
+                                    <field name="ex_users" widget="many2many_tags" placeholder="Add users" help="Users listed here will not see this menu, regardless of groups." domain="[('share','=',False)]" options="{'no_create': True, 'no_create_edit': True}"/>
+                                    <p colspan="2" class="text-muted o_row ps-1">Hides this menu for selected users.</p>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="om_edit_menu_search" model="ir.ui.view">
+        <field name="name">ir.ui.menu.search.ui</field>
+        <field name="model">ir.ui.menu</field>
+        <field name="inherit_id" ref="base.edit_menu_access_search"/>
+        <field name="arch" type="xml">
+            <filter name="inactive" position="before">
+                <filter string="Root Menu" name="root" domain="[('parent_id', '=', False)]"/>
+                <separator/>
+                <filter string="Patched Icon Plug" name="patch_icon" domain="[('bk_web_icon','!=',False)]"/>
+                <filter string="Pristine Icon Plug" name="pris_icon" domain="[('bk_web_icon','=',False)]"/>
+                <separator/>
+            </filter>
+            <filter name="inactive" position="after">
+                <group col="8" colspan="4" expand="0" string="Group By">
+                    <filter string="Parent" name="parent" context="{'group_by':'parent_id'}"/>
+                </group>
+            </filter>
+        </field>
+    </record>
+    <record id="action_edit_menu" model="ir.actions.act_window">
+        <field name="name">App Menu Manager</field>
+        <field name="res_model">ir.ui.menu</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('om_edit_menu_list')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('om_edit_menu_form')})]"/>
+        <field name="search_view_id" ref="om_edit_menu_search"/>
+        <field name="context">{'search_default_root':1, 'ir.ui.menu.full_list':1, 'safe_editor': 1}</field>
+        <field name="help">Manage and customize the items available and displayed in your Odoo system menu. You can delete an item by clicking on the box at the beginning of each line and then delete it through the button that appeared. Items can be assigned to specific groups in order to make them accessible to some users within the system.</field>
+    </record>
+    <record id="action_reset_web_icon" model="ir.actions.server">
+        <field name="name">Reset Icon Plug</field>
+        <field name="model_id" ref="base.model_ir_ui_menu"/>
+        <field name="state">code</field>
+        <field name="binding_model_id" ref="base.model_ir_ui_menu"/>
+        <field name="binding_view_types">list</field>
+        <field name="code">
+            action = env['ir.ui.menu'].browse(records.ids).u_reset_icon()
+        </field>
+    </record>
+</odoo>

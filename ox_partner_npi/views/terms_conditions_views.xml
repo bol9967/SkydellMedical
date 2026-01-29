@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Terms &amp; Conditions List View -->
+        <record id="view_terms_conditions_list" model="ir.ui.view">
+            <field name="name">terms.conditions.list</field>
+            <field name="model">terms.conditions</field>
+            <field name="arch" type="xml">
+                <list string="Terms &amp; Conditions">
+                    <field name="name"/>
+                    <field name="version"/>
+                    <field name="is_current" widget="boolean_toggle"/>
+                    <field name="active" widget="boolean_toggle"/>
+                    <field name="effective_date"/>
+                    <field name="acceptance_count"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Terms &amp; Conditions Form View -->
+        <record id="view_terms_conditions_form" model="ir.ui.view">
+            <field name="name">terms.conditions.form</field>
+            <field name="model">terms.conditions</field>
+            <field name="arch" type="xml">
+                <form string="Terms &amp; Conditions">
+                    <header>
+                        <button name="action_set_current" type="object" string="Set as Current Version" 
+                                class="oe_highlight" invisible="is_current"/>
+                        <field name="is_current" widget="boolean_button" options='{"terminology": "current"}' invisible="is_current"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" readonly="id"/>
+                                <field name="version" readonly="id"/>
+                                <field name="effective_date"/>
+                            </group>
+                            <group>
+                                <field name="active" widget="boolean_toggle"/>
+                                <field name="is_current" widget="boolean_toggle"/>
+                                <field name="acceptance_count" readonly="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Content">
+                                <field name="content" widget="html" nolabel="1"/>
+                            </page>
+                            <page string="Acceptances" name="acceptances">
+                                <field name="acceptance_ids" readonly="1">
+                                    <list>
+                                        <field name="partner_id"/>
+                                        <field name="user_id"/>
+                                        <field name="acceptance_date"/>
+                                        <field name="digital_signature_name"/>
+                                        <field name="digital_signature" widget="image" options="{'preview_image': 'digital_signature'}"/>
+                                        <field name="ip_address"/>
+                                        <field name="acceptance_method"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Content History" name="content_history">
+                                <field name="content_history_ids" readonly="1">
+                                    <list>
+                                        <field name="change_date"/>
+                                        <field name="changed_by"/>
+                                        <field name="change_summary"/>
+                                    </list>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <group string="Change Information">
+                                                    <field name="change_date"/>
+                                                    <field name="changed_by"/>
+                                                    <field name="change_summary"/>
+                                                </group>
+                                            </group>
+                                            <notebook>
+                                                <page string="Previous Content">
+                                                    <field name="old_content" widget="html" nolabel="1"/>
+                                                </page>
+                                                <page string="New Content">
+                                                    <field name="new_content" widget="html" nolabel="1"/>
+                                                </page>
+                                            </notebook>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Terms Acceptance List View -->
+        <record id="view_terms_acceptance_list" model="ir.ui.view">
+            <field name="name">terms.acceptance.list</field>
+            <field name="model">terms.acceptance</field>
+            <field name="arch" type="xml">
+                <list string="Terms Acceptances">
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="terms_id"/>
+                    <field name="terms_version"/>
+                    <field name="acceptance_date"/>
+                    <field name="digital_signature_name"/>
+                    <field name="digital_signature" widget="image" options="{'preview_image': 'digital_signature'}"/>
+                    <field name="ip_address"/>
+                    <field name="acceptance_method"/>
+                    <field name="signed_content" invisible="1"/>
+                </list>
+            </field>
+        </record>
+
+        <!-- Terms Acceptance Form View -->
+        <record id="view_terms_acceptance_form" model="ir.ui.view">
+            <field name="name">terms.acceptance.form</field>
+            <field name="model">terms.acceptance</field>
+            <field name="arch" type="xml">
+                <form string="Terms Acceptance" readonly="1">
+                    <sheet>
+                        <group>
+                            <group string="Terms Information">
+                                <field name="terms_id"/>
+                                <field name="terms_version"/>
+                            </group>
+                            <group string="User Information">
+                                <field name="partner_id"/>
+                                <field name="user_id"/>
+                            </group>
+                        </group>
+                        <group string="Audit Trail">
+                            <group>
+                                <field name="acceptance_date"/>
+                                <field name="acceptance_method"/>
+                                <field name="ip_address"/>
+                            </group>
+                            <group>
+                                <field name="digital_signature_name"/>
+                                <field name="digital_signature" widget="image" options="{'preview_image': 'digital_signature'}" nolabel="1"/>
+                            </group>
+                        </group>
+                        <group string="Additional Information">
+                            <field name="user_agent" widget="text" nolabel="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Signed Content">
+                                <field name="signed_content" widget="html" nolabel="1" readonly="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action for Terms & Conditions -->
+        <record id="action_terms_conditions" model="ir.actions.act_window">
+            <field name="name">Terms &amp; Conditions</field>
+            <field name="res_model">terms.conditions</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create Terms &amp; Conditions
+                </p>
+                <p>
+                    Manage Terms &amp; Conditions versions that users must accept during signup.
+                </p>
+            </field>
+        </record>
+
+        <!-- Action for Terms Acceptances -->
+        <record id="action_terms_acceptance" model="ir.actions.act_window">
+            <field name="name">Terms Acceptances</field>
+            <field name="res_model">terms.acceptance</field>
+            <field name="view_mode">list,form</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Terms Acceptances
+                </p>
+                <p>
+                    View all Terms &amp; Conditions acceptances with full audit trail.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu Items -->
+        <menuitem id="menu_terms_conditions_root" 
+                  name="Terms &amp; Conditions" 
+                  parent="base.menu_administration"
+                  sequence="100"/>
+        
+        <menuitem id="menu_terms_conditions" 
+                  name="Terms Versions" 
+                  parent="menu_terms_conditions_root"
+                  action="action_terms_conditions"
+                  sequence="10"/>
+        
+        <menuitem id="menu_terms_acceptance" 
+                  name="Acceptances" 
+                  parent="menu_terms_conditions_root"
+                  action="action_terms_acceptance"
+                  sequence="20"/>
+    </data>
+</odoo>

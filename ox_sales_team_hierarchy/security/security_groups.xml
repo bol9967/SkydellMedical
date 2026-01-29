@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Security Group for Team Leaders -->
+    <record id="group_team_leader" model="res.groups">
+        <field name="name">Team Leader</field>
+        <field name="category_id" ref="base.module_category_sales_sales"/>
+        <field name="comment">Team leaders can view records of their team members</field>
+        <!-- Imply salesperson group so team leaders have base sales access -->
+        <field name="implied_ids" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
+    </record>
+</odoo>

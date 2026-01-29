@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Demo Terms &amp; Conditions -->
+        <record id="terms_conditions_demo" model="terms.conditions">
+            <field name="name">Terms &amp; Conditions - Version 1.0</field>
+            <field name="version">1.0</field>
+            <field name="effective_date" eval="(datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')"/>
+            <field name="active" eval="True"/>
+            <field name="is_current" eval="True"/>
+            <field name="content"><![CDATA[
+                <h2>Terms &amp; Conditions</h2>
+                <p><strong>Last Updated:</strong> <t t-esc="effective_date"/></p>
+                
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing and using this service, you accept and agree to be bound by the terms and provision of this agreement.</p>
+                
+                <h3>2. Use License</h3>
+                <p>Permission is granted to temporarily access the materials on this service for personal, non-commercial transitory viewing only.</p>
+                
+                <h3>3. Disclaimer</h3>
+                <p>The materials on this service are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+                
+                <h3>4. Limitations</h3>
+                <p>In no event shall we or our suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on this service.</p>
+                
+                <h3>5. Privacy Policy</h3>
+                <p>Your use of this service is also governed by our Privacy Policy. Please review our Privacy Policy to understand our practices.</p>
+                
+                <h3>6. HIPAA Compliance</h3>
+                <p>This service is designed to comply with the Health Insurance Portability and Accountability Act (HIPAA). We are committed to protecting the privacy and security of your health information.</p>
+                
+                <h3>7. Modifications</h3>
+                <p>We may revise these terms of service at any time without notice. By using this service you are agreeing to be bound by the then current version of these terms of service.</p>
+                
+                <h3>8. Contact Information</h3>
+                <p>If you have any questions about these Terms &amp; Conditions, please contact us.</p>
+                
+                <p><strong>By accepting these terms, you acknowledge that you have read, understood, and agree to be bound by all of the above terms and conditions.</strong></p>
+            ]]></field>
+        </record>
+    </data>
+</odoo>

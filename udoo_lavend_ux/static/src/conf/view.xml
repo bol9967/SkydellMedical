@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="wub.OmuxConf" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('sysact_area')]" position="inside">
+            <a t-on-click="openCoSchemeSett" class="col-md-6 btn-link text-dodger" role="button">
+                <i class="text-info ri-arrow-right-line me-1 lh-1"/>
+                Customize environment colors
+            </a>
+            <a t-on-click="openAppGroupSett" class="col-md-6 btn-link text-dodger" role="button">
+                <i class="text-info ri-arrow-right-line me-1 lh-1"/>
+                Organize your applications
+            </a>
+        </xpath>
+    </t>
+</templates>

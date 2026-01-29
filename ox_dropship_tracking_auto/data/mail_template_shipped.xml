@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="email_template_order_shipped" model="mail.template">
+
+            <field name="name">Delivery: Order Shipped with Tracking</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+
+            <!-- Sender -->
+            <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
+
+            <!-- Subject -->
+            <field name="subject">Shipped! Order {{ object.picking_type_code == 'dropship' and object.sale_id.name or object.name }} - Track Your Package</field>
+
+            <!-- Recipient (MUST be pure Jinja2 – no <t> tags allowed) -->
+            <field name="email_to">
+                {{ object.picking_type_code == 'dropship'
+                    and object.sale_id.partner_shipping_id.email
+                    or object.partner_id.email }}
+            </field>
+
+            <field name="description">Sent automatically when tracking number is received from supplier and validated.</field>
+
+            <!-- Body HTML — QWeb allowed -->
+            <field name="body_html" type="html">
+<div style="margin:0; padding:0; font-size:13px;">
+    <p>
+
+        Dear
+        <t t-if="object.picking_type_code == 'dropship'">
+            <t t-out="object.sale_id.partner_shipping_id.name or ''"/>
+        </t>
+        <t t-else="">
+            <t t-out="object.partner_id.name or ''"/>
+        </t>,
+        <br/><br/>
+
+        Your order has shipped!
+        <br/><br/>
+
+        <span style="font-weight:bold; text-decoration:underline;">TRACKING INFORMATION:</span><br/>
+
+        • Order Number:
+        <strong>#<t t-if="object.picking_type_code == 'dropship' and object.sale_id">
+            <t t-out="object.sale_id.name"/>
+        </t>
+        <t t-else="">
+            <t t-out="object.name"/>
+        </t></strong>
+        <br/>
+
+        <t t-if="object.carrier_tracking_ref">
+            • Tracking Number:
+            <strong t-out="object.carrier_tracking_ref"/>
+            <br/>
+        </t>
+        <t t-else="">
+            • Tracking Number: N/A<br/>
+        </t>
+
+        <t t-if="object.carrier_id">
+            • Carrier:
+            <strong t-out="object.carrier_id.name"/>
+            <br/>
+        </t>
+        <t t-else="">
+            • Carrier: N/A<br/>
+        </t>
+
+        • Delivery Address:
+        <strong>
+            <t t-if="object.picking_type_code == 'dropship' and object.sale_id and object.sale_id.partner_shipping_id">
+                <t t-if="object.sale_id.partner_shipping_id.street">
+                    <t t-out="object.sale_id.partner_shipping_id.street"/>,
+                </t>
+                <t t-out="object.sale_id.partner_shipping_id.city or ''"/>
+            </t>
+            <t t-else="">
+                Delivery address
+            </t>
+        </strong>
+        <br/>
+
+        <t t-if="object.carrier_tracking_ref">
+            <br/>
+            <span style="font-weight:bold; text-decoration:underline;">TRACK YOUR ORDER:</span><br/>
+            <a t-attf-href="https://www.fedex.com/fedextrack/?trknbr={{ object.carrier_tracking_ref }}" 
+               style="display:inline-block; padding:10px 20px; background-color:#007bff; color:#ffffff; text-decoration:none; border-radius:5px; font-weight:bold; margin:10px 0;">
+                Track Your Package
+            </a>
+            <br/>
+        </t>
+
+        <br/>
+        <span style="font-weight:bold; text-decoration:underline;">ORDER CONTENTS:</span><br/><br/>
+
+        <table style="border-collapse: collapse; width:100%; font-size:13px;">
+            <tr>
+                <th style="border:1px solid #ccc; padding:6px; background:#f3f3f3;">SKU</th>
+                <th style="border:1px solid #ccc; padding:6px; background:#f3f3f3;">Description</th>
+                <th style="border:1px solid #ccc; padding:6px; background:#f3f3f3;">Qty</th>
+            </tr>
+
+            <t t-foreach="object.move_ids_without_package" t-as="line">
+                <tr>
+                    <td style="border:1px solid #ccc; padding:6px;">
+                        <t t-out="line.product_id.default_code or 'N/A'"/>
+                    </td>
+                    <td style="border:1px solid #ccc; padding:6px;">
+                        <t t-out="line.product_id.display_name"/>
+                    </td>
+                    <td style="border:1px solid #ccc; padding:6px;">
+                        <t t-if="line.quantity">
+                            <t t-out="line.quantity"/>
+                        </t>
+                        <t t-elif="line.move_line_ids">
+                            <t t-out="line.move_line_ids[0].qty_done"/>
+                        </t>
+                        <t t-else="">
+                            <t t-out="line.product_uom_qty"/>
+                        </t>
+                    </td>
+                </tr>
+            </t>
+        </table>
+
+        <br/>
+        <t t-if="object.fedex_standard_transit_end">
+            Expected Delivery:
+            <strong t-out="object.fedex_standard_transit_end.strftime('%Y-%m-%d')"/>
+            <br/>
+        </t>
+        <t t-else="">
+            Expected Delivery: TBD<br/>
+        </t>
+
+        <br/>
+        If you have questions about your shipment, reply to this email with your order number.
+        <br/><br/>
+
+        Thank you,<br/>
+        <t t-out="object.company_id.name"/> Logistics Team
+
+        <t t-if="not is_html_empty(object.user_id.signature)">
+            <br/><br/>
+            <t t-out="object.user_id.signature or ''"/>
+        </t>
+
+    </p>
+</div>
+            </field>
+
+            <field name="lang">{{ object.picking_type_code == 'dropship' and object.sale_id.partner_shipping_id.lang or object.partner_id.lang }}</field>
+
+            <field name="auto_delete" eval="True"/>
+
+        </record>
+
+    </data>
+</odoo>
+

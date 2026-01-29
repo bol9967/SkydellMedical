@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit sale.order form view to add On Hand Qty column -->
+    <record id="view_order_form_inherit_on_hand_qty" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.on.hand.qty</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Add On Hand Qty column after Quantity column in order lines -->
+            <xpath expr="//field[@name='order_line']/list/field[@name='product_uom_qty']" position="after">
+                <field name="on_hand_qty_display" 
+                       string="On Hand Qty"
+                       optional="show"
+                       column_invisible="not parent.show_on_hand_qty"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

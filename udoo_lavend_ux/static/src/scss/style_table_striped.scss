@@ -1,0 +1,36 @@
+.o_list_renderer {
+    .o_list_table_grouped {
+        .o_data_row>td {
+            border-top-width: 1px;
+        }
+    }
+
+    .table> :not(caption)>*>* {
+        border-bottom-width: 0px;
+    }
+
+    >.o_list_table:not(.o_list_table_grouped, .table-bordered):has(.o_data_row) {
+        --table-hover-bg: #{rgba($o-action, .12)};
+        --table-striped-bg: #{rgba($o-gray-300, .24)};
+
+        thead th {
+            padding-block: 8px;
+
+            &:first-child {
+                border-top-left-radius: $o-border-radius;
+            }
+
+            &:last-child {
+                border-top-right-radius: $o-border-radius;
+            }
+        }
+
+        .o_data_row {
+            border-bottom-width: 0px;
+
+            &.o_data_row_selected>.o_data_cell {
+                border-bottom-width: 0px !important;
+            }
+        }
+    }
+}

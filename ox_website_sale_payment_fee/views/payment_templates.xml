@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Payment fee info inside payment method selection (inside checkout) -->
+    <template id="payment_method_fee_info" inherit_id="payment.method_form" name="Payment Method Fee Information">
+        <!-- Add fee info after the help message for each payment method -->
+        <xpath expr="//div[@name='o_payment_inline_form']" position="after">
+            <div t-if="provider_sudo.payment_fee_enabled and provider_sudo.payment_fee_percentage > 0"
+                 class="payment-fee-info ms-4 mt-2 mb-2 small text-info"
+                 t-att-data-provider-id="provider_sudo.id"
+            >
+                <i class="fa fa-info-circle"/> 
+                <strong>Processing Fee:</strong> 
+                <span t-esc="provider_sudo.payment_fee_percentage"/>% 
+                will be added to your order total.
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Payment fee info inside payment token selection (inside checkout) -->
+    <template id="payment_token_fee_info" inherit_id="payment.token_form" name="Payment Token Fee Information">
+        <!-- Add fee info after the token details -->
+        <xpath expr="//p[@name='o_payment_secured_by_mobile']" position="after">
+            <div t-if="provider_sudo.payment_fee_enabled and provider_sudo.payment_fee_percentage > 0"
+                 class="payment-fee-info mt-2 mb-0 small text-info"
+                 t-att-data-provider-id="provider_sudo.id"
+            >
+                <i class="fa fa-info-circle"/> 
+                <strong>Processing Fee:</strong> 
+                <span t-esc="provider_sudo.payment_fee_percentage"/>% 
+                will be added to your order total.
+            </div>
+        </xpath>
+    </template>
+
+    <!-- General payment fee info at top of payment form (inside checkout) -->
+    <template id="payment_form_fee_info" inherit_id="payment.form" name="Payment Form Fee Information">
+        <!-- Add general fee info at the top of payment options -->
+        <xpath expr="//div[@id='o_payment_form_options']" position="before">
+            <div t-if="payment_fee_info" class="alert alert-info mb-3" role="alert">
+                <strong><i class="fa fa-info-circle"/> Payment Processing Fee</strong>
+                <p class="mb-0 mt-2">
+                    <t t-set="fee_count" t-value="0"/>
+                    <t t-foreach="payment_fee_info" t-as="fee">
+                        <t t-set="fee_count" t-value="fee_count + 1"/>
+                        <t t-if="fee_count > 1">, </t>
+                        <strong t-esc="fee['provider_name']"/>: <t t-esc="fee['fee_percentage']"/>%
+                    </t>
+                    processing fee will be added to your order total when you select a payment method.
+                </p>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Payment fee info on /shop/cart page (express checkout) -->
+    <template id="express_checkout_fee_info" inherit_id="website_sale.checkout_layout" name="Express Checkout Fee Information">
+        <xpath expr="//t[@t-call='payment.express_checkout']" position="after">
+            <div t-if="payment_fee_info" class="alert alert-info mt-3 mb-0" role="alert">
+                <strong><i class="fa fa-info-circle"/> Payment Processing Fee</strong>
+                <p class="mb-0 mt-2">
+                    <t t-set="fee_count" t-value="0"/>
+                    <t t-foreach="payment_fee_info" t-as="fee">
+                        <t t-set="fee_count" t-value="fee_count + 1"/>
+                        <t t-if="fee_count > 1">, </t>
+                        <strong t-esc="fee['provider_name']"/>: <t t-esc="fee['fee_percentage']"/>%
+                    </t>
+                    processing fee will be added to your order total when you proceed with payment.
+                </p>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Add invoice_id and sale_order_id to payment form for JavaScript -->
+    <template id="payment_form_fee_data" inherit_id="payment.form" name="Payment Form Fee Data">
+        <xpath expr="//form[@id='o_payment_form']" position="attributes">
+            <attribute name="data-invoice-id"><t t-esc="invoice_id or ''"/></attribute>
+            <attribute name="data-sale-order-id"><t t-esc="sale_order_id or ''"/></attribute>
+        </xpath>
+    </template>
+</odoo>
+

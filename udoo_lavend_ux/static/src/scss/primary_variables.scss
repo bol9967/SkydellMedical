@@ -1,0 +1,29 @@
+$o-gray-100: #f1f5f9 !default;
+$o-gray-200: #e3e5eb !default;
+$o-gray-300: #dbdfe9 !default;
+$o-gray-400: #c4cada !default;
+$o-gray-500: #99a1b7 !default;
+$o-gray-600: #78829d !default;
+$o-gray-700: #4a5573 !default;
+$o-gray-800: #252f4a !default;
+$o-gray-900: #071437 !default;
+
+$o-enterprise-color: #714B67 !default;
+
+$o-brand-odoo: $o-enterprise-color !default;
+$o-brand-primary: $o-brand-odoo !default;
+
+$o-action: #a18499 !default;
+$o-action-accent: $o-brand-primary !default;
+
+$o-main-link-color: #07868c !default;
+
+
+// == Omux
+
+$u-striped-ratio: 3.7 !default;
+
+$u-menuitem-hover: #86478b !default;
+$u-menuitem-hover-bg: #f3eef2 !default;
+
+$u-btn-shadow: 0px 1px 10px 1px rgba(black, 0.05) !default;

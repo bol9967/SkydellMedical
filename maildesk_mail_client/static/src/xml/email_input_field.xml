@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<templates xml:space="preserve">
+    <t t-name="maildesk.EmailInputField" owl="1">
+        <div class="form-group position-relative mb-2">
+            <label class="form-label">
+                <t t-out="props.field" />
+            </label>
+            <t t-set="emails" t-value="props.state[props.field] || []" />
+            <t t-foreach="emails" t-as="r" t-index="i" t-key="r.email || i">
+                <span
+          class="badge recipient-badge bg-light text-dark me-1 mb-1 px-2 py-1 d-flex align-items-center rounded-pill"
+          t-att-title="r.email"
+        >
+                    <div class="recipient-text text-truncate me-2">
+                        <t t-if="r.name">
+                            <t t-out="r.name" /> <span class="text-muted">&lt;<t
+                  t-out="r.email"
+                />&gt;</span>
+                        </t>
+                        <t t-if="!r.name">
+                            <t t-out="r.email" />
+                        </t>
+                    </div>
+                    <i
+            class="fa fa-times text-danger cursor-pointer flex-shrink-0"
+            role="button"
+            t-on-click="() => props.remove(r.email, props.field)"
+          />
+                </span>
+            </t>
+            <div class="flex-grow-1 position-relative">
+                <input
+          class="form-control border-0 flex-grow-1 recipient-input-composer line-h-composer"
+          t-model="state.inputValue"
+          t-on-input="onInput"
+          t-on-blur="onBlur"
+          t-on-keydown="onKeydown"
+          placeholder="Type email or name..."
+          autocomplete="one-time-code"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          t-att-name="'compose_field_' + props.field"
+        />
+                <t t-if="props.field === 'To'">
+                    <div
+            class="position-absolute end-0 top-0 bottom-0 d-flex align-items-center me-2 small text-primary"
+            style="z-index: 2;"
+          >
+                        <a
+              href="#"
+              t-on-click.prevent="props.toggleCc"
+              class="me-1"
+              data-tooltip="Add Cc (Carbon Copy)"
+            >Cc /</a>
+                        <a
+              href="#"
+              t-on-click.prevent="props.toggleBcc"
+              data-tooltip="Add Bcc (Blind Carbon Copy)"
+            >Bcc+</a>
+                    </div>
+                </t>
+            </div>
+            <div
+        class="list-group shadow position-absolute bg-white z-1 w-100"
+        t-if="state.showSuggestions"
+      >
+                <t t-foreach="state.suggestions" t-as="s" t-key="s.id">
+                    <a
+            href="#"
+            class="list-group-item list-group-item-action"
+            t-on-click="(ev) => addEmailHandler(ev, s)"
+          >
+                        <t t-out="s.name" /> - <span class="text-muted">&lt;<t
+                t-out="s.email"
+              />&gt;</span>
+                    </a>
+                </t>
+            </div>
+        </div>
+    </t>
+</templates>

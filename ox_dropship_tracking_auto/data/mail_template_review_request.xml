@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="email_template_review_request" model="mail.template">
+
+            <field name="name">Sale: Review Request</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+
+            <!-- Sender -->
+            <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
+
+            <!-- Subject -->
+            <field name="subject">How Was Your Order #{{ object.name }} Experience?</field>
+
+            <!-- Recipient (MUST be pure Jinja2 – no <t> tags allowed) -->
+            <field name="email_to">{{ object.partner_id.email }}</field>
+
+            <field name="description">Sent to request customer review/feedback after order delivery.</field>
+
+            <!-- Body HTML — QWeb allowed -->
+            <field name="body_html" type="html">
+<div style="margin:0; padding:0; font-size:13px;">
+    <p>
+
+        Dear Dr.
+        <t t-if="object.partner_id.name">
+            <t t-out="object.partner_id.name.split()[-1] if ' ' in object.partner_id.name else object.partner_id.name"/>,
+        </t>
+        <t t-else="">
+            Customer,
+        </t>
+        <br/><br/>
+
+        We hope your recent order #<strong><t t-out="object.name"/></strong> is meeting your expectations!
+        <br/><br/>
+
+        Your feedback helps us serve you better and assists other healthcare providers in their purchasing decisions.
+        <br/><br/>
+
+        <span style="font-weight:bold; text-decoration:underline;">HOW WAS YOUR EXPERIENCE?</span>
+        <br/><br/>
+
+        <t t-if="ctx.get('leave_review_url')">
+            <a t-attf-href="{{ ctx.get('leave_review_url') }}" 
+               style="display:inline-block; padding:12px 24px; background-color:#007bff; color:#ffffff; text-decoration:none; border-radius:5px; font-weight:bold; margin:10px 0;">
+                Leave a Review
+            </a>
+            <br/><br/>
+        </t>
+        <t t-else="">
+            <span style="color:#666; font-style:italic;">[Review link will be provided]</span>
+            <br/><br/>
+        </t>
+
+        <span style="font-weight:bold;">Rate on:</span>
+        <br/>
+        ⭐ Product Quality
+        <br/>
+        ⭐ Shipping Speed
+        <br/>
+        ⭐ Customer Service
+        <br/><br/>
+
+        <span style="font-weight:bold; text-decoration:underline;">REVIEW TAKES 60 SECONDS</span>
+        <br/>
+        • Rate your overall experience (1-5 stars)
+        <br/>
+        • Share comments about product quality
+        <br/>
+        • Tell us about our service
+        <br/><br/>
+
+        As a thank you, receive <strong>5% off your next order</strong> when you complete a review.
+        <br/><br/>
+
+        <t t-if="ctx.get('submit_review_url')">
+            <a t-attf-href="{{ ctx.get('submit_review_url') }}" 
+               style="display:inline-block; padding:12px 24px; background-color:#28a745; color:#ffffff; text-decoration:none; border-radius:5px; font-weight:bold; margin:10px 0;">
+                Submit Review
+            </a>
+            <br/><br/>
+        </t>
+        <t t-else="">
+            <span style="color:#666; font-style:italic;">[Submit review link will be provided]</span>
+            <br/><br/>
+        </t>
+
+        Thank you for being a valued customer.
+        <br/><br/>
+
+        <t t-out="object.company_id.name or 'Our Team'"/>
+
+        <t t-if="not is_html_empty(object.user_id.signature)">
+            <br/><br/>
+            <t t-out="object.user_id.signature or ''"/>
+        </t>
+
+    </p>
+</div>
+            </field>
+
+            <field name="lang">{{ object.partner_id.lang }}</field>
+
+            <field name="auto_delete" eval="True"/>
+
+        </record>
+
+    </data>
+</odoo>

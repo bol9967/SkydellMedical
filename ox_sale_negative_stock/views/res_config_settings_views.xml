@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit res.config.settings view to add No Negative Stock Sale option -->
+    <record id="res_config_settings_view_form_inherit_negative_stock" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.negative.stock</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Add the option in the Sales section as a separate block -->
+            <xpath expr="//block[@name='sale_shipping_setting_container']" position="after">
+                <block title="Stock Control" name="stock_control_setting_container">
+                    <setting id="no_negative_stock_sale_setting" 
+                             string="No Negative Stock Sale" 
+                             help="When enabled, products that are out of stock (quantity = 0) will not be visible in the search list when selecting products in sale orders (Sale app only, not website/e-commerce). This prevents selling items that are not available. Service products and products without stock tracking are always shown.">
+                        <field name="no_negative_stock_sale"/>
+                    </setting>
+                    <setting id="display_zero_stock_in_search_setting" 
+                             string="Display Zero Stock Products in Search" 
+                             help="When enabled, out-of-stock products will be visible in the product search list, but you still cannot add them to sale orders. Use this to see products for reference while still preventing them from being sold."
+                             invisible="not no_negative_stock_sale">
+                        <field name="display_zero_stock_in_search"/>
+                    </setting>
+                    <setting id="show_on_hand_qty_in_sale_order_line_setting" 
+                             string="Show On Hand Qty in Sale Order Line" 
+                             help="When enabled, displays an 'On Hand Qty' column in sale order lines. The column shows: 'Service' for service products, 'Combo' for combo products, 'Not Tracked' for physical products without stock tracking, or the actual stock quantity for physical products with stock tracking enabled.">
+                        <field name="show_on_hand_qty_in_sale_order_line"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

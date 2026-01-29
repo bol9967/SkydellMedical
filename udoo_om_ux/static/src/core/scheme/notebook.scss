@@ -1,0 +1,36 @@
+.o_notebook {
+    --notebook-link-border-color: #{$border-color};
+    --notebook-link-border-color-hover: #{$border-color};
+    --notebook-link-border-color-active-accent: #{$o-brand-primary};
+
+    .modal & {
+        --notebook-padding-x: #{$modal-inner-padding};
+        --notebook-margin-x: -#{$modal-inner-padding};
+    }
+
+    .nav-tabs {
+        .nav-link {
+            &:not(.active) {
+                background-color: rgba($o-gray-100, .4);
+                color: inherit;
+            }
+        }
+    }
+
+    .nav-tabs .nav-link {
+        position: relative;
+
+        &.active::after {
+            position: absolute;
+            inset: -1px;
+            height: 2px;
+            background-color: var(--notebook-link-border-color-active-accent);
+            content: '';
+        }
+
+        &.active,
+        .nav-tabs .nav-item.show .nav-link {
+            color: var(--notebook-link-border-color-active-accent);
+        }
+    }
+}

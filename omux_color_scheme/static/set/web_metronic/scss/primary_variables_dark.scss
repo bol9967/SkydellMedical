@@ -1,0 +1,53 @@
+$o-white: #000 !default;
+$o-black: #FFF !default;
+
+$o-gray-100: #1B1C22 !default;
+$o-gray-200: #26272F !default;
+$o-gray-300: #363843 !default;
+$o-gray-400: #464852 !default;
+$o-gray-500: #636674 !default;
+$o-gray-600: #808290 !default;
+$o-gray-700: #9A9CAE !default;
+$o-gray-800: #B5B7C8 !default;
+$o-gray-900: #F5F5F5 !default;
+
+$o-enterprise-color: #3a7ecc !default;
+
+$o-brand-primary: $o-enterprise-color !default;
+
+$o-webclient-background-color: #0F1014 !default;
+$o-view-background-color: #15171C !default;
+
+$o-border-color: #21232c !default;
+$o-notebook-tab-active: #4e8ace !default;
+
+$o-action: #3a7ecc !default;
+$o-success: #6DCD9D !default;
+$o-info: #B49ED6 !default;
+$o-warning: #E3C98D !default;
+$o-danger: #db6e8b !default;
+
+// = Text
+// ============================================================================
+
+// = Fine-tune contextual text colors.
+$o-theme-text-colors: (
+    "primary": #6e9fd6,
+    "success": #7cca98,
+    "info": #56c4ba,
+    "warning": #FBB56A,
+    "danger": #f37a7a,
+    "dodger": #e6b75d,
+    ) !default;
+
+
+// = Omux
+// ============================================================================
+
+$u-sidenav-border: $o-border-color;
+
+$u-searchview-bg: #0F1014 !default;
+$u-searchview-border: #0F1014 !default;
+
+$u-menuitem-hover: shade-color($o-gray-900, 10%) !default;
+$u-menuitem-hover-bg: rgba($o-black, .08) !default;

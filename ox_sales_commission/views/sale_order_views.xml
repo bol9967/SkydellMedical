@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Sale Order Form View - Add Manual Manager Commission Field -->
+    <record id="view_order_form_commission" model="ir.ui.view">
+        <field name="name">sale.order.form.commission</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Add manual manager commission field in the order form -->
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="manual_manager_commission_percentage" 
+                       invisible="not team_id or not team_id.user_id or team_id.user_id == user_id"
+                       readonly="state in ('sale', 'done', 'cancel')"
+                       help="Override manager commission percentage for this specific order. Leave empty to use default from commission plan. Only visible when order has a sales team with a manager different from the salesperson. Can only be set before order confirmation."/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

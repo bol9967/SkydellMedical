@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+<t t-inherit="web.ListRenderer" t-inherit-mode="extension">
+    <xpath expr="//span[hasclass('o_resize')]" position="attributes">
+        <attribute name="t-on-dblclick.stop.prevent">() => this.columnWidths.autofit(column_index)</attribute>
+    </xpath>
+</t>
+
+</templates>

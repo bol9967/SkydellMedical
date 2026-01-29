@@ -1,0 +1,40 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* omux_view_action
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 23:11+0000\n"
+"PO-Revision-Date: 2025-10-01 23:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#. module: omux_view_action
+#. odoo-javascript
+#: code:addons/omux_view_action/static/src/control_panel.xml:0
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#. module: omux_view_action
+#. odoo-javascript
+#: code:addons/omux_view_action/static/src/control_panel.xml:0
+msgid "Realign Layout"
+msgstr "Layout neu ausrichten"
+
+#. module: omux_view_action
+#. odoo-javascript
+#: code:addons/omux_view_action/static/src/control_panel.xml:0
+msgid "Toggle Fullscreen"
+msgstr "Vollbild umschalten"
+
+#. module: omux_view_action
+#. odoo-javascript
+#: code:addons/omux_view_action/static/src/control_panel.xml:0
+msgid "View Actions"
+msgstr "Aktionen anzeigen"

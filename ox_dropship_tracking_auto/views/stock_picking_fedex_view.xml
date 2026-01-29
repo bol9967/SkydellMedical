@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_form_fedex_tracking" model="ir.ui.view">
+        <field name="name">stock.picking.form.fedex.tracking</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+
+        <field name="arch" type="xml">
+
+            <!-- Insert a new page AFTER existing "Note" tab (this is known to work) -->
+            <xpath expr="//notebook/page[@name='note']" position="after">
+
+                <page string="FedEx Tracking" name="fedex_tracking"
+                    invisible="picking_type_code not in ['dropship','outgoing']">
+
+                    <group>
+
+                        <!-- ========== TRACKING SUMMARY ========== -->
+                        <group string="Tracking Details">
+                            <field name="fedex_tracking_number" readonly="1"/>
+                            <field name="tracking_status" readonly="1"/>
+                            <field name="tracking_last_event" readonly="1"/>
+                            <field name="tracking_last_date" readonly="1"/>
+                            <field name="fedex_last_check" readonly="1"/>
+                            <field name="fedex_delivered" readonly="1"/>
+                            <field name="fedex_delivered_notified" readonly="1"/>
+                            <field name="fedex_auto_validated" readonly="1"/>
+                        </group>
+
+                        <!-- ========== ADDRESSES ========== -->
+                        <group string="Shipper Address">
+                            <field name="fedex_actual_delivery" readonly="1" widget="datetime"/>
+                            <field name="fedex_actual_pickup" readonly="1" widget="datetime"/>
+                            <field name="fedex_ship_date" readonly="1" widget="datetime"/>
+                            <field name="fedex_actual_tender" readonly="1" widget="datetime"/>
+                            <field name="fedex_shipper_city" readonly="1"/>
+                            <field name="fedex_shipper_state" readonly="1"/>
+                            <field name="fedex_shipper_country" readonly="1"/>
+                        </group>
+
+                        <group string="Recipient Address">
+                            <field name="fedex_recipient_city" readonly="1"/>
+                            <field name="fedex_recipient_state" readonly="1"/>
+                            <field name="fedex_recipient_country" readonly="1"/>
+                        </group>
+
+                        <!-- ========== DELIVERY DETAILS ========== -->
+                        <group string="Delivery Details">
+                            <field name="fedex_delivery_city" readonly="1"/>
+                            <field name="fedex_delivery_state" readonly="1"/>
+                            <field name="fedex_delivery_country" readonly="1"/>
+                            <field name="fedex_delivery_location_type" readonly="1"/>
+                            <field name="fedex_delivery_location_desc" readonly="1"/>
+                            <field name="fedex_delivery_attempts" readonly="1"/>
+                            <field name="fedex_delivery_received_by" readonly="1"/>
+                            <field name="fedex_can_dispute_delivery" readonly="1"/>
+                        </group>
+
+                        <!-- ========== SERVICE DETAILS ========== -->
+                        <group string="Service Information">
+                            <field name="fedex_service_type" readonly="1"/>
+                            <field name="fedex_service_desc" readonly="1"/>
+                            <field name="fedex_service_short" readonly="1"/>
+                            <field name="fedex_possession_status" readonly="1"/>
+                            <field name="fedex_standard_transit_end" readonly="1"/>
+                        </group>
+
+                        <!-- ========== ORIGIN / DESTINATION ========== -->
+                        <group string="Origin Location">
+                            <field name="fedex_origin_city" readonly="1"/>
+                            <field name="fedex_origin_state" readonly="1"/>
+                            <field name="fedex_origin_country" readonly="1"/>
+                        </group>
+
+                        <group string="Destination Location">
+                            <field name="fedex_destination_city" readonly="1"/>
+                            <field name="fedex_destination_state" readonly="1"/>
+                            <field name="fedex_destination_country" readonly="1"/>
+                        </group>
+
+                        <group string="Last Updated Destination">
+                            <field name="fedex_last_dest_city" readonly="1"/>
+                            <field name="fedex_last_dest_state" readonly="1"/>
+                            <field name="fedex_last_dest_country" readonly="1"/>
+                        </group>
+
+                        <!-- ========== PACKAGE DETAILS ========== -->
+                        <group string="Package Weight">
+                            <field name="fedex_weight_lb" readonly="1"/>
+                            <field name="fedex_weight_kg" readonly="1"/>
+                        </group>
+
+                        <group string="Dimensions (inches)">
+                            <field name="fedex_pkg_length_in" readonly="1"/>
+                            <field name="fedex_pkg_width_in" readonly="1"/>
+                            <field name="fedex_pkg_height_in" readonly="1"/>
+                        </group>
+
+                        <group string="Dimensions (cm)">
+                            <field name="fedex_pkg_length_cm" readonly="1"/>
+                            <field name="fedex_pkg_width_cm" readonly="1"/>
+                            <field name="fedex_pkg_height_cm" readonly="1"/>
+                        </group>
+
+                        <!-- ========== OTHER DETAILS / JSON TEXT ========== -->
+                        <group string="Other Details">
+                            <field name="fedex_goods_classification_code" readonly="1"/>
+                            <field name="fedex_available_images" readonly="1" widget="text"/>
+                            <field name="fedex_notifications" readonly="1" widget="text"/>
+                            <field name="fedex_special_handlings" readonly="1" widget="text"/>
+                        </group>
+
+                        <group string="Raw FedEx Lists (JSON)">
+                            <field name="fedex_date_times_json" readonly="1" widget="text"/>
+                            <field name="fedex_scan_events_json" readonly="1" widget="text"/>
+                            <field name="fedex_delivery_options_json" readonly="1" widget="text"/>
+                        </group>
+
+                        <!-- ========== RAW API RESPONSE ========== -->
+                        <group string="Raw FedEx Response">
+                            <field name="tracking_raw" readonly="1" widget="text"/>
+                        </group>
+
+                    </group>
+
+                </page>
+
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

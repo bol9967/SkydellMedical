@@ -1,0 +1,33 @@
+.o_list_renderer {
+    --sticky-header-zindex: 5;
+    --ListRenderer-thead-bg-color: #{$u-searchview-bg};
+
+    .o_list_table {
+        .o_data_row:first-of-type {
+            border-top: unset !important;
+        }
+
+        .o_list_record_selector .form-check-input {
+            width: $o-root-font-size;
+            height: $o-root-font-size;
+        }
+
+        thead {
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 1px;
+                background-color: $table-border-color;
+                z-index: var(--sticky-header-zindex);
+            }
+
+            th {
+                border-bottom-width: 0;
+                background-color: var(--ListRenderer-thead-bg-color);
+            }
+        }
+    }
+}

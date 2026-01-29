@@ -1,0 +1,147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * udoo_lavend_ux
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-13 14:22+0000\n"
+"PO-Revision-Date: 2025-04-13 14:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__active
+msgid "Active"
+msgstr "有効"
+
+#. module: udoo_lavend_ux
+#: model:ir.actions.act_window,name:udoo_lavend_ux.action_app_group
+#: model:ir.ui.menu,name:udoo_lavend_ux.mensidenav_group
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_list
+msgid "App Groups"
+msgstr "アプリグループ"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__company_id
+msgid "Company"
+msgstr "会社"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "Contained Apps"
+msgstr "含まれるアプリ"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.actions.act_window,help:udoo_lavend_ux.action_app_group
+msgid "Create your first app group!"
+msgstr "最初のアプリグループを作成しましょう！"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__create_uid
+msgid "Created by"
+msgstr "作成者"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__create_date
+msgid "Created on"
+msgstr "作成日"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__description
+msgid "Description"
+msgstr "説明"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__display_name
+msgid "Display Name"
+msgstr "表示名"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.edit_menu_access_search_ui
+msgid "Group By"
+msgstr "グループ化"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__name
+msgid "Group Name"
+msgstr "グループ名"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__id
+msgid "ID"
+msgstr "ID"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__items
+msgid "Items"
+msgstr "項目"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__write_uid
+msgid "Last Updated by"
+msgstr "最終更新者"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__write_date
+msgid "Last Updated on"
+msgstr "最終更新日"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/conf/view.xml:0
+msgid "Manage your app organization"
+msgstr "アプリの構成を管理する"
+
+#. module: udoo_lavend_ux
+#: model:ir.model,name:udoo_lavend_ux.model_ir_ui_menu_group
+msgid "Menu Group"
+msgstr "メニューグループ"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.actions.act_window,help:udoo_lavend_ux.action_app_group
+msgid "Organize and categorize your apps by creating app groups."
+msgstr "アプリグループを作成して、アプリを整理・分類しましょう。"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/webclient/navbar/navbar.xml:0
+msgid "Others"
+msgstr "その他"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.edit_menu_access_search_ui
+msgid "Parent"
+msgstr "親メニュー"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.edit_menu_access_search_ui
+msgid "Root Menu"
+msgstr "ルートメニュー"
+
+#. module: udoo_lavend_ux
+#: model:ir.model.fields,field_description:udoo_lavend_ux.field_ir_ui_menu_group__sequence
+msgid "Sequence"
+msgstr "順序"
+
+#. module: udoo_lavend_ux
+#. odoo-javascript
+#: code:addons/udoo_lavend_ux/static/src/conf/view.xml:0
+msgid "Set environment color scheme"
+msgstr "環境のカラースキームを設定する"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "e.g. Contains all finance related applications"
+msgstr "例：財務関連のアプリをすべて含む"
+
+#. module: udoo_lavend_ux
+#: model_terms:ir.ui.view,arch_db:udoo_lavend_ux.app_group_view_form
+msgid "e.g. Finance"
+msgstr "例：財務"

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="wub.ListRenderer.xFilter">
+        <div t-if="uState.hasXColumnFilter and uState.fieldDefsLocked" t-att-class="x2mFilterClass">
+            <t t-foreach="allColumns" t-as="cc" t-key="cc.id">
+                <t t-set="fCanSearch" t-value="fields[cc.name]?.searchable or cc.relatedPropertyField"/>
+                <div t-if="cc?.options?.filterable and fCanSearch" class="input-group" t-att-class="{ 'd-block': isX2Many }">
+                    <t t-set="currentFvs" t-value="uo.filterValues[cc.name]"/>
+                    <div class="form-control d-flex align-items-center pe-0 bg-light" t-att-class="{ 'focus': !!currentFvs }">
+                        <t t-set="info" t-value="getColumnEditorInfo(cc)" />
+                        <span class="text-nowrap text-muted fw-bold me-2 small" t-out="cc.label + ':'"/>
+                        <span t-if="!!currentFvs" role="button" class="small text-info me-1 lh-1" t-on-click="() => this._clearColumnFilter(cc.name)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-funnel-x-icon lucide-funnel-x"><path d="M12.531 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14v6a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341l.427-.473"/><path d="m16.5 3.5 5 5"/><path d="m21.5 3.5-5 5"/></svg>
+                        </span>
+                        <t t-component="info.component" t-props="info.extractProps({value: info.mutGetter(), update: info.valueSetter })" />
+                        <span class="btn border-transparent lh-1 ps-2 pe-1 ms-auto text-muted" t-att-class="{ 'opacity-50 opacity-100-hover': fCanSearch, 'px-0 opacity-0 pe-none': !fCanSearch }" t-on-click.prevent="(ev) => this.openInlaceFilter(ev, cc)">
+                            <svg xmlns="http://www.w3.org/2000/svg" t-att-width="fCanSearch ? 16 : 0" height="16" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+                        </span>
+                    </div>
+                </div>
+            </t>
+            <button t-att-class="x2mFilterClearClass" t-on-click="uClearAllFilter">
+                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 1 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-filter-x"><path d="M13.013 3H2l8 9.46V19l4 2v-8.54l.9-1.055"/><path d="m22 3-5 5"/><path d="m17 3 5 5"/></svg>
+            </button>
+        </div>
+    </t>
+
+    <t t-inherit="web.ListRenderer" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_list_renderer')]" position="before">
+            <t t-if="!x2mFilterPortalPath" t-call="wub.ListRenderer.xFilter"/>
+            <t t-else="" t-portal="x2mFilterPortalPath">
+                <t t-call="wub.ListRenderer.xFilter"/>
+            </t>
+        </xpath>
+
+        <xpath expr="//table[contains(@t-attf-class,'o_list_table')]//thead" position="inside">
+            <tr t-if="activeActions.type == 'view' and ((uo.useFilterBar and env.config.actionId) or uo.useFilterBarPop) and uState.fieldDefsLocked" t-att-class="{ 'u_filter_bar': true }">
+                <td t-if="hasSelectors" class="align-middle opacity-75 opacity-100-hover py-1">
+                    <span role="button" t-on-click="uClearAllFilter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-filter"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg>
+                    </span>
+                </td>
+                <td t-foreach="columns" t-as="column" t-key="column.id" class="pe-0" style="padding-block: 7px" t-att-colspan="column_index == (columns.length - 1) and (displayOptionalFields or activeActions.onDelete) ? 2 : ''">
+                    <t t-set="fCanSearch" t-value="fields[column.name]?.searchable or column.relatedPropertyField"/>
+                    <div t-if="column.name and fCanSearch and !column.isHandle and column.hasLabel" class="input-group">
+                        <t t-set="currentFvs" t-value="uo.filterValues[column.name]"/>
+                        <div class="form-control d-flex align-items-center py-0 pe-0 me-1" t-att-class="{ 'focus': !!currentFvs }" style="background: var(--table-striped-bg)">
+                            <t t-set="info" t-value="getColumnEditorInfo(column)" />
+                            <span t-if="!!currentFvs" role="button" class="u_fcol_badge text-info me-1 lh-1" t-on-click="() => this._clearColumnFilter(column.name)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-funnel-x-icon lucide-funnel-x"><path d="M12.531 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14v6a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341l.427-.473"/><path d="m16.5 3.5 5 5"/><path d="m21.5 3.5-5 5"/></svg>
+                            </span>
+                            <t t-component="info.component" t-props="info.extractProps({value: info.mutGetter(), update: info.valueSetter })" />
+                            <span class="btn border-transparent lh-1 ps-2 pe-1 ms-auto text-muted" t-att-class="{ 'opacity-50 opacity-100-hover': fCanSearch, 'px-0 opacity-0 pe-none': !fCanSearch }" t-on-click.prevent="(ev) => this.openInlaceFilter(ev, column)">
+                                <svg xmlns="http://www.w3.org/2000/svg" t-att-width="fCanSearch ? 16 : 0" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </xpath>
+
+        <xpath expr="//i[contains(@t-att-class,'getSortableIconClass')]" position="after">
+            <Uropdown
+                t-if="uIsStorable(column)"
+                menuClass="'quick_cact lh-ud'"
+                position="'bottom-end'">
+
+                <button t-att-class="'ms-1 me-2 d-ufover align-items-center btn d-none p-0' + ' elvc_' + _normCls(column.name)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-ellipsis-vertical"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+                </button>
+
+                <t t-set-slot="content">
+                    <t t-set="colTypes" t-value="column.field.supportedTypes"/>
+                    <t t-set="uGroupable" t-value="fields[column.name].groupable"/>
+                    <t t-if="activeActions.type === 'view'">
+                        <DropdownItem class="'d-flex align-items-center'" onSelected="() => this.uAddCustomFilter(column)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-3 lucide lucide-cone"><path d="m20.9 18.55-8-15.98a1 1 0 0 0-1.8 0l-8 15.98"/><ellipse cx="12" cy="19" rx="9" ry="3"/></svg>
+                            <span class="me-3">Filter by <i t-out="column.label"/></span>
+                        </DropdownItem>
+                        <DropdownItem class="'d-flex align-items-center d-udrop-caret' + ' elvf_' + _normCls(column.name)" closingMode="'none'" onSelected="() => this.uQuickFilterPop(column)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-3 lucide lucide-blend"><circle cx="9" cy="9" r="7"/><circle cx="15" cy="15" r="7"/></svg>
+                            <span class="me-3">Quick Column Filters</span>
+                        </DropdownItem>
+                        <DropdownItem class="'d-flex align-items-center'" onSelected="() => this.uResetFilter(column)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-3 lucide lucide-filter-x"><path d="M13.013 3H2l8 9.46V19l4 2v-8.54l.9-1.055"/><path d="m22 3-5 5"/><path d="m17 3 5 5"/></svg>
+                            <t>Clear Filtering</t>
+                        </DropdownItem>
+                        <t t-if="uGroupable || fields[column.name].relatedPropertyField">
+                            <div role="separator" class="dropdown-divider"/>
+                            <DropdownItem t-if="colTypes and (colTypes.includes('datetime') or colTypes.includes('date'))" class="'d-flex align-items-center d-udrop-caret' + ' elvg_' + _normCls(column.name)" closingMode="'none'" onSelected="() => this.uToggleGroupPop(column)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-3 lucide lucide-list-collapse"><path d="m3 10 2.5-2.5L3 5"/><path d="m3 19 2.5-2.5L3 14"/><path d="M10 6h11"/><path d="M10 12h11"/><path d="M10 18h11"/></svg>
+                                <span class="me-3">Group <i t-out="column.label"/> by</span>
+                            </DropdownItem>
+                            <DropdownItem t-else="" class="'d-flex align-items-center'" onSelected="() => this.uToggleGroup(column)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-3 lucide lucide-list-collapse"><path d="m3 10 2.5-2.5L3 5"/><path d="m3 19 2.5-2.5L3 14"/><path d="M10 6h11"/><path d="M10 12h11"/><path d="M10 18h11"/></svg>
+                                <span>Group by <i t-out="column.label"/></span>
+                            </DropdownItem>
+                            <DropdownItem class="'d-flex align-items-center'" onSelected="() => this.uToggleGroup(column, true)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-3 lucide lucide-gallery-thumbnails"><rect width="18" height="14" x="3" y="3" rx="2"/><path d="M4 21h1"/><path d="M9 21h1"/><path d="M14 21h1"/><path d="M19 21h1"/></svg>
+                                <t>Clear Grouping</t>
+                            </DropdownItem>
+                        </t>
+                    </t>
+                    <t t-if="isSortable(column)">
+                        <div role="separator" class="dropdown-divider"/>
+                        <DropdownItem class="'d-flex align-items-center'" onSelected="() => this.uSortAscending(column)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-3 lucide lucide-arrow-down-a-z"><path d="m3 16 4 4 4-4"/><path d="M7 20V4"/><path d="M20 8h-5"/><path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10"/><path d="M15 14h5l-5 6h5"/></svg>
+                            <t>Sort Ascending</t>
+                        </DropdownItem>
+                        <DropdownItem class="'d-flex align-items-center'" onSelected="() => this.uSortDescending(column)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-3 lucide lucide-arrow-up-a-z"><path d="m3 8 4-4 4 4"/><path d="M7 4v16"/><path d="M20 8h-5"/><path d="M15 10V6.5a2.5 2.5 0 0 1 5 0V10"/><path d="M15 14h5l-5 6h5"/></svg>
+                            <t>Sort Descending</t>
+                        </DropdownItem>
+                        <DropdownItem class="'d-flex align-items-center'" onSelected="() => this.uResetSort(column)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-3 lucide lucide-list-start"><path d="M16 12H3"/><path d="M16 18H3"/><path d="M10 6H3"/><path d="M21 18V8a2 2 0 0 0-2-2h-5"/><path d="m16 8-2-2 2-2"/></svg>
+                            <t>Reset Sorting</t>
+                        </DropdownItem>
+                    </t>
+                    <t t-if="column.optional">
+                        <div role="separator" class="dropdown-divider"/>
+                        <DropdownItem class="'d-flex align-items-center'" onSelected="() => this.toggleOptionalField(column.name)">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-3 lucide lucide-eye-off"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg>
+                            <span>Hide <i t-out="column.label"/></span>
+                        </DropdownItem>
+                    </t>
+                </t>
+            </Uropdown>
+        </xpath>
+
+        <xpath expr="//i[hasclass('o_list_sortable_caret')]" position="attributes">
+            <attribute name="class"></attribute>
+        </xpath>
+
+        <xpath expr="//th[contains(@t-on-click,'onClickSortColumn')]" position="attributes">
+            <attribute name="t-on-contextmenu.prevent">() => this.triggerColPop(column)</attribute>
+            <attribute name="t-att-data-tooltip-template"></attribute>
+            <attribute name="t-att-data-tooltip-info"></attribute>
+            <attribute name="data-tooltip-delay"></attribute>
+        </xpath>
+
+        <!-- https://github.com/odoo/odoo/commit/646b029e5e9b03d30848e789ad400007305b3589 -->
+        <xpath expr="//th[contains(@t-on-click,'onClickSortColumn')]//span[hasclass('text-truncate')]" position="attributes">
+            <attribute name="t-att-data-tooltip-template">isDebugMode ? 'web.FieldTooltip' : 'web.ListHeaderTooltip'</attribute>
+            <attribute name="t-att-data-tooltip-info">makeTooltip(column)</attribute>
+            <attribute name="data-tooltip-delay">1000</attribute>
+        </xpath>
+    </t>
+
+    <t t-inherit="web.ListRenderer.Rows" t-inherit-mode="extension">
+        <xpath expr="//t[@t-foreach='list.records']" position="attributes">
+            <attribute name="t-if">!isX2Many or !uState.x2ManyFds or uState.x2ManyFds?.includes(record.resId)</attribute>
+        </xpath>
+    </t>
+
+    <t t-name="wub.QuickColumnFilterPopOver">
+        <div role="menu" class="py-2 d-block">
+            <t t-if="props.items.length">
+                <DropdownItem
+                    t-foreach="props.items"
+                    t-as="item"
+                    t-key="item.id"
+                    t-out="item.description"
+                    class="'user-select-none cursor-pointer ' + props.itemClass + (props.isel and props.isel(item) ? ' selected' : '')"
+                    onSelected="() => props.popAction(item, this)"/>
+            </t>
+            <div t-else="" class="p-2" t-out="props.emptyMsg"></div>
+        </div>
+    </t>
+</templates>

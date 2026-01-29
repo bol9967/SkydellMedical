@@ -1,0 +1,29 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mailbox_account_user,Mailbox Account - User,maildesk_mail_client.model_mailbox_account,maildesk_mail_client.group_mailbox_user,1,0,0,0
+access_mailbox_account_admin,Mailbox Account - Admin,maildesk_mail_client.model_mailbox_account,maildesk_mail_client.group_mailbox_admin,1,1,1,1
+
+access_mailbox_folder_user,Mailbox Folder - User,maildesk_mail_client.model_mailbox_folder,maildesk_mail_client.group_mailbox_user,1,0,0,0
+access_mailbox_folder_admin,Mailbox Folder - Admin,maildesk_mail_client.model_mailbox_folder,maildesk_mail_client.group_mailbox_admin,1,1,1,1
+
+access_mail_message_tag_user,Mail Message Tag - User,maildesk_mail_client.model_mail_message_tag,maildesk_mail_client.group_mailbox_user,1,1,1,0
+access_mail_message_tag_admin,Mail Message Tag - Admin,maildesk_mail_client.model_mail_message_tag,maildesk_mail_client.group_mailbox_admin,1,1,1,1
+
+access_mailbox_account_wizard_user,Mailbox Account Wizard - User,maildesk_mail_client.model_mailbox_account_wizard,maildesk_mail_client.group_mailbox_user,1,1,1,1
+access_mailbox_account_wizard_admin,Mailbox Account Wizard - Admin,maildesk_mail_client.model_mailbox_account_wizard,maildesk_mail_client.group_mailbox_admin,1,1,1,1
+
+access_maildesk_message_cache_user,maildesk.message_cache User,maildesk_mail_client.model_maildesk_message_cache,maildesk_mail_client.group_mailbox_user,1,1,1,1
+access_maildesk_message_cache_admin,maildesk.message_cache Admin,maildesk_mail_client.model_maildesk_message_cache,maildesk_mail_client.group_mailbox_admin,1,1,1,1
+
+access_maildesk_email_state_user,maildesk.email_state User,maildesk_mail_client.model_maildesk_email_state,maildesk_mail_client.group_mailbox_user,1,1,1,1
+access_maildesk_email_state_admin,maildesk.email_state Admin,maildesk_mail_client.model_maildesk_email_state,maildesk_mail_client.group_mailbox_admin,1,1,1,1
+
+access_mail_message_tag_link_user,mail.message.tag.link user,maildesk_mail_client.model_mail_message_tag_link,maildesk_mail_client.group_mailbox_user,1,1,1,1
+access_mail_message_tag_link_admin,mail.message.tag.link admin,maildesk_mail_client.model_mail_message_tag_link,maildesk_mail_client.group_mailbox_admin,1,1,1,1
+
+access_maildesk_draft_user,maildesk.draft User,maildesk_mail_client.model_maildesk_draft,maildesk_mail_client.group_mailbox_user,1,1,1,1
+access_maildesk_draft_admin,maildesk.draft Admin,maildesk_mail_client.model_maildesk_draft,maildesk_mail_client.group_mailbox_admin,1,1,1,1
+
+access_maildesk_inline_attachment_user,maildesk.inline.attachment User,maildesk_mail_client.model_maildesk_inline_attachment,maildesk_mail_client.group_mailbox_user,1,1,1,0
+access_maildesk_inline_attachment_admin,maildesk.inline.attachment Admin,maildesk_mail_client.model_maildesk_inline_attachment,maildesk_mail_client.group_mailbox_admin,1,1,1,1
+
+access_mailbox_sync,mailbox.sync User,maildesk_mail_client.model_mailbox_sync,maildesk_mail_client.group_mailbox_user,1,1,1,1

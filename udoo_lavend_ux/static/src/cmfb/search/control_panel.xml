@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="web.ControlPanel" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_control_panel_main')]" position="after">
+            <t t-if="uFilterBarItems?.length and env.config.viewType != 'form' and (((uo.useFilterTabBar and env.config.actionId) or uo.useFilterTabBarPop))">
+                <div class="u_filter_tabbar d-flex flex-nowrap overflow-y-auto justify-content-start gap-1" style="margin-bottom: -6px">
+                    <t t-foreach="uFilterPinnedTabs" t-as="fbi" t-key="fbi.id">
+                        <span role="button"
+                            class="btn text-nowrap py-1"
+                            t-att-class="{ 'opacity-75 opacity-100-hover': state.filterTid != fbi.id, 'text-primary': state.filterTid === fbi.id }"
+                            t-on-click="() => this.uToggleFilterTab(fbi)"
+                            t-out="fbi.description"/>
+                    </t>
+                    <span role="button"
+                        class="btn text-info fw-normal px-0 py-1 ms-auto"
+                        t-if="env.config.actionId"
+                        t-on-click="uFilterTabBarSetter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 3V6H3V8H7V11H9V3H7ZM11 8H21V6H11V8ZM17 13V16H21V18H17V21H15V13H17ZM13 18H3V16H13V18Z"></path>
+                        </svg>
+                    </span>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//div[hasclass('u_toggle_area')]" position="inside">
+            <span t-if="env.config.viewType and env.config.viewType != 'form'" t-on-click.prevent="uToggleFilterTabBar" class="dropdown-item" role="menuitem" tabindex="0">
+                <div class="pe-none o-checkbox form-check form-switch d-flex align-items-center flex-row-reverse justify-content-between p-0 w-100 mb-0">
+                    <input id="u_ToggleFilterTabBar" type="checkbox" class="form-check-input ms-3 mt-0" t-att-checked="(uo.useFilterTabBar and env.config.actionId) or uo.useFilterTabBarPop"/>
+                    <label class="user-select-none d-flex align-items-center" for="u_ToggleFilterTabBar">
+                        <t>Filter Navigation Bar</t>
+                    </label>
+                </div>
+            </span>
+        </xpath>
+    </t>
+</templates>

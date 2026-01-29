@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_users_team_leader,res.users.team.leader,base.model_res_users,ox_sales_team_hierarchy.group_team_leader,1,0,0,0
+access_sale_order_team_leader,sale.order.team.leader,model_sale_order,ox_sales_team_hierarchy.group_team_leader,1,0,0,0
+access_crm_lead_team_leader,crm.lead.team.leader,model_crm_lead,ox_sales_team_hierarchy.group_team_leader,1,0,0,0

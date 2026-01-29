@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="app_group_view_list" model="ir.ui.view">
+        <field name="name">ir.ui.menu.group.list</field>
+        <field name="model">ir.ui.menu.group</field>
+        <field name="arch" type="xml">
+            <list string="App Groups">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="items"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+    <record id="app_group_view_form" model="ir.ui.view">
+        <field name="name">ir.ui.menu.group.form</field>
+        <field name="model">ir.ui.menu.group</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" placeholder="e.g. Finance"/>
+                        </h1>
+                        <field name="description" placeholder="e.g. Contains all finance related applications"/>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="active" invisible="1"/>
+                            <field name="sequence"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Contained Apps" name="app_items">
+                            <field name="items">
+                                <list>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="complete_name"/>
+                                    <field name="name"/>
+                                    <field name="active"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_app_group" model="ir.actions.act_window">
+        <field name="name">App Groups</field>
+        <field name="res_model">ir.ui.menu.group</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first app group!
+            </p>
+            <p>
+                Organize and categorize your apps by creating app groups.
+            </p>
+        </field>
+    </record>
+    <menuitem id="mensidenav_group"
+          action="action_app_group"
+          parent="base.next_id_2"
+          sequence="1"/>
+</odoo>

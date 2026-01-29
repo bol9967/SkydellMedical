@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<odoo>
+  <record id="view_mailbox_account_list" model="ir.ui.view">
+    <field name="name">mailbox.account.list</field>
+    <field name="model">mailbox.account</field>
+    <field name="arch" type="xml">
+      <list string="Mailbox Accounts" decoration-muted="not active">
+        <field name="sequence" widget="handle" />
+        <field name="name" />
+        <field name="email" />
+        <field name="sender_name" />
+        <field name="owner_id" />
+        <field name="active" widget="boolean_toggle" />
+      </list>
+    </field>
+  </record>
+  <record id="view_mailbox_account_form" model="ir.ui.view">
+    <field name="name">mailbox.account.form</field>
+    <field name="model">mailbox.account</field>
+    <field name="arch" type="xml">
+      <form string="Mailbox Account">
+        <header>
+          <button name="sync_imap_folders" class="btn-primary" type="object" string="Fetch folders" />
+          <button
+            string="Test Incoming Server"
+            type="object"
+            name="button_test_incoming"
+          />
+          <button
+            string="Test Outgoing Server"
+            type="object"
+            name="button_test_outgoing"
+          />
+        </header>
+        <sheet>
+          <field name="active" invisible="1" />
+          <group>
+            <group>
+              <field name="name" />
+              <field name="email" />
+              <field name="sender_name" />
+              <field name="is_shared"
+                string="Allow Personal Connection"
+                help="If enabled, users can connect to this mailbox account themselves by entering the email and password."/>
+              <field name="password" password="True" invisible="not is_shared"/>
+              <field name="access_user_ids" widget="many2many_tags" />
+            </group>
+            <group>
+              <field name="mail_server_id" required="1" />
+              <field name="mail_send_server_id" required="1" />
+              <field name="max_email_size" />
+              <field
+                name="attach_mail_server_id"
+                help="If set, attachments will not be stored in Odoo. Only links to attachments on this mail server will be saved and fetched when needed."
+              />
+              <field
+                name="block_tracking_urls"
+                help="Removes tracking links (e.g. /L0/...) from incoming emails to protect user privacy."
+              />
+            </group>
+          </group>
+          <notebook>
+            <page string="Folders">
+              <field name="folder_ids">
+                <list editable="bottom">
+                  <field name="sequence" widget="handle" />
+                  <field name="is_visible" width="50px" />
+                  <field name="name" />
+                  <field name="parent_id" domain="[('account_id', '=', parent.id)]" />
+                  <field name="folder_type" />
+                  <field name="sync_modseq" optional="hide" />
+                  <field name="last_uid" optional="hide" />
+                  <field name="imap_name" optional="hide" />
+                </list>
+              </field>
+            </page>
+            <page string="Signature">
+              <field name="signature" widget="html" />
+            </page>
+          </notebook>
+          <div class="alert alert-warning rounded p-4" role="alert">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <h5 class="mb-1 fw-bold">Email Hosting Recommendation</h5>
+                <p class="mb-2 text-muted">
+                  Show or hide the Metzler IT recommendation block below the mailbox settings.
+                </p>
+              </div>
+              <div>
+                <field
+                  name="show_recommendation"
+                  widget="boolean_toggle"
+                  class="ms-3"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            class="alert alert-info rounded p-4"
+            role="alert"
+            invisible="not show_recommendation"
+          >
+              <h5 class="fw-bold mb-3">
+                🚀 Take Back Control of Your Email — Fully Inside Odoo!
+              </h5>
+              <p class="mb-3">
+                Tired of relying on Gmail or Outlook? Get your own
+                <strong>secure, managed IMAP server</strong> with deep Odoo integration:
+              </p>
+              <ul class="mb-3" style="list-style: none; padding-left: 0;">
+                <li class="mb-2">
+                  <strong
+                >Zero third-party storage:</strong> all messages &amp; data stay on your server—no Google, no Microsoft.
+                </li>
+                <li class="mb-2">
+                  <strong
+                >Enterprise-grade security:</strong> SPF/DKIM/DMARC, encryption at rest &amp; in transit, fail2ban &amp; advanced spam defense.
+                </li>
+                <li class="mb-2">
+                  <strong
+                >GDPR &amp; privacy first:</strong> host in the EU or on your own infrastructure for complete compliance.
+                </li>
+                <li class="mb-2">
+                  <strong
+                >Seamless Odoo integration:</strong> configure accounts, filters, signatures, folders, notifications &amp; more—without ever leaving your ERP.
+                </li>
+                <li class="mb-2">
+                  <strong
+                >Unified experience:</strong> send, receive, search and collaborate on emails directly in your Odoo workflows.
+                </li>
+                <li class="mb-2">
+                  <strong
+                >One-click mail server setup:</strong> with the Connector, you can create fully working incoming &amp; outgoing servers directly from Odoo—no need to touch the mail server UI. Just click, and it’s ready.
+                </li>
+                <li>
+                  Optional support by <strong
+                >Metzler IT GmbH</strong> – experienced Odoo experts
+                </li>
+              </ul>
+              <div class="d-flex gap-3">
+                <a
+                href="https://mit-odoo.de/module/maildesk"
+                role="button"
+                target="_blank"
+                class="btn btn-primary btn-lg"
+              >
+                  Learn More
+                </a>
+              </div>
+            </div>
+
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <record id="action_mailbox_account" model="ir.actions.act_window">
+    <field name="name">Mailbox Accounts</field>
+    <field name="res_model">mailbox.account</field>
+    <field name="view_mode">list,form</field>
+    <field name="context">{'active_test': False}</field>
+    <field name="domain">[]</field>
+  </record>
+  <record id="action_mailbox_account_create_folders" model="ir.actions.server">
+    <field name="name">Fetch Folders</field>
+    <field name="model_id" ref="model_mailbox_account" />
+    <field name="binding_model_id" ref="model_mailbox_account" />
+    <field name="state">code</field>
+    <field name="code">records.sync_imap_folders()</field>
+    <field name="binding_type">action</field>
+  </record>
+</odoo>

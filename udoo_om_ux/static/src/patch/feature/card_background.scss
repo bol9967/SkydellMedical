@@ -1,0 +1,13 @@
+@for $i from 1 through 11 {
+    $c: nth($o-colors, $i+1);
+
+    .o_kanban_color_#{$i} {
+        @if $min-contrast-ratio ==4.5 {
+            background-color: rgba($c, .1) !important;
+            border-color: rgba($c, .5) !important;
+        } @else {
+            background-color: mix($c, white, 2%) !important;
+            border-color: mix($c, white, 80%) !important;
+        }
+    }
+}

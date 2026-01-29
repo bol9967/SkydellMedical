@@ -1,0 +1,2099 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* maildesk_mail_client
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-30 09:21+0000\n"
+"PO-Revision-Date: 2025-07-30 09:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_sync.py:0
+msgid "%d new messages"
+msgstr "%d neue E-Mails"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>Enterprise-grade security:</strong> SPF/DKIM/DMARC, encryption at "
+"rest &amp; in transit, fail2ban &amp; advanced spam defense."
+msgstr ""
+"<strong>Sicherheit auf Enterprise-Niveau:</strong> SPF/DKIM/DMARC, "
+"Verschlüsselung (at rest &amp; in transit), fail2ban &amp; Spamschutz."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>GDPR &amp; privacy first:</strong> host in the EU or on your own "
+"infrastructure for complete compliance."
+msgstr ""
+"<strong>DSGVO &amp; Datenschutz im Fokus:</strong> Hosting in der EU oder "
+"auf eigener Infrastruktur."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"Tired of relying on Gmail or Outlook? Get your own\n"
+"                <strong>secure, managed IMAP server</strong> with deep Odoo integration:"
+msgstr ""
+"Genug von der Abhängigkeit von Gmail oder Outlook? Holen Sie sich Ihren eigenen\n"
+"<strong>sicheren, verwalteten IMAP-Server</strong> mit tiefer Odoo-Integration:"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>One-click mail server setup:</strong> with the Connector, you can "
+"create fully working incoming &amp; outgoing servers directly from Odoo—no "
+"need to touch the mail server UI. Just click, and it’s ready."
+msgstr ""
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>Seamless Odoo integration:</strong> configure accounts, filters, "
+"signatures, folders, notifications &amp; more—without ever leaving your ERP."
+msgstr ""
+"<strong>Nahtlose Odoo-Integration:</strong> Konten, Filter, Signaturen, "
+"Ordner &amp; Benachrichtigungen direkt im ERP."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>Unified experience:</strong> send, receive, search and collaborate "
+"on emails directly in your Odoo workflows."
+msgstr ""
+"<strong>Zentrale Nutzererfahrung:</strong> E-Mails senden, empfangen, "
+"durchsuchen &amp; zusammenarbeiten – alles in Odoo."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"<strong>Zero third-party storage:</strong> all messages &amp; data stay on "
+"your server—no Google, no Microsoft."
+msgstr ""
+"<strong>Keine Drittanbieter-Speicherung:</strong> Alle Daten bleiben auf "
+"Ihrem Server – ohne Google, ohne Microsoft."
+
+#. module: maildesk_mail_client
+#: model:ir.module.category,description:maildesk_mail_client.module_category_maildesk
+msgid "Access rights for the Mailbox / MailDesk module"
+msgstr "Zugriffsgruppen für den Maildesk-E-Mail-Client"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__account_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__account_id
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "Account"
+msgstr "Postfachkonto"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__name
+msgid "Account Name"
+msgstr "Kontoname"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Account not found."
+msgstr "Konto nicht gefunden."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_needaction
+msgid "Action Needed"
+msgstr "Aktion erforderlich"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__active
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__active
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__active
+msgid "Active"
+msgstr "Aktiv"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/email_input_field.xml:0
+msgid "Add Bcc (Blind Carbon Copy)"
+msgstr "Bcc hinzufügen (Blindkopie)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/email_input_field.xml:0
+msgid "Add Cc (Carbon Copy)"
+msgstr "Cc hinzufügen (Kopie)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Add Star"
+msgstr "Markieren"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Add or remove star from selected emails"
+msgstr "Stern zu ausgewählten E-Mails hinzufügen oder entfernen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "All"
+msgstr "Alle"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "All Mailboxes"
+msgstr "Alle Postfächer"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Apply"
+msgstr "Anwenden"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__archive
+msgid "Archive"
+msgstr "Archivieren"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Archive message"
+msgstr "E-Mail archivieren"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Archive selected emails"
+msgstr "Ausgewählte E-Mails archivieren"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/assign_tags_dialog.esm.js:0
+msgid "Assign Tags"
+msgstr "Tags zuweisen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Assign Tags…"
+msgstr "Tags zuweisen…"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Assign tags"
+msgstr "Tags zuweisen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Attach file"
+msgstr "Datei anhängen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_form
+msgid "Attachment"
+msgstr "Anhang"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_attachment_count
+msgid "Attachment Count"
+msgstr "Anzahl Anhänge"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mailbox_attachment
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_list
+msgid "Attachments"
+msgstr "Anhänge"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__avatar_html
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__avatar_html
+msgid "Avatar Html"
+msgstr "Avatar-HTML"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__avatar_partner_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__avatar_partner_id
+msgid "Avatar Partner"
+msgstr "Avatar-Partner"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_compose_message__partner_bcc_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__email_bcc
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_template_preview__email_bcc
+msgid "Bcc"
+msgstr "Bcc"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__recipient_bcc_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__recipient_bcc_ids
+msgid "Bcc (Partners)"
+msgstr "Bcc (Partner)"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__bcc_display
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__bcc_display
+msgid "Bcc Display"
+msgstr "Bcc-Anzeige"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/email_input_field.xml:0
+msgid "Bcc+"
+msgstr "Bcc+"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Bcc:"
+msgstr "Bcc:"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mail_mail__email_bcc
+msgid "Blind Cc message recipients"
+msgstr "Empfänger der Blindkopie (Bcc)"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__block_tracking_urls
+msgid "Block Tracking URLs"
+msgstr "Tracking-Links blockieren"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "By Contact"
+msgstr "Nach Kontakt"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_compose_message__partner_cc_ids
+msgid "Cc"
+msgstr "Cc"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__recipient_cc_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__recipient_cc_ids
+msgid "Cc (Partners)"
+msgstr "Cc (Partner)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/email_input_field.xml:0
+msgid "Cc /"
+msgstr "Cc /"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__cc_display
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__cc_display
+msgid "Cc Display"
+msgstr "Cc-Anzeige"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Cc:"
+msgstr "Cc:"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__child_ids
+msgid "Child"
+msgstr "Unterordner"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mail_compose_message__account_id
+msgid "Choose the mail account to send the email from"
+msgstr "Wählen Sie das E-Mail-Konto, von dem die E-Mail gesendet werden soll"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Clear"
+msgstr "Zurücksetzen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "Clear filter"
+msgstr "Filter löschen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+#: code:addons/maildesk_mail_client/static/src/xml/move_to_folder_dialog.xml:0
+msgid "Close"
+msgstr "Schließen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__color
+msgid "Color"
+msgstr "Farbe"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Compose"
+msgstr "Schreiben"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Compose a new email"
+msgstr "Neue E-Mail schreiben"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Concurrent write error. Please try again."
+msgstr "Gleichzeitiger Schreibfehler. Bitte versuchen Sie es erneut."
+
+#. module: maildesk_mail_client
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_maildesk_config
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_wizard_form
+msgid "Connect"
+msgstr "Verbinden"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_account_wizard
+msgid "Connect to Existing Mailbox Wizard"
+msgstr "Assistent zur Verbindung mit vorhandenem Postfach"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mailbox_account_wizard
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mailbox_account_wizard
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_wizard_form
+msgid "Connect to Mailbox"
+msgstr "Postfach verbinden"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid "Connection Test Successful!"
+msgstr "Verbindungstest erfolgreich!"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Create"
+msgstr "Erstellen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Create Contact"
+msgstr "Kontakt erstellen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Create New Tag"
+msgstr "Neues Tag erstellen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Create new tag"
+msgstr "Neues Tag erstellen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__create_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__create_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__date_created
+msgid "Date Created"
+msgstr "Erstellungsdatum"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__date_done
+msgid "Date Done"
+msgstr "Datum abgeschlossen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__date_from
+msgid "Date From"
+msgstr "Datum von"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__date_to
+msgid "Date To"
+msgstr "Datum bis"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_sync_manual_wizard.py:0
+msgid "Date To must be after or equal to Date From."
+msgstr "„Datum bis“ muss nach oder gleich „Datum von“ sein."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Delete"
+msgstr "Löschen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Delete message"
+msgstr "E-Mail löschen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__name
+msgid "Description"
+msgstr "Beschreibung"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_sync_job__state__done
+msgid "Done"
+msgstr "Erledigt"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Draft"
+msgstr "Entwurf"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Draft not found."
+msgstr "Entwurf nicht gefunden."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__drafts
+msgid "Drafts"
+msgstr "Entwürfe"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Edit Draft"
+msgstr "Entwurf bearbeiten"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Edit draft"
+msgstr "Entwurf bearbeiten"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+msgid "Email"
+msgstr "E-Mail"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__email
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__email
+msgid "Email Address"
+msgstr "E-Mail-Adresse"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Email Hosting Recommendation"
+msgstr "Empfehlung für E-Mail-Hosting"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_template_preview
+msgid "Email Template Preview"
+msgstr "Vorschau der E-Mail-Vorlage"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_thread
+msgid "Email Thread"
+msgstr "E-Mail-Thread"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Assistent für die E-Mail-Erstellung"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Email sending failed: %s"
+msgstr "E-Mail-Versand fehlgeschlagen: %s"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.res_partner_view_form_inherit_maildesk
+msgid "Emails"
+msgstr "E-Mails"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__notify_enabled
+msgid "Enable Notifications"
+msgstr "Benachrichtigungen aktivieren"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mail_compose_message__custom_from_name
+msgid ""
+"Enter the name from which the email will be sent. If empty, default is the "
+"user's name."
+msgstr ""
+"Geben Sie den Namen an, unter dem die E-Mail gesendet wird. Wenn leer, wird "
+"standardmäßig der Name des Benutzers verwendet."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__error_message
+msgid "Error Message"
+msgstr "Fehlermeldung"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "Errors only"
+msgstr "Nur Fehler"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Expand"
+msgstr "Erweitern"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_attachment
+msgid "External Email Attachment Metadata"
+msgstr "Metadaten externer E-Mail-Anhänge"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__external_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__external_id
+msgid "External Message ID"
+msgstr "Externe Nachrichten-ID"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_sync_job__state__failed
+msgid "Failed"
+msgstr "Fehlgeschlagen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Failed to mark partner as trusted."
+msgstr "Partner konnte nicht als vertrauenswürdig markiert werden."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Failed to open contact form."
+msgstr "Kontaktformular konnte nicht geöffnet werden."
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.action_mailbox_account_create_folders
+msgid "Fetch Folders"
+msgstr "Ordner abrufen"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Fetch folders"
+msgstr "Ordner abrufen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__filename
+msgid "Filename"
+msgstr "Dateiname"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Filter options"
+msgstr "Filteroptionen"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "Finished"
+msgstr "Abgeschlossen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__finished_at
+msgid "Finished At"
+msgstr "Beendet am"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__first_uid
+msgid "First UID"
+msgstr "Erste UID"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__folder_str
+msgid "Folder Name"
+msgstr "Ordnername"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__folder_type
+msgid "Folder Type"
+msgstr "Ordner-Typ"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Folder not found."
+msgstr "Ordner nicht gefunden."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__folder_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__folder_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__folder_ids
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Folders"
+msgstr "Ordner"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_follower_ids
+msgid "Followers"
+msgstr "Abonnenten"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnenten (Partner)"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__force_show_content
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__force_show_content
+msgid "Force show content once"
+msgstr "Inhalt einmalig anzeigen erzwingen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Forward"
+msgstr "Weiterleiten"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Forward this email to another recipient."
+msgstr "Diese E-Mail an einen anderen Empfänger weiterleiten."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Forward this message"
+msgstr "Diese E-Mail weiterleiten"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "From"
+msgstr "Von"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__date_from
+msgid "From Date"
+msgstr "Von-Datum"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_compose_message__custom_from_name
+msgid "From Name"
+msgstr "Absendername"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "Group By"
+msgstr "Gruppieren nach"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__has_message
+msgid "Has Message"
+msgstr "Hat E-Mail"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__id
+msgid "ID"
+msgstr ""
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__imap_name
+msgid "IMAP Folder Name"
+msgstr "IMAP-Ordnername"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__mailbox_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__mailbox_uid
+msgid "IMAP UID"
+msgstr "IMAP-UID"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_thread__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Wenn aktiviert, erfordern neue E-Mails Ihre Aufmerksamkeit."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_thread__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Wenn aktiviert, enthalten einige E-Mails einen Zustellfehler."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_account__attach_mail_server_id
+msgid ""
+"If enabled, attachments will be downloaded and stored in Odoo. If disabled, "
+"attachments will remain on the mail server and will be fetched on demand "
+"when the email is viewed."
+msgstr ""
+"Wenn aktiviert, werden Anhänge heruntergeladen und in Odoo gespeichert. Wenn deaktiviert, "
+"verbleiben die Anhänge auf dem Mailserver und werden bei Bedarf beim Anzeigen der E-Mail geladen."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.res_partner_view_form_inherit_maildesk
+msgid ""
+"If enabled, emails from this partner will always display full content "
+"without additional security checks."
+msgstr ""
+"Wenn aktiviert, wird der vollständige Inhalt von E-Mails dieses Partners "
+"immer ohne zusätzliche Sicherheitsprüfungen angezeigt."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"If set, attachments will not be stored in Odoo. Only links to attachments on"
+" this mail server will be saved and fetched when needed."
+msgstr ""
+"Wenn aktiviert, werden Anhänge nicht in Odoo gespeichert. Es werden nur Links "
+"zu den Anhängen auf diesem Mailserver gespeichert und bei Bedarf abgerufen."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+msgid "Images"
+msgstr "Bilder"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__inbox
+msgid "Inbox"
+msgstr "Posteingang"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Incoming"
+msgstr "Eingang"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_fetchmail_server
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__mail_server_id
+msgid "Incoming Mail Server"
+msgstr "Posteingangsserver"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_account_wizard.py:0
+msgid "Incorrect password."
+msgstr "Falsches Passwort."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Insert signature"
+msgstr "Signatur einfügen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_account__notify_interval_minutes
+msgid "Interval for periodic unread notifications"
+msgstr "Intervall für regelmäßige Benachrichtigungen über ungelesene E-Mails"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid "Invalid email address format."
+msgstr "Ungültiges E-Mail-Adressformat."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__is_draft
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__is_draft
+msgid "Is Draft"
+msgstr "Ist Entwurf"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_is_follower
+msgid "Is Follower"
+msgstr "Ist Abonnent"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__is_starred
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__is_starred
+msgid "Is Starred"
+msgstr "Ist markiert"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__is_visible
+msgid "Is Visible"
+msgstr "Sichtbar"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__job_type
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "Job Type"
+msgstr "Aufgabentyp"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__attach_mail_server_id
+msgid "Keep Attachments"
+msgstr "Anhänge speichern"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__sync_modseq
+msgid "Last MODSEQ"
+msgstr "Letzter synchronisierter MODSEQ"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__last_notify_sent
+msgid "Last Notification Sent"
+msgstr "Letzte Benachrichtigung gesendet"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__last_uid
+msgid "Last UID"
+msgstr "Letzte UID"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__write_uid
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert von"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__write_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Learn More"
+msgstr "Mehr erfahren"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__mimetype
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_list
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+msgid "MIME Type"
+msgstr "MIME-Typ"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_compose_message__account_id
+msgid "Mail Account"
+msgstr "E-Mail-Konto"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_ir_mail_server
+msgid "Mail Server"
+msgstr "Mailserver"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_thread
+msgid "Mail Thread"
+msgstr "Postfachkonversation"
+
+#. module: maildesk_mail_client
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_maildesk_root
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_maildesk_root_menu
+msgid "MailDesk"
+msgstr "MailDesk"
+
+#. module: maildesk_mail_client
+#: model:ir.module.category,name:maildesk_mail_client.module_category_maildesk
+msgid "Mailbox / MailDesk"
+msgstr "Maildesk"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_account
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__account_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__account_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__account_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__account_id
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Mailbox Account"
+msgstr "Postfachkonto"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mailbox_account
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mailbox_account
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_list
+msgid "Mailbox Accounts"
+msgstr "E-Mail-Konten"
+
+#. module: maildesk_mail_client
+#: model:res.groups,name:maildesk_mail_client.group_mailbox_admin
+msgid "Mailbox Admin"
+msgstr "Postfach-Administrator"
+
+#. module: maildesk_mail_client
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mailbox_attachment
+msgid "Mailbox Attachments"
+msgstr "Postfach-Anhänge"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_folder
+msgid "Mailbox Folder"
+msgstr "Postfachordner"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_sync_job
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_form
+msgid "Mailbox Sync Job"
+msgstr "Postfach-Synchronisierungsauftrag"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mailbox_sync_jobs
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mailbox_sync_jobs
+msgid "Mailbox Sync Jobs"
+msgstr "Postfach-Syncs"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_sync
+msgid "Mailbox Synchronization Handler"
+msgstr "Postfach-Synchronisierungs-Handler"
+
+#. module: maildesk_mail_client
+#: model:res.groups,name:maildesk_mail_client.group_mailbox_user
+msgid "Mailbox User"
+msgstr "Postfachbenutzer"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Mailbox account is required."
+msgstr "Ein Postfachkonto ist erforderlich."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_sync_manual_wizard.py:0
+msgid "Mailbox synchronization failed: %s"
+msgstr "Postfach-Synchronisierung fehlgeschlagen: %s"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Mailbox:"
+msgstr "Postfach:"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.ir_cron_sync_folder_history_ir_actions_server
+msgid "Mailbox: Background Sync (All Accounts)"
+msgstr "Postfach: Hintergrund-Synchronisierung (alle Konten)"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.ir_cron_compute_missing_values_ir_actions_server
+msgid "Mailbox: Compute missing values"
+msgstr "Postfach: Fehlende Werte berechnen"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.ir_cron_mailbox_sync_ir_actions_server
+msgid "Mailbox: Instant Sync (Online Users)"
+msgstr "Postfach: Sofortige Synchronisierung (Online-Benutzer)"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.server,name:maildesk_mail_client.ir_cron_mailbox_sync_job_runner_ir_actions_server
+msgid "Mailbox: Job Processor"
+msgstr "Postfach: Auftragsverarbeitung"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.client,name:maildesk_mail_client.maildesk_dashboard_action
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.res_partner_view_form_inherit_maildesk
+msgid "Maildesk"
+msgstr "Maildesk"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mailbox_sync_manual_wizard
+msgid "Manual Mailbox Sync Wizard"
+msgstr "Assistent für manuelle Postfach-Synchronisierung"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Manual Sync"
+msgstr "Manuell synchronisieren"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Mark as Read"
+msgstr "Als gelesen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Mark as Unread"
+msgstr "Als ungelesen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Mark as unread"
+msgstr "Als ungelesen markieren"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Mark selected emails as read"
+msgstr "Ausgewählte E-Mails als gelesen markieren"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Mark selected emails as unread"
+msgstr "Ausgewählte E-Mails als ungelesen markieren"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_sync_job__job_type__mass_sync
+msgid "Mass Email Sync"
+msgstr "Massensync"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_message
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__message_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__message_id
+msgid "Message"
+msgstr "Nachricht"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_has_error
+msgid "Message Delivery error"
+msgstr "Fehler bei der E-Mailsübermittlung"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_message_tag
+msgid "Message Tag"
+msgstr "E-Mail-Tag"
+
+#. module: maildesk_mail_client
+#: model:ir.actions.act_window,name:maildesk_mail_client.action_mail_message_tag
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mail_message_tag
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mail_message_tag_tree
+msgid "Message Tags"
+msgstr "E-Mail-Tags"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Message not found"
+msgstr "Nachricht nicht gefunden"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__message_id_header
+msgid "Message-ID Header"
+msgstr "Message-ID-Header"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_ids
+#: model:ir.ui.menu,name:maildesk_mail_client.menu_mailbox_messages
+msgid "Messages"
+msgstr "E-Mails"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_form
+msgid "Metadata"
+msgstr "Metadaten"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Minimize"
+msgstr "Minimieren"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Move"
+msgstr "Verschieben"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Move selected emails to another folder"
+msgstr "Ausgewählte E-Mails in einen anderen Ordner verschieben"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Move selected emails to trash"
+msgstr "Ausgewählte E-Mails in den Papierkorb verschieben"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Move to Folder…"
+msgstr "In Ordner verschieben…"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Move to folder"
+msgstr "In Ordner verschieben"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Moved to Trash"
+msgstr "In Papierkorb verschoben"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message_tag__name
+msgid "Name"
+msgstr "Name"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "New Message"
+msgstr "Neue E-Mail"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_sync.py:0
+msgid "New email"
+msgstr "Neue E-Mail"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_systray.xml:0
+msgid "New email (Alt+N)"
+msgstr "Neue E-Mail (Alt+N)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "New tag name"
+msgstr "Neuer Tag-Name"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "No Subject"
+msgstr "Kein Betreff"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "No contacts found"
+msgstr "Keine Kontakte gefunden"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.actions.act_window,help:maildesk_mail_client.action_mailbox_attachment
+msgid "No external attachments found."
+msgstr "Keine externen Anhänge gefunden."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid ""
+"No incoming mail server configured. Please configure it in the server "
+"settings."
+msgstr ""
+"Kein eingehender Mailserver konfiguriert. Bitte richten Sie ihn in den Servereinstellungen ein."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "No mailboxes configured"
+msgstr "Keine Postfächer konfiguriert"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "No message selected"
+msgstr "Keine E-Mail ausgewählt"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "No messages found"
+msgstr "Keine E-Mails gefunden"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_account.py:0
+msgid ""
+"No outgoing SMTP server configured. Please configure it in the server "
+"settings."
+msgstr ""
+"Kein ausgehender SMTP-Server konfiguriert. Bitte richten Sie ihn in den Servereinstellungen ein."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_sync.py:0
+msgid "No preview available"
+msgstr "Keine Vorschau verfügbar"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_account_wizard.py:0
+msgid "No shared mailbox found with this email."
+msgstr "Kein freigegebenes Postfach mit dieser E-Mail-Adresse gefunden."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "No tags available yet. Use the form above to create one."
+msgstr ""
+"Noch keine Tags verfügbar. Verwenden Sie das obige Formular, um eines zu "
+"erstellen."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__notify_interval_minutes
+msgid "Notification Interval (minutes)"
+msgstr "Benachrichtigungsintervall (Minuten)"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Notifications"
+msgstr "Benachrichtigungen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Anzahl an Aktionen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__message_has_error_counter
+msgid "Number of errors"
+msgstr "Anzahl an Fehlern"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_thread__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Anzahl der E-Mails, die eine Aktion erfordern"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_thread__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Anzahl der E-Mails mit Zustellfehler"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Only Starred"
+msgstr "Nur mit Stern"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Only Unread"
+msgstr "Nur ungelesene"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Open Contact"
+msgstr "Kontakt öffnen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Open Document"
+msgstr "Dokument öffnen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Open Linked Document"
+msgstr "Verknüpftes Dokument öffnen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Open linked document"
+msgstr "Verknüpftes Dokument öffnen"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Open: %s"
+msgstr "Öffnen: %s"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"Optional support by <strong>Metzler IT GmbH</strong> – experienced Odoo "
+"experts"
+msgstr ""
+"Optionaler Support durch <strong>Metzler IT GmbH</strong> – erfahrene Odoo-Experten"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__body_original
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__body_original
+msgid "Original HTML Body"
+msgstr "Ursprünglicher HTML-Inhalt"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__other
+msgid "Other"
+msgstr "Andere"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Outgoing"
+msgstr "Ausgang"
+
+#. module: maildesk_mail_client
+#: model:ir.model,name:maildesk_mail_client.model_mail_mail
+msgid "Outgoing Mails"
+msgstr "Ausgehende E-Mails"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__mail_send_server_id
+msgid "Outgoing SMTP Server"
+msgstr "Ausgehender SMTP-Server"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__change_key
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__change_key
+msgid "Outlook Change Key"
+msgstr "Outlook-Änderungsschlüssel"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__last_outlook_delta_link
+msgid "Outlook Delta Link"
+msgstr "Outlook-Delta-Link"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__owner_id
+msgid "Owner"
+msgstr "Eigentümer"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+msgid "PDF"
+msgstr "PDF"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__parent_id
+msgid "Parent"
+msgstr "Übergeordneter Ordner"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__part_id
+msgid "Part ID"
+msgstr "Teil-ID"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Partner marked as trusted."
+msgstr "Partner als vertrauenswürdig markiert."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mail_form_inherit
+msgid "Partners"
+msgstr "Partner"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account_wizard__password
+msgid "Password"
+msgstr "Passwort"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__data
+msgid "Payload"
+msgstr "Nutzdaten"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_sync_job__state__pending
+msgid "Pending"
+msgstr "Ausstehend"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Pick tag color"
+msgstr "Tag-Farbe wählen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__preview_text
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__preview_text
+msgid "Preview Text"
+msgstr "Vorschautext"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Print"
+msgstr "Drucken"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Print this email"
+msgstr "Diese E-Mail drucken"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__flags
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__flags
+msgid "Raw Flags"
+msgstr "Roh-Flags"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__is_read
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__is_read
+msgid "Read"
+msgstr "Gelesen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Remove Star"
+msgstr "Stern entfernen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Remove contact filter"
+msgstr "Kontaktfilter entfernen"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"Removes tracking links (e.g. /L0/...) from incoming emails to protect user "
+"privacy."
+msgstr ""
+"Entfernt Tracking-Links (z. B. /L0/…) aus eingehenden E-Mails, um die Privatsphäre der Nutzer zu schützen."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply"
+msgstr "Antworten"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply All"
+msgstr "Allen antworten"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply to all recipients"
+msgstr "Allen Empfängern antworten"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply to all recipients of this email."
+msgstr "Allen Empfängern dieser E-Mail antworten."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply to sender"
+msgstr "Dem Absender antworten"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply to this email."
+msgstr "Auf diese E-Mail antworten."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Reply to:"
+msgstr "Antwort an:"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_sync_job__state__running
+msgid "Running"
+msgstr "Wird ausgeführt"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "SMTP server is not configured for this account."
+msgstr "Der SMTP-Server ist für dieses Konto nicht konfiguriert."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Safe Mode:"
+msgstr "Sicherer Modus:"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Save draft"
+msgstr "Entwurf speichern"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Saving…"
+msgstr "Wird gespeichert…"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "Search"
+msgstr "Suchen"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_attachment_search
+msgid "Search Attachments"
+msgstr "Anhänge durchsuchen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__search_text
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__search_text
+msgid "Search Text"
+msgstr "Suchtext"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+msgid "Search contacts…"
+msgstr "Kontakte suchen…"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Search mail..."
+msgstr "In E-Mails suchen …"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Send"
+msgstr "Senden"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+msgid "Send email"
+msgstr "E-Mail senden"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__sender_display_name
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__sender_display_name
+msgid "Sender Display Name"
+msgstr "Absendername"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Sender email address is missing."
+msgstr "E-Mail-Adresse des Absenders fehlt."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__sent
+msgid "Sent"
+msgstr "Gesendet"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_partner__email_count
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_users__email_count
+msgid "Sent Email Count"
+msgstr "Anzahl gesendeter E-Mails"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/res_partner.py:0
+msgid "Sent Emails"
+msgstr "Gesendete E-Mails"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__sequence
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__sequence
+msgid "Sequence"
+msgstr "Reihenfolge"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__password
+msgid "Share Password"
+msgstr "Freigabepasswort"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__is_shared
+msgid "Shared Mailbox"
+msgstr "Geteiltes Postfach"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__show_recommendation
+msgid "Show Email Hosting Recommendation"
+msgstr "Empfehlung für E-Mail-Hosting anzeigen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show Once"
+msgstr "Einmal anzeigen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show all emails from all folders (Alt+A)"
+msgstr "Alle E-Mails aus allen Ordnern anzeigen (Alt+A)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show all mailboxes and folders"
+msgstr "Alle Postfächer und Ordner anzeigen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show only incoming messages (Alt+I)"
+msgstr "Nur eingehende Nachrichten anzeigen (Alt+I)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show only sent or outgoing messages (Alt+T)"
+msgstr "Nur gesendete oder ausgehende Nachrichten anzeigen (Alt+T)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show only starred (important) emails (Alt+R)"
+msgstr "Nur markierte (wichtige) E-Mails anzeigen (Alt+R)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Show only unread emails (Alt+U)"
+msgstr "Nur ungelesene E-Mails anzeigen (Alt+U)"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid ""
+"Show or hide the Metzler IT recommendation block below the mailbox settings."
+msgstr ""
+"Den Empfehlungshinweis von Metzler IT unterhalb der Postfacheinstellungen anzeigen oder ausblenden."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__signature
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Signature"
+msgstr "Signatur"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_sync_manual_wizard.py:0
+msgid "Similar sync tasks already exist for this account"
+msgstr "Ähnliche Synchronisierungsaufgaben existieren bereits für dieses Konto"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_attachment__size
+msgid "Size (bytes)"
+msgstr "Größe (Bytes)"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__formatted_date
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__formatted_date
+msgid "Smart Date"
+msgstr "Intelligentes Datum"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__spam
+msgid "Spam"
+msgstr "Spam"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Star"
+msgstr "Markieren"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__starred
+msgid "Starred"
+msgstr "Markiert"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__started_at
+msgid "Started At"
+msgstr "Gestartet am"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_job__state
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_search
+msgid "State"
+msgstr "Status"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/compose_mail.xml:0
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_thread__name
+msgid "Subject"
+msgstr "Betreff"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Suspicious content has been blocked for your safety."
+msgstr "Verdächtiger Inhalt wurde zu Ihrer Sicherheit blockiert."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__sync_job_ids
+msgid "Sync Jobs"
+msgstr "Postfach-Syncs"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_sync_manual_wizard.py:0
+msgid "Synchronization tasks have been created for each day."
+msgstr "Synchronisierungsaufgaben wurden für jeden Tag erstellt."
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_sync_job_form
+msgid "System Info"
+msgstr "Systeminformationen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/assign_tags_dialog.xml:0
+msgid "Tag name"
+msgstr "Tag-Name"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/assign_tags_dialog.esm.js:0
+msgid "Tag with this name already exists."
+msgstr "Ein Tag mit diesem Namen existiert bereits."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/contact_picker_dialog.xml:0
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__tag_ids
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__tag_ids
+msgid "Tags"
+msgstr "Stichwörter"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Test Incoming Server"
+msgstr "Eingangsserver testen"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "Test Outgoing Server"
+msgstr "Ausgangsserver testen"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.res_partner_view_form_inherit_maildesk
+msgid "The user who has marked this partner as trusted."
+msgstr "Der Benutzer, der diesen Partner als vertrauenswürdig markiert hat."
+
+#. module: maildesk_mail_client
+#: model:ir.model.constraint,message:maildesk_mail_client.constraint_mailbox_attachment_unique_attachment_part
+msgid "This attachment part already exists for this message!"
+msgstr "Dieser Anhangsteil existiert bereits für diese Nachricht!"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "This message will now show full content."
+msgstr "Diese Nachricht zeigt nun den vollständigen Inhalt an."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_sync_manual_wizard__date_to
+msgid "To Date"
+msgstr "Bis Datum"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__to_display
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__to_display
+msgid "To Display"
+msgstr "Anzeigen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid ""
+"To view the full content, we recommend checking this email or only trusting "
+"known senders."
+msgstr ""
+"Um den vollständigen Inhalt anzuzeigen, empfehlen wir, diese E-Mail zu überprüfen "
+"oder nur bekannten Absendern zu vertrauen."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid ""
+"To view the full content, we recommend checking this email with AI first or "
+"only trusting known senders."
+msgstr ""
+"Um den vollständigen Inhalt anzuzeigen, empfehlen wir, diese E-Mail zuerst mit KI zu prüfen "
+"oder nur bekannten Absendern zu vertrauen."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "To:"
+msgstr "An:"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Toggle select all messages"
+msgstr "Alle E-Mails auswählen/abwählen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Toggle star"
+msgstr "Stern umschalten"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_res_partner__email_count
+#: model:ir.model.fields,help:maildesk_mail_client.field_res_users__email_count
+msgid "Total number of emails sent by the partner"
+msgstr "Gesamtanzahl der vom Partner gesendeten E-Mails"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields.selection,name:maildesk_mail_client.selection__mailbox_folder__folder_type__trash
+msgid "Trash"
+msgstr "Papierkorb"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Trust Sender"
+msgstr "Absender vertrauen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Trust the sender of this email for all future communications."
+msgstr "Diesem Absender für alle zukünftigen E-Mails vertrauen."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Trust this email and display its full content."
+msgstr "Dieser E-Mail vertrauen und vollständigen Inhalt anzeigen."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_mail__trusted_by_user_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mail_message__trusted_by_user_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_partner__trusted_by_user_id
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_users__trusted_by_user_id
+msgid "Trusted By User"
+msgstr "Vertrauenswürdig markiert von Benutzer"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_partner__trusted_partner
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_res_users__trusted_partner
+msgid "Trusted Partner"
+msgstr "Vertrauenswürdiger Partner"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/email_input_field.xml:0
+msgid "Type email or name..."
+msgstr "E-Mail oder Namen eingeben..."
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_folder__uid_validity
+msgid "UID Validity"
+msgstr "UID-Gültigkeit"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Unable to determine or create partner."
+msgstr "Partner konnte nicht ermittelt oder erstellt werden."
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/maildesk.esm.js:0
+msgid "Undo"
+msgstr "Rückgängig"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "Unread"
+msgstr "Ungelesen"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/js/compose_mail.esm.js:0
+msgid "Uploading error"
+msgstr "Fehler beim Hochladen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,field_description:maildesk_mail_client.field_mailbox_account__access_user_ids
+msgid "Users with Access"
+msgstr "Benutzer mit Zugriff"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/partner_card_popover.xml:0
+msgid "View Profile"
+msgstr "Profil anzeigen"
+
+#. module: maildesk_mail_client
+#: model:ir.model.fields,help:maildesk_mail_client.field_mailbox_account__show_recommendation
+msgid "Whether to show the Metzler IT email hosting recommendation block."
+msgstr "Legt fest, ob der Empfehlungshinweis für E-Mail-Hosting von Metzler IT angezeigt wird."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "Yesterday"
+msgstr "Gestern"
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/wizard/mailbox_account_wizard.py:0
+msgid "You already have access to this mailbox."
+msgstr "Sie haben bereits Zugriff auf dieses Postfach."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "You do not have access to one or more selected messages."
+msgstr "Sie haben keinen Zugriff auf eine oder mehrere ausgewählte E-Mails."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mail_message.py:0
+msgid "You do not have access to this mailbox account."
+msgstr "Sie haben keinen Zugriff auf dieses Postfachkonto."
+
+#. module: maildesk_mail_client
+#. odoo-python
+#: code:addons/maildesk_mail_client/models/mailbox_sync.py:0
+msgid "You have %d new emails"
+msgstr "Sie haben %d neue E-Mails"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "[Draft]"
+msgstr "[Entwurf]"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "messages displayed"
+msgstr "angezeigte E-Mails"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "selected)"
+msgstr "ausgewählt)"
+
+#. module: maildesk_mail_client
+#. odoo-javascript
+#: code:addons/maildesk_mail_client/static/src/xml/maildesk.xml:0
+msgid "total)"
+msgstr "insgesamt)"
+
+#. module: maildesk_mail_client
+#: model_terms:ir.ui.view,arch_db:maildesk_mail_client.view_mailbox_account_form
+msgid "🚀 Take Back Control of Your Email — Fully Inside Odoo!"
+msgstr ""
+"🚀 Übernehmen Sie die volle Kontrolle über Ihre E-Mails – direkt in Odoo!"

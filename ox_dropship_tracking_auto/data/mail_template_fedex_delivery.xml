@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="email_template_fedex_delivery_notification" model="mail.template">
+
+            <field name="name">Delivery: Shipment Delivered</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+
+            <!-- Sender -->
+            <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
+
+            <!-- Subject -->
+            <field name="subject">{{ object.company_id.name }} – Delivered! Order {{ object.picking_type_code == 'dropship' and object.sale_id.name or object.name }}</field>
+
+            <!-- Recipient (MUST be pure Jinja2 – no <t> tags allowed) -->
+            <field name="email_to">
+                {{ object.picking_type_code == 'dropship'
+                    and object.sale_id.partner_shipping_id.email
+                    or object.partner_id.email }}
+            </field>
+
+            <field name="description">Sent automatically when FedEx reports the shipment as delivered.</field>
+
+            <!-- Body HTML — QWeb allowed -->
+            <field name="body_html" type="html">
+<div style="margin:0; padding:0; font-size:13px;">
+    <p>
+
+        Dear
+        <t t-if="object.picking_type_code == 'dropship'">
+            <t t-out="object.sale_id.partner_shipping_id.name or ''"/>
+        </t>
+        <t t-else="">
+            <t t-out="object.partner_id.name or ''"/>
+        </t>,
+        <br/><br/>
+
+        Your order
+        <t t-if="object.picking_type_code == 'dropship' and object.sale_id">
+            <span style="font-weight:bold;" t-out="object.sale_id.name"/>
+        </t>
+        <t t-else="">
+            <span style="font-weight:bold;" t-out="object.name"/>
+        </t>
+        has been successfully <span style="font-weight:bold;">delivered</span>!
+        <br/><br/>
+
+        <span style="font-weight:bold; text-decoration:underline;">DELIVERY DETAILS:</span><br/>
+
+        <t t-if="object.fedex_actual_delivery">
+            • Delivery Date:
+            <strong t-out="object.fedex_actual_delivery.strftime('%Y-%m-%d %H:%M')"/>
+            <br/>
+        </t>
+        <t t-else="">
+            • Delivery Date: N/A<br/>
+        </t>
+
+        • Carrier: <strong>FedEx</strong><br/>
+
+        <t t-if="object.carrier_tracking_ref">
+            • Tracking:
+            <strong t-out="object.carrier_tracking_ref"/>
+            <br/>
+        </t>
+        <t t-else="">
+            • Tracking: N/A<br/>
+        </t>
+
+        <br/>
+        <span style="font-weight:bold; text-decoration:underline;">CONFIRM RECEIPT:</span><br/>
+        Please verify that all items were received in good condition.
+        <br/><br/>
+
+        <strong style="text-decoration:underline;">ITEMS SHIPPED:</strong><br/><br/>
+
+        <table style="border-collapse: collapse; width:100%; font-size:13px;">
+            <tr>
+                <th style="border:1px solid #ccc; padding:6px; background:#f3f3f3;">Item</th>
+                <th style="border:1px solid #ccc; padding:6px; background:#f3f3f3;">Qty Shipped</th>
+            </tr>
+
+            <t t-foreach="object.move_ids_without_package" t-as="line">
+                <tr>
+                    <td style="border:1px solid #ccc; padding:6px;">
+                        <t t-out="line.product_id.display_name"/>
+                    </td>
+                    <td style="border:1px solid #ccc; padding:6px;">
+                        <t t-if="line.quantity">
+                            <t t-out="line.quantity"/>
+                        </t>
+                        <t t-elif="line.move_line_ids">
+                            <t t-out="line.move_line_ids[0].qty_done"/>
+                        </t>
+                        <t t-else="">
+                            <t t-out="line.product_uom_qty"/>
+                        </t>
+                    </td>
+                </tr>
+            </t>
+        </table>
+
+        <br/>
+        If there are any issues with your order (missing items, damage, etc.),
+        please contact us within 48 hours at
+        <strong t-out="object.company_id.phone"/>
+        or simply reply to this email.
+        <br/><br/>
+
+        Best regards,<br/>
+        <t t-out="object.company_id.name"/> Customer Success Team
+
+        <t t-if="not is_html_empty(object.user_id.signature)">
+            <br/><br/>
+            <t t-out="object.user_id.signature or ''"/>
+        </t>
+
+    </p>
+</div>
+            </field>
+
+            <field name="lang">{{ object.picking_type_code == 'dropship' and object.sale_id.partner_shipping_id.lang or object.partner_id.lang }}</field>
+
+            <field name="auto_delete" eval="True"/>
+
+        </record>
+
+    </data>
+</odoo>

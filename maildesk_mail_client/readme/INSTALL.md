@@ -1,0 +1,1 @@
+pip3 install imapclient aioimaplib google-api-python-client google-auth google-auth-httplib2 msal

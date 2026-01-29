@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_purchase_order_form_inherit_tracking" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.tracking</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Insert after the "Other Information" page -->
+            <xpath expr="//page[@name='purchase_delivery_invoice']" position="after">
+                <page string="Tracking Info" name="tracking_info">
+                    <group>
+                        <group>
+                            <field name="tracking_last_seen"/>
+                            <field name="tracking_last_seen_date"/>
+                        </group>
+                        <group>
+                            <field name="tracking_reminder_last"/>
+                            <field name="tracking_reminder_count"/>
+                            <field name="tracking_reminder_company_notified"/>
+                            <field name="order_confirmation_sent"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+
+    <t t-name="wub.DataFilter" t-inherit="web.DomainSelector" t-inherit-mode="primary">
+        <xpath expr="//CheckBox[@value='includeArchived']" position="attributes">
+            <attribute name="className" add="' ms-4'" separator="+"/>
+        </xpath>
+    </t>
+
+    <t t-name="wub.FieldFilterPopup">
+        <div class="rolkit udf_container">
+            <DataFilter t-props="domainSelectorProps" />
+        </div>
+        <footer class="d-flex bg-100 p-3 gap-2">
+            <button class="btn lh-1 btn-danger" t-on-click="clear">Clear</button>
+            <button class="btn lh-1 btn-light" t-on-click="reset">Reset</button>
+            <button class="btn lh-1 btn-light ms-auto" t-on-click="props.close">Close</button>
+            <button class="btn lh-1 btn-primary" t-on-click="apply">Apply</button>
+        </footer>
+    </t>
+
+</templates>

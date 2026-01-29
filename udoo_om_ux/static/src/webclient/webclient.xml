@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="web.WebClient" t-inherit-mode="extension">
+        <xpath expr="//t[@t-if='!state.fullscreen']" position="replace">
+            <t t-if="!state.fullscreen">
+                <ResizablePanel handleSide="'end'"
+                    class="'o_sidenav d-none position-fixed z-2 start-0 opacity-0'"
+                    onResize.bind="_onSideNavResize"
+                    initialWidth="ue.sidenavWidth"
+                    minWidth="75">
+
+                    <div class="sidenav_head">
+                        <a class="navbar-brand m-0 text-uppercase" href="/web">
+                            <img class="navbar-brand-logo" t-attf-src="/web/image/res.company/{{cpyId}}/{{ui.color_scheme == 'dark' ? 'logo_lui': 'logo_dui'}}"/>
+                        </a>
+                    </div>
+                    <span class="sidenav_hr d-block"/>
+                    <div class="sidenav_topa d-flex flex-shrink-0 flex-wrap w-100 mx-auto gap-1 justify-content-center align-items-center rounded-2 py-2 my-2" role="menu">
+                        <button type="button" class="btn sn_expand px-2 lh-1" t-on-click="lohiSidenav" title="Switch Sidebar Mode">
+                            <i class="ri-expand-left-line"/>
+                        </button>
+                    </div>
+                    <div class="sidenav_subs nav-item">
+                        <span class="sidenav_hr d-block mb-3"/>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <h6 class="fs-7 fw-sbold ms-2 sidenav_subt text-uppercase mb-0">Apps</h6>
+                            <button data-hotkey="j" type="button" class="btn btn-om border-transparent d-flex om-mask om-mask-blob sidenav_subt p-1" t-on-click="openOmSearch">
+                                <i class="ri-menu-2-line"/>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="sidenav_cont d-flex flex-column rolvis"/>
+                    <div role="button" class="sidenav_foot_tg nav-item mb-3 user-select-none" t-on-click="toggleFootnav" t-att-aria-expanded="ue.footnav">
+                        <span class="sidenav_hr d-block mb-3"/>
+                        <div class="d-flex flex-row">
+                            <h6 class="fs-7 fw-sbold ms-2 sidenav_subt text-uppercase mb-0 me-auto">Recents</h6>
+                            <span t-out="uo.recents.length" class="btn btn-sm border-secondary text-reset fw-sbold lh-1" style="font-size: 10px;"/>
+                        </div>
+                    </div>
+                    <div class="sidenav_foot flex-column rolkit" t-att-class="{'d-none': !ue.footnav}"/>
+                </ResizablePanel>
+                <NavBar/>
+            </t>
+        </xpath>
+    </t>
+</templates>

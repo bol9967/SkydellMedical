@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="email_template_tracking_reminder" model="mail.template">
+            <field name="name">Purchase: Tracking Reminder</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
+            <field name="subject">{{ object.company_id.name }} PO ({{ object.name or 'n/a' }}) – Tracking Reminder</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="description">Automatically sent to supplier when tracking is not yet received.</field>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+        Dear <t t-out="object.partner_id.name or ''">Supplier</t>
+        <t t-if="object.partner_id.parent_id">
+            (<t t-out="object.partner_id.parent_id.name or ''">Parent Company</t>)
+        </t>
+        <br/><br/>
+        This is a reminder regarding Purchase Order
+        <span style="font-weight:bold;" t-out="object.name or ''">PO00001</span>
+        <t t-if="object.partner_ref">
+            (<t t-out="object.partner_ref or ''">REF_XXX</t>)
+        </t>.
+        <br/><br/>
+        Our records show that we have not yet received the shipment tracking number.
+        Kindly share the tracking details at your earliest convenience.
+        <br/><br/>
+        Best regards,
+        <t t-if="not is_html_empty(object.user_id.signature)">
+            <br/><br/>
+            <t t-out="object.user_id.signature or ''">--<br/>Mitchell Admin</t>
+        </t>
+    </p>
+</div>
+            </field>
+            <field name="report_template_ids" eval="[(4, ref('purchase.action_report_purchase_order'))]"/>
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

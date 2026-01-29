@@ -1,0 +1,133 @@
+.d-ufover {
+
+    &:hover,
+    .o_column_storeable:hover & {
+        display: flex !important;
+    }
+
+    &:hover {
+        color: map-get($o-theme-text-colors, 'dodger');
+        opacity: 100 !important;
+    }
+}
+
+.d-udrop-caret:after {
+    content: "\f0d7";
+    font-family: FontAwesome;
+    display: inline-block;
+    transform: rotate(270deg);
+    transition: .25s ease-in-out;
+    position: absolute;
+    right: 14px;
+}
+
+.quick_cact {
+    svg {
+        color: $o-action-accent;
+    }
+}
+
+.u_filter_panel {
+    .input-group {
+        width: auto;
+    }
+
+    .form-control {
+        padding-block: 1.5pt;
+    }
+}
+
+.u_filter_panel,
+.u_filter_bar {
+    .form-control {
+        &.focus {
+            border-color: $input-focus-border-color;
+        }
+
+        .o_input {
+            border: 0;
+            min-width: 0px;
+        }
+
+        select,
+        .o_datetime_input {
+            opacity: 0;
+        }
+    }
+}
+
+.u_filter_panel .form-control {
+    .o_input {
+        width: 5.5rem;
+    }
+}
+
+.u_filter_bar .form-control {
+    .o_input {
+        width: 100%;
+    }
+}
+
+.u_field_filter {
+    .o_model_field_selector_chain_part {
+        max-width: 100%;
+        font-size: small;
+        overflow: hidden;
+        display: inline-block;
+        text-overflow: ellipsis;
+        vertical-align: bottom;
+        margin-bottom: 0 !important;
+    }
+}
+
+.u_fcol_badge {
+    margin-left: -4px;
+}
+
+.o_field_x2many_list {
+    .u_filter_panel {
+        .form-control {
+            width: auto;
+            min-width: unset;
+        }
+
+        .o_input {
+            width: 6rem;
+        }
+    }
+
+    .o_x2m_control_panel {
+        .o_cp_pager {
+            order: 1
+        }
+    }
+}
+
+
+.u_sw_filter_bar:not(.active, :hover, [disabled]) {
+    background-color: $o-gray-100;
+    border-color: $o-gray-100;
+}
+
+
+.o_list_renderer .o_list_table {
+    thead:has(.u_filter_bar) {
+        z-index: calc(var(--sticky-header-zindex) + 2);
+    }
+
+    // == Omux duplicated
+    .u_filter_bar td,
+    thead th {
+        border-bottom-width: 0;
+    }
+
+    thead::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: .5px;
+        background-color: $table-border-color;
+    }
+}

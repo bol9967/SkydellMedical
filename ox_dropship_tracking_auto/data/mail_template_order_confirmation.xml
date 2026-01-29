@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="email_template_order_confirmation" model="mail.template">
+
+            <field name="name">Sale: Order Confirmation</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+
+            <!-- Sender -->
+            <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
+
+            <!-- Subject -->
+            <field name="subject">Order Confirmed: #{{ object.name }} - {{ object.partner_id.name }}</field>
+
+            <!-- Recipient (MUST be pure Jinja2 – no <t> tags allowed) -->
+            <field name="email_to">{{ object.partner_id.email }}</field>
+
+            <field name="description">Sent automatically when vendor confirms order via email reply to PO.</field>
+
+            <!-- Body HTML — QWeb allowed -->
+            <field name="body_html" type="html">
+<div style="margin:0; padding:0; font-size:13px;">
+    <p>
+
+        Dear
+        <t t-if="object.partner_id.name">
+            <t t-out="object.partner_id.name.split()[-1] if ' ' in object.partner_id.name else object.partner_id.name"/>
+        </t>,
+        <br/><br/>
+
+        Thank you for your order! We've received your order and are processing it immediately.
+        <br/><br/>
+
+        <span style="font-weight:bold; text-decoration:underline;">ORDER DETAILS:</span><br/>
+
+        • Order Number:
+        <strong>#<t t-out="object.name"/></strong>
+        <br/>
+
+        • Order Date:
+        <strong><t t-out="object.date_order.strftime('%Y-%m-%d')"/></strong>
+        <br/>
+
+        <t t-if="object.commitment_date">
+            • Estimated Delivery:
+            <strong><t t-out="object.commitment_date.strftime('%Y-%m-%d')"/></strong>
+            <br/>
+        </t>
+        <t t-else="">
+            • Estimated Delivery: TBD<br/>
+        </t>
+
+        <br/>
+        <span style="font-weight:bold; text-decoration:underline;">ITEMS ORDERED:</span><br/><br/>
+
+        <table style="border-collapse: collapse; width:100%; font-size:13px;">
+            <tr>
+                <th style="border:1px solid #ccc; padding:6px; background:#f3f3f3;">SKU</th>
+                <th style="border:1px solid #ccc; padding:6px; background:#f3f3f3;">Description</th>
+                <th style="border:1px solid #ccc; padding:6px; background:#f3f3f3;">Qty</th>
+                <th style="border:1px solid #ccc; padding:6px; background:#f3f3f3;">Price</th>
+            </tr>
+
+            <t t-foreach="object.order_line" t-as="line">
+                <tr>
+                    <td style="border:1px solid #ccc; padding:6px;">
+                        <t t-out="line.product_id.default_code or 'N/A'"/>
+                    </td>
+                    <td style="border:1px solid #ccc; padding:6px;">
+                        <t t-out="line.product_id.display_name"/>
+                    </td>
+                    <td style="border:1px solid #ccc; padding:6px;">
+                        <t t-out="line.product_uom_qty"/>
+                    </td>
+                    <td style="border:1px solid #ccc; padding:6px;">
+                        <t t-out="format_amount(line.price_subtotal, object.currency_id)"/>
+                    </td>
+                </tr>
+            </t>
+        </table>
+
+        <br/>
+        <span style="font-weight:bold; text-decoration:underline;">SHIPPING INFORMATION:</span><br/>
+
+        <t t-if="object.partner_shipping_id">
+            Dr. <t t-out="object.partner_shipping_id.name or ''"/>
+            <br/>
+            <t t-if="object.partner_shipping_id.parent_id">
+                <t t-out="object.partner_shipping_id.parent_id.name or ''"/>
+                <br/>
+            </t>
+            <t t-if="object.partner_shipping_id.street">
+                <t t-out="object.partner_shipping_id.street"/>
+                <br/>
+            </t>
+            <t t-if="object.partner_shipping_id.city">
+                <t t-out="object.partner_shipping_id.city"/>,
+            </t>
+            <t t-if="object.partner_shipping_id.state_id">
+                <t t-out="object.partner_shipping_id.state_id.name"/>
+            </t>
+            <t t-if="object.partner_shipping_id.zip">
+                <t t-out="object.partner_shipping_id.zip"/>
+            </t>
+        </t>
+        <t t-else="">
+            Dr. <t t-out="object.partner_id.name or ''"/>
+            <br/>
+            <t t-if="object.partner_id.parent_id">
+                <t t-out="object.partner_id.parent_id.name or ''"/>
+                <br/>
+            </t>
+            <t t-if="object.partner_id.street">
+                <t t-out="object.partner_id.street"/>
+                <br/>
+            </t>
+            <t t-if="object.partner_id.city">
+                <t t-out="object.partner_id.city"/>,
+            </t>
+            <t t-if="object.partner_id.state_id">
+                <t t-out="object.partner_id.state_id.name"/>
+            </t>
+            <t t-if="object.partner_id.zip">
+                <t t-out="object.partner_id.zip"/>
+            </t>
+        </t>
+
+        <br/><br/>
+        <span style="font-weight:bold; text-decoration:underline;">BILLING INFORMATION:</span><br/>
+
+        Order Number:
+        <t t-if="object.name">
+            <t t-out="object.name"/>
+        </t>
+        <t t-else="">
+            N/A
+        </t>
+        <br/>
+
+        <t t-if="object.partner_invoice_id">
+            <t t-if="object.partner_invoice_id.street">
+                <t t-out="object.partner_invoice_id.street"/>
+                <br/>
+            </t>
+            <t t-if="object.partner_invoice_id.city">
+                <t t-out="object.partner_invoice_id.city"/>,
+            </t>
+            <t t-if="object.partner_invoice_id.state_id">
+                <t t-out="object.partner_invoice_id.state_id.name"/>
+            </t>
+            <t t-if="object.partner_invoice_id.zip">
+                <t t-out="object.partner_invoice_id.zip"/>
+            </t>
+        </t>
+        <t t-else="">
+            <t t-if="object.partner_id.street">
+                <t t-out="object.partner_id.street"/>
+                <br/>
+            </t>
+            <t t-if="object.partner_id.city">
+                <t t-out="object.partner_id.city"/>,
+            </t>
+            <t t-if="object.partner_id.state_id">
+                <t t-out="object.partner_id.state_id.name"/>
+            </t>
+            <t t-if="object.partner_id.zip">
+                <t t-out="object.partner_id.zip"/>
+            </t>
+        </t>
+
+        <br/><br/>
+        You'll receive a tracking number within 24-48 hours once your order ships.
+        <br/><br/>
+
+        Questions? Reply to this email or call us at
+        <strong t-out="object.company_id.phone or 'N/A'"/>.
+        <br/><br/>
+
+        Best regards,<br/>
+        <t t-out="object.company_id.name"/> Customer Service
+
+        <t t-if="not is_html_empty(object.user_id.signature)">
+            <br/><br/>
+            <t t-out="object.user_id.signature or ''"/>
+        </t>
+
+    </p>
+</div>
+            </field>
+
+            <field name="lang">{{ object.partner_id.lang }}</field>
+
+            <field name="auto_delete" eval="True"/>
+
+        </record>
+
+    </data>
+</odoo>
+

@@ -1,0 +1,59 @@
+Sveltware Proprietary License v1.3
+
+Copyright © 2025 Sveltware Solutions
+All rights reserved.
+
+------------------------------------------------------------------------
+
+1. Grant of Use
+
+Subject to the terms of this License and payment of the applicable fees,
+the Authors grant the Licensee a non-exclusive, non-transferable,
+perpetual license to install and use the Software for one (1) production
+purpose.
+
+A production purpose means the operation of the Software for a single
+customer or a single production environment.
+- Each additional customer, project, or production environment requires
+  the purchase of an additional license.
+- Use of the Software for development, testing, or evaluation that does
+  not generate revenue is permitted without additional licenses, provided
+  that the Software is not distributed or made available to third parties.
+
+2. Distribution and Resale
+
+The Licensee may not publish, distribute, sublicense, rent, lease, sell,
+or otherwise provide the Software (in original or modified form) to any
+third party, except under a separate written agreement with the Authors.
+
+Developing Odoo modules that depend on the Software as a library
+(e.g. importing or extending it) is permitted, provided that no source
+code of the Software itself is copied. Such modules may be distributed
+under any license that is compatible with this License (including LGPL,
+MIT, or proprietary licenses similar to this one).
+
+3. SaaS and Multi-Tenant Use
+
+Operating the Software as part of a hosted service or SaaS offering that
+serves multiple third-party customers is considered a form of
+distribution. This is not permitted under this License.
+To use the Software in a SaaS context, or to make it available to
+multiple third-party customers, the Licensee must obtain a separate
+commercial agreement with the Authors.
+
+4. Modifications
+
+The Licensee may modify the Software for its licensed purpose. Modified
+versions are subject to the same restrictions as the original Software
+and may not be distributed without written authorization from the
+Authors.
+
+5. No Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.

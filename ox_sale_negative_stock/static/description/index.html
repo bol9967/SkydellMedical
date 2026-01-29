@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sale Negative Stock Control</title>
+</head>
+<body>
+    <section style="margin: 50px 0;">
+        <div style="margin: 0 auto; height: 100%; width: 100%; max-width: 1000px;">
+            <div style="text-align: center; margin: 20px;">
+                <h1 style="margin: 20px 0 30px; font-size: 40px; color: #875A7B;">
+                    Sale Negative Stock Control
+                </h1>
+            </div>
+            
+            <div style="background-color: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin: 20px 0; border-radius: 5px;">
+                <p style="margin: 0; font-weight: bold; color: #856404;">
+                    <strong>Important:</strong> This module only affects the <strong>Sale app</strong>. Website/e-commerce orders are not affected and continue to use their own stock control settings.
+                </p>
+            </div>
+
+            <div style="padding: 20px;">
+                <h2 style="color: #875A7B; margin-top: 30px; font-size: 28px;">Overview</h2>
+                <p style="font-size: 16px; line-height: 1.6; color: #333;">
+                    This Odoo 18 module prevents products with zero on-hand quantity from being added to sale orders. This helps prevent selling items that are not available in stock, improving order accuracy and customer satisfaction.
+                </p>
+
+                <h2 style="color: #875A7B; margin-top: 30px; font-size: 28px;">Features</h2>
+                
+                <div style="background-color: #f8f9fa; border-left: 4px solid #875A7B; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                    <h3 style="color: #875A7B; margin-top: 0; font-size: 22px;">1. Stock-Based Product Filtering</h3>
+                    <ul style="margin: 10px 0; padding-left: 30px; color: #333;">
+                        <li style="margin: 8px 0;">Automatically hides products with zero stock (<code style="background-color: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: monospace;">qty_available = 0</code>) from product selection in sale order lines</li>
+                        <li style="margin: 8px 0;">Only applies to physical products (Goods) with stock tracking enabled</li>
+                        <li style="margin: 8px 0;">Service products, combo products, and products without stock tracking are always visible</li>
+                    </ul>
+                </div>
+
+                <div style="background-color: #f8f9fa; border-left: 4px solid #875A7B; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                    <h3 style="color: #875A7B; margin-top: 0; font-size: 22px;">2. Configurable Settings</h3>
+                    <ul style="margin: 10px 0; padding-left: 30px; color: #333;">
+                        <li style="margin: 8px 0;"><strong>No Negative Stock Sale:</strong> Enable/disable the entire feature</li>
+                        <li style="margin: 8px 0;"><strong>Display Zero Stock Products in Search:</strong> When enabled, shows zero-stock products in search but still prevents adding them (validation applies)</li>
+                        <li style="margin: 8px 0;"><strong>Show On Hand Qty in Sale Order Line:</strong> Displays an "On Hand Qty" column in sale order lines</li>
+                    </ul>
+                </div>
+
+                <div style="background-color: #f8f9fa; border-left: 4px solid #875A7B; padding: 15px; margin: 15px 0; border-radius: 5px;">
+                    <h3 style="color: #875A7B; margin-top: 0; font-size: 22px;">3. On Hand Quantity Column</h3>
+                    <p style="color: #333; margin: 10px 0;">When enabled, displays stock information in sale order lines:</p>
+                    <ul style="margin: 10px 0; padding-left: 30px; color: #333;">
+                        <li style="margin: 8px 0;"><strong>"Service"</strong> - when the product type is Service</li>
+                        <li style="margin: 8px 0;"><strong>"Combo"</strong> - when the product type is Combo</li>
+                        <li style="margin: 8px 0;"><strong>"Not Tracked"</strong> - when the product is a physical product (Goods) without stock tracking enabled</li>
+                        <li style="margin: 8px 0;"><strong>Actual stock quantity</strong> - when the product is a physical product (Goods) with stock tracking enabled</li>
+                    </ul>
+                </div>
+
+                <h2 style="color: #875A7B; margin-top: 30px; font-size: 28px;">Configuration</h2>
+                <p style="font-size: 16px; line-height: 1.6; color: #333;">
+                    Navigate to: <strong style="color: #875A7B;">Settings → Sales → Stock Control</strong>
+                </p>
+
+                <h3 style="color: #666; margin-top: 20px; font-size: 20px;">No Negative Stock Sale</h3>
+                <p style="font-size: 16px; line-height: 1.6; color: #333;">
+                    When enabled, products that are out of stock (quantity = 0) will not be visible in the search list when selecting products in sale orders (Sale app only, not website/e-commerce). This prevents selling items that are not available. Service products and products without stock tracking are always shown.
+                </p>
+                
+                <p style="font-size: 16px; line-height: 1.6; color: #333; margin-top: 15px;">
+                    <strong style="color: #875A7B;">What gets hidden from search:</strong>
+                </p>
+                <ul style="margin: 10px 0; padding-left: 30px; color: #333;">
+                    <li style="margin: 8px 0;">Physical products (Goods) that have stock tracking enabled and are currently out of stock (quantity = 0)</li>
+                </ul>
+
+                <p style="font-size: 16px; line-height: 1.6; color: #333; margin-top: 15px;">
+                    <strong style="color: #875A7B;">What always remains visible in search:</strong>
+                </p>
+                <ul style="margin: 10px 0; padding-left: 30px; color: #333;">
+                    <li style="margin: 8px 0;">Service products (like delivery fees, consulting services, etc.)</li>
+                    <li style="margin: 8px 0;">Combo products</li>
+                    <li style="margin: 8px 0;">Physical products without stock tracking</li>
+                    <li style="margin: 8px 0;">Physical products with stock tracking that have available inventory</li>
+                </ul>
+
+                <h3 style="color: #666; margin-top: 20px; font-size: 20px;">Display Zero Stock Products in Search</h3>
+                <p style="font-size: 16px; line-height: 1.6; color: #333;">
+                    When enabled, out-of-stock products will be visible in the product search list, but you still cannot add them to sale orders. Use this to see products for reference while still preventing them from being sold.
+                </p>
+
+                <h3 style="color: #666; margin-top: 20px; font-size: 20px;">Show On Hand Qty in Sale Order Line</h3>
+                <p style="font-size: 16px; line-height: 1.6; color: #333;">
+                    When enabled, displays an 'On Hand Qty' column in sale order lines. The column shows: 'Service' for service products, 'Combo' for combo products, 'Not Tracked' for physical products without stock tracking, or the actual stock quantity for physical products with stock tracking enabled.
+                </p>
+
+                <h2 style="color: #875A7B; margin-top: 30px; font-size: 28px;">Usage</h2>
+                <ol style="margin: 10px 0; padding-left: 30px; color: #333;">
+                    <li style="margin: 8px 0;">Go to <strong style="color: #875A7B;">Settings → Sales → Stock Control</strong></li>
+                    <li style="margin: 8px 0;">Enable <strong style="color: #875A7B;">"No Negative Stock Sale"</strong></li>
+                    <li style="margin: 8px 0;">When creating sale orders, only products with available stock will appear in the product search</li>
+                    <li style="margin: 8px 0;">(Optional) Enable <strong style="color: #875A7B;">"Show On Hand Qty in Sale Order Line"</strong> to see stock quantities directly in order lines</li>
+                </ol>
+
+                <h2 style="color: #875A7B; margin-top: 30px; font-size: 28px;">Website/E-commerce Compatibility</h2>
+                <p style="font-size: 16px; line-height: 1.6; color: #333;">
+                    This module automatically detects and excludes website/e-commerce contexts. Website orders continue to use the native <code style="background-color: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: monospace;">allow_out_of_stock_order</code> setting from the website_sale module, ensuring no conflicts between Sale app and e-commerce functionality.
+                </p>
+
+                <h2 style="color: #875A7B; margin-top: 30px; font-size: 28px;">Dependencies</h2>
+                <ul style="margin: 10px 0; padding-left: 30px; color: #333;">
+                    <li style="margin: 8px 0;"><code style="background-color: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: monospace;">sale</code> - Sales module</li>
+                    <li style="margin: 8px 0;"><code style="background-color: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-family: monospace;">stock</code> - Inventory/Stock module</li>
+                </ul>
+
+                <h2 style="color: #875A7B; margin-top: 30px; font-size: 28px;">Version</h2>
+                <p style="font-size: 16px; line-height: 1.6; color: #333;">18.0.1.0.0</p>
+
+                <h2 style="color: #875A7B; margin-top: 30px; font-size: 28px;">License</h2>
+                <p style="font-size: 16px; line-height: 1.6; color: #333;">LGPL-3</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

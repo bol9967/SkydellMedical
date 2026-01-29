@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Terms &amp; Conditions Acceptance Page -->
+        <template id="signup_terms" name="Signup Terms &amp; Conditions">
+            <t t-call="web.login_layout">
+                <form class="oe_signup_terms_form" role="form" method="post" id="terms_form">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                    <div class="container mt-4 mb-4">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-8">
+                                <h2 class="text-center mb-4">Terms &amp; Conditions</h2>
+                                
+                                <p class="alert alert-info" role="alert">
+                                    <strong>Please read the Terms &amp; Conditions carefully.</strong><br/>
+                                    You must provide your signature below to accept.
+                                </p>
+
+                                <p class="alert alert-danger" t-if="error" role="alert">
+                                    <strong>Error:</strong> <t t-esc="error"/>
+                                </p>
+
+                                <!-- Scrollable Terms &amp; Conditions Content -->
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">
+                                            Terms &amp; Conditions - Version <t t-esc="terms.version"/>
+                                            <small class="text-muted">(Effective: <t t-esc="terms.effective_date"/>)</small>
+                                        </h5>
+                                    </div>
+                                    <div class="card-body" id="terms_content" style="max-height: 400px; overflow-y: auto; border: 1px solid #dee2e6; padding: 15px;">
+                                        <t t-out="terms.content"/>
+                                    </div>
+                                </div>
+
+                                <!-- Digital Signature Field -->
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Digital Signature</h5>
+                                        <p class="text-muted">
+                                            By providing your signature below, you acknowledge that you have read, understood, 
+                                            and agree to be bound by the Terms &amp; Conditions above.
+                                        </p>
+                                        
+                                        <!-- Use Odoo's native signature form component -->
+                                        <div id="signature_form_container">
+                                            <t t-call="portal.signature_form">
+                                                <t t-set="call_url" t-value="'/web/signup/terms/accept'"/>
+                                                <t t-set="default_name" t-value="signup_data.get('name', '')"/>
+                                                <t t-set="mode" t-value="'auto'"/>
+                                                <t t-set="send_label" t-value="'Accept Terms &amp; Conditions'"/>
+                                            </t>
+                                        </div>
+                                        
+                                        <!-- Hidden inputs for form data -->
+                                        <input type="hidden" name="terms_id" id="terms_id" t-att-value="terms.id"/>
+                                        <input type="hidden" name="scrolled_to_bottom" id="scrolled_to_bottom" value="true"/>
+                                    </div>
+                                </div>
+
+                                <!-- Action Buttons -->
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-between mt-3">
+                                    <a href="/web/signup" class="btn btn-secondary">
+                                        <i class="fa fa-arrow-left"/> Back
+                                    </a>
+                                    <!-- The OWL signature component has its own submit button, so we don't need a duplicate -->
+                                </div>
+
+                                <div class="mt-4 text-center text-muted small">
+                                    <p>
+                                        <strong>Audit Information:</strong><br/>
+                                        Your acceptance will be recorded with:<br/>
+                                        • Timestamp (UTC)<br/>
+                                        • IP Address<br/>
+                                        • Terms Version ID<br/>
+                                        • Your Digital Signature
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </t>
+        </template>
+    </data>
+</odoo>

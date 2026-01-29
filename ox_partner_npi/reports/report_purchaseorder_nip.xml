@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Inherit Purchase Order PDF -->
+    <template id="report_purchaseorder_document_inherit_npi"
+              name="Purchase Order Report with Title Logic, NPI, Mobile, and VAT"
+              inherit_id="purchase.report_purchaseorder_document">
+
+        <!-- Replace the default shipping address block -->
+        <xpath expr="//div[@name='purchase_shipping_address']" position="replace">
+            <div name="purchase_shipping_address" style="line-height: 1.4;">
+
+                <!-- Title (shortcut preferred, fallback to name) + Contact Name -->
+                <div t-if="o.dest_address_id.name">
+                    <t t-if="o.dest_address_id.title">
+                        <t t-if="o.dest_address_id.title.shortcut">
+                            <span t-esc="o.dest_address_id.title.shortcut"/> 
+                        </t>
+                        <t t-elif="o.dest_address_id.title.name">
+                            <span t-esc="o.dest_address_id.title.name"/> 
+                        </t>
+                    </t>
+                    <span t-esc="o.dest_address_id.name"/>
+                </div>
+
+                <!-- NPI -->
+                <div t-if="o.dest_address_id.npi_number">
+                    NPI: <span t-esc="o.dest_address_id.npi_number"/>
+                </div>
+
+                <!-- Email -->
+                <div t-if="o.dest_address_id.email">
+                    <i class="fa fa-envelope"/> 
+                    <span t-esc="o.dest_address_id.email"/>
+                </div>
+
+                <!-- Company name -->
+                <div t-if="o.dest_address_id.company_name or o.dest_address_id.parent_id">
+                    <span t-esc="o.dest_address_id.company_name or o.dest_address_id.parent_id.name"/>
+                </div>
+
+                <!-- Address -->
+                <div t-if="o.dest_address_id.street">
+                    <span t-esc="o.dest_address_id.street"/>
+                    <t t-if="o.dest_address_id.street2">
+                        <br/><span t-esc="o.dest_address_id.street2"/>
+                    </t>
+                </div>
+                <div t-if="o.dest_address_id.city or o.dest_address_id.state_id or o.dest_address_id.zip">
+                    <span t-esc="o.dest_address_id.city"/>
+                    <t t-if="o.dest_address_id.state_id">
+                        <span> </span><span t-esc="o.dest_address_id.state_id.name"/>
+                    </t>
+                    <t t-if="o.dest_address_id.zip">
+                        <span> </span><span t-esc="o.dest_address_id.zip"/>
+                    </t>
+                </div>
+                <div t-if="o.dest_address_id.country_id">
+                    <span t-esc="o.dest_address_id.country_id.name"/>
+                </div>
+
+                <!-- Phone -->
+                <div t-if="o.dest_address_id.phone">
+                    <i class="fa fa-phone"/> 
+                    <span t-esc="o.dest_address_id.phone"/>
+                </div>
+
+                <!-- Mobile -->
+                <div t-if="o.dest_address_id.mobile">
+                    <i class="fa fa-mobile"/> 
+                    <span t-esc="o.dest_address_id.mobile"/>
+                </div>
+
+                <!-- VAT -->
+                <div t-if="o.dest_address_id.vat">
+                    VAT: <span t-esc="o.dest_address_id.vat"/>
+                </div>
+
+            </div>
+        </xpath>
+    </template>
+</odoo>

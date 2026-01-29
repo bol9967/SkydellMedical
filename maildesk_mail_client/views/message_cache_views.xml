@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<odoo>
+
+    <record id="view_maildesk_message_cache_list" model="ir.ui.view">
+        <field name="name">maildesk.message_cache.list</field>
+        <field name="model">maildesk.message_cache</field>
+        <field name="arch" type="xml">
+            <list string="MailDesk Message Cache" create="0">
+                <field name="date"/>
+                <field name="account_id"/>
+                <field name="folder"/>
+                <field name="uid"/>
+                <field name="subject" width="400"/>
+                <field name="from_addr"/>
+                <field name="has_attachments"/>
+                <field name="size" widget="float_time" string="Size (bytes)"/>
+                <field name="flags"/>
+                <field name="thread_id"/>
+                <field name="cache_until"/>
+                <field name="body_cached"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_maildesk_message_cache_form" model="ir.ui.view">
+        <field name="name">maildesk.message_cache.form</field>
+        <field name="model">maildesk.message_cache</field>
+        <field name="arch" type="xml">
+            <form string="Cached Message" create="0">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="account_id"/>
+                            <field name="folder"/>
+                            <field name="uid"/>
+                            <field name="date"/>
+                            <field name="size" string="Size (bytes)"/>
+                            <field name="has_attachments"/>
+                            <field name="flags"/>
+                            <field name="process_state"/>
+                            <field name="process_error"/>
+                        </group>
+                        <group>
+                            <field name="subject"/>
+                            <field name="from_addr"/>
+                            <field name="to_addrs"/>
+                            <field name="cc_addrs"/>
+                            <field name="message_id"/>
+                            <field name="thread_id"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Preview and Meta">
+                            <group>
+                                <field name="preview" widget="text"/>
+                                <field name="in_reply_to"/>
+                                <field name="references_hdr"/>
+                            </group>
+                        </page>
+                        <page string="Body (cached)">
+                            <group>
+                                <field name="body_cached"/>
+                                <field name="body_cache_until"/>
+                            </group>
+                            <group>
+                                <field name="body_html" widget="html" options="{'sanitize': False}"/>
+                                <field name="body_text" widget="text"/>
+                            </group>
+                        </page>
+                        <page string="Caching">
+                            <group>
+                                <field name="cache_until"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_maildesk_message_cache_search" model="ir.ui.view">
+        <field name="name">maildesk.message_cache.search</field>
+        <field name="model">maildesk.message_cache</field>
+        <field name="arch" type="xml">
+            <search string="Search Cached Messages">
+                <field name="subject"/>
+                <field name="from_addr"/>
+                <field name="to_addrs"/>
+                <field name="cc_addrs"/>
+                <field name="message_id" string="Message-ID"/>
+                <field name="thread_id"/>
+                <field name="flags"/>
+
+                <filter string="With Attachments" name="with_att" domain="[('has_attachments','=',True)]"/>
+                <filter string="Body Cached" name="body_cached" domain="[('body_cached','=',True)]"/>
+
+                <searchpanel>
+                    <field name="account_id"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_maildesk_message_cache" model="ir.actions.act_window">
+        <field name="name">Message Cache</field>
+        <field name="res_model">maildesk.message_cache</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_maildesk_message_cache_search"/>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p>
+                This screen shows transient metadata cached by MailDesk for fast list rendering.
+                Entries expire automatically by <b>cache_until</b>.
+            </p>
+        </field>
+    </record>
+
+</odoo>

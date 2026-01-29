@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="omux_input_style.uxopt_form_input_filled" model="ir.asset">
+        <field name="active" eval="True"/>
+    </record>
+    <record id="omux_list_density.uxopt_list_density_cozy" model="ir.asset">
+        <field name="active" eval="True"/>
+    </record>
+    <data noupdate="1">
+        <record id="uxopt_table_striped" model="ir.asset">
+            <field name="name">[OMUX] List View: Striped Row Style</field>
+            <field name="bundle">web.assets_backend</field>
+            <field name="directive">append</field>
+            <field name="path">udoo_lavend_ux/static/src/scss/style_table_striped.scss</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="uxopt_global_filter_nav" model="ir.asset">
+            <field name="name">[OMUX] Filter Navigation Bar: Enabled by Default</field>
+            <field name="bundle">web.assets_backend</field>
+            <field name="directive">after</field>
+            <field name="target">web/static/src/search/control_panel/control_panel.js</field>
+            <field name="path">udoo_lavend_ux/static/src/cmfb/patch/feature/global_filter_nav.js</field>
+            <field name="active" eval="False"/>
+        </record>
+        <record id="uxopt_global_column_filter" model="ir.asset">
+            <field name="name">[OMUX] Column Filtering Bar: Enabled by Default</field>
+            <field name="bundle">web.assets_backend</field>
+            <field name="directive">after</field>
+            <field name="target">web/static/src/search/control_panel/control_panel.js</field>
+            <field name="path">udoo_lavend_ux/static/src/cmfb/patch/feature/global_column_filter.js</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

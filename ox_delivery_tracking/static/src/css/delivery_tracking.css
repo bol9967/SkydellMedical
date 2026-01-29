@@ -1,0 +1,448 @@
+
+#trackingNumberInput:focus, #trackingInputBtn:focus{
+  box-shadow: none;
+}
+
+#trackingNumberInput::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+#trackingNumberInput::-webkit-outer-spin-button,
+#trackingNumberInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#trackingNumberInput {
+  -moz-appearance: textfield;
+}
+
+/* Timeline Styles */
+.tracking-timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 50px;
+  padding-bottom: 30px;
+  border-left: 3px solid #e0e0e0;
+}
+
+.timeline-item:last-child {
+  border-left: none;
+}
+
+.timeline-item.active {
+  border-left-color: var(--o-color-1, #017e84);
+}
+
+.timeline-item.completed {
+  border-left-color: var(--o-color-1, #017e84);
+}
+
+.timeline-item.pending {
+  border-left-color: #e0e0e0;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  border: 3px solid #fff;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-item.active .timeline-marker {
+  background: var(--o-color-1, #017e84);
+  border-color: var(--o-color-1, #017e84);
+  box-shadow: 0 0 0 4px rgba(1, 126, 132, 0.2);
+}
+
+/* Larger marker and box for latest event - layered design */
+.timeline-item.latest-event .timeline-marker {
+  width: 56px;
+  height: 56px;
+  left: -28px;
+  top: -18px;
+  z-index: 5;
+  background: rgba(1, 126, 132, 0.2); /* Light Odoo color circular background */
+  border: 3px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* Odoo theme color square on top of the circle */
+.timeline-marker-square {
+  width: 36px;
+  height: 36px;
+  background: var(--o-color-1, #017e84);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.timeline-marker-box {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  display: block;
+}
+
+.timeline-item.completed .timeline-marker {
+  background: var(--o-color-1, #017e84);
+  border-color: var(--o-color-1, #017e84);
+}
+
+.timeline-item.pending .timeline-marker {
+  background: #e0e0e0;
+  border-color: #fff;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.timeline-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.timeline-location {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.timeline-date {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.timeline-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 25px;
+  height: 100%;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tracking-id {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.timeline-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.timeline-actions i {
+  cursor: pointer;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.timeline-actions i:hover {
+  color: var(--o-color-1, #017e84);
+}
+
+#trackedTableDetails{
+  padding: 0 15px;
+  margin-top: 40px; /* Push down to avoid overlap with back button */
+}
+
+#trackedTimelineDetails{
+  padding: 0 15px;
+  margin-top: 40px; /* Push down to avoid overlap with back button */
+}
+
+/* Back to Search Button */
+.tracking-back-btn {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.tracking-back-btn a {
+  color: var(--o-color-1, #017e84) !important;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tracking-back-btn a:hover {
+  color: var(--o-color-2, #00a09d) !important;
+  text-decoration: none;
+}
+
+.tracking-back-btn i {
+  font-size: 1.1rem;
+}
+
+/* Use Odoo theme colors for buttons and links */
+#trackingInputBtn {
+  color: var(--o-color-1, #017e84) !important;
+}
+
+#trackingInputBtn:hover {
+  color: var(--o-color-2, #00a09d) !important;
+}
+
+/* Timeline colors using Odoo theme */
+.timeline-item.active .timeline-marker {
+  background: var(--o-color-1, #017e84);
+  border-color: var(--o-color-1, #017e84);
+}
+
+.timeline-item.active {
+  border-left-color: var(--o-color-1, #017e84);
+}
+
+.timeline-item.completed .timeline-marker {
+  background: var(--o-color-1, #017e84);
+  border-color: var(--o-color-1, #017e84);
+}
+
+.timeline-item.completed {
+  border-left-color: var(--o-color-1, #017e84);
+}
+
+.timeline-item.latest-event .timeline-marker {
+  background: #D8BFD8;
+}
+
+.timeline-marker-square {
+  background: var(--o-color-1, #017e84);
+}
+
+.timeline-card {
+  border-top: 3px solid var(--o-color-1, #017e84);
+}
+
+.tracking-id {
+  color: var(--o-color-1, #017e84);
+}
+
+.timeline-actions i:hover {
+  color: var(--o-color-1, #017e84);
+}
+
+/* Card header using Odoo theme */
+.card-header.bg-primary {
+  background-color: var(--o-color-1, #017e84) !important;
+}
+
+/* Links and buttons */
+.btn-link {
+  color: var(--o-color-1, #017e84) !important;
+}
+
+.btn-link:hover {
+  color: var(--o-color-2, #00a09d) !important;
+}
+
+/* Additional Odoo theme color applications */
+.text-success {
+  color: var(--o-color-3, #28a745) !important;
+}
+
+/* Ensure checkmark in status is always green */
+.table td span[style*="color: #28a745"] {
+  color: #28a745 !important;
+}
+
+.table td .text-success {
+  color: #28a745 !important;
+}
+
+.badge.bg-info {
+  background-color: var(--o-color-1, #017e84) !important;
+}
+
+/* Search form input focus */
+#trackingNumberInput:focus {
+  border-color: var(--o-color-1, #017e84);
+  box-shadow: 0 0 0 0.2rem rgba(1, 126, 132, 0.25);
+}
+
+/* Card shadows with theme color hint */
+.card.shadow-sm {
+  border-top: 2px solid var(--o-color-1, #017e84);
+}
+
+/* Timeline card border */
+.timeline-card {
+  border-top: 3px solid var(--o-color-1, #017e84);
+}
+
+/* Back button background with theme color */
+.tracking-back-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--o-color-1, #017e84);
+}
+
+.tracking-back-btn:hover {
+  background: rgba(1, 126, 132, 0.05);
+}
+
+/* Travel History Styles */
+.travel-history-content {
+  padding: 20px 0;
+}
+
+.travel-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.travel-history-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.travel-history-sort select {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: #333;
+}
+
+.travel-history-timeline {
+  position: relative;
+}
+
+.travel-history-date-group {
+  margin-bottom: 40px;
+}
+
+.travel-history-date-header {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.travel-history-date-header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--o-color-1, #017e84);
+}
+
+.travel-history-events {
+  padding-left: 30px;
+  border-left: 2px solid #e0e0e0;
+  margin-left: 4px;
+}
+
+.travel-history-event {
+  display: flex;
+  gap: 20px;
+  padding: 15px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+.travel-history-event::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--o-color-1, #017e84);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--o-color-1, #017e84);
+}
+
+.travel-history-event.delivered::before {
+  background: #28a745;
+  box-shadow: 0 0 0 2px #28a745;
+}
+
+.travel-history-time {
+  min-width: 80px;
+  font-weight: 500;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.travel-history-details {
+  flex: 1;
+}
+
+.travel-history-description {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.travel-history-location {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.travel-history-event.delivered .travel-history-description {
+  color: #28a745;
+}
+
+#travelHistoryModal .modal-header {
+  border-bottom: 2px solid #f0f0f0;
+  padding: 15px 20px;
+}
+
+#travelHistoryModal .modal-body {
+  padding: 20px;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}

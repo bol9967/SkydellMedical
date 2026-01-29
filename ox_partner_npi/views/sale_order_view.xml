@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Add NPI # for partner fields in Sales Order form -->
+        <record id="view_order_form_inherit_npi" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit.npi</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='partner_details']/field[@name='partner_id']" position="after">
+			<field name="partner_npi" readonly="1" placeholder="NPI #" invisible="not partner_npi"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<templates xml:space="preserve">
+<t t-name="maildesk_mail_client.AssignTagsDialog" owl="1">
+    <Dialog t-props="{title: props.title + ' (' + state.selectedTagIds.size + ')'}">
+        <div class="p-3 tag-select-maildesk">
+            <div class="mb-4">
+                <label class="form-label fw-bold">Create New Tag</label>
+                <div class="input-group align-items-center">
+                    <input
+              t-model="state.newTagName"
+              type="text"
+              class="form-control"
+              placeholder="Tag name"
+              aria-label="New tag name"
+            />
+                    <input
+              type="color"
+              t-model="state.newTagColor"
+              class="form-control form-control-color px-1"
+              title="Pick tag color"
+              style="max-width: 3rem;"
+            />
+                    <button
+              class="btn btn-outline-primary"
+              t-on-click="createNewTag"
+              title="Create new tag"
+              t-att-disabled="!state.newTagName.trim()"
+            >
+                        <i class="fa fa-plus me-1" /> Create
+                    </button>
+                </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+                <t t-if="localTags.length">
+                    <t t-foreach="localTags" t-as="tag" t-key="tag.id">
+                        <div
+                t-att-class="'tag-pill px-3 py-1 rounded-pill border fw-semibold cursor-pointer ' + (isTagSelected(tag) ? 'border-dark text-white' : 'border-light text-dark')"
+                t-attf-style="background-color:#{getTagColor(tag)}"
+                t-on-click="() =&gt; this.toggleTag(tag.id)"
+              >
+                            <t t-out="tag.name" />
+                        </div>
+                    </t>
+                </t>
+                <t t-if="!localTags.length">
+                    <p
+              class="text-muted"
+            >No tags available yet. Use the form above to create one.</p>
+                </t>
+            </div>
+        </div>
+
+        <t t-set-slot="footer">
+            <button
+          class="btn btn-primary"
+          t-on-click="confirmSelection"
+          t-att-disabled="state.isSaving"
+        >
+                <t t-if="state.isSaving">Saving…</t>
+                <t t-if="!state.isSaving">Apply</t>
+            </button>
+            <button
+          class="btn btn-outline-secondary"
+          t-on-click="props.close"
+        >Cancel</button>
+        </t>
+    </Dialog>
+</t>
+</templates>

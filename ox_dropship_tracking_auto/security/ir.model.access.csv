@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mail_tracking_processor,access_mail_tracking_processor,model_mail_tracking_processor,base.group_user,1,1,1,0
+ox_dropship_tracking_auto.access_fedex_api,access_fedex_api,model_fedex_api,base.group_system,1,1,1,1

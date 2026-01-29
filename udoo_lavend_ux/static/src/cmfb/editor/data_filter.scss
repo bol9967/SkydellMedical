@@ -1,0 +1,39 @@
+.o_tree_editor_condition {
+    .o_tree_editor_editor {
+        input {
+            width: 10em;
+
+            &.o_datetime_input {
+                text-align: center;
+                width: 12em;
+            }
+        }
+    }
+}
+
+.o_tree_editor_editor.overflow-hidden {
+    max-width: 445px;
+
+    .o_input {
+        flex-direction: row-reverse;
+    }
+
+    .o_record_autocomplete_with_caret:after {
+        display: none !important;
+    }
+}
+
+.udf_container .o_domain_selector {
+    max-height: 50vh;
+    overflow-y: auto;
+
+    .o_tree_editor_condition {
+        select {
+            width: auto;
+        }
+
+        .o_tree_editor_editor:nth-of-type(2) {
+            display: contents;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Peptide Shipping Product -->
+    <record id="product_product_delivery_peptide" model="product.product">
+        <field name="name">Overnight Peptide Delivery</field>
+        <field name="type">service</field>
+        <field name="list_price">50.0</field> <!-- Default base shipping cost -->
+        <field name="sale_ok">True</field>
+        <field name="purchase_ok">False</field>
+        <field name="invoice_policy">order</field>
+        <field name="taxes_id" eval="[(6, 0, [])]"/>
+    </record>
+
+    <!-- Standard Shipping Product -->
+    <record id="product_product_delivery_standard" model="product.product">
+        <field name="name">Overnight Biologics Delivery</field>
+        <field name="type">service</field>
+        <field name="list_price">150.0</field> <!-- Flat rate -->
+        <field name="sale_ok">True</field>
+        <field name="purchase_ok">False</field>
+        <field name="invoice_policy">order</field>
+        <field name="taxes_id" eval="[(6, 0, [])]"/>
+    </record>
+
+    <!-- Peptide Shipping Carrier -->
+    <record id="delivery_carrier_peptide" model="delivery.carrier">
+        <field name="name">Overnight Peptide Delivery</field>
+        <field name="delivery_type">fixed</field>
+        <field name="fixed_price">50.0</field> <!-- Fixed for < 5000 -->
+        <field name="free_over">True</field> <!-- Enable free shipping threshold -->
+        <field name="amount">5000.0</field> <!-- Threshold amount -->
+        <field name="website_published">True</field>
+        <field name="active">True</field>
+        <field name="product_id" ref="product_product_delivery_peptide"/>
+    </record>
+
+    <!-- Standard Shipping Product (3rd option) -->
+    <record id="product_product_delivery_standard_shipping" model="product.product">
+        <field name="name">Standard Shipping</field>
+        <field name="type">service</field>
+        <field name="list_price">0.0</field>
+        <field name="sale_ok">True</field>
+        <field name="purchase_ok">False</field>
+        <field name="invoice_policy">order</field>
+        <field name="taxes_id" eval="[(6, 0, [])]"/>
+    </record>
+
+    <!-- Standard Shipping Carrier (3rd option) -->
+    <record id="delivery_carrier_standard_shipping" model="delivery.carrier">
+        <field name="name">Standard Shipping</field>
+        <field name="delivery_type">fixed</field>
+        <field name="fixed_price">0.0</field>
+        <field name="free_over">False</field>
+        <field name="amount">0.0</field>
+        <field name="website_published">True</field>
+        <field name="active">True</field>
+        <field name="product_id" ref="product_product_delivery_standard_shipping"/>
+    </record>
+
+    <!-- Standard Shipping Carrier (Overnight Biologics) -->
+    <record id="delivery_carrier_standard" model="delivery.carrier">
+        <field name="name">Overnight Biologics Delivery</field>
+        <field name="delivery_type">fixed</field>
+        <field name="fixed_price">150.0</field> <!-- Always 150 -->
+        <field name="free_over">False</field>
+        <field name="amount">0.0</field>
+        <field name="website_published">True</field>
+        <field name="active">True</field>
+        <field name="product_id" ref="product_product_delivery_standard"/>
+    </record>
+</odoo>

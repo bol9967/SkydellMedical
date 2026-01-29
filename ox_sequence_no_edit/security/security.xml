@@ -1,0 +1,14 @@
+<odoo>
+    <record model="res.groups" id="sale_edit_sequence_group">
+        <field name="name">Sales Order Edit Sequence</field>
+    </record>
+    <record model="res.groups" id="purchase_edit_sequence_group">
+        <field name="name">Purchase Order Edit Sequence</field>
+    </record>
+    <record model="res.groups" id="invoice_edit_sequence_group">
+        <field name="name">Account Invoice Edit Sequence</field>
+    </record>
+    <record model="res.groups" id="warehouse_edit_sequence_group">
+        <field name="name">Warehouse Edit Sequence</field>
+    </record>
+</odoo>

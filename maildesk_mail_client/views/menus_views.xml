@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+# Copyright (C) 2025 Metzler IT GmbH
+# License Odoo Proprietary License v1.0 (OPL-1)
+# You may use this file only in accordance with the license terms.
+# For more information, visit: https://www.odoo.com/documentation/18.0/legal/licenses/licenses.html#odoo-proprietary-license
+-->
+<odoo>
+    <record id="maildesk_dashboard_action" model="ir.actions.client">
+        <field name="name">MailDesk</field>
+        <field name="tag">maildesk_mail_client.maildesk</field>
+    </record>
+
+    <menuitem
+        id="menu_maildesk_root"
+        name="MailDesk"
+        sequence="1"
+        action="maildesk_dashboard_action"
+        web_icon="maildesk_mail_client,static/description/icon.png"
+        groups="maildesk_mail_client.group_mailbox_user,maildesk_mail_client.group_mailbox_admin"
+    />
+
+    <menuitem
+        id="menu_maildesk_root_menu"
+        name="MailDesk"
+        parent="menu_maildesk_root"
+        action="maildesk_dashboard_action"
+        sequence="10"
+        groups="maildesk_mail_client.group_mailbox_user"
+    />
+
+    <menuitem
+        id="menu_mailbox_account_wizard"
+        name="Connect Mailbox"
+        parent="menu_maildesk_root"
+        action="action_mailbox_account_wizard"
+        sequence="20"
+        groups="maildesk_mail_client.group_mailbox_user"
+    />
+    <menuitem
+        id="menu_maildesk_config"
+        name="Configuration"
+        parent="menu_maildesk_root"
+        sequence="40"
+        groups="maildesk_mail_client.group_mailbox_admin"
+    />
+
+    <menuitem
+        id="menu_maildesk_config_maildesk"
+        name="MailDesk Settings"
+        parent="menu_maildesk_config"
+        sequence="10"
+        groups="maildesk_mail_client.group_mailbox_admin"
+    />
+
+    <menuitem
+        id="menu_maildesk_technical_message_tags"
+        name="Message Tags"
+        parent="menu_maildesk_config_maildesk"
+        action="action_mail_message_tag"
+        sequence="10"
+        groups="maildesk_mail_client.group_mailbox_admin"
+    />
+
+    <menuitem
+        id="menu_maildesk_technical_message_cache"
+        name="Message Cache"
+        parent="menu_maildesk_config_maildesk"
+        action="maildesk_mail_client.action_maildesk_message_cache"
+        sequence="20"
+        groups="maildesk_mail_client.group_mailbox_admin"
+    />
+
+    <menuitem
+        id="menu_maildesk_config_aliases"
+        name="Aliases"
+        parent="menu_maildesk_config"
+        sequence="20"
+        groups="maildesk_mail_client.group_mailbox_admin"
+    />
+
+    <menuitem
+        id="mail_alias_menu"
+        name="Aliases"
+        parent="menu_maildesk_config_aliases"
+        action="mail.mail_alias_action"
+        sequence="10"
+        groups="maildesk_mail_client.group_mailbox_admin"
+    />
+
+    <menuitem
+        id="mail_alias_domain_menu"
+        name="Alias Domains"
+        parent="menu_maildesk_config_aliases"
+        action="mail.mail_alias_domain_action"
+        sequence="20"
+        groups="maildesk_mail_client.group_mailbox_admin"
+    />
+
+    <menuitem
+        id="menu_maildesk_config_mailboxes"
+        name="Mailboxes"
+        parent="menu_maildesk_config"
+        sequence="30"
+        groups="maildesk_mail_client.group_mailbox_admin"
+    />
+
+    <menuitem
+        id="menu_maildesk_technical_accounts"
+        name="Mailbox Accounts"
+        parent="menu_maildesk_config_mailboxes"
+        action="action_mailbox_account"
+        sequence="10"
+        groups="maildesk_mail_client.group_mailbox_admin"
+    />
+
+    <menuitem
+        name="Incoming Mail Servers"
+        id="menu_action_fetchmail_server_tree"
+        parent="menu_maildesk_config_mailboxes"
+        action="mail.action_email_server_tree"
+        sequence="20"
+        groups="maildesk_mail_client.group_mailbox_admin"
+    />
+
+    <menuitem
+        name="Outgoing Mail Servers"
+        id="menu_mail_servers"
+        parent="menu_maildesk_config_mailboxes"
+        action="base.action_ir_mail_server_list"
+        sequence="30"
+        groups="maildesk_mail_client.group_mailbox_admin"
+    />
+
+</odoo>

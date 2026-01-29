@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_terms_conditions_admin,terms.conditions.admin,model_terms_conditions,base.group_system,1,1,1,1
+access_terms_conditions_user,terms.conditions.user,model_terms_conditions,base.group_user,1,0,0,0
+access_terms_acceptance_admin,terms.acceptance.admin,model_terms_acceptance,base.group_system,1,1,1,1
+access_terms_acceptance_user,terms.acceptance.user,model_terms_acceptance,base.group_user,1,0,0,0
+access_terms_content_history_admin,terms.content.history.admin,model_terms_content_history,base.group_system,1,1,1,1
+access_terms_content_history_user,terms.content.history.user,model_terms_content_history,base.group_user,1,0,0,0
+access_two_factor_auth,two.factor.auth,model_two_factor_auth,base.group_user,1,0,0,0

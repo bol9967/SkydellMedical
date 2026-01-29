@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <!-- List View Configuration -->
+        <record id="group_lvm" model="res.groups">
+            <field name="name">List View Configuration</field>
+            <field name="category_id" ref="base.module_category_usability"/>
+            <field name="comment">Manage the structure and behavior of backend list views.</field>
+        </record>
+
+        <!-- System Admin => auto implied UX roles -->
+        <record id="base.group_system" model="res.groups">
+            <field name="implied_ids" eval="[
+                (4, ref('udoo_lavend_ux.group_lvm')),
+            ]"/>
+        </record>
+    </data>
+</odoo>

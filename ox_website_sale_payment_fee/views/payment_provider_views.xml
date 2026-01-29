@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_provider_form_inherit_payment_fee" model="ir.ui.view">
+        <field name="name">payment.provider.form.inherit.payment.fee</field>
+        <field name="model">payment.provider</field>
+        <field name="inherit_id" ref="payment.payment_provider_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='payment_form']" position="inside">
+                <separator string="Payment Processing Fee" invisible="state == 'disabled'"/>
+                <field name="payment_fee_enabled" invisible="state == 'disabled'"/>
+                <field name="payment_fee_percentage" invisible="state == 'disabled' or not payment_fee_enabled"/>
+                <field name="payment_fee_product_id" invisible="state == 'disabled' or not payment_fee_enabled"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

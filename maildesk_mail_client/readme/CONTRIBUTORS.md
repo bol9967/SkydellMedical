@@ -1,0 +1,4 @@
+- Andreas Metzler <andreas.metzler@mit-odoo.com>  
+- Johannes Schmidt <johannes.schmidt@mit-odoo.com>  
+- Dr. Ihar Marfin <ihar.marfin@mit-odoo.com>  
+- Metzler IT GmbH <info@mit-odoo.com>
