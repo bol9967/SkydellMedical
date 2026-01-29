@@ -1,6 +1,7 @@
 from odoo import models, fields, api
 from datetime import datetime, timedelta
 from odoo.exceptions import UserError
+from odoo.osv import expression
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -54,6 +55,83 @@ class CommissionTracking(models.Model):
                                    default=lambda self: self.env.company.currency_id)
     
     # ------------------------------------------------------------------
+    # Team Leader visibility helpers (own + team commissions)
+    # ------------------------------------------------------------------
+
+    @api.model
+    def _search(self, domain, offset=0, limit=None, order=None):
+        """
+        Extend search to allow Commission Team Leaders to see:
+          - their own commissions
+          - commissions of users in the sales teams they lead
+
+        Hierarchy:
+          - Commission Admin  : sees all (native rule + bypass here)
+          - Commission TL     : own + team members (this override)
+          - Commission User   : own only (native rule)
+        """
+        # Determine the original user (handle sudo environments correctly)
+        original_uid = self.env.context.get("uid") or self.env.uid
+        if original_uid and original_uid != self.env.user.id:
+            user = self.env["res.users"].browse(original_uid)
+        else:
+            user = self.env.user
+
+        is_commission_admin = user.has_group("ox_sales_commission.group_commission_sale_admin")
+        is_commission_user = user.has_group("ox_sales_commission.group_commission_sale_user")
+        is_commission_team_leader = user.has_group("ox_sales_commission.group_commission_team_leader")
+
+        # Admins: keep standard behavior (they already have an \"admin sees all\" rule)
+        if is_commission_admin:
+            return super()._search(domain, offset=offset, limit=limit, order=order)
+
+        # Only extend behavior for users that are both commission users and
+        # explicitly marked as Commission Team Leaders
+        if is_commission_user and is_commission_team_leader:
+            # Sales team leader logic reuses crm.team structure
+            teams = self.env["crm.team"].search([("user_id", "=", user.id)])
+            if teams:
+                # Collect active team member user IDs
+                member_user_ids = (
+                    teams.mapped("crm_team_member_ids")
+                    .filtered("active")
+                    .mapped("user_id")
+                    .filtered(lambda u: u)
+                    .ids
+                )
+
+                if member_user_ids:
+                    # Own commissions (respect record rules)
+                    own_query = super()._search(
+                        expression.AND([domain, [("salesperson_id", "=", user.id)]]),
+                        offset=0,
+                        limit=0,
+                        order=False,
+                    )
+                    # Team member commissions (bypass record rules with sudo)
+                    team_query = super(CommissionTracking, self.sudo())._search(
+                        expression.AND([domain, [("salesperson_id", "in", member_user_ids)]]),
+                        offset=0,
+                        limit=0,
+                        order=False,
+                    )
+
+                    own_ids = list(own_query) if own_query else []
+                    team_ids = list(team_query) if team_query else []
+                    result_ids = list(set(own_ids) | set(team_ids))
+
+                    if result_ids:
+                        return self.browse(result_ids)._as_query(order or self._order)
+                    return self.browse([])._as_query(order or self._order)
+
+            # If user is TL but has no team members, or teams missing,
+            # fall back to native behavior (own commissions via rule).
+            return super()._search(domain, offset=offset, limit=limit, order=order)
+
+        # Non-TL users: keep native behavior
+        return super()._search(domain, offset=offset, limit=limit, order=order)
+
+    # ------------------------------------------------------------------
     # Smart button helpers
     # ------------------------------------------------------------------
     def _open_record_action(self, model, res_id):
@@ -88,6 +166,90 @@ class CommissionTracking(models.Model):
         if not self.sale_order_id:
             return False
         return self._open_record_action('sale.order', self.sale_order_id.id)
+
+    def read(self, fields=None, load="_classic_read"):
+        """
+        Override read so that Commission Team Leaders can actually read
+        the commission lines for their team members, even though the
+        base record rule only allows \"own\" commissions.
+
+        Strategy:
+          - Identify IDs that belong to:
+              * own commissions
+              * team member commissions
+              * other users
+          - Read own + team member records with sudo() (after verifying
+            salesperson ownership via SQL), skip the rest.
+        """
+        user = self.env.user
+
+        is_commission_admin = user.has_group("ox_sales_commission.group_commission_sale_admin")
+        is_commission_user = user.has_group("ox_sales_commission.group_commission_sale_user")
+        is_commission_team_leader = user.has_group("ox_sales_commission.group_commission_team_leader")
+
+        # Admin or non-commission users: use standard behavior
+        if is_commission_admin or not is_commission_user or not is_commission_team_leader:
+            return super().read(fields, load)
+
+        # Reuse sales team hierarchy via crm.team
+        teams = self.env["crm.team"].search([("user_id", "=", user.id)])
+        if not teams or not self.ids:
+            # No teams or no records -> default behavior
+            return super().read(fields, load)
+
+        member_user_ids = (
+            teams.mapped("crm_team_member_ids")
+            .filtered("active")
+            .mapped("user_id")
+            .filtered(lambda u: u and u.id)
+            .ids
+        )
+
+        if not member_user_ids:
+            # TL with no active members: falls back to own-only via rule
+            return super().read(fields, load)
+
+        # Map commission.tracking -> salesperson_id via SQL to avoid any
+        # recursive ORM calls that could re-trigger access logic.
+        self.env.cr.execute(
+            "SELECT id, salesperson_id FROM commission_tracking WHERE id = ANY(%s)", (self.ids,)
+        )
+        user_id_map = {row[0]: row[1] for row in self.env.cr.fetchall()}
+
+        team_member_record_ids = [
+            rid for rid in self.ids if user_id_map.get(rid) in member_user_ids
+        ]
+        own_record_ids = [rid for rid in self.ids if user_id_map.get(rid) == user.id]
+        other_record_ids = [
+            rid for rid in self.ids if rid not in team_member_record_ids and rid not in own_record_ids
+        ]
+
+        result = []
+
+        if team_member_record_ids:
+            team_member_records = self.browse(team_member_record_ids)
+            result.extend(
+                super(CommissionTracking, team_member_records.sudo()).read(fields, load)
+            )
+
+        if own_record_ids:
+            own_records = self.browse(own_record_ids)
+            result.extend(super(CommissionTracking, own_records.sudo()).read(fields, load))
+
+        # Skip other users' commissions entirely
+        if other_record_ids:
+            _logger.info(
+                "[commission.tracking.read] Skipping %s non-accessible records for user %s",
+                len(other_record_ids),
+                user.id,
+            )
+
+        # Preserve original order if we have results
+        if result:
+            id_order = {rid: idx for idx, rid in enumerate(self.ids)}
+            return sorted(result, key=lambda r: id_order.get(r["id"], len(self.ids)))
+
+        return result
 
     # @api.model
     # def read_group(self, domain, fields, groupby, offset=0, limit=None, orderby=False, lazy=True):

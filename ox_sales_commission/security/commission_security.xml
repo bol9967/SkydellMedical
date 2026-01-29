@@ -7,6 +7,25 @@
         <field name="comment">Can view and track their own commissions</field>
     </record>
 
+    <!-- Commission Team Leader Group -->
+    <record id="group_commission_team_leader" model="res.groups">
+        <field name="name">Commission Team Leader</field>
+        <field name="category_id" ref="base.module_category_sales_sales"/>
+        <!--
+            This group is independent of ox_sales_team_hierarchy.
+            It is meant for users who are leaders of one or more sales teams
+            (native crm.team.user_id). In code we look at crm.team to find
+            their team members; no extra module is required.
+
+            It implies:
+             - Commission Sale User group (so they keep \"own\" commission rights)
+        -->
+        <field name="implied_ids" eval="[(4, ref('group_commission_sale_user'))]"/>
+        <field name="comment">
+            Team leaders can view their own commissions plus commissions of users assigned to sales teams they lead.
+        </field>
+    </record>
+
     <!-- Commission Admin Group -->
     <record id="group_commission_sale_admin" model="res.groups">
         <field name="name">Commission Sale Administrator</field>

@@ -1,52 +1,90 @@
-# Sales Team Hierarchy Access
+# Sales Team Hierarchy Module
 
-This module extends Odoo's access control to allow sales team leaders to view records (sales orders, CRM leads, invoices, etc.) belonging to their team members.
+## Overview
 
-## Features
+This module extends Odoo's native 3-tier access control system to add a **4th tier: Team Leader Access**.
 
-- **Team Leader Access**: Sales team leaders can see all records (sales orders, CRM leads, invoices) created by members of their teams
-- **Personal Access Maintained**: Regular salespersons still only see their own records (unless they have additional permissions)
-- **Automatic Detection**: The system automatically detects team leaders based on the `user_id` field on sales teams
+## Access Control Hierarchy
+
+```
+1. Administrator (group_sale_manager)
+   └── Bypasses all record rules → Sees everything
+
+2. All Documents (group_sale_salesman_all_leads)
+   └── Rule: [(1,'=',1)] → Sees everything
+
+3. Team Leader Access (group_team_leader) ← NEW 4TH TIER
+   └── Rule: Own records + Team member records
+   └── If no team members → Falls back to "Own Documents Only"
+
+4. Own Documents Only (group_sale_salesman)
+   └── Rule: ['|',('user_id','=',user.id),('user_id','=',False)]
+```
 
 ## How It Works
 
-1. When a user is set as a team leader (via the `user_id` field on `crm.team`), the system computes which users are members of their teams
-2. Record rules are extended to allow access to records where:
-   - The record's `user_id` matches the current user (personal records)
-   - The record has no `user_id` assigned
-   - The record's `user_id` is a member of a team where the current user is the leader
+### Team Leader Access (4th Tier)
 
-## Models Affected
+**When user has Team Leader group but NOT "All Documents":**
 
-- **Sale Orders** (`sale.order`)
-- **Sale Order Lines** (`sale.order.line`)
-- **Sale Order Reports** (`sale.report`)
-- **CRM Leads** (`crm.lead`)
-- **CRM Activity Reports** (`crm.activity.report`)
-- **Account Invoices** (`account.move`)
-- **Account Invoice Lines** (`account.move.line`)
-- **Account Invoice Reports** (`account.invoice.report`)
+1. **With Team Members:**
+   - Sees own records (where `user_id = current user`)
+   - Sees team member records (where `user_id` is in team member list)
+   - Does NOT see unassigned records (`user_id = False`) unless they are own records
+
+2. **No Team Members:**
+   - Falls back to "Own Documents Only" behavior
+   - Sees only own records + unassigned records
+
+3. **Has "All Documents":**
+   - Team Leader logic is skipped
+   - Sees everything (native "All Documents" rule applies)
+
+## Implementation Details
+
+### Hybrid Approach (Native-Style)
+
+- **XML Record Rules:** Define the structure and make rules visible in UI
+- **Python Overrides:** Extend domains dynamically based on team membership
+
+### Key Files
+
+- `security/security_groups.xml` - Defines Team Leader group
+- `security/ir_rules.xml` - Defines base record rules (extended in Python)
+- `models/sale_order.py` - Extends `_search()` and `read()` for sales orders
+- `models/crm_lead.py` - Extends `_search()` and `read()` for CRM leads
+- `models/res_users.py` - Computed field for team member IDs
+
+### Why Python Overrides?
+
+Team membership changes dynamically when:
+- Teams are created/modified
+- Team members are added/removed
+- Users are assigned/unassigned
+
+XML record rules can't compute this dynamically, so Python overrides extend the base domain.
 
 ## Installation
 
-1. Copy this module to your Odoo addons directory
-2. Update the apps list in Odoo
-3. Install the module "Sales Team Hierarchy Access"
+1. Copy module to `addons` directory
+2. Update apps list
+3. Install "Sales Team Hierarchy" module
+4. Assign "User: Team Leader Access" group to users
+5. Set users as team leaders in Sales > Configuration > Sales Teams
 
-## Configuration
+## Usage
 
-No configuration needed. The module works automatically once installed.
+1. Go to Sales > Configuration > Sales Teams
+2. Create or edit a team
+3. Set the "Team Leader" field to the user who should see team member records
+4. Add team members in the "Team Members" tab
+5. The team leader will now see:
+   - Their own sales orders and CRM leads
+   - Sales orders and CRM leads of all active team members
 
-## Technical Details
+## Technical Notes
 
-- Adds a computed Many2many field `team_member_user_ids` on `res.users` that contains all users who are members of teams where the current user is the leader
-- Extends existing record rules for salespersons to include team member records
-- Uses Odoo's standard record rule mechanism, so it integrates seamlessly with existing security
-
-## Requirements
-
-- Odoo 18.0
-- `sales_team` module
-- `sale` module
-- `crm` module
-- `account` module
+- Uses SQL queries to avoid recursion when reading `user_id` field
+- Maintains compatibility with Odoo 18's `Query` object handling
+- Respects native record rules (multi-company, etc.)
+- Falls back gracefully when no team members exist

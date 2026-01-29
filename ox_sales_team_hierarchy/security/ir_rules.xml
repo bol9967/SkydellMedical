@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
     <!-- 
-        Record rules for team leader access are implemented via Python code
-        by overriding the _search method in each model (sale.order, crm.lead, etc.)
-        This aligns with Odoo 18's native pattern of extending search behavior.
+        Record Rules for Team Leader Access (4th Tier)
         
-        The _search override extends the standard search to include team member records
-        for users who are team leaders, allowing them to see their team members' records.
+        These rules define the base structure. The actual domain is extended
+        dynamically in Python _search() override to include team member records.
         
-        No XML record rules are needed here since we can't use computed fields in
-        record rule domains during XML parsing. The Python-based approach is more
-        flexible and aligns with Odoo 18's architecture.
+        The domain here is the same as "Own Documents Only" - Python extends it
+        to include team members when team membership exists.
+    -->
+    
+    <!-- Sales Order Team Leader Rule -->
+    <record id="sale_order_team_leader_rule" model="ir.rule">
+        <field name="name">Team Leader Orders</field>
+        <field ref="sale.model_sale_order" name="model_id"/>
+        <!-- Base domain: own records + unassigned. Extended in Python to include team members -->
+        <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+        <field name="groups" eval="[(4, ref('ox_sales_team_hierarchy.group_team_leader'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    
+    <!-- CRM Lead Team Leader Rule -->
+    <record id="crm_lead_team_leader_rule" model="ir.rule">
+        <field name="name">Team Leader Leads</field>
+        <field ref="crm.model_crm_lead" name="model_id"/>
+        <!-- Base domain: own records + unassigned. Extended in Python to include team members -->
+        <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+        <field name="groups" eval="[(4, ref('ox_sales_team_hierarchy.group_team_leader'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+    
+    <!-- 
+        Note: These XML rules provide the base structure and make the rules
+        visible in Settings > Technical > Security > Record Rules.
+        
+        The actual access control logic is extended in Python _search() override
+        to dynamically include team member records based on current team membership.
+        This is necessary because team membership changes dynamically and cannot
+        be computed in static XML domain expressions.
     -->
 </odoo>

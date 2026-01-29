@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Add Team Leader boolean field to user form Access Rights tab -->
-    <!-- Inherit from base.user_groups_view and add field at the end of the replaced groups_id structure -->
-    <record id="view_users_form_team_leader" model="ir.ui.view">
-        <field name="name">res.users.form.team.leader</field>
-        <field name="model">res.users</field>
-        <field name="inherit_id" ref="base.user_groups_view"/>
-        <field name="arch" type="xml">
-            <!-- Add Team Leader checkbox at the end of the replaced groups_id field structure -->
-            <!-- Add after the last empty group at the end of the replaced groups_id content -->
-            <xpath expr="//field[@name='groups_id']/group[last()]" position="after">
-                <group string="Sales Team Access" groups="base.group_no_one">
-                    <div class="o_row">
-                        <field name="is_team_leader" widget="boolean_toggle"/>
-                        <label for="is_team_leader" string="Team Leader" 
-                               help="Allow this user to view records of their team members. User must also be set as team leader on a sales team."/>
-                    </div>
-                </group>
-            </xpath>
-        </field>
-    </record>
+    <!-- 
+        Note: The Team Leader group appears in the native groups list as "User: Team Leader Access"
+        Users can check/uncheck it directly there, following Odoo's native pattern.
+        No separate boolean field is needed - this matches how "User: All Documents" and 
+        "User: Own Documents Only" work in Odoo.
+    -->
 </odoo>
