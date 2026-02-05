@@ -35,4 +35,5 @@ class ResConfigSettings(models.TransientModel):
             param_value
         )
         # Clear cache to ensure the change takes effect immediately
-        self.env['ir.config_parameter'].sudo().clear_caches()
+        # Use registry.clear_cache() instead of deprecated model.clear_caches()
+        self.env.registry.clear_cache()
