@@ -56,17 +56,24 @@ class ResPartner(models.Model):
                 )
                 
                 if member_user_ids:
-                    # Search for own contacts - record rule will automatically filter to own contacts
-                    # The record rule applies to group_sales_contact_restricted (which team leaders have)
+                    # Search for own contacts (respects record rules)
                     own_query = super()._search(
-                        domain,
+                        expression.AND([domain, [
+                            '|', '|', '|', '|', '|', '|',
+                            ('id', '=', user.partner_id.id),
+                            ('create_uid', '=', user.id),
+                            ('user_id', '=', user.id),
+                            ('message_partner_ids', 'in', user.partner_id.ids),
+                            ('parent_id.create_uid', '=', user.id),
+                            ('parent_id.user_id', '=', user.id),
+                            ('id', '=', 1)
+                        ]]),
                         offset=0,
                         limit=0,
                         order=False
                     )
                     
                     # Search for team member contacts (bypass record rules with sudo)
-                    # Domain includes conditions for team member contacts
                     team_domain = expression.AND([domain, [
                         '|', '|', '|', '|', '|',
                         ('create_uid', 'in', member_user_ids),
@@ -107,7 +114,20 @@ class ResPartner(models.Model):
             # Set user_id to current user (creator) if not already set
             for vals in vals_list:
                 if 'user_id' not in vals or not vals.get('user_id'):
+                    _logger.info(
+                        f"[ox_own_contacts_visibility.create] Setting user_id to creator {user.id} ({user.login}) "
+                        f"for partner with email={vals.get('email')}, name={vals.get('name')}"
+                    )
                     vals['user_id'] = self.env.user.id
+                else:
+                    _logger.info(
+                        f"[ox_own_contacts_visibility.create] user_id already set to {vals.get('user_id')} "
+                        f"for partner with email={vals.get('email')}, name={vals.get('name')}, skipping auto-assign"
+                    )
+        else:
+            _logger.info(
+                f"[ox_own_contacts_visibility.create] Admin user {user.id} ({user.login}) - skipping auto-assign"
+            )
         return super().create(vals_list)
 
     def read(self, fields=None, load='_classic_read'):
