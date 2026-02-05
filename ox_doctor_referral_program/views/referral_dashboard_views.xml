@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Referral Dashboard with JS Widget -->
+    <record id="view_referral_dashboard_main" model="ir.ui.view">
+        <field name="name">referral.dashboard.main</field>
+        <field name="model">referral.dashboard</field>
+        <field name="arch" type="xml">
+            <form string="Referral Program Dashboard" create="0" delete="0">
+                <sheet>
+                    <field name="name" invisible="1"/>
+                    <field name="date_from" invisible="1"/>
+                    <field name="date_to" invisible="1"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_clicks" type="object" 
+                                string="View All Clicks" 
+                                class="oe_stat_button" 
+                                icon="fa-mouse-pointer"/>
+                        <button name="action_view_fraud" type="object" 
+                                string="Fraud Detections" 
+                                class="oe_stat_button" 
+                                icon="fa-shield-alt"/>
+                    </div>
+                    
+                    <!-- JavaScript Dashboard Widget -->
+                    <field name="id" widget="referral_dashboard_widget"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Dashboard Action -->
+    <record id="action_referral_dashboard" model="ir.actions.act_window">
+        <field name="name">Referral Dashboard</field>
+        <field name="res_model">referral.dashboard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_referral_dashboard_main"/>
+        <field name="target">current</field>
+        <field name="context">{
+            'create': False,
+            'delete': False
+        }</field>
+    </record>
+
+</odoo>

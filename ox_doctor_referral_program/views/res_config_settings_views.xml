@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_referral" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.referral</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Doctor Referral Program" string="Doctor Referral Program" name="ox_doctor_referral_program">
+                    <block title="Referral Program Configuration">
+                        <setting string="Global Reward Product (Skydell Platinum)" help="Default product used for rewards when reward rules don't specify a product. This is used as fallback if Reward Product is not set in reward rules.">
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label class="o_light_label col-lg-3" string="Product" for="skydell_platinum_product_id"/>
+                                    <field name="skydell_platinum_product_id" 
+                                           class="col-lg-9" 
+                                           options="{'no_create': True, 'no_create_edit': True}"/>
+                                    <div class="col-lg-12 mt-2">
+                                        <p class="text-muted small">
+                                            This product will be used as the reward product if a reward rule doesn't specify one.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </setting>
+                        <setting string="Reward Rules" help="Configure flexible reward rules based on products/categories, quantity or revenue">
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <div class="col-lg-12">
+                                        <p class="text-muted mb-3">
+                                            Configure multiple reward rules. Each rule can apply to specific products or product categories, 
+                                            with quantity-based or revenue-based thresholds. Doctor 1 will receive the configured free product 
+                                            when referred doctors meet the rule criteria.
+                                        </p>
+                                        <div class="mb-3">
+                                            <button name="action_open_configured_rules" 
+                                                    type="object" 
+                                                    string="Open Configured Rules"
+                                                    class="btn-link"/>
+                                            <span class="text-muted small ms-2">
+                                                View and manage all existing reward rules configured for your company.
+                                            </span>
+                                            <div class="mt-1">
+                                                <span class="text-muted small">
+                                                    Currently configured: <strong><field name="reward_rules_count" readonly="1" widget="integer" force_save="1"/></strong> rule(s)
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <button name="action_create_new_rule" 
+                                                    type="object" 
+                                                    string="Create New Rule"
+                                                    class="btn-link"/>
+                                            <span class="text-muted small ms-2">
+                                                Create a new reward rule with custom products, categories, thresholds, and reward settings.
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </setting>
+                        <setting string="Auto-Grant Rewards" help="Automatically grant promo rewards when conditions are met">
+                            <field name="auto_grant_rewards" widget="boolean_toggle"/>
+                        </setting>
+                        <setting string="Company Property User" help="User assigned to partners referred by Doctor 2 (Level 1). This user will be set as res.partner.user_id for these referrals.">
+                            <div class="content-group">
+                                <div class="row mt16">
+                                    <label class="o_light_label col-lg-3" string="User" for="company_property_user_id"/>
+                                    <field name="company_property_user_id" 
+                                           class="col-lg-9" 
+                                           options="{'no_create': True, 'no_create_edit': True}"/>
+                                    <div class="col-lg-12 mt-2">
+                                        <p class="text-muted small">
+                                            When a doctor is referred by Doctor 2/3/4 (Level 1), this user will be assigned 
+                                            as their salesperson (res.partner.user_id). If not set, no user will be assigned.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+</odoo>

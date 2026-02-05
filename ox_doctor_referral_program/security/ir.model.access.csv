@@ -1,0 +1,14 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_referral_reward_user,referral.reward.user,model_referral_reward,base.group_user,1,0,0,0
+access_referral_reward_manager,referral.reward.manager,model_referral_reward,base.group_system,1,1,1,1
+access_referral_reward_rule_user,referral.reward.rule.user,model_referral_reward_rule,base.group_user,1,0,0,0
+access_referral_reward_rule_manager,referral.reward.rule.manager,model_referral_reward_rule,base.group_system,1,1,1,1
+access_res_partner_referral,res.partner.referral,base.model_res_partner,base.group_user,1,1,1,0
+access_referral_link_click_user,referral.link.click.user,model_referral_link_click,base.group_user,1,0,0,0
+access_referral_link_click_manager,referral.link.click.manager,model_referral_link_click,base.group_system,1,1,1,1
+access_referral_share_user,referral.share.user,model_referral_share,base.group_user,1,0,0,0
+access_referral_share_manager,referral.share.manager,model_referral_share,base.group_system,1,1,1,1
+access_referral_fraud_detection_user,referral.fraud.detection.user,model_referral_fraud_detection,base.group_user,1,0,0,0
+access_referral_fraud_detection_manager,referral.fraud.detection.manager,model_referral_fraud_detection,base.group_system,1,1,1,1
+access_referral_dashboard_user,referral.dashboard.user,model_referral_dashboard,base.group_user,1,0,0,0
+access_referral_dashboard_manager,referral.dashboard.manager,model_referral_dashboard,base.group_system,1,1,1,1

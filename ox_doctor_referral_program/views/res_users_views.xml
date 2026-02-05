@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Extend User Preferences Form to add Referral tab -->
+    <record id="view_users_form_simple_modif_referral" model="ir.ui.view">
+        <field name="name">res.users.preferences.form.referral</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='page_devices']" position="after">
+                <page string="Referral" name="page_referral">
+                    <group>
+                        <group string="Your Referral Information" col="1">
+                            <div class="text-muted mb-3">
+                                Share your referral code or QR code to invite others. When they sign up using your link, they'll be added to your referral network.
+                            </div>
+
+                            <!-- QR Code display using widget -->
+                            <div class="text-center mb-4" invisible="not partner_referral_code">
+                                <span class="o_form_label fw-bold d-block mb-2">Scan QR Code</span>
+                                <field name="partner_referral_qr_url" widget="referral_qr_code"/>
+                            </div>
+
+                            <!-- Referral Code -->
+                            <field name="partner_referral_code" string="Referral Code" readonly="1" widget="CopyClipboardChar"/>
+
+                            <!-- Referral Link -->
+                            <field name="partner_referral_link" string="Referral Link" readonly="1" widget="CopyClipboardChar"/>
+
+                            <!-- Referral Statistics -->
+                            <field name="partner_referred_doctors_count" string="Doctors Referred" invisible="not partner_referral_code"/>
+
+                            <!-- No referral code message -->
+                            <div class="alert alert-info" role="alert" invisible="partner_referral_code">
+                                <i class="fa fa-info-circle me-2"/>
+                                You don't have a referral code yet. Contact your administrator to get one assigned.
+                            </div>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

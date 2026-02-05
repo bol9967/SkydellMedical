@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_referral" model="ir.ui.view">
+        <field name="name">res.partner.form.referral</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Add referral fields to contact form -->
+            <xpath expr="//page[@name='sales_purchases']" position="after">
+                <page string="Referral Program" name="referral_program">
+                    <group>
+                        <group string="Referral Information">
+                            <field name="referral_code" readonly="1"/>
+                            <field name="referral_link" readonly="1" widget="url"/>
+                            <field name="referred_by_id"/>
+                            <field name="referral_level"/>
+                            <field name="referral_type"/>
+                            <field name="is_salesperson_onboarded"/>
+                            <field name="is_doctor_referred"/>
+                            <field name="is_doctor_1"/>
+                        </group>
+                        <group string="Salesperson Assignment">
+                            <field name="user_type" readonly="1" 
+                                   help="Type of user linked to this partner (from res.users model)"/>
+                            <field name="referral_salesperson_id"/>
+                            <field name="doctor_1_id" readonly="1" 
+                                   help="The Doctor 1 in your referral chain. Empty if you are Doctor 1."/>
+                        </group>
+                    </group>
+                    <group string="Referred Doctors">
+                        <field name="referred_doctors_count" readonly="1"/>
+                        <field name="referred_doctors_ids" nolabel="1" options="{'no_create': True, 'no_create_edit': True}">
+                            <list>
+                                <field name="name"/>
+                                <field name="email"/>
+                                <field name="referral_code"/>
+                                <field name="referral_level"/>
+                                <field name="referral_type"/>
+                            </list>
+                        </field>
+                    </group>
+                    <group string="Analytics &amp; Performance">
+                        <field name="total_clicks" readonly="1"/>
+                        <field name="unique_clicks" readonly="1"/>
+                        <field name="conversion_rate" readonly="1"/>
+                        <field name="total_revenue" readonly="1"/>
+                    </group>
+                    <group string="QR Code">
+                        <field name="qr_code_url" readonly="1" widget="url"/>
+                        <button name="action_view_qrcode" 
+                                string="View QR Code" 
+                                type="object" 
+                                class="btn-secondary"
+                                invisible="not referral_code"
+                                help="Click to view/download QR code image"/>
+                    </group>
+                    <group>
+                        <button name="action_generate_referral_code" 
+                                string="Generate Referral Code" 
+                                type="object" 
+                                class="btn-primary"
+                                invisible="referral_code"/>
+                    </group>
+                    <group string="Maintenance">
+                        <div class="alert alert-info" role="alert">
+                            <p><strong>Note:</strong> Internal users (salespersons) should never have "Salesperson-Onboarded Doctor" set to True.</p>
+                            <p>If you see incorrect flags, you can fix them by saving this record (the system will auto-correct).</p>
+                        </div>
+                    </group>
+                    <notebook>
+                        <page string="Clicks" name="clicks">
+                            <field name="click_ids" nolabel="1">
+                                <list>
+                                    <field name="click_date"/>
+                                    <field name="ip_address"/>
+                                    <field name="is_unique"/>
+                                    <field name="converted"/>
+                                    <field name="utm_source"/>
+                                    <field name="utm_medium"/>
+                                    <field name="utm_campaign"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Shares" name="shares">
+                            <field name="share_ids" nolabel="1">
+                                <list>
+                                    <field name="share_date"/>
+                                    <field name="platform"/>
+                                    <field name="clicks_generated"/>
+                                    <field name="conversions_generated"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Fraud Detections" name="fraud" invisible="not fraud_detection_ids">
+                            <field name="fraud_detection_ids" nolabel="1">
+                                <list>
+                                    <field name="detection_date"/>
+                                    <field name="detection_type"/>
+                                    <field name="severity"/>
+                                    <field name="status"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_tree_referral" model="ir.ui.view">
+        <field name="name">res.partner.list.referral</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="user_type" optional="hide"/>
+                <field name="referral_code" optional="hide"/>
+                <field name="referral_salesperson_id" optional="hide"/>
+                <field name="referral_level" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

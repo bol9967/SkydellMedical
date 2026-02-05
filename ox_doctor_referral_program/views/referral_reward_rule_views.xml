@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Referral Reward Rule List View -->
+    <record id="view_referral_reward_rule_list" model="ir.ui.view">
+        <field name="name">referral.reward.rule.list</field>
+        <field name="model">referral.reward.rule</field>
+        <field name="arch" type="xml">
+            <list string="Reward Rules">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="active" widget="boolean_toggle"/>
+                <field name="apply_to_type"/>
+                <field name="reward_type"/>
+                <field name="minimum_qty" invisible="reward_type != 'qty'"/>
+                <field name="minimum_revenue" invisible="reward_type != 'revenue'"/>
+                <field name="reward_product_id"/>
+                <field name="reward_quantity"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Referral Reward Rule Form View -->
+    <record id="view_referral_reward_rule_form" model="ir.ui.view">
+        <field name="name">referral.reward.rule.form</field>
+        <field name="model">referral.reward.rule</field>
+        <field name="arch" type="xml">
+            <form string="Reward Rule">
+                <header>
+                    <field name="active" widget="boolean_toggle"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="apply_to_type"/>
+                            <field name="reward_type"/>
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Products/Categories" name="products">
+                            <group>
+                                <group string="Products (if Apply To = Specific Products)">
+                                    <field name="product_ids" 
+                                           invisible="apply_to_type != 'product'"
+                                           options="{'no_create': True}"
+                                           widget="many2many_tags"/>
+                                </group>
+                                <group string="Product Categories (if Apply To = Product Categories)">
+                                    <field name="product_category_ids" 
+                                           invisible="apply_to_type != 'category'"
+                                           options="{'no_create': True}"
+                                           widget="many2many_tags"/>
+                                </group>
+                            </group>
+                        </page>
+                        
+                        <page string="Threshold" name="threshold">
+                            <group>
+                                <group string="Quantity Threshold (if Reward Type = Quantity Based)">
+                                    <field name="minimum_qty" 
+                                           invisible="reward_type != 'qty'"
+                                           required="reward_type == 'qty'"/>
+                                </group>
+                                <group string="Revenue Threshold (if Reward Type = Revenue Based)">
+                                    <field name="minimum_revenue" 
+                                           invisible="reward_type != 'revenue'"
+                                           required="reward_type == 'revenue'"/>
+                                    <field name="currency_id" 
+                                           invisible="reward_type != 'revenue'"
+                                           readonly="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        
+                        <page string="Reward" name="reward">
+                            <group>
+                                <group>
+                                    <field name="reward_product_id" 
+                                           options="{'no_create': True, 'no_create_edit': True}"/>
+                                    <field name="reward_quantity"/>
+                                </group>
+                            </group>
+                            <div class="alert alert-info" role="alert" invisible="reward_product_id">
+                                <strong>Note:</strong> If Reward Product is not set, the system will use the global 
+                                Skydell Platinum product configured in Settings.
+                            </div>
+                        </page>
+                        
+                        <page string="Description" name="description">
+                            <group>
+                                <field name="description" placeholder="Additional notes about this reward rule..."/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Referral Reward Rule Search View -->
+    <record id="view_referral_reward_rule_search" model="ir.ui.view">
+        <field name="name">referral.reward.rule.search</field>
+        <field name="model">referral.reward.rule</field>
+        <field name="arch" type="xml">
+            <search string="Reward Rules">
+                <field name="name"/>
+                <field name="reward_product_id"/>
+                <filter string="Active" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Inactive" name="inactive" domain="[('active', '=', False)]"/>
+                <filter string="Quantity Based" name="qty_based" domain="[('reward_type', '=', 'qty')]"/>
+                <filter string="Revenue Based" name="revenue_based" domain="[('reward_type', '=', 'revenue')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Apply To Type" name="group_by_apply_to" context="{'group_by': 'apply_to_type'}"/>
+                    <filter string="Reward Type" name="group_by_reward_type" context="{'group_by': 'reward_type'}"/>
+                    <filter string="Company" name="group_by_company" context="{'group_by': 'company_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Referral Reward Rule Action - Keep as act_window but use Python method via server action wrapper -->
+    <!-- Create a new server action that will be used by the menu -->
+    <record id="action_referral_reward_rule_server" model="ir.actions.server">
+        <field name="name">Reward Rules</field>
+        <field name="model_id" ref="model_referral_reward_rule"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_open_reward_rules()</field>
+    </record>
+    
+    <!-- Keep the original window action (may be referenced elsewhere) -->
+    <!-- No context - model's create() method handles company_id -->
+    <record id="action_referral_reward_rule" model="ir.actions.act_window">
+        <field name="name">Reward Rules</field>
+        <field name="res_model">referral.reward.rule</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_referral_reward_rule_list"/>
+        <field name="search_view_id" ref="view_referral_reward_rule_search"/>
+        <!-- No context field - model handles company_id via create() method -->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first reward rule!
+            </p>
+            <p>
+                Configure flexible reward rules based on products or categories, 
+                with quantity or revenue thresholds.
+            </p>
+        </field>
+    </record>
+
+</odoo>

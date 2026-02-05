@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Referral Analytics Dashboard -->
+    <record id="view_referral_analytics_dashboard" model="ir.ui.view">
+        <field name="name">referral.analytics.dashboard</field>
+        <field name="model">referral.analytics</field>
+        <field name="arch" type="xml">
+            <form string="Referral Analytics Dashboard">
+                <group>
+                    <group string="Filters">
+                        <field name="partner_id" options="{'no_create': True}"/>
+                        <field name="date"/>
+                    </group>
+                    <group string="Metrics">
+                        <field name="total_clicks"/>
+                        <field name="unique_clicks"/>
+                        <field name="total_signups"/>
+                        <field name="conversion_rate"/>
+                        <field name="total_revenue"/>
+                        <field name="order_count"/>
+                        <field name="average_order_value"/>
+                        <field name="new_referrals"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Referral Analytics List View -->
+    <record id="view_referral_analytics_list" model="ir.ui.view">
+        <field name="name">referral.analytics.list</field>
+        <field name="model">referral.analytics</field>
+        <field name="arch" type="xml">
+            <list string="Referral Analytics">
+                <field name="date"/>
+                <field name="partner_id"/>
+                <field name="referral_code"/>
+                <field name="total_clicks" sum="Total"/>
+                <field name="unique_clicks" sum="Total"/>
+                <field name="total_signups" sum="Total"/>
+                <field name="conversion_rate"/>
+                <field name="total_revenue" sum="Total"/>
+                <field name="order_count" sum="Total"/>
+                <field name="average_order_value"/>
+                <field name="new_referrals" sum="Total"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Referral Analytics Search View -->
+    <record id="view_referral_analytics_search" model="ir.ui.view">
+        <field name="name">referral.analytics.search</field>
+        <field name="model">referral.analytics</field>
+        <field name="arch" type="xml">
+            <search string="Referral Analytics">
+                <field name="partner_id"/>
+                <field name="referral_code"/>
+                <field name="date"/>
+                <filter string="Today" name="today" domain="[('date', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter string="This Week" name="this_week" domain="[('date', '>=', (context_today() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                <filter string="This Month" name="this_month" domain="[('date', '>=', (context_today() - datetime.timedelta(days=30)).strftime('%Y-%m-%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Date" name="group_by_date" context="{'group_by': 'date'}"/>
+                    <filter string="Referrer" name="group_by_partner" context="{'group_by': 'partner_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Referral Analytics Graph Views -->
+    <record id="view_referral_analytics_graph_clicks" model="ir.ui.view">
+        <field name="name">referral.analytics.graph.clicks</field>
+        <field name="model">referral.analytics</field>
+        <field name="arch" type="xml">
+            <graph string="Clicks Over Time" type="line" stacked="False">
+                <field name="date" type="row"/>
+                <field name="total_clicks" type="measure"/>
+                <field name="unique_clicks" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_referral_analytics_graph_conversions" model="ir.ui.view">
+        <field name="name">referral.analytics.graph.conversions</field>
+        <field name="model">referral.analytics</field>
+        <field name="arch" type="xml">
+            <graph string="Conversion Rate Over Time" type="line">
+                <field name="date" type="row"/>
+                <field name="conversion_rate" type="measure" operator="avg"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_referral_analytics_graph_revenue" model="ir.ui.view">
+        <field name="name">referral.analytics.graph.revenue</field>
+        <field name="model">referral.analytics</field>
+        <field name="arch" type="xml">
+            <graph string="Revenue Over Time" type="bar" stacked="False">
+                <field name="date" type="row"/>
+                <field name="total_revenue" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_referral_analytics_graph_top_referrers" model="ir.ui.view">
+        <field name="name">referral.analytics.graph.top.referrers</field>
+        <field name="model">referral.analytics</field>
+        <field name="arch" type="xml">
+            <graph string="Top Referrers by Revenue" type="bar">
+                <field name="partner_id" type="row"/>
+                <field name="total_revenue" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_referral_analytics_pivot" model="ir.ui.view">
+        <field name="name">referral.analytics.pivot</field>
+        <field name="model">referral.analytics</field>
+        <field name="arch" type="xml">
+            <pivot string="Referral Analytics Pivot">
+                <field name="date" type="row"/>
+                <field name="partner_id" type="col"/>
+                <field name="total_clicks" type="measure"/>
+                <field name="total_signups" type="measure"/>
+                <field name="total_revenue" type="measure"/>
+                <field name="conversion_rate" type="measure" operator="avg"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Referral Analytics Dashboard Action -->
+    <record id="action_referral_analytics" model="ir.actions.act_window">
+        <field name="name">Referral Analytics Dashboard</field>
+        <field name="res_model">referral.analytics</field>
+        <field name="view_mode">graph,pivot,list,form</field>
+        <field name="view_id" ref="view_referral_analytics_graph_clicks"/>
+        <field name="search_view_id" ref="view_referral_analytics_search"/>
+        <field name="context">{
+            'search_default_group_by_date': 1,
+            'graph_mode': 'line',
+            'graph_measure': 'total_clicks',
+            'graph_groupbys': ['date']
+        }</field>
+    </record>
+
+    <!-- Referral Funnel Dashboard -->
+    <record id="view_referral_funnel_graph" model="ir.ui.view">
+        <field name="name">referral.funnel.graph</field>
+        <field name="model">referral.link.click</field>
+        <field name="arch" type="xml">
+            <graph string="Referral Funnel" type="bar">
+                <field name="converted" type="row"/>
+                <field name="id" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_referral_funnel" model="ir.actions.act_window">
+        <field name="name">Referral Funnel</field>
+        <field name="res_model">referral.link.click</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="view_referral_funnel_graph"/>
+        <field name="context">{'group_by': ['converted']}</field>
+    </record>
+
+    <!-- Click Analytics Graph Views -->
+    <record id="view_referral_clicks_by_platform" model="ir.ui.view">
+        <field name="name">referral.clicks.by.platform</field>
+        <field name="model">referral.link.click</field>
+        <field name="arch" type="xml">
+            <graph string="Clicks by Platform" type="pie">
+                <field name="utm_source" type="row"/>
+                <field name="id" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Share Performance Graph View -->
+    <record id="view_referral_shares_by_platform" model="ir.ui.view">
+        <field name="name">referral.shares.by.platform</field>
+        <field name="model">referral.share</field>
+        <field name="arch" type="xml">
+            <graph string="Shares by Platform" type="pie">
+                <field name="platform" type="row"/>
+                <field name="id" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Referral Link Click Views -->
+    <record id="view_referral_link_click_list" model="ir.ui.view">
+        <field name="name">referral.link.click.list</field>
+        <field name="model">referral.link.click</field>
+        <field name="arch" type="xml">
+            <list string="Referral Link Clicks">
+                <field name="click_date"/>
+                <field name="partner_id"/>
+                <field name="referral_code"/>
+                <field name="ip_address"/>
+                <field name="is_unique"/>
+                <field name="converted"/>
+                <field name="utm_source"/>
+                <field name="utm_medium"/>
+                <field name="utm_campaign"/>
+                <field name="country_id"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_referral_link_click_form" model="ir.ui.view">
+        <field name="name">referral.link.click.form</field>
+        <field name="model">referral.link.click</field>
+        <field name="arch" type="xml">
+            <form string="Referral Link Click">
+                <group>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="referral_code"/>
+                        <field name="click_date"/>
+                        <field name="converted"/>
+                        <field name="converted_partner_id" invisible="not converted"/>
+                        <field name="conversion_date" invisible="not converted"/>
+                    </group>
+                    <group>
+                        <field name="ip_address"/>
+                        <field name="device_fingerprint"/>
+                        <field name="is_unique"/>
+                        <field name="country_id"/>
+                        <field name="referrer_url"/>
+                    </group>
+                </group>
+                <group string="UTM Parameters">
+                    <field name="utm_source"/>
+                    <field name="utm_medium"/>
+                    <field name="utm_campaign"/>
+                    <field name="utm_content"/>
+                </group>
+                <group string="User Agent">
+                    <field name="user_agent" widget="text"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_referral_link_click" model="ir.actions.act_window">
+        <field name="name">Referral Link Clicks</field>
+        <field name="res_model">referral.link.click</field>
+        <field name="view_mode">graph,list,form</field>
+        <field name="view_id" ref="view_referral_clicks_by_platform"/>
+    </record>
+
+    <!-- Referral Share Views -->
+    <record id="view_referral_share_list" model="ir.ui.view">
+        <field name="name">referral.share.list</field>
+        <field name="model">referral.share</field>
+        <field name="arch" type="xml">
+            <list string="Referral Shares">
+                <field name="share_date"/>
+                <field name="partner_id"/>
+                <field name="referral_code"/>
+                <field name="platform"/>
+                <field name="clicks_generated"/>
+                <field name="conversions_generated"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_referral_share" model="ir.actions.act_window">
+        <field name="name">Referral Shares</field>
+        <field name="res_model">referral.share</field>
+        <field name="view_mode">graph,list</field>
+        <field name="view_id" ref="view_referral_shares_by_platform"/>
+    </record>
+
+    <!-- Fraud Detection Views -->
+    <record id="view_referral_fraud_detection_list" model="ir.ui.view">
+        <field name="name">referral.fraud.detection.list</field>
+        <field name="model">referral.fraud.detection</field>
+        <field name="arch" type="xml">
+            <list string="Fraud Detections">
+                <field name="detection_date"/>
+                <field name="partner_id"/>
+                <field name="referral_code"/>
+                <field name="detection_type"/>
+                <field name="severity" widget="badge" decoration-danger="severity == 'critical'" decoration-warning="severity == 'high'" decoration-info="severity == 'medium'"/>
+                <field name="status" widget="badge" decoration-success="status == 'false_positive'" decoration-info="status == 'reviewed'" decoration-muted="status == 'pending'"/>
+                <field name="ip_address"/>
+                <field name="reviewed_by"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_referral_fraud_detection_form" model="ir.ui.view">
+        <field name="name">referral.fraud.detection.form</field>
+        <field name="model">referral.fraud.detection</field>
+        <field name="arch" type="xml">
+            <form string="Fraud Detection">
+                <header>
+                    <button name="action_mark_reviewed" string="Mark as Reviewed" type="object" class="btn-primary" invisible="status != 'pending'"/>
+                    <button name="action_mark_false_positive" string="Mark as False Positive" type="object" invisible="status != 'pending'"/>
+                </header>
+                <group>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="referral_code"/>
+                        <field name="detection_type"/>
+                        <field name="severity"/>
+                        <field name="status"/>
+                        <field name="detection_date"/>
+                    </group>
+                    <group>
+                        <field name="ip_address"/>
+                        <field name="device_fingerprint"/>
+                        <field name="reviewed_by" invisible="status == 'pending'"/>
+                        <field name="review_date" invisible="status == 'pending'"/>
+                    </group>
+                </group>
+                <group string="Description">
+                    <field name="description" widget="text"/>
+                </group>
+                <group string="Review Notes" invisible="status == 'pending'">
+                    <field name="review_notes" widget="text"/>
+                </group>
+                <group string="Flagged Clicks">
+                    <field name="flagged_clicks" nolabel="1">
+                        <list>
+                            <field name="click_date"/>
+                            <field name="ip_address"/>
+                            <field name="converted"/>
+                        </list>
+                    </field>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_referral_fraud_detection" model="ir.actions.act_window">
+        <field name="name">Fraud Detection</field>
+        <field name="res_model">referral.fraud.detection</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('status', '=', 'pending')]</field>
+        <field name="context">{'default_status': 'pending'}</field>
+    </record>
+
+</odoo>

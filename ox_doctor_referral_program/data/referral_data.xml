@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Cron job to auto-grant rewards if enabled -->
+        <!-- Note: numbercall field removed in Odoo 18 - cron jobs run indefinitely by default -->
+        <!-- All fields aligned with Odoo 18 native patterns -->
+        <record id="ir_cron_grant_referral_rewards" model="ir.cron">
+            <field name="name">Grant Pending Referral Rewards</field>
+            <field name="model_id" ref="model_referral_reward"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_grant_pending_rewards()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field name="priority">5</field>
+            <field name="active" eval="False"/>
+            <field name="user_id" ref="base.user_root"/>
+        </record>
+        
+        <!-- Analytics cron job removed -->
+        
+        <!-- Dashboard default record removed - will be configured in next phase -->
+        <!-- <record id="referral_dashboard_default" model="referral.dashboard">
+            <field name="name">Referral Program Dashboard</field>
+        </record> -->
+    </data>
+</odoo>

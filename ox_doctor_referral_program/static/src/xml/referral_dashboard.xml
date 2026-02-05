@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NOTE: This file is kept for future dashboard implementation -->
+<!-- Currently disabled in __manifest__.py (commented out in assets) -->
+<!-- To enable: uncomment dashboard assets in __manifest__.py -->
+<templates xml:space="preserve">
+    <t t-name="ox_doctor_referral_program.ReferralDashboardWidget">
+        <div class="o_referral_dashboard">
+            <!-- Header -->
+            <div class="dashboard-header">
+                <h1 class="dashboard-title">Referral Program Analytics</h1>
+                <div class="header-controls">
+                    <div class="time-filters">
+                        <button t-att-class="state.timeFilter === 'month' ? 'filter-btn active' : 'filter-btn'"
+                                t-on-click="() => this.setTimeFilter('month')">
+                            Month
+                        </button>
+                        <button t-att-class="state.timeFilter === 'year' ? 'filter-btn active' : 'filter-btn'"
+                                t-on-click="() => this.setTimeFilter('year')">
+                            Year
+                        </button>
+                        <button t-att-class="state.timeFilter === 'total' ? 'filter-btn active' : 'filter-btn'"
+                                t-on-click="() => this.setTimeFilter('total')">
+                            Total
+                        </button>
+                    </div>
+                    <div class="date-range-filters">
+                        <label>From:</label>
+                        <input type="date" t-model="state.dateFrom" t-on-change="onDateChange" class="date-input"/>
+                        <label>To:</label>
+                        <input type="date" t-model="state.dateTo" t-on-change="onDateChange" class="date-input"/>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Loading State -->
+            <div t-if="state.loading" class="loading">
+                <div class="spinner"></div>
+                <p>Loading dashboard data...</p>
+            </div>
+            
+            <!-- Dashboard Content -->
+            <div t-if="!state.loading" class="dashboard-content">
+                <!-- KPI Tiles Row 1 -->
+                <div class="row kpi-tiles">
+                    <div class="col-md-3 kpi-tile">
+                        <div class="kpi-card" t-on-click="openClicks">
+                            <div class="kpi-value" t-esc="formatNumber(state.stats.total_clicks || 0)"/>
+                            <div class="kpi-label">Total Clicks</div>
+                            <div class="kpi-sparkline">
+                                <canvas id="sparkline-clicks"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 kpi-tile">
+                        <div class="kpi-card">
+                            <div class="kpi-value" t-esc="formatNumber(state.stats.unique_clicks || 0)"/>
+                            <div class="kpi-label">Unique Clicks</div>
+                            <div class="kpi-sparkline">
+                                <canvas id="sparkline-clicks-unique"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 kpi-tile">
+                        <div class="kpi-card" t-on-click="openSignups">
+                            <div class="kpi-value" t-esc="formatNumber(state.stats.total_signups || 0)"/>
+                            <div class="kpi-label">Signups</div>
+                            <div class="kpi-sparkline">
+                                <canvas id="sparkline-signups"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 kpi-tile">
+                        <div class="kpi-card">
+                            <div class="kpi-value" t-esc="formatPercentage(state.stats.conversion_rate)"/>
+                            <div class="kpi-label">Conversion Rate</div>
+                            <div class="kpi-sparkline">
+                                <canvas id="sparkline-conversion"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- KPI Tiles Row 2 -->
+                <div class="row kpi-tiles">
+                    <div class="col-md-3 kpi-tile">
+                        <div class="kpi-card revenue" t-on-click="openRevenue">
+                            <div class="kpi-value" t-esc="formatCurrency(state.stats.total_revenue)"/>
+                            <div class="kpi-label">Total Revenue</div>
+                            <div class="kpi-sparkline">
+                                <canvas id="sparkline-revenue"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 kpi-tile">
+                        <div class="kpi-card">
+                            <div class="kpi-value" t-esc="formatNumber(state.stats.order_count || 0)"/>
+                            <div class="kpi-label">Orders</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 kpi-tile">
+                        <div class="kpi-card">
+                            <div class="kpi-value" t-esc="formatCurrency(state.stats.average_order_value)"/>
+                            <div class="kpi-label">Avg Order Value</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 kpi-tile">
+                        <div class="kpi-card">
+                            <div class="kpi-value" t-esc="formatNumber(state.stats.new_referrals || 0)"/>
+                            <div class="kpi-label">New Referrals</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Breakdown Charts Row -->
+                <div class="row chart-row">
+                    <div class="col-md-6 chart-container">
+                        <div class="chart-card">
+                            <canvas id="chart-device"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6 chart-container">
+                        <div class="chart-card">
+                            <canvas id="chart-referral-type"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Time-Series Charts Row -->
+                <div class="row chart-row">
+                    <div class="col-md-12 chart-container">
+                        <div class="chart-card">
+                            <canvas id="chart-sessions-device"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row chart-row">
+                    <div class="col-md-6 chart-container">
+                        <div class="chart-card">
+                            <canvas id="chart-clicks"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6 chart-container">
+                        <div class="chart-card">
+                            <canvas id="chart-revenue"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Stats Row -->
+                <div class="row stat-tiles">
+                    <div class="col-md-6 stat-tile">
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-value" t-esc="state.stats.active_referrers || 0"/>
+                            <div class="stat-label">Active Referrers</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 stat-tile">
+                        <div class="stat-card" 
+                             t-att-class="state.stats.pending_fraud > 0 ? 'alert-danger' : ''"
+                             t-on-click="openFraud">
+                            <div class="stat-icon">🛡️</div>
+                            <div class="stat-value" t-esc="state.stats.pending_fraud || 0"/>
+                            <div class="stat-label">Pending Fraud Cases</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

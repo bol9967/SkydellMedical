@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Model Definitions -->
+    <record id="model_referral_reward_rule" model="ir.model">
+        <field name="name">referral.reward.rule</field>
+        <field name="model">referral.reward.rule</field>
+        <field name="info">Referral Reward Rule</field>
+    </record>
+    
+    <!-- No additional security groups needed - uses base groups -->
+</odoo>

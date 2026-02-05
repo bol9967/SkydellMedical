@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_sale_order_form_referral" model="ir.ui.view">
+        <field name="name">sale.order.form.referral</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="is_referral_order" invisible="1"/>
+                <field name="referral_doctor_1_id" invisible="1"/>
+                <field name="promo_reward_granted" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Referral Dashboard Kanban View -->
+    <record id="view_referral_dashboard_kanban" model="ir.ui.view">
+        <field name="name">referral.dashboard.kanban</field>
+        <field name="model">referral.dashboard</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_dashboard" create="0" delete="0">
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="total_clicks"/>
+                <field name="unique_clicks"/>
+                <field name="total_signups"/>
+                <field name="conversion_rate"/>
+                <field name="total_revenue"/>
+                <field name="order_count"/>
+                <field name="average_order_value"/>
+                <field name="new_referrals"/>
+                <field name="active_referrers"/>
+                <field name="pending_fraud"/>
+                
+                <templates>
+                    <t t-name="card">
+                        <div class="oe_kanban_card">
+                            <div class="oe_kanban_content">
+                                <!-- Date Filters -->
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label class="o_form_label" for="date_from">From Date</label>
+                                        <field name="date_from" widget="date"/>
+                                    </div>
+                                    <div class="col-6">
+                                        <label class="o_form_label" for="date_to">To Date</label>
+                                        <field name="date_to" widget="date"/>
+                                    </div>
+                                </div>
+                                
+                                <!-- Stat Buttons Row 1 -->
+                                <div class="row">
+                                    <div class="col-3">
+                                        <button name="action_view_clicks" type="object" class="oe_stat_button">
+                                            <div class="o_stat_info">
+                                                <span class="o_stat_value">
+                                                    <field name="total_clicks"/>
+                                                </span>
+                                                <span class="o_stat_text">Total Clicks</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button name="action_view_unique_clicks" type="object" class="oe_stat_button">
+                                            <div class="o_stat_info">
+                                                <span class="o_stat_value">
+                                                    <field name="unique_clicks"/>
+                                                </span>
+                                                <span class="o_stat_text">Unique Clicks</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button name="action_view_signups" type="object" class="oe_stat_button">
+                                            <div class="o_stat_info">
+                                                <span class="o_stat_value">
+                                                    <field name="total_signups"/>
+                                                </span>
+                                                <span class="o_stat_text">Signups</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="oe_stat_button">
+                                            <div class="o_stat_info">
+                                                <span class="o_stat_value">
+                                                    <field name="conversion_rate" widget="percentage"/>
+                                                </span>
+                                                <span class="o_stat_text">Conversion Rate</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Stat Buttons Row 2 -->
+                                <div class="row mt-2">
+                                    <div class="col-3">
+                                        <button name="action_view_orders" type="object" class="oe_stat_button">
+                                            <div class="o_stat_info">
+                                                <span class="o_stat_value">
+                                                    <field name="total_revenue" widget="monetary"/>
+                                                </span>
+                                                <span class="o_stat_text">Total Revenue</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button name="action_view_orders" type="object" class="oe_stat_button">
+                                            <div class="o_stat_info">
+                                                <span class="o_stat_value">
+                                                    <field name="order_count"/>
+                                                </span>
+                                                <span class="o_stat_text">Orders</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="oe_stat_button">
+                                            <div class="o_stat_info">
+                                                <span class="o_stat_value">
+                                                    <field name="average_order_value" widget="monetary"/>
+                                                </span>
+                                                <span class="o_stat_text">Avg Order Value</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <button name="action_view_referrals" type="object" class="oe_stat_button">
+                                            <div class="o_stat_info">
+                                                <span class="o_stat_value">
+                                                    <field name="new_referrals"/>
+                                                </span>
+                                                <span class="o_stat_text">New Referrals</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <!-- Stat Buttons Row 3 -->
+                                <div class="row mt-2">
+                                    <div class="col-6">
+                                        <button name="action_view_referrers" type="object" class="oe_stat_button">
+                                            <div class="o_stat_info">
+                                                <span class="o_stat_value">
+                                                    <field name="active_referrers"/>
+                                                </span>
+                                                <span class="o_stat_text">Active Referrers</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button name="action_view_fraud" type="object" class="oe_stat_button" 
+                                                decoration-danger="pending_fraud > 0">
+                                            <div class="o_stat_info">
+                                                <span class="o_stat_value">
+                                                    <field name="pending_fraud"/>
+                                                </span>
+                                                <span class="o_stat_text">Pending Fraud Cases</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Dashboard Action - Kanban View Only -->
+    <record id="action_referral_dashboard" model="ir.actions.act_window">
+        <field name="name">Referral Dashboard</field>
+        <field name="res_model">referral.dashboard</field>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_referral_dashboard_kanban"/>
+        <field name="target">current</field>
+        <field name="context">{
+            'create': False, 
+            'delete': False
+        }</field>
+    </record>
+    
+    <!-- Analytics actions removed -->
+
+</odoo>

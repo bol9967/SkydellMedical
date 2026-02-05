@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Extend portal side_content to add QR code with referral link -->
+    <template id="portal_side_content_referral" inherit_id="portal.side_content" name="Portal Referral QR Code">
+        <xpath expr="//a[@href='/my/account']" position="after">
+            <!-- QR Code Section - Only show if partner has referral_code -->
+            <t t-set="partner" t-value="user_id.partner_id"/>
+            <t t-if="partner.referral_code">
+                <div class="o_referral_qr_section mt-4 pt-3 border-top">
+                    <h6 class="mb-3">Your Referral Code</h6>
+
+                    <!-- QR Code Image - 2 inches x 2 inches (approximately 192px at 96dpi) -->
+                    <div class="text-center mb-3">
+                        <img t-att-src="'/referral/qr/%s' % partner.referral_code"
+                             alt="Referral QR Code"
+                             style="width: 192px; height: 192px; border: 1px solid #dee2e6; border-radius: 4px; padding: 8px; background: white;"/>
+                    </div>
+
+                    <!-- Referral Code Display -->
+                    <div class="mb-2">
+                        <label class="small text-muted d-block">Referral Code</label>
+                        <div class="d-flex align-items-center gap-2">
+                            <code class="fs-5 fw-bold text-primary" t-esc="partner.referral_code"/>
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-secondary o_copy_referral_code"
+                                    t-att-data-code="partner.referral_code"
+                                    title="Copy code">
+                                <i class="fa fa-copy"/>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Referral Link Display -->
+                    <div class="mb-2">
+                        <label class="small text-muted d-block">Referral Link</label>
+                        <div class="input-group input-group-sm">
+                            <input type="text"
+                                   class="form-control form-control-sm o_referral_link_input"
+                                   t-att-value="partner.referral_link"
+                                   readonly="readonly"
+                                   style="font-size: 0.75rem;"/>
+                            <button type="button"
+                                    class="btn btn-outline-secondary o_copy_referral_link"
+                                    t-att-data-link="partner.referral_link"
+                                    title="Copy link">
+                                <i class="fa fa-copy"/>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Share hint -->
+                    <p class="small text-muted mt-2 mb-0">
+                        <i class="fa fa-info-circle me-1"/>
+                        Share this code or scan the QR to refer others.
+                    </p>
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Extend signup form to add referral code field -->
+    <template id="auth_signup_referral_code" inherit_id="auth_signup.fields" name="Signup Referral Code Field">
+        <xpath expr="//div[hasclass('field-confirm_password')]" position="after">
+            <!-- Referral Code Field - Hidden if user came via referral link -->
+            <div t-attf-class="mb-3 field-referral_code #{referral_code and 'd-none' or ''}">
+                <label for="referral_code" class="col-form-label label-optional">Referral Code (Optional)</label>
+                <input type="text"
+                       name="referral_code"
+                       id="referral_code"
+                       class="form-control form-control-sm"
+                       t-att-value="referral_code or ''"
+                       placeholder="Enter referral code if you have one"
+                       t-att-readonly="'readonly' if referral_code else None"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

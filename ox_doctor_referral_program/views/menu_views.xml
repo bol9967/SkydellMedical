@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu Items -->
+    <menuitem id="menu_referral_rewards" 
+              name="Referral Rewards" 
+              parent="sale.sale_menu_root" 
+              sequence="100">
+        <menuitem id="menu_referral_rewards_list" 
+                  name="Rewards" 
+                  action="action_referral_reward" 
+                  sequence="1"/>
+        <menuitem id="menu_referral_reward_rules" 
+                  name="Reward Rules" 
+                  action="action_referral_reward_rule_server" 
+                  sequence="2"/>
+    </menuitem>
+    
+    <!-- Analytics Menu Removed -->
+    
+    <!-- Tracking Menu -->
+    <menuitem id="menu_referral_tracking" 
+              name="Referral Tracking" 
+              parent="sale.sale_menu_root" 
+              sequence="102">
+        <menuitem id="menu_referral_clicks" 
+                  name="Link Clicks" 
+                  action="action_referral_link_click" 
+                  sequence="1"/>
+        <menuitem id="menu_referral_shares" 
+                  name="Social Shares" 
+                  action="action_referral_share" 
+                  sequence="2"/>
+    </menuitem>
+    
+    <!-- Fraud Detection Menu -->
+    <menuitem id="menu_referral_fraud" 
+              name="Fraud Detection" 
+              parent="sale.sale_menu_root" 
+              action="action_referral_fraud_detection" 
+              sequence="103"/>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ox_doctor_referral_program.ReferralQrCodeWidget">
+        <div class="o_referral_qr_widget">
+            <t t-if="hasQrCode">
+                <img t-att-src="qrCodeUrl"
+                     alt="Referral QR Code"
+                     style="width: 192px; height: 192px; border: 1px solid #dee2e6; border-radius: 8px; padding: 8px; background: white;"/>
+            </t>
+            <t t-else="">
+                <div class="text-muted">No QR code available</div>
+            </t>
+        </div>
+    </t>
+</templates>

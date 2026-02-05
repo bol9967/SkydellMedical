@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Referral Link Click Views -->
+    <record id="view_referral_link_click_list" model="ir.ui.view">
+        <field name="name">referral.link.click.list</field>
+        <field name="model">referral.link.click</field>
+        <field name="arch" type="xml">
+            <list string="Referral Link Clicks">
+                <field name="click_date"/>
+                <field name="referral_code"/>
+                <field name="partner_id"/>
+                <field name="ip_address"/>
+                <field name="is_unique"/>
+                <field name="converted"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_referral_link_click_search" model="ir.ui.view">
+        <field name="name">referral.link.click.search</field>
+        <field name="model">referral.link.click</field>
+        <field name="arch" type="xml">
+            <search string="Referral Link Clicks">
+                <field name="referral_code"/>
+                <field name="partner_id"/>
+                <field name="ip_address"/>
+                <filter string="Unique Clicks" name="unique" domain="[('is_unique', '=', True)]"/>
+                <filter string="Converted" name="converted" domain="[('converted', '=', True)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Referral Code" name="group_by_code" context="{'group_by': 'referral_code'}"/>
+                    <filter string="Partner" name="group_by_partner" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Date" name="group_by_date" context="{'group_by': 'click_date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_referral_link_click" model="ir.actions.act_window">
+        <field name="name">Referral Link Clicks</field>
+        <field name="res_model">referral.link.click</field>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_referral_link_click_list"/>
+        <field name="search_view_id" ref="view_referral_link_click_search"/>
+    </record>
+
+    <!-- Referral Share Views -->
+    <record id="view_referral_share_list" model="ir.ui.view">
+        <field name="name">referral.share.list</field>
+        <field name="model">referral.share</field>
+        <field name="arch" type="xml">
+            <list string="Social Shares">
+                <field name="share_date"/>
+                <field name="referral_code"/>
+                <field name="partner_id"/>
+                <field name="platform"/>
+                <field name="clicks_generated"/>
+                <field name="conversions_generated"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_referral_share_search" model="ir.ui.view">
+        <field name="name">referral.share.search</field>
+        <field name="model">referral.share</field>
+        <field name="arch" type="xml">
+            <search string="Social Shares">
+                <field name="referral_code"/>
+                <field name="partner_id"/>
+                <field name="platform"/>
+                <filter string="Facebook" name="facebook" domain="[('platform', '=', 'facebook')]"/>
+                <filter string="Twitter" name="twitter" domain="[('platform', '=', 'twitter')]"/>
+                <filter string="LinkedIn" name="linkedin" domain="[('platform', '=', 'linkedin')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Platform" name="group_by_platform" context="{'group_by': 'platform'}"/>
+                    <filter string="Partner" name="group_by_partner" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Date" name="group_by_date" context="{'group_by': 'share_date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_referral_share" model="ir.actions.act_window">
+        <field name="name">Social Shares</field>
+        <field name="res_model">referral.share</field>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_referral_share_list"/>
+        <field name="search_view_id" ref="view_referral_share_search"/>
+    </record>
+
+    <!-- Fraud Detection Views -->
+    <record id="view_referral_fraud_detection_list" model="ir.ui.view">
+        <field name="name">referral.fraud.detection.list</field>
+        <field name="model">referral.fraud.detection</field>
+        <field name="arch" type="xml">
+            <list string="Fraud Detection">
+                <field name="detection_date"/>
+                <field name="referral_code"/>
+                <field name="partner_id"/>
+                <field name="detection_type"/>
+                <field name="severity"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_referral_fraud_detection_search" model="ir.ui.view">
+        <field name="name">referral.fraud.detection.search</field>
+        <field name="model">referral.fraud.detection</field>
+        <field name="arch" type="xml">
+            <search string="Fraud Detection">
+                <field name="referral_code"/>
+                <field name="partner_id"/>
+                <field name="detection_type"/>
+                <filter string="Pending" name="pending" domain="[('status', '=', 'pending')]"/>
+                <filter string="Reviewed" name="reviewed" domain="[('status', '=', 'reviewed')]"/>
+                <filter string="High Severity" name="high" domain="[('severity', 'in', ['high', 'critical'])]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Detection Type" name="group_by_type" context="{'group_by': 'detection_type'}"/>
+                    <filter string="Severity" name="group_by_severity" context="{'group_by': 'severity'}"/>
+                    <filter string="Status" name="group_by_status" context="{'group_by': 'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_referral_fraud_detection" model="ir.actions.act_window">
+        <field name="name">Fraud Detection</field>
+        <field name="res_model">referral.fraud.detection</field>
+        <field name="view_mode">list</field>
+        <field name="view_id" ref="view_referral_fraud_detection_list"/>
+        <field name="search_view_id" ref="view_referral_fraud_detection_search"/>
+    </record>
+
+</odoo>
