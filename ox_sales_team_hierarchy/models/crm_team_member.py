@@ -1,37 +1,36 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, api
-
-_logger = models.logging.getLogger(__name__)
+from odoo import api, models
 
 
 class CrmTeamMember(models.Model):
     _inherit = 'crm.team.member'
 
     def write(self, vals):
-        """Trigger recomputation of team_member_user_ids when team membership changes"""
+        """When team membership changes, recompute team_member_user_ids for the leader"""
         result = super().write(vals)
-        if 'user_id' in vals or 'active' in vals or 'crm_team_id' in vals:
-            # Invalidate team_member_user_ids for affected team leaders
-            for member in self:
-                if member.crm_team_id and member.crm_team_id.user_id:
-                    self.env['res.users'].browse(member.crm_team_id.user_id.id).invalidate_recordset(['team_member_user_ids'])
+        if 'user_id' in vals or 'crm_team_id' in vals or 'active' in vals:
+            # Recompute for both old and new team leaders
+            old_leaders = self._origin.mapped('crm_team_id.user_id')
+            new_leaders = self.mapped('crm_team_id.user_id')
+            leaders = old_leaders | new_leaders
+            if leaders:
+                leaders._compute_team_member_user_ids()
         return result
 
     @api.model_create_multi
     def create(self, vals_list):
-        """Trigger recomputation when new team member is created"""
+        """When a team member is created, recompute team_member_user_ids for the leader"""
         members = super().create(vals_list)
-        for member in members:
-            if member.crm_team_id and member.crm_team_id.user_id:
-                self.env['res.users'].browse(member.crm_team_id.user_id.id).invalidate_recordset(['team_member_user_ids'])
+        leaders = members.mapped('crm_team_id.user_id')
+        if leaders:
+            leaders._compute_team_member_user_ids()
         return members
 
     def unlink(self):
-        """Trigger recomputation when team member is removed"""
-        team_leaders = self.mapped('crm_team_id.user_id')
+        """When a team member is deleted, recompute team_member_user_ids for the leader"""
+        leaders = self.mapped('crm_team_id.user_id')
         result = super().unlink()
-        for leader in team_leaders:
-            if leader:
-                self.env['res.users'].browse(leader.id).invalidate_recordset(['team_member_user_ids'])
+        if leaders:
+            leaders._compute_team_member_user_ids()
         return result

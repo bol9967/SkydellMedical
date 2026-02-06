@@ -176,10 +176,6 @@ class PurchaseOrder(models.Model):
 
                 _logger.info("Sending PO confirmation email for %s to %s", po.name, po.partner_id.email)
                 
-                # CRITICAL PRIVACY FIX: Remove customer followers BEFORE sending email
-                # The message_subscribe override will prevent new additions, but clean up any existing ones
-                po._remove_customer_followers()
-                
                 # Use native mail composer mechanism (similar to action_rfq_send) for proper chatter recording
                 try:
                     # Create mail composer context (same as action_rfq_send uses)
@@ -203,17 +199,11 @@ class PurchaseOrder(models.Model):
                         'res_ids': [po.id],  # Use list for Odoo 18
                         'template_id': template.id,
                         'composition_mode': 'comment',
-                        # CRITICAL: Explicitly set partner_ids to ONLY vendor to prevent customer followers
-                        'partner_ids': [(6, 0, [po.partner_id.id])],
                     })
                     
                     # Send the email (this will properly record in chatter like action_rfq_send)
                     # Template is already rendered automatically when composer is created
                     composer_wizard._action_send_mail()
-                    
-                    # CRITICAL PRIVACY FIX: Safety net - remove any customer followers that might have been added
-                    # The message_subscribe override should prevent this, but this is a final safety check
-                    po._remove_customer_followers()
                     
                     # Mark as processed IMMEDIATELY after sending to prevent duplicates
                     po.dropship_auto_email_processed = True
@@ -225,161 +215,22 @@ class PurchaseOrder(models.Model):
                     _logger.error("Error sending email via mail composer: %s", str(e), exc_info=True)
                     # Fallback: try direct template send
                     try:
-                        # CRITICAL PRIVACY FIX: Remove customer followers BEFORE sending
-                        po._remove_customer_followers()
-                        
-                        # Use email_values to ensure only vendor receives email
-                        email_values = {
-                            'email_to': po.partner_id.email,
-                            'partner_ids': [(6, 0, [po.partner_id.id])],  # Only vendor
-                        }
-                        mail_id = template.send_mail(po.id, force_send=True, email_values=email_values)
+                        mail_id = template.send_mail(po.id, force_send=True)
                         if mail_id:
                             mail = self.env['mail.mail'].browse(mail_id)
                             if mail.exists():
                                 mail.write({'auto_delete': False})
                                 mail.send()
-                        
-                        # CRITICAL PRIVACY FIX: Safety net - remove any customer followers that might have been added
-                        po._remove_customer_followers()
-                        
-                        # Mark as processed even if fallback succeeds
-                        po.dropship_auto_email_processed = True
-                        po.flush_recordset(['dropship_auto_email_processed'])
-                        _logger.info("Email sent via fallback method for PO: %s (marked as processed)", po.name)
+                            # Mark as processed even if fallback succeeds
+                            po.dropship_auto_email_processed = True
+                            po.flush_recordset(['dropship_auto_email_processed'])
+                            _logger.info("Email sent via fallback method for PO: %s (marked as processed)", po.name)
                     except Exception as fallback_error:
                         _logger.error("Fallback email send also failed: %s", str(fallback_error))
                         # Don't mark as processed if both methods failed - allow retry
                         
             except Exception as e:
                 _logger.error("Error auto-confirming and notifying vendor for PO %s: %s", po.name, str(e), exc_info=True)
-
-    def _get_customer_partner_ids(self):
-        """
-        Get all customer partner IDs linked to this purchase order via sale orders.
-        Used to identify customers that must NEVER be followers of purchase orders.
-        
-        :return: List of customer partner IDs
-        """
-        self.ensure_one()
-        customer_partner_ids = []
-        for line in self.order_line:
-            if line.sale_line_id and line.sale_line_id.order_id:
-                sale_order = line.sale_line_id.order_id
-                if sale_order.partner_id:
-                    customer_partner_ids.append(sale_order.partner_id.id)
-                if sale_order.partner_shipping_id and sale_order.partner_shipping_id.id != sale_order.partner_id.id:
-                    customer_partner_ids.append(sale_order.partner_shipping_id.id)
-        return list(set(customer_partner_ids))  # Remove duplicates
-    
-    def message_subscribe(self, partner_ids=None, subtype_ids=None):
-        """
-        OVERRIDE: PREVENT customers from being subscribed to purchase orders.
-        
-        This is the PRIMARY prevention mechanism - customers are BLOCKED at the source.
-        Aligned with Odoo 18 native message_subscribe signature and behavior.
-        """
-        # Follow Odoo 18 native pattern: early return if no recordset or no partner_ids
-        if not self or not partner_ids:
-            return True
-        
-        # Convert to list (Odoo 18 native pattern)
-        partner_ids = partner_ids or []
-        
-        # Get customer partner IDs that must be excluded
-        customer_partner_ids = self._get_customer_partner_ids()
-        
-        if customer_partner_ids:
-            # Filter out any customer partners from the subscription list
-            original_count = len(partner_ids)
-            partner_ids = [pid for pid in partner_ids if pid not in customer_partner_ids]
-            
-            if len(partner_ids) < original_count:
-                blocked_count = original_count - len(partner_ids)
-                _logger.warning(
-                    "🔒 PRIVACY PREVENTION: Blocked %d customer partner(s) from being subscribed to PO %s (customer IDs: %s)",
-                    blocked_count, self.name, customer_partner_ids
-                )
-        
-        # Only subscribe non-customer partners (call parent if we have valid partners)
-        if partner_ids:
-            return super().message_subscribe(partner_ids=partner_ids, subtype_ids=subtype_ids)
-        # Return True if all partners were filtered out (matches Odoo 18 behavior)
-        return True
-    
-    def _remove_customer_followers(self, customer_partner_ids=None):
-        """
-        CRITICAL PRIVACY METHOD: Remove any customer partners from purchase order followers.
-        
-        In dropship business, customers must NEVER be followers of purchase orders.
-        This method ensures customer privacy by removing them from PO followers.
-        
-        :param customer_partner_ids: List of customer partner IDs to remove (if None, auto-detects)
-        """
-        self.ensure_one()
-        
-        if customer_partner_ids is None:
-            customer_partner_ids = self._get_customer_partner_ids()
-        
-        if not customer_partner_ids:
-            return
-        
-        try:
-            # Get all followers of this purchase order
-            followers = self.env['mail.followers'].search([
-                ('res_model', '=', 'purchase.order'),
-                ('res_id', '=', self.id),
-                ('partner_id', 'in', customer_partner_ids),
-            ])
-            
-            if followers:
-                _logger.warning(
-                    "🔒 PRIVACY FIX: Removing %d customer follower(s) from PO %s (customer IDs: %s)",
-                    len(followers), self.name, customer_partner_ids
-                )
-                followers.unlink()
-                
-                # Also check message_follower_ids directly on the record
-                customer_followers = self.message_follower_ids.filtered(
-                    lambda f: f.partner_id.id in customer_partner_ids
-                )
-                if customer_followers:
-                    self.message_unsubscribe(customer_partner_ids)
-                    _logger.info(
-                        "🔒 PRIVACY FIX: Unsubscribed %d customer partner(s) from PO %s",
-                        len(customer_followers), self.name
-                    )
-        except Exception as e:
-            _logger.error(
-                "Error removing customer followers from PO %s: %s",
-                self.name, str(e), exc_info=True
-            )
-    
-    @api.model
-    def cleanup_customer_followers_from_all_pos(self):
-        """
-        Utility method to clean up customer followers from all purchase orders.
-        This can be called manually or via cron to ensure privacy compliance.
-        """
-        # Find all purchase orders that have dropship lines
-        pos_with_dropship = self.env['purchase.order'].search([
-            ('order_line.sale_line_id', '!=', False),
-        ])
-        
-        cleaned_count = 0
-        for po in pos_with_dropship:
-            # Check if any customers are followers (using the helper method)
-            customer_partner_ids = po._get_customer_partner_ids()
-            if customer_partner_ids:
-                customer_followers = po.message_follower_ids.filtered(
-                    lambda f: f.partner_id.id in customer_partner_ids
-                )
-                if customer_followers:
-                    po._remove_customer_followers()
-                    cleaned_count += 1
-        
-        _logger.info("🔒 PRIVACY CLEANUP: Removed customer followers from %d purchase orders", cleaned_count)
-        return cleaned_count
 
     @api.model
     def process_draft_pos_for_paid_orders(self):

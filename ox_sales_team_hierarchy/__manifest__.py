@@ -1,23 +1,17 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Sales Team Hierarchy',
+    'name': 'Sales Team Hierarchy Access',
     'version': '18.0.1.0.0',
-    'category': 'Sales',
-    'summary': 'Allow team leaders to view records of their team members',
+    'category': 'Sales/CRM',
+    'summary': 'Allow sales team leaders to view records of their team members',
     'description': """
-        Sales Team Hierarchy
-        ====================
+        This module extends the access rules for sales orders and CRM leads
+        to allow sales team leaders to view records belonging to their team members.
         
-        This module extends Odoo's native access control to add a 4th tier:
-        
-        1. Administrator - Sees everything (bypasses all rules)
-        2. All Documents - Sees everything (permissive rule)
-        3. Team Leader Access - Sees own records + team member records (NEW)
-        4. Own Documents Only - Sees only own records (restrictive rule)
-        
-        Team leaders can view sales orders and CRM leads of users who are
-        members of teams they lead. If a team leader has no team members,
-        they fall back to "Own Documents Only" behavior.
+        Features:
+        - Team leaders can see all sales orders of their team members
+        - Team leaders can see all CRM leads/opportunities of their team members
+        - Maintains existing personal record access for regular salespersons
     """,
     'author': 'OutsetX',
     'website': 'https://www.outsetx.com',
@@ -31,10 +25,11 @@
         'security/security_groups.xml',
         'security/ir.model.access.csv',
         'security/ir_rules.xml',
+        'views/res_users_views.xml',
     ],
+    'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': False,
     'auto_install': False,
     'license': 'LGPL-3',
-    'post_init_hook': 'post_init_hook',
 }

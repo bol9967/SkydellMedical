@@ -16,8 +16,6 @@
     """,
     'author': 'Your Company',
     'website': 'https://www.yourcompany.com',
-    # Depends only on core sales/account apps; commission \"team leader\" logic
-    # uses native crm.team structures and does NOT require ox_sales_team_hierarchy.
     'depends': ['sale_management', 'account', 'mail'],
     'data': [
         'security/commission_security.xml',

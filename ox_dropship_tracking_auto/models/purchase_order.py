@@ -741,107 +741,6 @@ class PurchaseOrder(models.Model):
             return drops or picks
         return picks
 
-    def _get_customer_partner_ids(self):
-        """
-        Get all customer partner IDs linked to this purchase order via sale orders.
-        Used to identify customers that must NEVER be followers of purchase orders.
-        
-        :return: List of customer partner IDs
-        """
-        self.ensure_one()
-        customer_partner_ids = []
-        for line in self.order_line:
-            if line.sale_line_id and line.sale_line_id.order_id:
-                sale_order = line.sale_line_id.order_id
-                if sale_order.partner_id:
-                    customer_partner_ids.append(sale_order.partner_id.id)
-                if sale_order.partner_shipping_id and sale_order.partner_shipping_id.id != sale_order.partner_id.id:
-                    customer_partner_ids.append(sale_order.partner_shipping_id.id)
-        return list(set(customer_partner_ids))  # Remove duplicates
-    
-    def message_subscribe(self, partner_ids=None, subtype_ids=None):
-        """
-        OVERRIDE: PREVENT customers from being subscribed to purchase orders.
-        
-        This is the PRIMARY prevention mechanism - customers are BLOCKED at the source.
-        Aligned with Odoo 18 native message_subscribe signature and behavior.
-        """
-        # Follow Odoo 18 native pattern: early return if no recordset or no partner_ids
-        if not self or not partner_ids:
-            return True
-        
-        # Convert to list (Odoo 18 native pattern)
-        partner_ids = partner_ids or []
-        
-        # Get customer partner IDs that must be excluded
-        customer_partner_ids = self._get_customer_partner_ids()
-        
-        if customer_partner_ids:
-            # Filter out any customer partners from the subscription list
-            original_count = len(partner_ids)
-            partner_ids = [pid for pid in partner_ids if pid not in customer_partner_ids]
-            
-            if len(partner_ids) < original_count:
-                blocked_count = original_count - len(partner_ids)
-                _logger.warning(
-                    "🔒 PRIVACY PREVENTION: Blocked %d customer partner(s) from being subscribed to PO %s (customer IDs: %s)",
-                    blocked_count, self.name, customer_partner_ids
-                )
-        
-        # Only subscribe non-customer partners (call parent if we have valid partners)
-        if partner_ids:
-            return super().message_subscribe(partner_ids=partner_ids, subtype_ids=subtype_ids)
-        # Return True if all partners were filtered out (matches Odoo 18 behavior)
-        return True
-    
-    def _remove_customer_followers(self, customer_partner_ids=None):
-        """
-        CRITICAL PRIVACY METHOD: Remove any customer partners from purchase order followers.
-        
-        In dropship business, customers must NEVER be followers of purchase orders.
-        This method ensures customer privacy by removing them from PO followers.
-        
-        :param customer_partner_ids: List of customer partner IDs to remove (if None, auto-detects)
-        """
-        self.ensure_one()
-        
-        if customer_partner_ids is None:
-            customer_partner_ids = self._get_customer_partner_ids()
-        
-        if not customer_partner_ids:
-            return
-        
-        try:
-            # Get all followers of this purchase order
-            followers = self.env['mail.followers'].search([
-                ('res_model', '=', 'purchase.order'),
-                ('res_id', '=', self.id),
-                ('partner_id', 'in', customer_partner_ids),
-            ])
-            
-            if followers:
-                _logger.warning(
-                    "🔒 PRIVACY FIX: Removing %d customer follower(s) from PO %s (customer IDs: %s)",
-                    len(followers), self.name, customer_partner_ids
-                )
-                followers.unlink()
-                
-                # Also check message_follower_ids directly on the record
-                customer_followers = self.message_follower_ids.filtered(
-                    lambda f: f.partner_id.id in customer_partner_ids
-                )
-                if customer_followers:
-                    self.message_unsubscribe(customer_partner_ids)
-                    _logger.info(
-                        "🔒 PRIVACY FIX: Unsubscribed %d customer partner(s) from PO %s",
-                        len(customer_followers), self.name
-                    )
-        except Exception as e:
-            _logger.error(
-                "Error removing customer followers from PO %s: %s",
-                self.name, str(e), exc_info=True
-            )
-
     # ---------------------------------------------------------------
     # Mail gateway hooks
     # ---------------------------------------------------------------
@@ -1000,10 +899,6 @@ class PurchaseOrder(models.Model):
                 )
                 reply_to = po.company_id.catchall_email or email_from
 
-                # CRITICAL PRIVACY FIX: Remove customer followers BEFORE sending email
-                # The message_subscribe override will prevent new additions, but clean up any existing ones
-                po._remove_customer_followers()
-
                 # use new mail.compose.message API (Odoo 18)
                 Compose = self.env["mail.compose.message"].with_context({
                     "default_model": "purchase.order",
@@ -1014,15 +909,8 @@ class PurchaseOrder(models.Model):
                     "default_email_from": email_from,
                     "default_reply_to": reply_to,
                 })
-                # CRITICAL: Explicitly set partner_ids to ONLY vendor to prevent customer followers
-                compose = Compose.create({
-                    "partner_ids": [(6, 0, [po.partner_id.id])],
-                })
+                compose = Compose.create({})
                 compose.action_send_mail()
-
-                # CRITICAL PRIVACY FIX: Safety net - remove any customer followers that might have been added
-                # The message_subscribe override should prevent this, but this is a final safety check
-                po._remove_customer_followers()
 
                 po.tracking_reminder_last = now
                 po.tracking_reminder_count += 1

@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- 
-        Security Group for Team Leaders (4th Tier in Access Control)
-        
-        Hierarchy:
-        1. Administrator (group_sale_manager) - Bypasses all rules
-        2. All Documents (group_sale_salesman_all_leads) - Sees everything
-        3. Team Leader Access (group_team_leader) - Sees own + team member records ← THIS
-        4. Own Documents Only (group_sale_salesman) - Sees only own records
-        
-        Team Leader Access works as an extension of "Own Documents Only":
-        - If user has team members: Sees own records + team member records
-        - If user has no team members: Falls back to "Own Documents Only" behavior
-        - If user has "All Documents": Team Leader logic is skipped (they see everything)
-    -->
+    <!-- Security Group for Team Leaders -->
     <record id="group_team_leader" model="res.groups">
-        <field name="name">User: Team Leader Access</field>
+        <field name="name">Team Leader</field>
         <field name="category_id" ref="base.module_category_sales_sales"/>
-        <field name="comment">Team leaders can view their own records plus records of their team members. If no team members exist, falls back to "Own Documents Only" behavior.</field>
+        <field name="comment">Team leaders can view records of their team members</field>
         <!-- Imply salesperson group so team leaders have base sales access -->
         <field name="implied_ids" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
-        <!-- 
-            Note: We do NOT imply "group_sale_salesman_all_leads" (All Documents).
-            Team Leader Access is a separate tier that extends "Own Documents Only"
-            with team member visibility.
-        -->
     </record>
 </odoo>
